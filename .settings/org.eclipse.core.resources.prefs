@@ -1,4 +1,8 @@
 eclipse.preferences.version=1
 encoding//partner_personality_insight/models/profile.py=utf-8
+encoding//partner_social/__init__.py=utf-8
 encoding//partner_social/__manifest__.py=utf-8
+encoding//partner_social/models/__init__.py=utf-8
 encoding//partner_social/models/models.py=utf-8
+encoding//website_facebook_pixel/__manifest__.py=utf-8
+encoding//website_facebook_pixel/models/website_facebook_pixel.py=utf-8
