@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+      <template id="assets_frontend" inherit_id="website.assets_frontend" name="Brand Nav-bar Front-end assets">
+	    	<xpath expr="script[last()]" position="after">
+	    	 	<t t-if="landing_page">
+            		<script type="text/javascript" >
+            			$(function() {
+	                     $('.navbar-nav').hide();
+	                     $('.navbar-toggle').hide();
+	                     $('footer').hide();
+	               		 });
+            		</script>
+            	</t>
+            </xpath>
+        </template>
+    </data>
+</odoo>
