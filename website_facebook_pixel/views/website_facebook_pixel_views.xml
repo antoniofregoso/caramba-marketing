@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<record id="view_website_facebook_pixel_form" model="ir.ui.view">
+    	<field name="name">facebook_pixel.form</field>
+        <field name="model">website.facebook_pixel</field>
+        <field name="arch" type="xml">
+        	<form string="Facebook Pixel Events">
+            	<sheet>
+            		<div class="oe_title">
+                		<label for="name" class="oe_edit_only" string="Facebook Pixel Event"/>
+	                    <h1><field name="name" placeholder="Describe the pixel event..."/></h1>
+                	</div>
+            		<group string='Event'>
+            			<group>
+            				<field name="page_id" />
+            			</group>
+            			<group>
+            				<field name="event" />
+            			</group>
+            		</group>
+            		<group string='Event Parameters'>
+            			<group>
+            				<field name="content_category" />
+            				<field name="content_ids" />
+            				<field name="content_name" />
+            				<field name="content_type" />
+            				<field name="contents" />
+            				<field name="currency" />
+            			</group>
+            			<group>
+            				<field name="num_items" />
+            				<field name="predicted_ltv" />
+            				<field name="search_string" />
+            				<field name="status" />
+            				<field name="value" />
+            			</group>
+            		</group>
+            	</sheet>
+            </form>
+       </field>
+    </record>
+    
+    <record id="view_website_facebook_pixel_tree_view" model="ir.ui.view">
+    	<field name="name">facebook_pixel..list</field>
+        <field name="model">website.facebook_pixel</field>
+        <field name="arch" type="xml">
+        <tree string="Facebook Pixel Events">
+        	<field name="name"/>
+        	<field name="page_id"/>
+        	<field name="event"/>
+         </tree>
+         </field>
+	</record> 
+	
+	<record id="action_website_facebook_pixel" model="ir.actions.act_window">
+    	<field name="name">Facebook Pixel Event</field>
+        <field name="res_model">website.facebook_pixel</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_website_facebook_pixel_tree_view"/>
+        <field name="target">current</field>
+     </record>
+     
+     <menuitem name="Facebook Pixel Event"
+            id="menu_website_facebook_pixel"
+            action="action_website_facebook_pixel"
+            parent="website.menu_website_global_configuration"
+            sequence="85"
+            groups="website.group_website_designer"/> 
+</odoo>

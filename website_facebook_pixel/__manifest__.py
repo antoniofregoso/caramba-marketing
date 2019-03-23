@@ -21,7 +21,7 @@
 
     'data': [
         # 'security/ir.model.access.csv',
-        'views/views.xml',
+        'views/website_facebook_pixel_views.xml',
         'views/templates.xml',
     ],
    
