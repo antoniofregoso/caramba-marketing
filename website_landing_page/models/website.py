@@ -7,5 +7,5 @@ class Page(models.Model):
 
     _inherit ='website.page'
     
-    landing_page = fields.Boolean('Is landing page', default=False, help='Hidden menu, footer and home link.')
+    is_landingpage = fields.Boolean('Is landing page', default=False, help='Hidden menu, footer and home link.')
 

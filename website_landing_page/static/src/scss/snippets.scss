@@ -182,6 +182,28 @@
     padding: 10px 15px;
     background: #f0f0f0;
 }
+//Infographics
+.infg-header {
+    height:50px;
+}
+
+.infg-circle {
+    border-radius:50%;
+    border: 9px solid white;
+    width: 70px;
+    height: 70px;
+    margin:auto;
+    position: absolute;
+    top: 15px;
+    
+    
+}
+
+.infg-item{
+    background-color: rgb(8, 82, 148);
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
 
 // Timeline
 

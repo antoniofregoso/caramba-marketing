@@ -7,7 +7,7 @@
 		<field name="inherit_id" ref="website.website_pages_form_view"/>
 		<field name="arch" type="xml">
 			<xpath expr="//field[@name='date_publish']" position="after">
-				<field name="landing_page"/>
+				<field name="is_landingpage"/>
 			</xpath>
 		</field>
 	</record>
@@ -18,7 +18,7 @@
 		<field name="inherit_id" ref="website.website_pages_tree_view"/>
 		<field name="arch" type="xml">
 			<xpath expr="//field[@name='write_date']" position="after">
-				<field name="landing_page"/>
+				<field name="is_landingpage"/>
 			</xpath>
 		</field>
 	</record>

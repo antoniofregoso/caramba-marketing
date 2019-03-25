@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-	<template id="editor_landing_page" inherit_id="website.assets_editor" name="Landing Page Editor">
-	 	<xpath expr="//script[last()]" position="after">
-			<script type="text/javascript" src="/website_landing_page/static/src/js/snippets.js" />
-		</xpath> 
-		<xpath expr="//link[last()]" position="after">
-        	<link rel="stylesheet" type="text/less" href="/website_landing_page/static/src/scss/snippets.scss" />
-        </xpath>
-	</template>
+
 
 	<template id="s_lp_header" name="Header">
     <section class="s_text_image oe_img_bg oe_custom_bg" style="background-image: url(/web/image/website.s_cover_default_image); background-position: 50% 100%">
@@ -633,7 +626,7 @@
             	 <div class="col-md-12">
             	 
             <div class="main-timeline">
-                <div class="timeline">
+                <div class="timeline" id="template" >
                     <div class="timeline-content">
                         <div class="circle"><span class="fa fa-globe fa-5x" /></div>
                         <div class="content">
@@ -714,7 +707,7 @@
                    <t t-snippet="website_landing_page.s_lp_important_points" t-thumbnail="/website_landing_page/static/src/img/snippets_thumbs/block_lp_points.png"/>
                    <t t-snippet="website_landing_page.s_lp_testimony" t-thumbnail="/website_landing_page/static/src/img/snippets_thumbs/block_lp_testimony.png"/>  
                    <t t-snippet="website_landing_page.s_lp_discount" t-thumbnail="/website_landing_page/static/src/img/snippets_thumbs/block_lp_discount.png"/>   
-                  <t t-snippet="website_landing_page.s_lp_timeline" t-thumbnail="/website_landing_page/static/src/img/snippets_thumbs/block_lp_timeline.png"/>                                   
+                  <t t-snippet="website_landing_page.s_lp_timeline" t-thumbnail="/website_landing_page/static/src/img/snippets_thumbs/block_lp_timeline.png"/>                                       
                </div>
             </div>	    
 	    </xpath>
@@ -726,7 +719,7 @@
   <template id="s_lp_opt" name="Landing Page Options" inherit_id="website.snippet_options">
   <xpath expr="//div[@data-js='background_position']" position="after">
     <div data-js="colorpicker"
-        data-selector=".lp-tickets, .lp-imp-points-inner, .lp_data_sheet, .discount, .coupon"
+        data-selector=".lp-tickets, .lp-imp-points-inner, .lp_data_sheet, .discount, .coupon, .timeline"
         data-palette-default="transparent_grayscale"
         data-palette-title="Overlay Color">
         <li class="dropdown-submenu">
@@ -736,6 +729,7 @@
             </ul>
         </li>
     </div>
+
      <div  data-selector=".lp-speakers .lp-lead-speaker .lp-testimony">
      	 <li class="dropdown-submenu">
         <a href="#">Edit Images</a>
@@ -745,9 +739,11 @@
         </ul>
       </li>     
 	</div>
-	<div data-js="timeline_clone_item" data-selector="timeline">
-	
-	</div>
+	<div data-js="timeline" data-selector="section .row > div" data-target=".main-timeline">		
+        <a href="#" class="dropdown-item" data-add-item="1" data-no-preview="true"><i class="fa fa-plus"/>Add Item</a>
+        <a href="#" class="dropdown-item" data-remove-item="1" data-no-preview="true"><i class="fa fa-minus"/>Remove Item</a>
+    </div>
+
   </xpath>
  </template>
 

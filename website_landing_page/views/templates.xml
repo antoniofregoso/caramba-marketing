@@ -1,17 +1,12 @@
 <odoo>
-    <data>
-      <template id="assets_frontend" inherit_id="website.assets_frontend" name="Brand Nav-bar Front-end assets">
-	    	<xpath expr="script[last()]" position="after">
-	    	 	<t t-if="landing_page">
-            		<script type="text/javascript" >
-            			$(function() {
-	                     $('.navbar-nav').hide();
-	                     $('.navbar-toggle').hide();
-	                     $('footer').hide();
-	               		 });
-            		</script>
-            	</t>
-            </xpath>
-        </template>
-    </data>
+  
+      <template id="editor_landing_page" inherit_id="website.assets_editor" name="Landing Page Editor">
+	 	<xpath expr="//script[last()]" position="after">
+			<script type="text/javascript" src="/website_landing_page/static/src/js/editor/snippets.options.js" />
+		</xpath> 
+		<xpath expr="//link[last()]" position="after">
+        	<link rel="stylesheet" type="text/less" href="/website_landing_page/static/src/scss/snippets.scss" />
+        </xpath>
+	</template>
+ 
 </odoo>
