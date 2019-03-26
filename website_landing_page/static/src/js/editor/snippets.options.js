@@ -15,8 +15,8 @@ var qweb = core.qweb;
    
 options.registry.timeline = options.Class.extend({
 	addItem: function (previewMode, value, $opt) {
-		var $activeItem = this.data().addItem;
-		alert($activeItem);
+		var count = $('main-timeline').length;
+		alert(count);
 	},
 	
 	removeItem: function (previewMode, value, $opt) {
