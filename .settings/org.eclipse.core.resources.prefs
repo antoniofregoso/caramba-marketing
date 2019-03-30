@@ -1,4 +1,7 @@
 eclipse.preferences.version=1
+encoding//marketing_buyer_persona/__init__.py=utf-8
+encoding//marketing_buyer_persona/__manifest__.py=utf-8
+encoding//marketing_buyer_persona/models/marketing_buyer_persona.py=utf-8
 encoding//partner_personality_insight/__manifest__.py=utf-8
 encoding//partner_personality_insight/models/profile.py=utf-8
 encoding//partner_social/__init__.py=utf-8
