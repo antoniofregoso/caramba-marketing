@@ -230,8 +230,9 @@
 			        New York, NY 10023<br />
 			        Call toll-free: <a href="tel:+8003052768">(800) 305-2768</a>
 		      </address>
-		      <div id="map_canvas">
-		      
+		      <div class="embed-responsive embed-responsive-16by9" id="map_canvas">
+		      <!-- class="embed-responsive-item" -->
+		      	
 		      </div>
            </div>
         </div>

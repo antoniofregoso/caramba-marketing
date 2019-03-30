@@ -1,0 +1,648 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* website_landing_page
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-29 18:02+0000\n"
+"PO-Revision-Date: 2019-03-29 12:27-0600\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_MX\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_event
+msgid "$65 early bird"
+msgstr "$ 65 para madrugadores"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_map
+msgid "(800) 305-2768"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_important_points
+msgid "1000"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_event
+msgid "12-14 february 2018"
+msgstr "12-14 de febrero de 2018"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_lead_speaker
+msgid "1st President of the United States"
+msgstr "1er presidente de los estados unidos"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_counter
+msgid "2145"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_important_points
+msgid "25"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_map
+msgid ""
+"30 Lincoln Center Plaza<br/>\n"
+"\t\t\t        New York, NY 10023<br/>\n"
+"\t\t\t        Call toll-free:"
+msgstr ""
+"30 Lincoln Center Plaza<br/>\n"
+"\t\t\t        New York, NY 10023<br/>\n"
+"\t\t\t       Llame gratis:"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_counter
+msgid "45214"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_important_points
+msgid "5763"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_counter
+msgid "650"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_schedule
+msgid "7:00pm - 10:00pm"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_schedule
+msgid "7:00pm - Till late"
+msgstr "7:00 pm - Hasta tarde"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_schedule
+msgid "8:00am - 5:00pm at the Queen Elizabeth Theatre"
+msgstr "8:00 am - 5:00 pm en el Teatro Queen Elizabeth"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_schedule
+msgid "8:00am - 5:00pm at the Queen Elizhabeth Theatre"
+msgstr "8:00 am - 5:00 pm en el teatro Queen Elizhabeth"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_counter
+msgid "973"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_discount
+msgid "<font style=\"color: rgb(255, 255, 255);\">15%</font>"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_discount
+msgid "<font style=\"color: rgb(255, 255, 255);\">25%</font>"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_discount
+msgid "<font style=\"color: rgb(255, 255, 255);\">30%</font>"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_discount
+msgid "<font style=\"color: rgb(255, 255, 255);\">50%</font>"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_discount
+msgid "<font style=\"color: rgb(255, 255, 255);\">Get a code</font>"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_discount
+msgid "<font style=\"color: rgb(255, 255, 255);\">off</font>"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.landing_page_snippets
+msgid "<i class=\"fa fa-angle-double-down\"/> Landing Page"
+msgstr "<i class=\"fa fa-angle-double-down\"/> Página de destino"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_opt
+msgid "<i class=\"fa fa-eyedropper\"/>Overlay color"
+msgstr "Color de superposición"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_opt
+msgid "<i class=\"fa fa-minus\"/>Remove Item"
+msgstr "Remover objeto"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_opt
+msgid "<i class=\"fa fa-plus\"/>Add Item"
+msgstr "<i class=\"fa fa-plus\"/>Agregar Objeto"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_discount
+msgid ""
+"<small>\n"
+"\t\t                    * Conditions and restrictions apply.\n"
+"\t\t                </small>"
+msgstr ""
+"<small>\n"
+"\t\t                    * Se aplican condiciones y restricciones.\n"
+"\t\t                </small>"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_discount
+msgid ""
+"<small>\n"
+"\t\t                   * Conditions and restrictions apply.\n"
+"\t\t                </small>"
+msgstr ""
+"<small>\n"
+"\t\t                   * Se aplican condiciones y restricciones..\n"
+"\t\t                </small>"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_side
+msgid ""
+"<span class=\"btn btn-primary btn-lg o_website_form_send\">I'm interested</span>\n"
+"\t\t                                <span id=\"o_website_form_result\"/>"
+msgstr ""
+"<span class=\"btn btn-primary btn-lg o_website_form_send\">Estoy interesado</span>\n"
+"\t\t                                <span id=\"o_website_form_result\"/>"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_header
+msgid ""
+"<span class=\"btn btn-primary btn-lg o_website_form_send\">I'm interested</span>\n"
+"                                <span id=\"o_website_form_result\"/>"
+msgstr ""
+"<span class=\"btn btn-primary btn-lg o_website_form_send\">Estoy interesado</span>\n"
+"                                <span id=\"o_website_form_result\"/>"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_data_sheet
+msgid "<span class=\"fa fa-download\"/> Download"
+msgstr "<span class=\"fa fa-download\"/> Descargar"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_data_sheet
+msgid "<span class=\"fa fa-file-pdf-o\"/> Data Sheet"
+msgstr "<span class=\"fa fa-file-pdf-o\"/> Ficha de datos"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_timeline
+msgid "<span class=\"year\">2013 - 2014</span>"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_timeline
+msgid "<span class=\"year\">2014 - 2015</span>"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_timeline
+msgid "<span class=\"year\">2015 - 2016</span>"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_timeline
+msgid "<span class=\"year\">2016 - 2017</span>"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_tickets
+msgid ""
+"<span>Get My Ticket Now</span>\n"
+"\t\t                        <i class=\"fa fa-chevron-right\"/>"
+msgstr ""
+"<span>Quiero mi boleto ahora</span>\n"
+"\t\t                        <i class=\"fa fa-chevron-right\"/>"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_tickets
+msgid ""
+"<span>Regular ticket sale</span><br/>\n"
+"\t\t\t\t\t\t\t<span>End apr 30, 2018</span>"
+msgstr ""
+"<span>Venta regular de entradas</span><br/>\n"
+"\t\t\t\t\t\t\t<span>Termina 30 de abril de 2018.</span>"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_discount
+msgid ""
+"<strong>\n"
+"\t\t                     Solet consul tractatos ei pro*. \n"
+"\t\t                </strong> \n"
+"\t\t                Ei mei quot invidunt explicari, placerat percipitur intellegam."
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_discount
+msgid ""
+"<strong>\n"
+"\t\t                    Cu aliquip persius alterum duo*. \n"
+"\t\t                </strong> \n"
+"\t\t                Possit equidem disputando usu et, sea invidunt scriptorem in."
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_discount
+msgid ""
+"<strong>\n"
+"\t\t                    Ea per iuvaret ocurreret*. \n"
+"\t\t                </strong> \n"
+"\t\t                sit ea detraxit menandri mediocritatem, in mel dicant mentitum."
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_discount
+msgid ""
+"<strong>\n"
+"\t\t                    Mei mucius gloriatur reprimique mollis*. \n"
+"\t\t                </strong> \n"
+"\t\t                Ad sonet perfecto antiopam mei, denique molestie."
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_6_speakers
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_testimony
+msgid "Aline Turner"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_important_points
+msgid "Attendees from around the world"
+msgstr "Asistentes de todo el mundo."
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_header
+msgid "Catch attention"
+msgstr "Llamar la atención"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_opt
+msgid "Change Images"
+msgstr "Cambiar imagenes"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_header
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_side
+msgid "Comments"
+msgstr "Comentarios"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_schedule
+msgid "Conference Day 1"
+msgstr "Conferencia día 1"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_schedule
+msgid "Conference Day 2"
+msgstr "Conferencia día 2"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_counter
+msgid "Contacts"
+msgstr "Contactos"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_counter
+msgid "Conversations"
+msgstr "Conversaciones"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_header
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_side
+msgid "Create the wish"
+msgstr "Crear el deseo"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_event
+msgid "DATE"
+msgstr "FECHA"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_date_counter_small
+msgid "DAYS"
+msgstr "DIAS"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_counter
+msgid "Deals"
+msgstr "Ofertas"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_opt
+msgid "Edit Images"
+msgstr "Editar imagenes"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_date_counter_small
+msgid "Event will start in"
+msgstr "El evento comenzará en"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_schedule
+msgid "Gastown Pub Crawl"
+msgstr "Gastown Pub Crawl"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_lead_speaker
+msgid "George Washington"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_header
+msgid "Get interest"
+msgstr "Obtener interés"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_date_counter_small
+msgid "HRS"
+msgstr "HORAS"
+
+#. module: website_landing_page
+#: model:ir.model.fields,help:website_landing_page.field_website_page__is_landingpage
+msgid "Hidden menu, footer and home link."
+msgstr "Menú oculto, pie de página y enlace de inicio."
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_6_speakers
+msgid "Iris Joe"
+msgstr ""
+
+#. module: website_landing_page
+#: model:ir.model.fields,field_description:website_landing_page.field_website_page__is_landingpage
+msgid "Is landing page"
+msgstr "Es la página de destino"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_testimony
+msgid "John Doe"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_schedule
+msgid "June 19"
+msgstr "19 de junio"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_schedule
+msgid "June 20"
+msgstr "20 de junio"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_schedule
+msgid "June 21"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_discount
+msgid "LV5MAY14"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_lead_speaker
+msgid "Lead Speaker"
+msgstr "Orador principal"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_timeline
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non lectus justo. Nam ultricies laoreet massa sed maximus. Curabitur tristique sagittis scelerisque. Vivamus posuere nisi quis tortor interdum, in finibus risus convallis. Suspendisse efficitur lacus a nulla commodo, sit amet vestibulum nibh."
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_testimony
+msgid "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas distinctio repudiandae hic dolore accusamus impedit odio esse voluptatibus amet cumque temporibus illum dolores ipsum quisquam alias modi fugit cum dolor."
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_event
+msgid "Los Angeles, CA."
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_date_counter_small
+msgid "MIN"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_discount
+msgid "MNO123ST"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_important_points
+msgid "Memorable Networking events"
+msgstr "Eventos memorables en red"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_6_speakers
+msgid "Mich Stark"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_schedule
+msgid "Monday"
+msgstr "Lunes"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_header
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_side
+msgid "Name"
+msgstr "Nombre"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_event
+msgid "Natalie James + guests"
+msgstr "Natalie James + invitados"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_discount
+msgid "OLV4SY3R"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_schedule
+msgid "Official After Party"
+msgstr "Fiesta posterior oficial"
+
+#. module: website_landing_page
+#: model:ir.model,name:website_landing_page.model_website_page
+msgid "Page"
+msgstr "Página"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_header
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_side
+msgid "Phone"
+msgstr "Teléfono"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_important_points
+msgid "Pieces of free swag to give away"
+msgstr "Recuerdos gratis para regalar."
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_counter
+msgid "Recommendations"
+msgstr "Recomendaciones"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_tickets
+msgid "Register Today"
+msgstr "Regístrese hoy"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_opt
+msgid "Restore Overlay"
+msgstr "Restaurar superposición"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_date_counter_small
+msgid "SEC"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_schedule
+msgid "Schedule"
+msgstr "Planificacion"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_6_speakers
+msgid "Speakers"
+msgstr "Ponentes"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_schedule
+msgid "Sunday"
+msgstr "Domingo"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_testimony
+msgid "Testimonials"
+msgstr "Testimonios"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_tickets
+msgid "Tickets"
+msgstr "Entradas"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_tickets
+msgid ""
+"Tickets include two full days of speaker presentations, workshop, lunch, snacks, afterparties, swag, \n"
+"\t\t\t\t\tconference notes and full access to the recording of every session."
+msgstr ""
+"Los boletos incluyen dos días completos de presentaciones de oradores, taller, almuerzo, refrigerios, brindis de clausura, recuerdos, \n"
+"\t\t\t\t\tNotas de conferencia y acceso completo a la grabación de cada sesión."
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_timeline
+msgid "Timeline"
+msgstr "Línea de tiempo"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_6_speakers
+msgid "Tony Fred"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_schedule
+msgid "Tuesday"
+msgstr "Maartes"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_timeline
+msgid "Web Desginer"
+msgstr "Diseñador web"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_timeline
+msgid "Web Developer"
+msgstr "Desarrollador web"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_timeline
+msgid "Web Developerr"
+msgstr "Desarrollador web"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_schedule
+msgid "Workshops at Unbounce HQ &amp; extracurricular activities around Vancouver."
+msgstr "Talleres en Unbounce HQ & amp; Actividades extracurriculares alrededor de Vancouver."
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_important_points
+msgid "Worls-class marketing speakers"
+msgstr "Oradores de marketing de clase mundial"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_header
+msgid "Write one or two paragraphs describing your product, services or a specific feature. To be successful your content needs to be useful to your readers."
+msgstr "Escriba uno o dos párrafos que describan su producto, servicios o una característica específica. Para tener éxito, su contenido debe ser útil para sus lectores."
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_tickets
+msgid "You can save uo to 35% with our regular ticket sale, but limited quantities are avaliable. Save your spot today!"
+msgstr "Puede ahorrar hasta un 35% con nuestra venta regular de boletos, pero hay cantidades limitadas disponibles. ¡Guarda tu lugar hoy!"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_discount
+msgid "ZUY4OPLQ"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_discount
+msgid "adidas"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_discount
+msgid "converse"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_header
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_side
+msgid "email"
+msgstr "correo electrónico"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_discount
+msgid "lacoste"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_event
+msgid "location"
+msgstr "ubicación"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_discount
+msgid "mango"
+msgstr ""
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_event
+msgid "speakers"
+msgstr "Conferencistas"
+
+#. module: website_landing_page
+#: model_terms:ir.ui.view,arch_db:website_landing_page.s_lp_event
+msgid "tikets"
+msgstr "Entradas"

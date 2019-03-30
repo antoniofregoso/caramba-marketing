@@ -104,3 +104,4 @@ venv.bak/
 .mypy_cache/
 /.project
 /.pydevproject
+.settings/org.eclipse.core.resources.prefs
