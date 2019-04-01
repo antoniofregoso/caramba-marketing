@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+ 
+        <menuitem
+            id="lean_marketing_menu_root"
+            name="Lean Marketing"
+            web_icon="marketing,static/description/icon.png"
+            groups=""
+            sequence="6"/>
+            
+        <menuitem
+            id="lean_marketing_menu_assets"
+            name="Assets"
+            parent="lean_marketing_menu_root"
+            sequence="10" groups="group_lean_marketing_scrum_master,group_lean_marketing_product_owner,group_lean_marketing_manager"/>
+            
+
+
+        <menuitem
+            id="lean_marketing_menu_config"
+            name="Configuration"
+            parent="lean_marketing_menu_root"
+            sequence="80" groups="group_lean_marketing_manager"/>
+            
+       <record id='lean_marketing_brand_view_tree' model='ir.ui.view'>
+        <field name="name">lean_marketing.brand.tree</field>
+        <field name="model">lean_marketing.brand</field>
+        <field name="arch" type="xml">
+            <tree string="Brand">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <record id='lean_marketing_brand_view_form' model='ir.ui.view'>
+        <field name="name">lean_marketing.brand.form</field>
+        <field name="model">lean_marketing.brand</field>
+        <field name="arch" type="xml">
+            <form string="Brand">
+                <group>
+                    <div>
+                        <field name="image_medium" widget="image" class="oe_avatar"/>
+                        <label for="name" class="oe_edit_only"/>
+                         <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                        </div>
+                    </div>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id='lean_marketing_brand_view_kanban' model='ir.ui.view'>
+        <field name="name">lean_marketing.brand.kanban</field>
+        <field name="model">lean_marketing.brand</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id"/>
+                <field name="name" />
+                <field name="image" />
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                        	 <a type="open" href="#" class="o_kanban_image oe_kanban_action">
+                                <img alt="Open" t-att-src="kanban_image('lean_marketing.brand', 'image_medium', record.id.raw_value)" class="img-fluid" style="width:100px;"/>
+                            </a>
+                              <h4 class="oe_partner_heading">
+                                    <a type="open" class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </a>
+                                </h4>                        
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id='lean_marketing_brand_action' model='ir.actions.act_window'>
+        <field name="name">Brands</field>
+        <field name="res_model">lean_marketing.brand</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new brand
+          </p>
+        </field>
+    </record>
+
+    <menuitem action="lean_marketing_brand_action" parent="lean_marketing_menu_assets" id="lean_marketing_brand_menu" sequence="2"/>
+    
+	<menuitem id="menu_lean_marketing_touchpoints" name="Touchpoints" parent="lean_marketing_menu_assets" sequence="20"/>
+ 
+ 
+</odoo>

@@ -14,7 +14,7 @@
     'category': 'Marketing',
     'version': '12.0.0.0.1',
 
-    'depends': ['project', 'project_timeline', 'mass_mailing'],
+    'depends': ['marketing_interaction'],
 
 
     'data': [

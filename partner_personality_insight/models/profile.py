@@ -11,40 +11,40 @@ PROFILE_CATEGORIES = [
 
 PROFILE_PERSONALITY = [
     ('big5_openness', 'Openness'),
-    ('facet_adventurousness','(O) Adventurousness'),
-    ('facet_artistic_interests','(O) Artistic interests'),
-    ('facet_emotionality','(O) Emotionality'),
-    ('facet_imagination','(O) Imagination'),
-    ('facet_intellect','(O) Intellect'),
-    ('facet_liberalism','(O) Authority-challenging'),
+    ('facet_adventurousness','Adventurousness'),
+    ('facet_artistic_interests','Artistic interests'),
+    ('facet_emotionality','Emotionality'),
+    ('facet_imagination','Imagination'),
+    ('facet_intellect','Intellect'),
+    ('facet_liberalism','Authority-challenging'),
     ('big5_conscientiousness','Conscientiousness'),
-    ('facet_achievement_striving','(C) Achievement striving'),
-    ('facet_cautiousness','(C) Cautiousness'),
-    ('facet_dutifulness','(C) Dutifulness'),
-    ('facet_orderliness','(C) Orderliness'),
-    ('facet_self_discipline','(C) Self-discipline'),
-    ('facet_self_efficacy','(C) Self-efficacy'),
+    ('facet_achievement_striving','Achievement striving'),
+    ('facet_cautiousness','Cautiousness'),
+    ('facet_dutifulness','Dutifulness'),
+    ('facet_orderliness','Orderliness'),
+    ('facet_self_discipline','Self-discipline'),
+    ('facet_self_efficacy','Self-efficacy'),
     ('big5_extraversion','Extraversion'),
-    ('facet_activity_level','(E) Activity level'),
-    ('facet_assertiveness','(E) Assertiveness'),
-    ('facet_cheerfulness','(E) Cheerfulness'),
-    ('facet_excitement_seeking','(E) Excitement-seeking'),
-    ('facet_friendliness','(E) Outgoing'),
-    ('facet_gregariousness','(E) Gregariousness'),
+    ('facet_activity_level','Activity level'),
+    ('facet_assertiveness','Assertiveness'),
+    ('facet_cheerfulness','Cheerfulness'),
+    ('facet_excitement_seeking','Excitement-seeking'),
+    ('facet_friendliness','Outgoing'),
+    ('facet_gregariousness','Gregariousness'),
     ('big5_agreeableness','Agreeableness'),
-    ('facet_altruism','(A) Altruism'),
-    ('facet_cooperation','(A) Cooperation'),
-    ('facet_modesty','(A) Modesty'),
-    ('facet_morality','(A) Uncompromising'),
-    ('facet_sympathy','(A) Sympathy'),
-    ('facet_trust','(A) Trust'),
+    ('facet_altruism','Altruism'),
+    ('facet_cooperation','Cooperation'),
+    ('facet_modesty','Modesty'),
+    ('facet_morality','Uncompromising'),
+    ('facet_sympathy','Sympathy'),
+    ('facet_trust','Trust'),
     ('big5_neuroticism','Emotional range'),
-    ('facet_anger','(N) Fiery'),
-    ('facet_anxiety','(N) Prone to worry'),
-    ('facet_depression','(N) Melancholy'),
-    ('facet_immoderation','(N) Immoderation'),
-    ('facet_self_consciousness','(N) Self-consciousness'),
-    ('facet_vulnerability','(N) Susceptible to stress'),
+    ('facet_anger','Fiery'),
+    ('facet_anxiety','Prone to worry'),
+    ('facet_depression','Melancholy'),
+    ('facet_immoderation','Immoderation'),
+    ('facet_self_consciousness','Self-consciousness'),
+    ('facet_vulnerability','usceptible to stress'),
     ]
 
 PROFILE_TRAIY = [
@@ -67,6 +67,16 @@ PROFILE_TRAIY = [
     ('value_self_transcendenc', 'Self-transcendence'),
     ]
 
+CONSUPTION_PREFERENCES_CATEGORY = [
+    ('consumption_preferences_shopping','Purchasing Preferences'),
+    ('consumption_preferences_movie','Movie Preferences'),
+    ('consumption_preferences_music','Music Preferences'),
+    ('consumption_preferences_reading','Reading Preferences'),
+    ('consumption_preferences_health_and_activity','Health & Activity Preferences'),
+    ('consumption_preferences_entrepreneurship','Entrepreneurship Preferences'),
+    ('consumption_preferences_environmental_concern','Environmental Concern Preferences'),
+    ('consumption_preferences_volunteering','Volunteering Preferences')
+    ]
 
 
 class PersonalityTrait(models.Model):
@@ -91,13 +101,12 @@ class Trait(models.Model):
     raw_score = fields.Float('Raw Score')
     significant = fields.Boolean('Significant')
     
-class ConsumptionPreferencesType(models.Model):
-    _name = 'profile.consumption_preferences_type'
-    _description = 'Consumption Preference Type'
+class ConsumptionPreferencesCategory(models.Model):
+    _name = 'profile.consumption_preferences_category'
+    _description = 'Consumption Preference Category'
     
-    consumption_preference_id = fields.Char('Consumtion Preference Id', required=True)
+    consumption_preference_category_id = fields.Char('Category Id', required=True)
     name = fields.Char('Name', required=True, index=True)
-    score = fields.Float('Score')
     consumption_preferences_id = fields.One2many('profile.consumption_preferences', 'preference_type_id', string='Consuption Preferences', copy=True)
 
 
@@ -106,8 +115,9 @@ class ConsumptionPreferences(models.Model):
     _description = 'Consumption Preferences'
     
     consumption_preference_category_id = fields.Char('Opportunity', required=True, index=True)
-    name = fields.Char('Opportunity', required=True, index=True)
-    preference_type_id = fields.Many2one('profile.consumption_preferences_type', string='Consuption Preference Type', required=True, ondelete='cascade')
+    consumption_preference_id = fields.Char('Preference Id', required=True, index=True)
+    name = fields.Char('Name', required=True, index=True)
+    score = fields.Float('Score')
     
 class Behavior(models.Model):
     _name = 'profile.behavior'

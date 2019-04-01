@@ -1,12 +1,19 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=branch '12.0' of https\://github.com/antoniofregoso/caramba-marketing.git
 eclipse.preferences.version=1
-<<<<<<< HEAD
+encoding//lean_marketing/__init__.py=utf-8
+encoding//lean_marketing/__manifest__.py=utf-8
+encoding//lean_marketing/models/__init__.py=utf-8
+encoding//lean_marketing/models/lean_marketing.py=utf-8
+encoding//lean_marketing/models/res_partner.py=utf-8
+encoding//lean_marketing/models/utm.py=utf-8
 encoding//marketing_buyer_persona/__init__.py=utf-8
 encoding//marketing_buyer_persona/__manifest__.py=utf-8
+encoding//marketing_buyer_persona/models/__init__.py=utf-8
 encoding//marketing_buyer_persona/models/marketing_buyer_persona.py=utf-8
-=======
 encoding//marketing_facebook_campaign/__manifest__.py=utf-8
 encoding//marketing_facebook_campaign/models/marketing_facebook_campaign.py=utf-8
->>>>>>> branch '12.0' of https://github.com/antoniofregoso/caramba-marketing.git
 encoding//partner_personality_insight/__manifest__.py=utf-8
 encoding//partner_personality_insight/controllers/controllers.py=utf-8
 encoding//partner_personality_insight/models/profile.py=utf-8

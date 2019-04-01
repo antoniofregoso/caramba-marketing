@@ -58,7 +58,7 @@ FB_LEBELS = [
     ]
 
 class MarketingFacebookAdtag(models.Model):
-    _name = 'marketing.facebook.adtag'
+    _name = 'lean_marketing.facebook.adtag'
     _description = 'Facebook Adtag'
 
     name = fields.Char('Tag Name', required=True, translate=True)
@@ -69,7 +69,7 @@ class MarketingFacebookAdtag(models.Model):
     ]
     
 class MarketingFacebookAdrecommendation(models.Model):
-    _name = 'marketing.facebook.adrecommendation'
+    _name = 'lean_marketing.facebook.adrecommendation'
     _description = 'Facebook Adrecomendation'
     
     blame_field = 'blame_field'
@@ -88,7 +88,7 @@ class MassMailingCampaign(models.Model):
     
     fb_account_id = fields.Char('Account', required=True)
     fb_campaign_id = fields.Char('Account', required=True)
-    fb_addtag_ids = fields.Many2many('marketing.Facebook.Addtag', 'facebook_addtags_rel', 'campaign_id', 'addtag_id', string='Tags')
+    fb_addtag_ids = fields.Many2many('lean_marketing.Facebook.Addtag', 'facebook_addtags_rel', 'campaign_id', 'addtag_id', string='Tags')
     fb_bid_strategy = fields.Selection(FB_BID_STRATEGY, string='Bind Strategy')
     fb_budget_rebalance_flag = fields.Boolean('Budget rebalance Flag')
     fb_budget_remaining = fields.Char('Budget remaining')
