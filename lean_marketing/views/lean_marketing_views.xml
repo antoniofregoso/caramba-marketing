@@ -67,11 +67,13 @@
                         	 <a type="open" href="#" class="o_kanban_image oe_kanban_action">
                                 <img alt="Open" t-att-src="kanban_image('lean_marketing.brand', 'image_medium', record.id.raw_value)" class="img-fluid" style="width:100px;"/>
                             </a>
+                            <div class="oe_kanban_details">
                               <h4 class="oe_partner_heading">
                                     <a type="open" class="o_kanban_record_title">
                                         <field name="name"/>
                                     </a>
-                                </h4>                        
+                                </h4> 
+</div>                      
                         </div>
                     </t>
                 </templates>
@@ -94,6 +96,124 @@
     <menuitem action="lean_marketing_brand_action" parent="lean_marketing_menu_assets" id="lean_marketing_brand_menu" sequence="2"/>
     
 	<menuitem id="menu_lean_marketing_touchpoints" name="Touchpoints" parent="lean_marketing_menu_assets" sequence="20"/>
+ 
+ 	        <!-- Touchpoint -->
+        <record id="view_touchpoint_tree" model="ir.ui.view">
+            <field name="name">lean_marketing.touchpoint.tree</field>
+            <field name="model">lean_marketing.touchpoint</field>
+            <field name="arch" type="xml">
+                <tree string="Touchpoints">
+                    <field name="name" string="Name"/>
+                    <field name="type" />
+                    <field name="state"/>
+                    <field name="url"/>
+                </tree>
+            </field>
+        </record>
+        
+      <record id="touchpoint_form_view" model="ir.ui.view">
+        <field name="name">lean_marketing.touchpoint.form</field>
+        <field name="model">lean_marketing.touchpoint</field>
+        <field name="arch" type="xml">
+            <form string="Leads Form">
+                <header>
+                      <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
+                <sheet>
+                <div class="oe_title">
+                        <h1><field name="name" placeholder="Name of the Touchpoint" nolabel="1"/></h1>
+                    </div>
+                	<group>
+                		<group>
+                			<field name="ref" />
+                			<field name="type" />
+                		</group>
+                		<group>
+                			<field name="url" widget="url" placeholder="Online Touchpoint Location"/>
+                			<field name="partner_id" />
+                		</group>
+                	</group>
+                	<notebook colspan="4">
+                		<page string="Description" autofocus="autofocus">
+                		<field name="description" widget="html" nolabel="1"/>
+                		</page>
+                		<page string="View" >
+                		<field name="image" widget="image" class="img-fluid" nolabel="1"/>
+                		</page>
+                	</notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+              </form>
+              </field>
+         </record>
+        
+       <record id='lean_marketing_brand_view_kanban' model='ir.ui.view'>
+        <field name="name">lean_marketing.touchpoint.kanban</field>
+        <field name="model">lean_marketing.touchpoint</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state" class="o_kanban_small_column">
+            	<field name="state"/>
+                <field name="id"/>
+                <field name="name" />
+                <field name="type" />
+                <field name="image" />
+                <field name="color"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                        	<div class="o_dropdown_kanban dropdown">
+
+                                    <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                        <span class="fa fa-ellipsis-v"/>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                                        <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                    </div>
+                                </div>
+                                <a type="open" href="#" class="o_kanban_image oe_kanban_action">
+                                <img alt="Open" t-att-src="kanban_image('lean_marketing.touchpoint', 'image_medium', record.id.raw_value)" class="img-fluid" style="width:100px;"/>
+                            </a>
+                                 <div class="oe_kanban_details">
+                                 <h4 class="oe_partner_heading">
+                                    <a type="open" class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </a>
+                                </h4> 
+                                 <field name="type"/>
+                                 </div>                             
+                        		<div class="oe_clear"/>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+             
+    	 <record id="action_lean_marketing_touchpoints_form" model="ir.actions.act_window">
+            <field name="name">Touchpoints</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lean_marketing.touchpoint</field>
+            <field name="view_type">form</field>
+            <field name="domain">[]</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="filter" eval="True"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new touchpoint
+              </p><p>
+                Odoo helps you easily track all activities related to a touchpoint.
+              </p>
+            </field>
+        </record>
+    
+    <menuitem id="menu_lean_marketing_touchpoint" name="Touchpoints"
+            parent="menu_lean_marketing_touchpoints"
+            action="action_lean_marketing_touchpoints_form" sequence="1"/>	
  
  
 </odoo>
