@@ -73,7 +73,7 @@ class Touchpoint(models.Model):
     _name = 'lean_marketing.touchpoint'
     _description = 'Touchpoint'
     _order = 'name asc'
-    _inherit = ['mail.thread']
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     
     name = fields.Char('Name', required=True)
     active = fields.Boolean(default=True)
@@ -98,9 +98,14 @@ class Touchpoint(models.Model):
         help="Small-sized touchpoint. It is automatically "
              "resized as a 64x64px image, with aspect ratio preserved. "
              "Use this field anywhere a small image is required.")
+    plan_id = fields.Many2one('lean_marketing.plan', string='Plan')
+    buyer_journey_stage = fields.Selection([('awareness','Awareness'),('consideration','Consideration'),('purchase','Purchase'),('service','Service'),('loyalty','Loyalty')], string="Buyer's Journey Stage", default='awareness', required=True, copy=False, track_visibility='onchange', group_expand='_expand_buyer_journey')
     
     def _expand_states(self, states, domain, order):
-        return['draft', 'testing', 'operating', 'maintenance', 'cancel']
+        return ['draft', 'testing', 'operating', 'maintenance', 'cancel']
+        
+    def _expand_buyer_journey(self, states, domain, order):
+        return ['awareness','consideration','purchase','service', 'loyalty']
         
     @api.model_create_multi
     def create(self, vals_list):
@@ -180,7 +185,7 @@ class Solution(models.Model):
     _name = 'lean_marketing.solution'
     _description = 'Lean Marketing Solutions'
     _order = 'name asc'
-    _inherit = ['mail.thread']
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     
     name = fields.Char('Name', required=True)
     color = fields.Integer('Kanban Color Index')
@@ -216,4 +221,27 @@ class Solution(models.Model):
     def write(self, vals):
         tools.image_resize_images(vals)
         return super(Solution, self).write(vals)
+    
+class Plan(models.Model):
+    _name = 'lean_marketing.plan'
+    _description = 'Lean Marketing Plan'
+    _order = 'name asc'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
+    
+    name = fields.Char('Name', required=True) 
+    active = fields.Boolean(default=True,
+        help="If the active field is set to False, it will allow you to hide the project without removing it.")
+    mission = fields.Html('Description')
+    solution_id = fields.Many2one('lean_marketing.solution', string='Solution', required=True)
+    target = fields.Monetary('Target', currency_field='company_currency', track_visibility='always')
+    date_start = fields.Date(string='Start Date')
+    date_end = fields.Date(string='End Date')
+    user_id = fields.Many2one('res.users', string='Product owner', default=lambda self: self.env.user, track_visibility="onchange")
+    project_id = fields.Many2one('project.project', string='Project', ondelete='cascade')
+    campaigns_ids = fields.One2many('mail.mass_mailing.campaign', 'plan_id', string="Campaigns", ondelete='cascade')
+    touchpoints_ids = fields.One2many('lean_marketing.touchpoint', 'plan_id', string="Touchpoints", ondelete='set null')
+    color = fields.Integer(string='Color Index')
+    company_id = fields.Many2one('res.company', string='Company', index=True, default=lambda self: self.env.user.company_id.id)
+    company_currency = fields.Many2one(string='Currency', related='company_id.currency_id', readonly=True, relation="res.currency")
+    
     

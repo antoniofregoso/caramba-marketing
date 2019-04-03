@@ -76,26 +76,26 @@
             parent="lean_marketing_menu_assets"
             action="action_lean_marketing_evangelist_form" sequence="6"/>
             
-    	 <record id="action_lean_marketing_offline_touchpoints_hub_form" model="ir.actions.act_window">
-            <field name="name">Offline Touchpoints</field>
+    	 <record id="action_lean_marketing_touchpoints_hub_form" model="ir.actions.act_window">
+            <field name="name">Touchpoints Hubs</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">res.partner</field>
             <field name="view_type">form</field>
             <field name="domain">[]</field>
             <field name="view_mode">kanban,tree,form</field>
-            <field name="context">{'search_default_touchpoint_hub': 1,'default_customer': 0,'default_supplier': 0, 'default_touchpoint_hub':1, 'default_is_company': False}</field>
+            <field name="context">{'search_default_touchpoint_hub': 1,'default_customer': 0,'default_supplier': 0, 'default_touchpoint_hub':1, 'default_is_company': True}</field>
             <field name="filter" eval="True"/>
             <field name="help" type="html">
               <p class="o_view_nocontent_smiling_face">
-                Create a new evangelist in your address book
+                Create a new touchpoins hub in your address book
               </p><p>
-                Odoo helps you easily track all activities related to a evangelist.
+                Odoo helps you easily track all activities related to a touchpoint hub.
               </p>
             </field>
         </record>
     
-    <menuitem id="menu_lean_marketing_offline_touchpoint_hub" name="Offline Touchpoints hubs"
+    <menuitem id="menu_lean_marketing_offline_touchpoint_hub" name="Touchpoints hubs"
             parent="menu_lean_marketing_touchpoints"
-            action="action_lean_marketing_offline_touchpoints_hub_form" sequence="3"/>
+            action="action_lean_marketing_touchpoints_hub_form" sequence="3"/>
 
 </odoo>

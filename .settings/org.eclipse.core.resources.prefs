@@ -6,6 +6,7 @@ encoding//lean_marketing/__init__.py=utf-8
 encoding//lean_marketing/__manifest__.py=utf-8
 encoding//lean_marketing/models/__init__.py=utf-8
 encoding//lean_marketing/models/lean_marketing.py=utf-8
+encoding//lean_marketing/models/mass_mailing.py=utf-8
 encoding//lean_marketing/models/res_partner.py=utf-8
 encoding//lean_marketing/models/utm.py=utf-8
 encoding//marketing_buyer_persona/__init__.py=utf-8

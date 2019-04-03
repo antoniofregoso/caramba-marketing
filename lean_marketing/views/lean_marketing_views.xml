@@ -8,18 +8,24 @@
             web_icon="marketing,static/description/icon.png"
             groups=""
             sequence="6"/>
+           
+         <menuitem
+            id="lean_marketing_menu_plans"
+            name="Lean Marketing Plans"
+            parent="lean_marketing_menu_root"
+            sequence="1" groups="group_lean_marketing_scrum_master,group_lean_marketing_product_owner,group_lean_marketing_manager"/>
             
         <menuitem
             id="lean_marketing_menu_assets"
             name="Assets"
             parent="lean_marketing_menu_root"
-            sequence="2" groups="group_lean_marketing_scrum_master,group_lean_marketing_product_owner,group_lean_marketing_manager"/>
+            sequence="3" groups="group_lean_marketing_scrum_master,group_lean_marketing_product_owner,group_lean_marketing_manager"/>
             
 		 <menuitem
             id="lean_marketing_menu_solution"
             name="Solutions"
             parent="lean_marketing_menu_root"
-            sequence="3" groups="group_lean_marketing_scrum_master,group_lean_marketing_product_owner,group_lean_marketing_manager"/>
+            sequence="2" groups="group_lean_marketing_scrum_master,group_lean_marketing_product_owner,group_lean_marketing_manager"/>
             
 		
 
@@ -147,6 +153,8 @@
                     <field name="url"/>
                     <field name="hub_id"/>
                     <field name="state"/>
+	            	<field name="buyer_journey_stage" invisible="1"/>
+	            	<field name="plan_id" invisible="1"/>
                 </tree>
             </field>
         </record>
@@ -161,6 +169,14 @@
                       <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
                 </header>
                 <sheet>
+                <div class="oe_button_box" name="button_box" groups="base.group_user">            		 	
+                        <button name="toggle_active" type="object"
+                                confirm="(Un)archiving a project automatically (un)archives its tasks. Do you want to proceed?"
+                                class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button"
+                                options='{"terminology": "archive"}'/>
+                        </button>
+                        </div>
                 <div class="oe_title">
                         <h1><field name="name" placeholder="Name of the Touchpoint" nolabel="1"/></h1>
                     </div>
@@ -168,10 +184,12 @@
                 		<group>
                 			<field name="ref" />
                 			<field name="type" />
+                			<field name="buyer_journey_stage" />
                 		</group>
                 		<group>
                 			<field name="url" widget="url" placeholder="Online Touchpoint Location"/>
                 			<field name="hub_id" />
+                			<field name="plan_id" />
                 		</group>
                 	</group>
                 	<notebook colspan="4">
@@ -185,7 +203,8 @@
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids" widget="mail_followers"/>
-                    <field name="message_ids" widget="mail_thread"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
                 </div>
               </form>
               </field>
@@ -197,6 +216,8 @@
         <field name="arch" type="xml">
             <kanban default_group_by="state" class="o_kanban_small_column">
             	<field name="state"/>
+            	<field name="buyer_journey_stage"/>
+            	<field name="plan_id"/>
                 <field name="id"/>
                 <field name="name" />
                 <field name="type" />
@@ -240,7 +261,7 @@
         </field>
     </record>
     
-    <record id="view_lean_marketing_touchpoints" model="ir.ui.view">
+    <record id="view_lean_marketing_touchpoints_select" model="ir.ui.view">
             <field name="name">lean_marketing.touchpoint.select</field>
             <field name="model">lean_marketing.touchpoint</field>
             <field name="arch" type="xml">
@@ -250,6 +271,8 @@
            		<group expand="0" name="group_by" string="Group By">
            			<filter name="group_type" string="Type" context="{'group_by': 'type'}"/>
            			<filter name="group_hub" string="Hub" context="{'group_by': 'hub_id'}"/>
+           			<filter name="group_buyer_journey_stage" string="Buyer's Journey Stage" context="{'group_by': 'buyer_journey_stage'}"/>
+           			<filter name="group_plan" string="Lean Marketing Plan" context="{'group_by': 'plan_id'}"/>
            		</group>
             </search>
             </field>
@@ -263,6 +286,7 @@
             <field name="domain">[]</field>
             <field name="view_mode">kanban,tree,form</field>
             <field name="filter" eval="True"/>
+             <field name="view_id" ref="lean_marketing_touchpoint_view_kanban"/>
             <field name="help" type="html">
               <p class="o_view_nocontent_smiling_face">
                 Create a new touchpoint
@@ -316,13 +340,13 @@
                     			<group string="Products or Services">
                     				<field name="products_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
                     			</group>
-                    			<group string="Custumer Pains">
+                    			<group string="Customer Pains">
                     				<field name="customer_pain_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
                     			</group>
                     			<group string="Pain Reliever">
                     				<field name="pain_reliever_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
                     			</group>
-                    			<group string="Custumer Gains">
+                    			<group string="Customer Gains">
                     				<field name="customer_pain_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
                     			</group>
                     			<group string="Gain Creator">
@@ -403,5 +427,208 @@
       <menuitem id="menu_lean_marketing_solution_dev" name="Solutions"
             parent="lean_marketing_menu_solution"
             action="lean_marketing_solution_action" sequence="1"/>	
+            
+ 	        <!-- Lean Marketing Plan -->
+        <record id="view_lean_marketing_plan_tree" model="ir.ui.view">
+            <field name="name">lean_marketing.plan.tree</field>
+            <field name="model">lean_marketing.plan</field>
+            <field name="arch" type="xml">
+                <tree string="Lean Marketing Plans">
+                    <field name="name" string="Name"/>
+                    <field name="solution_id" />
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="target"/>
+                </tree>
+            </field>
+        </record>
+        
+       <record id='lean_marketing_plan_view_form' model='ir.ui.view'>
+        <field name="name">lean_marketing.plan.form</field>
+        <field name="model">lean_marketing.plan</field>
+        <field name="arch" type="xml">
+            <form string="Lean Marketing Plan">
+            	<sheet>
+            		 <div class="oe_button_box" name="button_box" groups="base.group_user">            		 	
+                        <button name="toggle_active" type="object"
+                                confirm="(Un)archiving a project automatically (un)archives its tasks. Do you want to proceed?"
+                                class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button"
+                                options='{"terminology": "archive"}'/>
+                        </button>
+            		 </div>
+                    <div class="oe_title">
+                    	<h1><field name="name"/></h1>
+                     </div>
+                     <group>
+                     	<group>
+                     		<field name="solution_id"/>
+                     		<field name="user_id"/>
+                     		<field name="project_id"/>
+                     	</group>
+                     	<group>
+                     		<field name="target" widget="monetary"/>
+                     		<field name="date_start"/>
+                     		<field name="date_end"/>
+                     	</group>
+                     	<group string="Related campaigns">
+                     		<field name="campaigns_ids" widget="one2many_list" nolabel="1" >
+                     			 <tree string="Campaigns" editable="bottom">
+                     			 	<field name="name" />
+                     			 </tree>                     		
+                     		</field>
+                     	</group>
+                     	<group>
+                     		
+                     	</group>
+                     </group>
+                     <notebook colspan="4">
+                    	<page string="Mission" autofocus="autofocus">
+                    		<field name="mission" nolabel="1"/>
+                    	</page>
+                    	<page string="Touchpoints">
+                    		<field name="touchpoints_ids" widget="one2many_list" nolabel="1" >
+                     			 <tree string="Touchpoints" editable="bottom">
+                     			 	<field name="name" />
+                     			 	<field name="type" />
+                     			 	<field name="buyer_journey_stage" />                     			 	
+                     			 	<field name="state" />
+                     			 </tree>                     		
+                     		</field>
+                    	</page>
+                    	</notebook>
+                 </sheet>
+                  <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                </div>
+             </form>
+             </field>
+         </record>
+         
+        <record id='lean_marketing_plan_view_kanban' model='ir.ui.view'>
+        <field name="name">lean_marketing.plan.kanban</field>
+        <field name="model">lean_marketing.plan</field>
+        <field name="arch" type="xml">
+            <kanban  class="o_kanban_small_column">
+                <field name="id"/>
+                <field name="name" />
+                <field name="color"/>
+                 <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                        	<div class="o_dropdown_kanban dropdown">
+
+                                    <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                        <span class="fa fa-ellipsis-v"/>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                                        <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                    </div>
+                                </div>
+                                 <div class="oe_kanban_details">
+                                 <h4 class="oe_partner_heading">
+                                    <a type="open" class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </a>
+                                </h4> 
+                                </div>
+                                <div class="oe_clear"/>
+                                </div>
+                                </t>
+                                </templates>
+            </kanban>
+        </field>
+        </record>
+        
+      <record id='lean_marketing_plan_action' model='ir.actions.act_window'>
+        <field name="name">Lean Marketing Plans</field>
+        <field name="res_model">lean_marketing.plan</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new Lean Marketing Plan
+          </p><p>
+                Odoo helps you easily track all activities related to a lean marketing plan.
+              </p>
+        </field>
+    </record>
+    
+          <menuitem id="menu_lean_marketing_plan" name="Plans"
+            parent="lean_marketing_menu_plans"
+            action="lean_marketing_plan_action" sequence="1"/>	
+            
+       <record id='lean_marketing_buyer_journey_view_kanban' model='ir.ui.view'>
+        <field name="name">lean_marketing.buyer_journey.kanban</field>
+        <field name="model">lean_marketing.touchpoint</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="buyer_journey_stage" class="o_kanban_small_column">
+            	<field name="buyer_journey_stage"/>
+            	<field name="state"/>
+            	<field name="plan_id"/>
+                <field name="id"/>
+                <field name="name" />
+                <field name="type" />
+                <field name="hub_id" />
+                <field name="image" />
+                <field name="color"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                        	<field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                        	<div class="o_dropdown_kanban dropdown">
+
+                                    <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                        <span class="fa fa-ellipsis-v"/>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                                        <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                    </div>
+                                </div>
+                                <a type="open" href="#" class="o_kanban_image oe_kanban_action">
+                                <img alt="Open" t-att-src="kanban_image('lean_marketing.touchpoint', 'image_medium', record.id.raw_value)" class="img-fluid" style="width:100px;"/>
+                            </a>
+                                 <div class="oe_kanban_details">
+                                 <h4 class="oe_partner_heading">
+                                    <a type="open" class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </a>
+                                </h4> 
+                                <ul>
+                                 <li><field name="type"/></li>
+                                 <li><field name="hub_id"/></li>
+                                 </ul>
+                                 </div>                             
+                        		<div class="oe_clear"/>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    
+     <record id='lean_marketing_buyer_journey_action' model='ir.actions.act_window'>
+        <field name="name">Lean Marketing Buyer Journey</field>
+        <field name="res_model">lean_marketing.touchpoint</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="domain">[('state','=','operating')]</field>
+        <field name="view_id" ref="lean_marketing_buyer_journey_view_kanban"/>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new touchpoint
+          </p>
+        </field>
+    </record>
+    
+        <menuitem id="menu_lean_buyer_journey" name="Buyer's Journey"
+            parent="lean_marketing_menu_plans"
+            action="lean_marketing_buyer_journey_action" sequence="2"/>
  
 </odoo>
