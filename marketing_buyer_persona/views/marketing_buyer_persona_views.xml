@@ -180,7 +180,7 @@
         </record>
         
                
-        <record model="ir.ui.view" id="rlean_marketing_buyer_persona_view_kanban">
+        <record model="ir.ui.view" id="lean_marketing_buyer_persona_view_kanban">
             <field name="name">lean_marketing.buyer_persona.kanban</field>
             <field name="model">lean_marketing.buyer_persona</field>
             <field name="arch" type="xml">
@@ -191,8 +191,7 @@
 	                <field name="tribe_id" />
 	                <field name="gender" />
 	                <field name="status" />
-	                <field name="income" />
-                    <field name="image_small"/>
+                    <field name="image_medium"/>
                     <templates>
 	                    <t t-name="kanban-box">
 	                     <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
@@ -207,7 +206,7 @@
                                 </div>
                             </div>
                             <a type="open" href="#" class="o_kanban_image oe_kanban_action">
-                                <img alt="Open" t-att-src="kanban_image('lean_marketing.buyer_persona', 'image_small', record.id.raw_value)" class="img-fluid" style="width:100px;"/>
+                                <img alt="Open" t-att-src="kanban_image('lean_marketing.buyer_persona', 'image_medium', record.id.raw_value)" class="img-fluid" style="width:100px;"/>
                             </a>
                             <div class="oe_kanban_details">
                             	<h4 class="oe_partner_heading">
@@ -216,9 +215,9 @@
                                     </a>
                                 </h4> 
                                 <ul>
-                                 <li><field name="tribe_id"/></li>
-                                 <li><field name="gender"/></li>
-                                 <li><field name="income"/></li>
+                                 <li>Tribe: <field name="tribe_id"/></li>
+                                 <li>Gender: <field name="gender"/></li>
+                                 <li>Status: <field name="status"/></li>
                                  </ul>
                                  </div>                             
                         		<div class="oe_clear"/>
@@ -255,30 +254,38 @@
         <field name="arch" type="xml">
         <xpath expr="//page[@name='mission']" position="after">
         	<page string="Buyers Persona">
-        		<field name="buyers_persona_ids" mode="kanban" nolabel="1">
-                	<kanban>
-                   		<field name="id"/>
-                        <field name="color"/>
-                        <field name="name"/>
-                        <field name="tribe_id"/>
-                        <field name="image_small"/>
-                         <templates>
-                                	<t t-name="kanban-box">
-                                    	<t t-set="color" t-value="kanban_color(record.color.raw_value)"/>
-                                        <div t-att-class="color + (record.title.raw_value == 1 ? ' oe_kanban_color_alert' : '') + ' oe_kanban_global_click'">
-                                        	<div class="o_kanban_image">
-                                        		 <a type="open" href="#" class="o_kanban_image oe_kanban_action">
-                                <img alt="Open" t-att-src="kanban_image('lean_marketing.buyer_persona', 'image_small', record.id.raw_value)" class="img-fluid" style="width:100px;"/>
+        		<field name="buyers_persona_ids" widget="many2many_kanban" nolabel="1">
+        			 <kanban>				        
+                	<field name="id"/>
+                    <field name="color"/>
+                    <field name="name"/>
+	                <field name="tribe_id" />
+	                <field name="status" />
+                    <field name="image_medium"/>
+				        <templates>
+				        	 <t t-name="kanban-box">
+				        	 	<div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+				        	 		 <a type="open" href="#" class="o_kanban_image oe_kanban_action">
+                                <img alt="Open" t-att-src="kanban_image('lean_marketing.buyer_persona', 'image_medium', record.id.raw_value)" class="img-fluid" style="width:100px;"/>
                             </a>
-                            	</div>
-                                        	<div class="oe_kanban_details">
-                                        		 <field name="name"/>
-                                        	</div>
-                                        </div>
-                                	</t>
-                                </templates>                 
-                    </kanban>
-               </field>
+					        	 	<div class="oe_kanban_details">
+		                            	<h4 class="oe_partner_heading">
+		                                    <a type="open" class="o_kanban_record_title">
+		                                        <field name="name"/>
+		                                    </a>
+		                                </h4> 
+		                                <ul>
+			                                 <li>Tribe: <field name="tribe_id"/></li>
+			                                 <li>Status: <field name="status"/></li>
+		                                 </ul>
+	                                 </div>                             
+	                        		<div class="oe_clear"/>
+				        	 	
+				        	 	</div>	
+				             </t>
+				        </templates>
+				    </kanban>
+               </field> 	 
         	</page>
         	
         </xpath>        
