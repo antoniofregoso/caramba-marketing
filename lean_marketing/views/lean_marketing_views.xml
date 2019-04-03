@@ -13,9 +13,15 @@
             id="lean_marketing_menu_assets"
             name="Assets"
             parent="lean_marketing_menu_root"
-            sequence="10" groups="group_lean_marketing_scrum_master,group_lean_marketing_product_owner,group_lean_marketing_manager"/>
+            sequence="2" groups="group_lean_marketing_scrum_master,group_lean_marketing_product_owner,group_lean_marketing_manager"/>
             
-
+		 <menuitem
+            id="lean_marketing_menu_solution"
+            name="Solutions"
+            parent="lean_marketing_menu_root"
+            sequence="3" groups="group_lean_marketing_scrum_master,group_lean_marketing_product_owner,group_lean_marketing_manager"/>
+            
+		
 
         <menuitem
             id="lean_marketing_menu_config"
@@ -38,17 +44,32 @@
         <field name="model">lean_marketing.brand</field>
         <field name="arch" type="xml">
             <form string="Brand">
-                <group>
-                    <div>
-                        <field name="image_medium" widget="image" class="oe_avatar"/>
-                        <label for="name" class="oe_edit_only"/>
-                         <div class="oe_title">
-                        <h1>
-                            <field name="name"/>
-                        </h1>
-                        </div>
-                    </div>
-                </group>
+            	<sheet>
+            		<field name="image" widget='image' class="oe_avatar" options='{"preview_image": "image_medium", "size": [90, 90]}'/>
+                    <div class="oe_title">
+                    	<h1><field name="name"/></h1>
+                      </div>
+                    <group>
+                    	<group>
+                    		<field name="partner_id"/>
+                    	</group>
+                    	<group>
+                    		<field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags"/>
+                    	</group>
+                    </group>
+                    <group string="Social">
+                    	<group>
+                    		<field name="twitter"/>
+                    		<field name="facebook"/>
+                    		<field name="linkedin"/>
+                    	</group>
+                    	<group>
+                    		<field name="youtube"/>
+                    		<field name="blog"/>
+                    	</group>
+                    </group>
+            	</sheet>
+                
             </form>
         </field>
     </record>
@@ -60,21 +81,39 @@
             <kanban>
                 <field name="id"/>
                 <field name="name" />
+                <field name="partner_id" />
                 <field name="image" />
-                <templates>
+                <field name="color" />
+               <templates>
                     <t t-name="kanban-box">
-                        <div t-attf-class="oe_kanban_global_click">
-                        	 <a type="open" href="#" class="o_kanban_image oe_kanban_action">
+                       <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                        	<field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                        	<div class="o_dropdown_kanban dropdown">
+
+                                    <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                        <span class="fa fa-ellipsis-v"/>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                                        <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                    </div>
+                                </div>
+                                <a type="open" href="#" class="o_kanban_image oe_kanban_action">
                                 <img alt="Open" t-att-src="kanban_image('lean_marketing.brand', 'image_medium', record.id.raw_value)" class="img-fluid" style="width:100px;"/>
                             </a>
                             <div class="oe_kanban_details">
-                              <h4 class="oe_partner_heading">
+                                 <h4 class="oe_partner_heading">
                                     <a type="open" class="o_kanban_record_title">
                                         <field name="name"/>
                                     </a>
                                 </h4> 
-</div>                      
-                        </div>
+                                <ul>
+                                 <li><field name="partner_id"/></li>
+                                 </ul>
+                                 </div>                             
+                        		<div class="oe_clear"/>
+                            </div>
                     </t>
                 </templates>
             </kanban>
@@ -105,8 +144,9 @@
                 <tree string="Touchpoints">
                     <field name="name" string="Name"/>
                     <field name="type" />
-                    <field name="state"/>
                     <field name="url"/>
+                    <field name="hub_id"/>
+                    <field name="state"/>
                 </tree>
             </field>
         </record>
@@ -117,6 +157,7 @@
         <field name="arch" type="xml">
             <form string="Leads Form">
                 <header>
+                		 <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags"/>
                       <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
                 </header>
                 <sheet>
@@ -130,7 +171,7 @@
                 		</group>
                 		<group>
                 			<field name="url" widget="url" placeholder="Online Touchpoint Location"/>
-                			<field name="partner_id" />
+                			<field name="hub_id" />
                 		</group>
                 	</group>
                 	<notebook colspan="4">
@@ -150,7 +191,7 @@
               </field>
          </record>
         
-       <record id='lean_marketing_brand_view_kanban' model='ir.ui.view'>
+       <record id='lean_marketing_touchpoint_view_kanban' model='ir.ui.view'>
         <field name="name">lean_marketing.touchpoint.kanban</field>
         <field name="model">lean_marketing.touchpoint</field>
         <field name="arch" type="xml">
@@ -159,11 +200,13 @@
                 <field name="id"/>
                 <field name="name" />
                 <field name="type" />
+                <field name="hub_id" />
                 <field name="image" />
                 <field name="color"/>
                 <templates>
                     <t t-name="kanban-box">
                         <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                        	<field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                         	<div class="o_dropdown_kanban dropdown">
 
                                     <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
@@ -184,7 +227,10 @@
                                         <field name="name"/>
                                     </a>
                                 </h4> 
-                                 <field name="type"/>
+                                <ul>
+                                 <li><field name="type"/></li>
+                                 <li><field name="hub_id"/></li>
+                                 </ul>
                                  </div>                             
                         		<div class="oe_clear"/>
                         </div>
@@ -193,6 +239,21 @@
             </kanban>
         </field>
     </record>
+    
+    <record id="view_lean_marketing_touchpoints" model="ir.ui.view">
+            <field name="name">lean_marketing.touchpoint.select</field>
+            <field name="model">lean_marketing.touchpoint</field>
+            <field name="arch" type="xml">
+            	<search string="Search Touchpoints">
+            		<filter string="Online" name="type_online" domain="[('type','=','online')]"/>
+            		<filter string="Offline" name="type_offline" domain="[('type','=','offline')]"/>
+           		<group expand="0" name="group_by" string="Group By">
+           			<filter name="group_type" string="Type" context="{'group_by': 'type'}"/>
+           			<filter name="group_hub" string="Hub" context="{'group_by': 'hub_id'}"/>
+           		</group>
+            </search>
+            </field>
+      </record>
              
     	 <record id="action_lean_marketing_touchpoints_form" model="ir.actions.act_window">
             <field name="name">Touchpoints</field>
@@ -214,6 +275,133 @@
     <menuitem id="menu_lean_marketing_touchpoint" name="Touchpoints"
             parent="menu_lean_marketing_touchpoints"
             action="action_lean_marketing_touchpoints_form" sequence="1"/>	
+            
+<!-- Solutions -->
+
+  <record id='lean_marketing_solution_view_tree' model='ir.ui.view'>
+        <field name="name">lean_marketing.solution.tree</field>
+        <field name="model">lean_marketing.solution</field>
+        <field name="arch" type="xml">
+            <tree string="Solution">
+                <field name="name" />
+                 <field name="type" />
+            </tree>
+        </field>
+    </record>
  
+     <record id='lean_marketing_solution_view_form' model='ir.ui.view'>
+        <field name="name">lean_marketing.solution.form</field>
+        <field name="model">lean_marketing.solution</field>
+        <field name="arch" type="xml">
+            <form string="Solution">
+            	<sheet>
+                    <div class="oe_title">
+                    	<h1><field name="name"/></h1>
+                     </div>
+                    <group>
+                    	<group>
+                    		<field name="type"/>
+                    	</group>
+                    	<group>
+                    		<field name="ref"/>
+                    	</group>
+                    </group>
+                    
+                    <notebook colspan="4">
+                    	<page string="Value Proposition Canvas" autofocus="autofocus">
+                    		<group>
+                    			<group string="Customer Jobs">
+                    				<field name="customer_job_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+                    			</group>
+                    			<group string="Products or Services">
+                    				<field name="products_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+                    			</group>
+                    			<group string="Custumer Pains">
+                    				<field name="customer_pain_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+                    			</group>
+                    			<group string="Pain Reliever">
+                    				<field name="pain_reliever_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+                    			</group>
+                    			<group string="Custumer Gains">
+                    				<field name="customer_pain_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+                    			</group>
+                    			<group string="Gain Creator">
+                    				<field name="gain_creator_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+                    			</group>
+                    		</group>
+                    	
+                    	</page>
+                    	<page string="Description" >
+                    		<field name="description" widget="html" nolabel="1"/>
+                    	</page>
+                    	<page string="View" >
+                    		<field name="image" widget="image" class="img-fluid" nolabel="1"/>
+                    	</page>                    
+                    </notebook>
+            	</sheet>
+            </form>
+         </field>
+      </record>
+      
+     <record id='lean_marketing_solution_view_kanban' model='ir.ui.view'>
+        <field name="name">lean_marketing.solution.kanban</field>
+        <field name="model">lean_marketing.solution</field>
+        <field name="arch" type="xml">
+            <kanban  class="o_kanban_small_column">
+                <field name="id"/>
+                <field name="name" />
+                <field name="type" />
+                <field name="image" />
+                <field name="color"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                        	<div class="o_dropdown_kanban dropdown">
+
+                                    <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                        <span class="fa fa-ellipsis-v"/>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                                        <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                    </div>
+                                </div>
+                                <a type="open" href="#" class="o_kanban_image oe_kanban_action">
+                                <img alt="Open" t-att-src="kanban_image('lean_marketing.solution', 'image_medium', record.id.raw_value)" class="img-fluid" style="width:100px;"/>
+                            </a>
+                                 <div class="oe_kanban_details">
+                                 <h4 class="oe_partner_heading">
+                                    <a type="open" class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </a>
+                                </h4> 
+                                <ul>
+                                 <li><field name="type"/></li>
+                                 </ul>
+                                 </div>                             
+                        		<div class="oe_clear"/>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    
+    <record id='lean_marketing_solution_action' model='ir.actions.act_window'>
+        <field name="name">Solutions</field>
+        <field name="res_model">lean_marketing.solution</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new solution
+          </p>
+        </field>
+    </record>
+    
+      <menuitem id="menu_lean_marketing_solution_dev" name="Solutions"
+            parent="lean_marketing_menu_solution"
+            action="lean_marketing_solution_action" sequence="1"/>	
  
 </odoo>

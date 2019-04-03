@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_lean_marketing_tags_config" name="Tags"
+            parent="lean_marketing_menu_config"
+            sequence="1"/>	
+            
+        <menuitem id="menu_lean_marketing_utm_config" name="UTMs"
+            parent="lean_marketing_menu_config"
+            sequence="2"/>	
+            
+  
+            
+            <!--
+            leam_marketing.brand.tag views
+        -->
+        <record id="lean_marketing_brand_tag_form" model="ir.ui.view">
+            <field name="name">lean_marketing.brand.tag.form</field>
+            <field name="model">lean_marketing.brand.tag</field>
+            <field name="arch" type="xml">
+                <form string="Brand Tags">
+                    <group>
+                        <field name="name"/>
+                        <field name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="lean_marketing_brand_tag_tree" model="ir.ui.view">
+            <field name="name">clean_marketing.brand.tag.tree</field>
+            <field name="model">lean_marketing.brand.tag</field>
+            <field name="arch" type="xml">
+                <tree string="Brand Tags">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="lean_marketing_brand_tag_action" model="ir.actions.act_window">
+            <field name="name">Brand Tags</field>
+            <field name="res_model">lean_marketing.brand.tag</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="lean_marketing_brand_tag_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new tag for brands
+              </p><p>
+                Create tags that fit your brands to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_lean_marketing_brand_tag"
+            name="Brand Tags"
+            action="lean_marketing_brand_tag_action"
+            parent="menu_lean_marketing_tags_config"
+            sequence="1"/>
+            
+                        <!--
+            leam_marketing.touchcontact.tag views
+        -->
+        <record id="lean_marketing_touchpoint_tag_form" model="ir.ui.view">
+            <field name="name">lean_marketing.touchpoint.tag.form</field>
+            <field name="model">lean_marketing.touchpoint.tag</field>
+            <field name="arch" type="xml">
+                <form string="touchpoint Tags">
+                    <group>
+                        <field name="name"/>
+                        <field name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="lean_marketing_touchpoint_tag_tree" model="ir.ui.view">
+            <field name="name">clean_marketing.touchpoint.tag.tree</field>
+            <field name="model">lean_marketing.touchpoint.tag</field>
+            <field name="arch" type="xml">
+                <tree string="Touchpoint Tags">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="lean_marketing_touchpoint_tag_action" model="ir.actions.act_window">
+            <field name="name">Touchpoint Tags</field>
+            <field name="res_model">lean_marketing.touchpoint.tag</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="lean_marketing_touchpoint_tag_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new tag for touchpoints
+              </p><p>
+                Create tags that fit your touchpoints to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_lean_marketing_touchpoint_tag"
+            name="Touchpoint Tags"
+            action="lean_marketing_touchpoint_tag_action"
+            parent="menu_lean_marketing_tags_config"
+            sequence="2"/>
+            
+            
+         <menuitem
+            id="menu_lean_marketing_utm_campaign"
+            name="Campaigns"
+            action="utm.utm_campaign_act"
+            parent="menu_lean_marketing_utm_config"
+            sequence="1"/>
+            
+         <menuitem
+            id="menu_lean_marketing_utm_medium"
+            name="Mediums"
+            action="utm.utm_medium_action"
+            parent="menu_lean_marketing_utm_config"
+            sequence="2"/>
+            
+          <menuitem
+            id="menu_lean_marketing_utm_source"
+            name="Sources"
+            action="utm.utm_source_action"
+            parent="menu_lean_marketing_utm_config"
+            sequence="3"/>
+            
+         <record id="utm_content_view_tree" model="ir.ui.view">
+            <field name="name">utm.content.tree</field>
+            <field name="model">utm.content</field>
+            <field name="arch" type="xml">
+                <tree string="Content">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="utm_content_view_form" model="ir.ui.view">
+            <field name="name">utm.content.form</field>
+            <field name="model">utm.content</field>
+            <field name="arch" type="xml">
+                <form string="Content">
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        
+        <record id="utm_content_action" model="ir.actions.act_window">
+            <field name="name">Contents</field>
+            <field name="res_model">utm.content</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Define a new content
+              </p>
+            </field>
+        </record>
+        
+        <menuitem
+            id="menu_lean_marketing_utm_content"
+            name="Contents"
+            action="utm_content_action"
+            parent="menu_lean_marketing_utm_config"
+            sequence="4"/>
+            
+                   
+         <record id="utm_term_view_tree" model="ir.ui.view">
+            <field name="name">utm.term.tree</field>
+            <field name="model">utm.term</field>
+            <field name="arch" type="xml">
+                <tree string="Term">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="utm_term_view_form" model="ir.ui.view">
+            <field name="name">utm.term.form</field>
+            <field name="model">utm.term</field>
+            <field name="arch" type="xml">
+                <form string="Term">
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="utm_term_action" model="ir.actions.act_window">
+            <field name="name">Terms</field>
+            <field name="res_model">utm.term</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Define a new content
+              </p>
+            </field>
+        </record>
+        
+        <menuitem
+            id="menu_lean_marketing_utm_term"
+            name="Terms"
+            action="utm_term_action"
+            parent="menu_lean_marketing_utm_config"
+            sequence="4"/>
+      
+
+</odoo>

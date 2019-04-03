@@ -18,13 +18,14 @@
     'version': '12.0.0.0.0',
 
 
-    'depends': ['crm', 'project', 'project_timeline', 'mass_mailing'],
+    'depends': ['crm', 'sale', 'project', 'project_timeline', 'mass_mailing'],
 
 
     'data': [
         'security/lean_marketing_security.xml',
         'security/ir.model.access.csv',
         'views/lean_marketing_views.xml',
+        'views/lean_marketing_settings_views.xml',
         'views/res_partner_views.xml',
     ],
 
