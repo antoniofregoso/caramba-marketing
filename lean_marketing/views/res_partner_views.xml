@@ -94,7 +94,7 @@
             </field>
         </record>
     
-    <menuitem id="menu_lean_marketing_offline_touchpoint_hub" name="Touchpoints hubs"
+    <menuitem id="menu_lean_marketing_touchpoint_hub" name="Touchpoints hubs"
             parent="menu_lean_marketing_touchpoints"
             action="action_lean_marketing_touchpoints_hub_form" sequence="3"/>
 

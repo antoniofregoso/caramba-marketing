@@ -483,7 +483,7 @@
                      	</group>
                      </group>
                      <notebook colspan="4">
-                    	<page string="Mission" autofocus="autofocus">
+                    	<page string="Mission" name="mission" autofocus="autofocus">
                     		<field name="mission" nolabel="1"/>
                     	</page>
                     	<page string="Touchpoints">

@@ -12,6 +12,7 @@ encoding//lean_marketing/models/utm.py=utf-8
 encoding//marketing_buyer_persona/__init__.py=utf-8
 encoding//marketing_buyer_persona/__manifest__.py=utf-8
 encoding//marketing_buyer_persona/models/__init__.py=utf-8
+encoding//marketing_buyer_persona/models/lean_marketing.py=utf-8
 encoding//marketing_buyer_persona/models/marketing_buyer_persona.py=utf-8
 encoding//marketing_facebook_campaign/__manifest__.py=utf-8
 encoding//marketing_facebook_campaign/models/marketing_facebook_campaign.py=utf-8

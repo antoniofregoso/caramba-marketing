@@ -14,13 +14,12 @@
     'category': 'Marketing',
     'version': '12.0.0.0.1',
 
-    'depends': ['marketing_interaction'],
+    'depends': ['lean_marketing'],
 
 
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'security/ir.model.access.csv',
+        'views/marketing_buyer_persona_views.xml',
     ],
 
     'demo': [

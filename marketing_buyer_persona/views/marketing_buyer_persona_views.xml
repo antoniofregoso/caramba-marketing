@@ -1,6 +1,289 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+    <menuitem id="menu_lean_marketing_buyers_persona_hub" 
+    name="Buyers Persona" 
+    parent="lean_marketing.lean_marketing_menu_assets" 
+    sequence="8"/>
     
+    <record id='lean_marketing_tribe_view_tree' model='ir.ui.view'>
+        <field name="name">lean_marketing.tribe.tree</field>
+        <field name="model">lean_marketing.tribe</field>
+        <field name="arch" type="xml">
+            <tree string="Tribe">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    
+    <record id='lean_marketing_tribe_view_form' model='ir.ui.view'>
+        <field name="name">lean_marketing.tribe.form</field>
+        <field name="model">lean_marketing.tribe</field>
+        <field name="arch" type="xml">
+            <form string="Tribe">
+            	<sheet>
+            		 <div class="oe_title">
+                        <h1><field name="name" placeholder="Name of the Tribe" nolabel="1"/></h1>
+                        <div class="o_row">
+                        	<field name="meeting_place_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Meeting Places" nolabel="1"/>
+                        </div>
+                    </div>
+                    <group string="description">
+                     <field name="description" nolabel="1" />
+                    </group>
+                    <group string="Members">
+                    	<field name="members_ids" mode="kanban" nolabel="1">
+                    		<kanban>
+                    			<field name="id"/>
+                                <field name="color"/>
+                                <field name="name"/>
+                                 <field name="image_small"/>
+                                <templates>
+                                	<t t-name="kanban-box">
+                                    	<t t-set="color" t-value="kanban_color(record.color.raw_value)"/>
+                                        <div t-att-class="color + (record.title.raw_value == 1 ? ' oe_kanban_color_alert' : '') + ' oe_kanban_global_click'">
+                                        	<div class="o_kanban_image">
+                                        		<img alt="" t-if="record.image_small.raw_value" t-att-src="kanban_image('res.partner', 'image_small', record.id.raw_value)"/>
+                                        	</div>
+                                        	<div class="oe_kanban_details">
+                                        		 <field name="name"/>
+                                        	</div>
+                                        </div>
+                                	</t>
+                                </templates>                                            
+                    		</kanban>
+                    	</field>                    
+                    </group>
+            	</sheet>
+           </form>
+       </field>
+   </record>
+   
+       <record id='lean_marketing_tribe_view_kanban' model='ir.ui.view'>
+        <field name="name">lean_marketing.tribe.kanban</field>
+        <field name="model">lean_marketing.tribe</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id"/>
+                <field name="name" />
+                <field name="color" />
+               <templates>
+                    <t t-name="kanban-box">
+                       <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                        	<div class="o_dropdown_kanban dropdown">
 
+                                    <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                        <span class="fa fa-ellipsis-v"/>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                                        <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                    </div>
+                                </div>
+                               
+                            <div class="oe_kanban_details">
+                                 <h4 class="oe_partner_heading">
+                                    <a type="open" class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </a>
+                                </h4> 
+                                
+                                 </div>                             
+                        		<div class="oe_clear"/>
+                            </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+   
+       	 <record id="action_lean_marketing_tribe_form" model="ir.actions.act_window">
+            <field name="name">Tribes</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lean_marketing.tribe</field>
+            <field name="view_type">form</field>
+            <field name="domain">[]</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="filter" eval="True"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new tribe
+              </p>
+            </field>
+        </record>
+
+    <menuitem id="menu_lean_marketing_tribe" name="Tribes"
+            parent="menu_lean_marketing_buyers_persona_hub"
+            action="action_lean_marketing_tribe_form" sequence="1"/>
+            
+         <record id='lean_marketing_buyer_persona_view_tree' model='ir.ui.view'>
+        <field name="name">lean_marketing.buyer_persona.tree</field>
+        <field name="model">lean_marketing.buyer_persona</field>
+        <field name="arch" type="xml">
+            <tree string="Buyers Persona">
+                <field name="name" />
+                <field name="tribe_id" />
+                <field name="gender" />
+                <field name="status" />
+                <field name="income" />
+            </tree>
+        </field>
+    </record>
+    
+        <record id='lean_marketing_buyer_persona_view_form' model='ir.ui.view'>
+        <field name="name">lean_marketing.buyer_persona.form</field>
+        <field name="model">lean_marketing.buyer_persona</field>
+        <field name="arch" type="xml">
+            <form string="Buyer Persona">
+            	<sheet>
+            		<field name="image" widget='image' class="oe_avatar" options='{"preview_image": "image_medium", "size": [90, 90]}'/>
+            		 <div class="oe_title">
+                        <h1><field name="name" placeholder="Name of the Buyer Persona" nolabel="1"/></h1>                        
+                    </div>
+                    <group name="profile">
+                    	<group string="Background">
+                    		<field name="tribe_id" />
+                    		<field name="title" />
+                    		<field name="function" />   
+                    		<field name="status" />
+                    		<field name="children" />                 	
+                    	</group>
+                    	<group  string="Demographics">
+                    		<field name="gender" />
+                    		<field name="age_min" />
+                    		<field name="age_max" />
+                    		<field name="income" />
+                    		<field name="lang" />                    		
+                    	</group>
+                    	<group   string="Location">
+                    		<field name="country_id" />
+                    		<field name="state_id" />
+                    		<field name="city" />
+                    		<field name="zip" />
+                    	</group>
+                    	<group  string="Preferences">
+                    		<field name="content_type_ids" widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Content Preferences" />
+                    		<field name="social_media_ids" widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Social Media Preferences" />
+                    		<field name="objection_ids" widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Objections" />
+                    		<field name="goal_ids" widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Personal Goals" />
+                    	</group>
+                    </group>
+                     <notebook colspan="4">
+                    	<page string="Bio" autofocus="autofocus">
+                    		<field name="bio" widget="html" nolabel="1"/>
+                    	</page>
+                    </notebook>
+                  </sheet>
+              </form>
+        </field>
+        </record>
+        
+               
+        <record model="ir.ui.view" id="rlean_marketing_buyer_persona_view_kanban">
+            <field name="name">lean_marketing.buyer_persona.kanban</field>
+            <field name="model">lean_marketing.buyer_persona</field>
+            <field name="arch" type="xml">
+                <kanban class="o_res_partner_kanban">
+                	<field name="id"/>
+                    <field name="color"/>
+                    <field name="name"/>
+	                <field name="tribe_id" />
+	                <field name="gender" />
+	                <field name="status" />
+	                <field name="income" />
+                    <field name="image_small"/>
+                    <templates>
+	                    <t t-name="kanban-box">
+	                     <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+	                    	<div class="o_dropdown_kanban dropdown">
+                            	<a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                 	<span class="fa fa-ellipsis-v"/>
+                                </a>
+                                <div class="dropdown-menu" role="menu">
+                                	<t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                                    <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                                    <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                </div>
+                            </div>
+                            <a type="open" href="#" class="o_kanban_image oe_kanban_action">
+                                <img alt="Open" t-att-src="kanban_image('lean_marketing.buyer_persona', 'image_small', record.id.raw_value)" class="img-fluid" style="width:100px;"/>
+                            </a>
+                            <div class="oe_kanban_details">
+                            	<h4 class="oe_partner_heading">
+                                    <a type="open" class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </a>
+                                </h4> 
+                                <ul>
+                                 <li><field name="tribe_id"/></li>
+                                 <li><field name="gender"/></li>
+                                 <li><field name="income"/></li>
+                                 </ul>
+                                 </div>                             
+                        		<div class="oe_clear"/>
+                        		</div>
+	                    </t>  
+                    </templates>              
+                </kanban>
+            </field>
+        </record>
+        
+        <record id="action_lean_marketing_buyer_persona_form" model="ir.actions.act_window">
+            <field name="name">Buyers Persona</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lean_marketing.buyer_persona</field>
+            <field name="view_type">form</field>
+            <field name="domain">[]</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="filter" eval="True"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new buyer persona
+              </p>
+            </field>
+        </record>
+        
+        <menuitem id="menu_lean_marketing_buyer_persona" name="Buyers Persona"
+            parent="menu_lean_marketing_buyers_persona_hub"
+            action="action_lean_marketing_buyer_persona_form" sequence="2"/>
+            
+       <record id='lean_marketing_plan_buyers_view_form' model='ir.ui.view'>
+        <field name="name">lean_marketing.plan.buyers.form</field>
+        <field name="model">lean_marketing.plan</field>
+        <field name="inherit_id" ref="lean_marketing.lean_marketing_plan_view_form"/>
+        <field name="arch" type="xml">
+        <xpath expr="//page[@name='mission']" position="after">
+        	<page string="Buyers Persona">
+        		<field name="buyers_persona_ids" mode="kanban" nolabel="1">
+                	<kanban>
+                   		<field name="id"/>
+                        <field name="color"/>
+                        <field name="name"/>
+                        <field name="tribe_id"/>
+                        <field name="image_small"/>
+                         <templates>
+                                	<t t-name="kanban-box">
+                                    	<t t-set="color" t-value="kanban_color(record.color.raw_value)"/>
+                                        <div t-att-class="color + (record.title.raw_value == 1 ? ' oe_kanban_color_alert' : '') + ' oe_kanban_global_click'">
+                                        	<div class="o_kanban_image">
+                                        		 <a type="open" href="#" class="o_kanban_image oe_kanban_action">
+                                <img alt="Open" t-att-src="kanban_image('lean_marketing.buyer_persona', 'image_small', record.id.raw_value)" class="img-fluid" style="width:100px;"/>
+                            </a>
+                            	</div>
+                                        	<div class="oe_kanban_details">
+                                        		 <field name="name"/>
+                                        	</div>
+                                        </div>
+                                	</t>
+                                </templates>                 
+                    </kanban>
+               </field>
+        	</page>
+        	
+        </xpath>        
+        </field>
+        </record>
+        
+        
 </odoo>
