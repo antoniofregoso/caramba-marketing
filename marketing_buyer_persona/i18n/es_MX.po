@@ -1,0 +1,533 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* marketing_buyer_persona
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-04 03:25+0000\n"
+"PO-Revision-Date: 2019-04-03 21:39-0600\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_MX\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__children
+msgid "# Children"
+msgstr "No. Hijos"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__age_max
+msgid "Age Max"
+msgstr "Edad Máxima"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__age_min
+msgid "Age Min"
+msgstr "Edad Mínima"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,help:marketing_buyer_persona.field_lean_marketing_buyer_persona__lang
+msgid "All the emails and documents sent to this contact will be translated in this language."
+msgstr "Todos los correos electrónicos y documentos enviados a este contacto se traducirán en este idioma."
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__income
+msgid "Annual Income"
+msgstr "Ingresos anuales"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_form
+msgid "Background"
+msgstr "Antecedentes"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__bio
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_form
+msgid "Bio"
+msgstr "Biografía"
+
+#. module: marketing_buyer_persona
+#: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_buyer_competence
+#: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_buyer_goal
+msgid "Buyer Goal"
+msgstr "Objetivo del consumidor"
+
+#. module: marketing_buyer_persona
+#: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_buyer_objection
+msgid "Buyer Objection"
+msgstr "Objeción del consumidor"
+
+#. module: marketing_buyer_persona
+#: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_form
+msgid "Buyer Persona"
+msgstr "Persona Consumidora"
+
+#. module: marketing_buyer_persona
+#: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_buyer_preferences
+msgid "Buyer Preference"
+msgstr "Preferencia del Consumidor"
+
+#. module: marketing_buyer_persona
+#: sql_constraint:lean_marketing.buyer_competence:0
+msgid "Buyer competence name already exists !"
+msgstr "La competencia del consumidor ya existe"
+
+#. module: marketing_buyer_persona
+#: sql_constraint:lean_marketing.buyer_preferences:0
+msgid "Buyer preference name already exists !"
+msgstr "La preferencia del consumidor ya existe"
+
+#. module: marketing_buyer_persona
+#: model:ir.actions.act_window,name:marketing_buyer_persona.action_lean_marketing_buyer_persona_form
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_plan__buyers_persona_ids
+#: model:ir.ui.menu,name:marketing_buyer_persona.menu_lean_marketing_buyer_persona
+#: model:ir.ui.menu,name:marketing_buyer_persona.menu_lean_marketing_buyers_persona_hub
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_tree
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_plan_buyers_view_form
+msgid "Buyers Persona"
+msgstr "Personas consumidoras"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__city
+msgid "City"
+msgstr "Ciudad"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_competence__color
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_goal__color
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_objection__color
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__color
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_preferences__color
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_content_type__color
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_meeting_place__color
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_social_media_preference__color
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__color
+msgid "Color Index"
+msgstr "Índice de Colores"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_form
+msgid "Content Preferences"
+msgstr "Preferencias de Contenido"
+
+#. module: marketing_buyer_persona
+#: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_content_type
+msgid "Content Type"
+msgstr "Tipo de Contenido"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__content_type_ids
+msgid "Content Type Preferences"
+msgstr "Preferencias de Tipo de Contenido"
+
+#. module: marketing_buyer_persona
+#: sql_constraint:lean_marketing.content_type:0
+msgid "Content type name already exists !"
+msgstr "El tipo de contenido ta existe"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__country_id
+msgid "Country"
+msgstr "País"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.actions.act_window,help:marketing_buyer_persona.action_lean_marketing_buyer_persona_form
+msgid "Create a new buyer persona"
+msgstr "Crea una nueba persona consumidora"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.actions.act_window,help:marketing_buyer_persona.action_lean_marketing_tribe_form
+msgid "Create a new tribe"
+msgstr "Crea una nueva tribu"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_competence__create_uid
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_goal__create_uid
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_objection__create_uid
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__create_uid
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_preferences__create_uid
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_content_type__create_uid
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_meeting_place__create_uid
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_social_media_preference__create_uid
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_competence__create_date
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_goal__create_date
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_objection__create_date
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__create_date
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_preferences__create_date
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_content_type__create_date
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_meeting_place__create_date
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_social_media_preference__create_date
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__company_currency
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_tribe_view_kanban
+msgid "Delete"
+msgstr "Suprimir"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_form
+msgid "Demographics"
+msgstr "Datos Demográficos"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_competence__display_name
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_goal__display_name
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_objection__display_name
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__display_name
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_preferences__display_name
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_content_type__display_name
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_meeting_place__display_name
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_social_media_preference__display_name
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: marketing_buyer_persona
+#: selection:lean_marketing.buyer_persona,status:0
+msgid "Divorced"
+msgstr "Divorciado"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_tribe_view_kanban
+msgid "Dropdown menu"
+msgstr "Menú desplegable"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_tribe_view_kanban
+msgid "Edit"
+msgstr "Editar"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.view_lean_marketing_buyer_persona_select
+#: selection:lean_marketing.buyer_persona,gender:0
+msgid "Female"
+msgstr "Mujer"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__gender
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.view_lean_marketing_buyer_persona_select
+msgid "Gender"
+msgstr "Género"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_kanban
+msgid "Gender:"
+msgstr "Género:"
+
+#. module: marketing_buyer_persona
+#: sql_constraint:lean_marketing.buyer_goal:0
+msgid "Goal name already exists !"
+msgstr "El objetivo ya existe"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__goal_ids
+msgid "Goals"
+msgstr "Objetivos"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.view_lean_marketing_buyer_persona_select
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_competence__id
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_goal__id
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_objection__id
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__id
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_preferences__id
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_content_type__id
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_meeting_place__id
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_social_media_preference__id
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__id
+msgid "ID"
+msgstr ""
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__image
+msgid "Image"
+msgstr "Imagen"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__function
+msgid "Job Position"
+msgstr "Puesto de trabajo"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__lang
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.view_lean_marketing_buyer_persona_select
+msgid "Language"
+msgstr "Idioma"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_competence____last_update
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_goal____last_update
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_objection____last_update
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona____last_update
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_preferences____last_update
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_content_type____last_update
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_meeting_place____last_update
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_social_media_preference____last_update
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_competence__write_uid
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_goal__write_uid
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_objection__write_uid
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__write_uid
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_preferences__write_uid
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_content_type__write_uid
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_meeting_place__write_uid
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_social_media_preference__write_uid
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_competence__write_date
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_goal__write_date
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_objection__write_date
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__write_date
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_preferences__write_date
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_content_type__write_date
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_meeting_place__write_date
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_social_media_preference__write_date
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: marketing_buyer_persona
+#: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_plan
+msgid "Lean Marketing Plan"
+msgstr "Plan de Marquetin Magro"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_form
+msgid "Location"
+msgstr "Ubicación"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.view_lean_marketing_buyer_persona_select
+#: selection:lean_marketing.buyer_persona,gender:0
+msgid "Male"
+msgstr "Hombre"
+
+#. module: marketing_buyer_persona
+#: selection:lean_marketing.buyer_persona,status:0
+msgid "Married"
+msgstr "Casado"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__image_medium
+msgid "Medium-sized image"
+msgstr "Imagen de tamaño mediano"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,help:marketing_buyer_persona.field_lean_marketing_buyer_persona__image_medium
+msgid "Medium-sized image of this contact. It is automatically resized as a 128x128px image, with aspect ratio preserved. Use this field in form views or some kanban views."
+msgstr "Imagen mediana de este contacto. Se redimensiona automáticamente a 128x128px, con el ratio de aspecto preservado. Se usa este campo en las vistas formulario y en algunas vistas kanban."
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__meeting_place_ids
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_tribe_view_form
+msgid "Meeting Places"
+msgstr "Lugares de Reunión"
+
+#. module: marketing_buyer_persona
+#: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_meeting_place
+msgid "Meeting place"
+msgstr "Lugar de Reunión"
+
+#. module: marketing_buyer_persona
+#: sql_constraint:lean_marketing.meeting_place:0
+msgid "Meeting place name already exists !"
+msgstr "El lugar de reunión ya existe"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__members_ids
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_tribe_view_form
+msgid "Members"
+msgstr "Miembros"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_competence__name
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_goal__name
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_objection__name
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_preferences__name
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_content_type__name
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_social_media_preference__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_form
+msgid "Name of the Buyer Persona"
+msgstr "Nombre de la Persona Consumidora"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_tribe_view_form
+msgid "Name of the Tribe"
+msgstr "Nombre de la tribu"
+
+#. module: marketing_buyer_persona
+#: sql_constraint:lean_marketing.buyer_objection:0
+msgid "Objection name already exists !"
+msgstr "La objeción ya existe"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__objection_ids
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_form
+msgid "Objections"
+msgstr "Objeciones"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_plan_buyers_view_form
+msgid "Open"
+msgstr "Abierto"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_form
+msgid "Personal Goals"
+msgstr "Objetivos Personales"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__name
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_meeting_place__name
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__name
+msgid "Place Name"
+msgstr "Nombre del lugar"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_form
+msgid "Preferences"
+msgstr "Preferencias"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.view_lean_marketing_buyer_persona_select
+msgid "Search Buyers Persona"
+msgstr "Buscar a la Persona Consumidora"
+
+#. module: marketing_buyer_persona
+#: selection:lean_marketing.buyer_persona,status:0
+msgid "Single"
+msgstr "Soltero"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__image_small
+msgid "Small-sized image"
+msgstr "Imagen de tamaño pequeño"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,help:marketing_buyer_persona.field_lean_marketing_buyer_persona__image_small
+msgid "Small-sized image of this contact. It is automatically resized as a 64x64px image, with aspect ratio preserved. Use this field anywhere a small image is required."
+msgstr "Imagen de tamaño pequeño de este contacto. Se redimensiona automáticamente a 64x64 px, con el ratio de aspecto preservado. Use este campo donde se requiera una imagen pequeña."
+
+#. module: marketing_buyer_persona
+#: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_social_media_preference
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__social_media_ids
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_form
+msgid "Social Media Preferences"
+msgstr "Preferencias de Medios Sociales"
+
+#. module: marketing_buyer_persona
+#: sql_constraint:lean_marketing.social_media_preference:0
+msgid "Social Media name already exists !"
+msgstr "Ya existe el Medio Social"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__state_id
+msgid "State"
+msgstr "Estado"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__status
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.view_lean_marketing_buyer_persona_select
+msgid "Status"
+msgstr "Estado Civil"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_plan_buyers_view_form
+msgid "Status:"
+msgstr "Estado Civil:"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,help:marketing_buyer_persona.field_lean_marketing_buyer_persona__image
+msgid "This field holds the image used as avatar for this contact, limited to 1024x1024px"
+msgstr "Este campo contiene la imagen utilizada como avatar para este contacto, limitada a 1024x1024px"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__title
+msgid "Title"
+msgstr "Título"
+
+#. module: marketing_buyer_persona
+#: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_tribe
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__tribe_id
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_tribe_view_form
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_tribe_view_tree
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.view_lean_marketing_buyer_persona_select
+msgid "Tribe"
+msgstr "Tribu"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_plan_buyers_view_form
+msgid "Tribe:"
+msgstr "Tribu:"
+
+#. module: marketing_buyer_persona
+#: model:ir.actions.act_window,name:marketing_buyer_persona.action_lean_marketing_tribe_form
+#: model:ir.ui.menu,name:marketing_buyer_persona.menu_lean_marketing_tribe
+msgid "Tribes"
+msgstr "Tribus"
+
+#. module: marketing_buyer_persona
+#: selection:lean_marketing.buyer_persona,status:0
+msgid "Widower"
+msgstr "Vudo"
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__zip
+msgid "Zip"
+msgstr "C.P."
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_tribe_view_form
+msgid "description"
+msgstr "descripción"

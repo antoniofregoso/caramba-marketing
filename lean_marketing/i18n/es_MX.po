@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-03 08:02+0000\n"
-"PO-Revision-Date: 2019-04-03 02:40-0600\n"
+"POT-Creation-Date: 2019-04-04 03:00+0000\n"
+"PO-Revision-Date: 2019-04-03 21:23-0600\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_solution__message_needaction
 #: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_touchpoint__message_needaction
 msgid "Action Needed"
-msgstr "Acción Necesaria"
+msgstr "Acción requerida"
 
 #. module: lean_marketing
 #: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_plan__active
@@ -201,7 +201,6 @@ msgstr "Crea una nueva marca"
 
 #. module: lean_marketing
 #: model_terms:ir.actions.act_window,help:lean_marketing.action_lean_marketing_evangelist_form
-#: model_terms:ir.actions.act_window,help:lean_marketing.action_lean_marketing_offline_touchpoints_hub_form
 msgid "Create a new evangelist in your address book"
 msgstr "Crea un nuevo evangelista en tu libreta de direcciones"
 
@@ -224,6 +223,11 @@ msgstr "Crear una nueva etiqueta para las marcas."
 #: model_terms:ir.actions.act_window,help:lean_marketing.lean_marketing_touchpoint_tag_action
 msgid "Create a new tag for touchpoints"
 msgstr "Crear una nueva etiqueta para los puntos de contacto"
+
+#. module: lean_marketing
+#: model_terms:ir.actions.act_window,help:lean_marketing.action_lean_marketing_touchpoints_hub_form
+msgid "Create a new touchpoins hub in your address book"
+msgstr "Crea un nuebo concentrador de puntos de contacto"
 
 #. module: lean_marketing
 #: model_terms:ir.actions.act_window,help:lean_marketing.action_lean_marketing_touchpoints_form
@@ -283,58 +287,62 @@ msgstr "Moneda"
 #. module: lean_marketing
 #: model:ir.model,name:lean_marketing.model_lean_marketing_solution_customer_gain
 msgid "Customer Gain"
-msgstr "Ganancia del cliente"
+msgstr "Beneficio del consumidor"
+
+#. module: lean_marketing
+#: model_terms:ir.ui.view,arch_db:lean_marketing.lean_marketing_solution_view_form
+msgid "Customer Gains"
+msgstr "Beneficios del consumidor"
 
 #. module: lean_marketing
 #: model:ir.model,name:lean_marketing.model_lean_marketing_solution_customer_job
 msgid "Customer Job"
-msgstr "Tarea del cliente"
+msgstr "Tarea del consumidor"
 
 #. module: lean_marketing
 #: model_terms:ir.ui.view,arch_db:lean_marketing.lean_marketing_solution_view_form
 msgid "Customer Jobs"
-msgstr "Tareas del cliente"
+msgstr "Necesidades del consumidor"
 
 #. module: lean_marketing
 #: model:ir.model,name:lean_marketing.model_lean_marketing_solution_customer_pain
 msgid "Customer Pain"
-msgstr "Dolor del cliente"
+msgstr "Malestar del consumidor"
+
+#. module: lean_marketing
+#: model_terms:ir.ui.view,arch_db:lean_marketing.lean_marketing_solution_view_form
+msgid "Customer Pains"
+msgstr "Malestares del consumidor"
 
 #. module: lean_marketing
 #: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_solution__custumer_gain_ids
 msgid "Custumer Gain"
-msgstr ""
-
-#. module: lean_marketing
-#: model_terms:ir.ui.view,arch_db:lean_marketing.lean_marketing_solution_view_form
-msgid "Custumer Gains"
-msgstr ""
+msgstr "Beneficios del consumidor"
 
 #. module: lean_marketing
 #: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_solution__customer_job_ids
 msgid "Custumer Jobs"
-msgstr ""
+msgstr "Necesidades del consumidor"
 
 #. module: lean_marketing
 #: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_solution__customer_pain_ids
-#: model_terms:ir.ui.view,arch_db:lean_marketing.lean_marketing_solution_view_form
 msgid "Custumer Pains"
-msgstr ""
+msgstr "Malestares del consumidor"
 
 #. module: lean_marketing
 #: sql_constraint:lean_marketing.solution.customer_gain:0
 msgid "Custumer gain name already exists !"
-msgstr ""
+msgstr "El nombre del beneficio del consumidor ya existe"
 
 #. module: lean_marketing
 #: sql_constraint:lean_marketing.solution.customer_job:0
 msgid "Custumer job name already exists !"
-msgstr ""
+msgstr "El nombre de la necesidad del consumidor ya existe"
 
 #. module: lean_marketing
 #: sql_constraint:lean_marketing.solution.customer_pain:0
 msgid "Custumer pain name already exists !"
-msgstr ""
+msgstr "¡El nombre del malestar ya existe!"
 
 #. module: lean_marketing
 #: model_terms:ir.actions.act_window,help:lean_marketing.utm_content_action
@@ -467,7 +475,7 @@ msgstr "Agrupar por"
 #. module: lean_marketing
 #: model_terms:ir.ui.view,arch_db:lean_marketing.view_lean_marketing_touchpoints_select
 msgid "Hub"
-msgstr ""
+msgstr "Concentrador"
 
 #. module: lean_marketing
 #: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_brand__id
@@ -515,13 +523,13 @@ msgstr "Si el campo activo se desmarca, permite ocultar el proyecto sin eliminar
 #. module: lean_marketing
 #: model_terms:ir.ui.view,arch_db:lean_marketing.view_res_partner_lean_marketing_filter
 msgid "Influencer"
-msgstr ""
+msgstr "Influenciador"
 
 #. module: lean_marketing
 #: model:ir.actions.act_window,name:lean_marketing.action_lean_marketing_influencer_form
 #: model:ir.ui.menu,name:lean_marketing.menu_lean_marketing_influencer
 msgid "Influencers"
-msgstr ""
+msgstr "Influenciadores"
 
 #. module: lean_marketing
 #: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_solution__ref
@@ -540,13 +548,13 @@ msgstr "Es un seguidor"
 #: model:ir.model.fields,field_description:lean_marketing.field_res_partner__evangelist
 #: model:ir.model.fields,field_description:lean_marketing.field_res_users__evangelist
 msgid "Is a Evangelist"
-msgstr "Es evangelista"
+msgstr "Es Evangelista"
 
 #. module: lean_marketing
 #: model:ir.model.fields,field_description:lean_marketing.field_res_partner__influencer
 #: model:ir.model.fields,field_description:lean_marketing.field_res_users__influencer
 msgid "Is a Influencer"
-msgstr ""
+msgstr "Es influenciador"
 
 #. module: lean_marketing
 #: model:ir.model.fields,field_description:lean_marketing.field_res_partner__touchpoint_hub
@@ -621,36 +629,36 @@ msgstr "Formulario de iniciativas"
 #: model:ir.module.category,name:lean_marketing.module_lean_marketing
 #: model:ir.ui.menu,name:lean_marketing.lean_marketing_menu_root
 msgid "Lean Marketing"
-msgstr "Lean Marketing"
+msgstr "Marketing Magro"
 
 #. module: lean_marketing
 #: model:ir.actions.act_window,name:lean_marketing.lean_marketing_buyer_journey_action
 msgid "Lean Marketing Buyer Journey"
-msgstr "Viaje del comprador Lean Marketing"
+msgstr "Viaje del consumidor"
 
 #. module: lean_marketing
 #: model:ir.model,name:lean_marketing.model_lean_marketing_plan
 #: model_terms:ir.ui.view,arch_db:lean_marketing.lean_marketing_plan_view_form
 #: model_terms:ir.ui.view,arch_db:lean_marketing.view_lean_marketing_touchpoints_select
 msgid "Lean Marketing Plan"
-msgstr ""
+msgstr "Plan de Marqueting Magro"
 
 #. module: lean_marketing
 #: model:ir.actions.act_window,name:lean_marketing.lean_marketing_plan_action
 #: model:ir.ui.menu,name:lean_marketing.lean_marketing_menu_plans
 #: model_terms:ir.ui.view,arch_db:lean_marketing.view_lean_marketing_plan_tree
 msgid "Lean Marketing Plans"
-msgstr ""
+msgstr "Planes de Marketing Magros"
 
 #. module: lean_marketing
 #: model:ir.model,name:lean_marketing.model_lean_marketing_solution
 msgid "Lean Marketing Solutions"
-msgstr ""
+msgstr "Soluciones de Marketing Magro"
 
 #. module: lean_marketing
 #: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_brand__linkedin
 msgid "Linkedin Page"
-msgstr ""
+msgstr "Página de LinkedIn"
 
 #. module: lean_marketing
 #: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_brand__image
@@ -807,13 +815,7 @@ msgid "Number of unread messages"
 msgstr "Número de mensajes no leidos"
 
 #. module: lean_marketing
-#: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_plan__objective
-msgid "Objetive"
-msgstr ""
-
-#. module: lean_marketing
 #: model_terms:ir.actions.act_window,help:lean_marketing.action_lean_marketing_evangelist_form
-#: model_terms:ir.actions.act_window,help:lean_marketing.action_lean_marketing_offline_touchpoints_hub_form
 msgid "Odoo helps you easily track all activities related to a evangelist."
 msgstr "Odoo lo ayuda a rastrear fácilmente todas las actividades relacionadas con un evangelista."
 
@@ -828,6 +830,11 @@ msgid "Odoo helps you easily track all activities related to a lean marketing pl
 msgstr "Odoo lo ayuda a rastrear fácilmente todas las actividades relacionadas con un plan de marketing lean."
 
 #. module: lean_marketing
+#: model_terms:ir.actions.act_window,help:lean_marketing.action_lean_marketing_touchpoints_hub_form
+msgid "Odoo helps you easily track all activities related to a touchpoint hub."
+msgstr ""
+
+#. module: lean_marketing
 #: model_terms:ir.actions.act_window,help:lean_marketing.action_lean_marketing_touchpoints_form
 msgid "Odoo helps you easily track all activities related to a touchpoint."
 msgstr "Odoo lo ayuda a rastrear fácilmente todas las actividades relacionadas con un punto de contacto."
@@ -837,16 +844,6 @@ msgstr "Odoo lo ayuda a rastrear fácilmente todas las actividades relacionadas 
 #: selection:lean_marketing.touchpoint,type:0
 msgid "Offline"
 msgstr "Desconectado"
-
-#. module: lean_marketing
-#: model:ir.actions.act_window,name:lean_marketing.action_lean_marketing_offline_touchpoints_hub_form
-msgid "Offline Touchpoints"
-msgstr "Puntos de contacto fuera de línea"
-
-#. module: lean_marketing
-#: model:ir.ui.menu,name:lean_marketing.menu_lean_marketing_offline_touchpoint_hub
-msgid "Offline Touchpoints hubs"
-msgstr "Puntos de contacto sin conexión"
 
 #. module: lean_marketing
 #: model_terms:ir.ui.view,arch_db:lean_marketing.view_lean_marketing_touchpoints_select
@@ -906,7 +903,7 @@ msgstr "Foto"
 #: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_touchpoint__plan_id
 #: model:ir.model.fields,field_description:lean_marketing.field_mail_mass_mailing_campaign__plan_id
 msgid "Plan"
-msgstr "Plan"
+msgstr ""
 
 #. module: lean_marketing
 #: selection:lean_marketing.plan,activity_state:0
@@ -985,13 +982,13 @@ msgstr "Imagen de tamaño pequeño"
 #. module: lean_marketing
 #: model:ir.model.fields,help:lean_marketing.field_lean_marketing_brand__image_small
 msgid "Small-sized logo of the brand. It is automatically resized as a 64x64px image, with aspect ratio preserved. Use this field anywhere a small image is required."
-msgstr ""
+msgstr "Logo de tamaño pequeño de la marca. Se redimensiona automáticamente como una imagen de 64x64px, con la relación de aspecto conservada. Utilice este campo en cualquier lugar donde se requiera una pequeña imagen."
 
 #. module: lean_marketing
 #: model:ir.model.fields,help:lean_marketing.field_lean_marketing_solution__image_small
 #: model:ir.model.fields,help:lean_marketing.field_lean_marketing_touchpoint__image_small
 msgid "Small-sized touchpoint. It is automatically resized as a 64x64px image, with aspect ratio preserved. Use this field anywhere a small image is required."
-msgstr ""
+msgstr "Punto de contacto de pequeño tamaño. Se redimensiona automáticamente como una imagen de 64x64px, con la relación de aspecto conservada. Utilice este campo en cualquier lugar donde se requiera una pequeña imagen."
 
 #. module: lean_marketing
 #: model_terms:ir.ui.view,arch_db:lean_marketing.lean_marketing_brand_view_form
@@ -1065,21 +1062,26 @@ msgid "Tags"
 msgstr "Etiquetas"
 
 #. module: lean_marketing
+#: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_plan__target
+msgid "Target"
+msgstr "Objetivo"
+
+#. module: lean_marketing
 #: model_terms:ir.ui.view,arch_db:lean_marketing.utm_term_view_form
 #: model_terms:ir.ui.view,arch_db:lean_marketing.utm_term_view_tree
 msgid "Term"
-msgstr ""
+msgstr "Término de búsqueda"
 
 #. module: lean_marketing
 #: model:ir.model.fields,field_description:lean_marketing.field_utm_term__name
 msgid "Term Name"
-msgstr ""
+msgstr "Nombre del término"
 
 #. module: lean_marketing
 #: model:ir.actions.act_window,name:lean_marketing.utm_term_action
 #: model:ir.ui.menu,name:lean_marketing.menu_lean_marketing_utm_term
 msgid "Terms"
-msgstr ""
+msgstr "Términos de búsqueda"
 
 #. module: lean_marketing
 #: selection:lean_marketing.touchpoint,state:0
@@ -1090,12 +1092,12 @@ msgstr "Pruebas"
 #: model:ir.model.fields,help:lean_marketing.field_lean_marketing_solution__image
 #: model:ir.model.fields,help:lean_marketing.field_lean_marketing_touchpoint__image
 msgid "This field holds the image used as big, limited to 1024x1024px."
-msgstr ""
+msgstr "Este campo contiene la imagen utilizada como grande, limitada a 1024x1024px."
 
 #. module: lean_marketing
 #: model:ir.model.fields,help:lean_marketing.field_lean_marketing_brand__image
 msgid "This field holds the image used as logo for the brand, limited to 1024x1024px."
-msgstr ""
+msgstr "Este campo contiene la imagen utilizada como logotipo de la marca, limitada a"
 
 #. module: lean_marketing
 #: selection:lean_marketing.plan,activity_state:0
@@ -1137,9 +1139,19 @@ msgid "Touchpoints"
 msgstr "Puntos de contacto"
 
 #. module: lean_marketing
+#: model:ir.actions.act_window,name:lean_marketing.action_lean_marketing_touchpoints_hub_form
+msgid "Touchpoints Hubs"
+msgstr "Concentradores de puntos de contacto"
+
+#. module: lean_marketing
 #: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_touchpoint__hub_id
 msgid "Touchpoints hub"
-msgstr "Hub de puntos de contacto"
+msgstr "Concentrador de puntos de contacto"
+
+#. module: lean_marketing
+#: model:ir.ui.menu,name:lean_marketing.menu_lean_marketing_touchpoint_hub
+msgid "Touchpoints hubs"
+msgstr "Concentradores de puntos de contacto"
 
 #. module: lean_marketing
 #: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_brand__twitter
