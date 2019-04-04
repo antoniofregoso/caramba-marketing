@@ -97,7 +97,7 @@ class BuyerPersona(models.Model):
         return self.env['res.lang'].get_installed()
     
     name = fields.Char('Place Name', required=True, translate=True)
-    tribe_id = fields.Many2one('lean_marketing.tribe', string='Tribe', index=True)
+    tribe_id = fields.Many2one('lean_marketing.tribe', string='Tribe', index=True, required=True)
     color = fields.Integer(string='Color Index', default=0)
     bio = fields.Html('Bio')
     age_min = fields.Integer('Age Min')
