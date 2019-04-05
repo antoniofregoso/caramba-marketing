@@ -42,6 +42,7 @@ class MarketingBrand(models.Model):
     linkedin = fields.Char('Linkedin Page')
     youtube = fields.Char('Youtube Channel')
     blog = fields.Char('Blog')
+    url = fields.Char('Website')
    
     
 
@@ -98,8 +99,9 @@ class Touchpoint(models.Model):
         help="Small-sized touchpoint. It is automatically "
              "resized as a 64x64px image, with aspect ratio preserved. "
              "Use this field anywhere a small image is required.")
-    plan_id = fields.Many2one('lean_marketing.plan', string='Plan')
+    plan_id = fields.Many2one('lean_marketing.plan', string='Lean Marketing Plan')
     buyer_journey_stage = fields.Selection([('awareness','Awareness'),('consideration','Consideration'),('purchase','Purchase'),('service','Service'),('loyalty','Loyalty')], string="Buyer's Journey Stage", default='awareness', required=True, copy=False, track_visibility='onchange', group_expand='_expand_buyer_journey')
+    responsible_id = fields.Many2one('res.users', string='Responsible', required=False, default=lambda self: self.env.user)
     
     def _expand_states(self, states, domain, order):
         return ['draft', 'testing', 'operating', 'maintenance', 'cancel']

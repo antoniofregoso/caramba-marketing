@@ -27,6 +27,8 @@
         'views/lean_marketing_views.xml',
         'views/lean_marketing_settings_views.xml',
         'views/res_partner_views.xml',
+        'views/crm_lead_views.xml',
+        'views/website_crm_templates.xml'
     ],
 
     'demo': [

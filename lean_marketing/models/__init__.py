@@ -5,3 +5,4 @@ from . import lean_marketing
 from . import res_partner
 from . import utm
 from . import mass_mailing
+from . import crm_lead

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<odoo>
+
+        <record id="crm_lead_tag_form" model="ir.ui.view">
+            <field name="name">crm.lead.utm_extend.form</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+            <field name="arch" type="xml">
+            <xpath expr="//field[@name='source_id']" position="after">
+	            <field name="content_id" groups="lean_marketing.group_lean_marketing_product_owner,lean_marketing.group_lean_marketing_manager"/>
+	            <field name="term_id" groups="lean_marketing.group_lean_marketing_product_owner,lean_marketing.group_lean_marketing_manager"/>
+            </xpath>
+            
+            </field>
+            </record>
+
+</odoo>
