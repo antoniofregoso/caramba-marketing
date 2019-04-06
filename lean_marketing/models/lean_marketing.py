@@ -240,7 +240,7 @@ class Plan(models.Model):
     date_end = fields.Date(string='End Date')
     user_id = fields.Many2one('res.users', string='Product owner', default=lambda self: self.env.user, track_visibility="onchange")
     project_id = fields.Many2one('project.project', string='Project', ondelete='cascade')
-    campaigns_ids = fields.One2many('mail.mass_mailing.campaign', 'plan_id', string="Campaigns", ondelete='cascade')
+    campaigns_ids = fields.One2many('utm.campaign', 'plan_id', string="Campaigns", ondelete='cascade')
     touchpoints_ids = fields.One2many('lean_marketing.touchpoint', 'plan_id', string="Touchpoints", ondelete='set null')
     color = fields.Integer(string='Color Index')
     company_id = fields.Many2one('res.company', string='Company', index=True, default=lambda self: self.env.user.company_id.id)
