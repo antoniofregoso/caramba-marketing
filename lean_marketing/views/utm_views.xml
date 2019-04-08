@@ -27,6 +27,7 @@
         
         <record id="utm_lean_marketing_source_view_form" model="ir.ui.view">
             <field name="name">utm.source.form</field>
+            <field name="model">utm.source</field>
             <field name="inherit_id" ref="utm.utm_source_view_form"/>
             <field name="arch" type="xml">
             <xpath expr="//field[@name='name']" position="replace">

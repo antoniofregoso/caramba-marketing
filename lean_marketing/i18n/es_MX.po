@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-04 03:00+0000\n"
-"PO-Revision-Date: 2019-04-03 21:23-0600\n"
+"POT-Creation-Date: 2019-04-06 05:04+0000\n"
+"PO-Revision-Date: 2019-04-05 23:37-0600\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_solution__message_needaction
 #: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_touchpoint__message_needaction
 msgid "Action Needed"
-msgstr "Acción requerida"
+msgstr "Acción Necesaria"
 
 #. module: lean_marketing
 #: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_plan__active
@@ -173,6 +173,7 @@ msgid "Contact"
 msgstr "Contacto"
 
 #. module: lean_marketing
+#: model:ir.model.fields,field_description:lean_marketing.field_crm_lead__content_id
 #: model_terms:ir.ui.view,arch_db:lean_marketing.utm_content_view_form
 #: model_terms:ir.ui.view,arch_db:lean_marketing.utm_content_view_tree
 msgid "Content"
@@ -192,7 +193,7 @@ msgstr "Contenidos"
 #. module: lean_marketing
 #: model_terms:ir.actions.act_window,help:lean_marketing.lean_marketing_plan_action
 msgid "Create a new Lean Marketing Plan"
-msgstr "Crea un nuevo plan de marketing  magro."
+msgstr "Crea un nuevo plan de lean marketing."
 
 #. module: lean_marketing
 #: model_terms:ir.actions.act_window,help:lean_marketing.lean_marketing_brand_action
@@ -495,6 +496,16 @@ msgid "ID"
 msgstr ""
 
 #. module: lean_marketing
+#: model:ir.model.fields,help:lean_marketing.field_crm_lead__content_id
+msgid "Identifies search terms."
+msgstr ""
+
+#. module: lean_marketing
+#: model:ir.model.fields,help:lean_marketing.field_crm_lead__term_id
+msgid "Identifies what specifically was clicked to bring the user to the site, such as a banner ad or a text link. It is often used for A/B testing and content-targeted ads."
+msgstr ""
+
+#. module: lean_marketing
 #: model:ir.model.fields,help:lean_marketing.field_lean_marketing_plan__message_unread
 #: model:ir.model.fields,help:lean_marketing.field_lean_marketing_solution__message_unread
 #: model:ir.model.fields,help:lean_marketing.field_lean_marketing_touchpoint__message_unread
@@ -621,6 +632,11 @@ msgid "Last Updated on"
 msgstr "Última actualización el"
 
 #. module: lean_marketing
+#: model:ir.model,name:lean_marketing.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Iniciativa/Oportunidad"
+
+#. module: lean_marketing
 #: model_terms:ir.ui.view,arch_db:lean_marketing.touchpoint_form_view
 msgid "Leads Form"
 msgstr "Formulario de iniciativas"
@@ -629,31 +645,32 @@ msgstr "Formulario de iniciativas"
 #: model:ir.module.category,name:lean_marketing.module_lean_marketing
 #: model:ir.ui.menu,name:lean_marketing.lean_marketing_menu_root
 msgid "Lean Marketing"
-msgstr "Marketing Magro"
+msgstr "Lean Marketing"
 
 #. module: lean_marketing
 #: model:ir.actions.act_window,name:lean_marketing.lean_marketing_buyer_journey_action
 msgid "Lean Marketing Buyer Journey"
-msgstr "Viaje del consumidor"
+msgstr "Viaje del comprador"
 
 #. module: lean_marketing
 #: model:ir.model,name:lean_marketing.model_lean_marketing_plan
+#: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_touchpoint__plan_id
 #: model_terms:ir.ui.view,arch_db:lean_marketing.lean_marketing_plan_view_form
 #: model_terms:ir.ui.view,arch_db:lean_marketing.view_lean_marketing_touchpoints_select
 msgid "Lean Marketing Plan"
-msgstr "Plan de Marqueting Magro"
+msgstr "Plan de Marquetin Magro"
 
 #. module: lean_marketing
 #: model:ir.actions.act_window,name:lean_marketing.lean_marketing_plan_action
 #: model:ir.ui.menu,name:lean_marketing.lean_marketing_menu_plans
 #: model_terms:ir.ui.view,arch_db:lean_marketing.view_lean_marketing_plan_tree
 msgid "Lean Marketing Plans"
-msgstr "Planes de Marketing Magros"
+msgstr "Planes de Lean Marketing"
 
 #. module: lean_marketing
 #: model:ir.model,name:lean_marketing.model_lean_marketing_solution
 msgid "Lean Marketing Solutions"
-msgstr "Soluciones de Marketing Magro"
+msgstr "Soluciones de Lean Marketing"
 
 #. module: lean_marketing
 #: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_brand__linkedin
@@ -707,18 +724,18 @@ msgstr "Imagen de tamaño mediano"
 #. module: lean_marketing
 #: model:ir.model.fields,help:lean_marketing.field_lean_marketing_brand__image_medium
 msgid "Medium-sized logo of the brand. It is automatically resized as a 128x128px image, with aspect ratio preserved. Use this field in form views or some kanban views."
-msgstr ""
+msgstr "Logo mediano de la marca. Se cambia automáticamente de tamaño como una imagen de 128x128px, con relación de aspecto conservada. Utilice este campo en las vistas de formulario o en algunas vistas kanban."
 
 #. module: lean_marketing
 #: model:ir.model.fields,help:lean_marketing.field_lean_marketing_solution__image_medium
 #: model:ir.model.fields,help:lean_marketing.field_lean_marketing_touchpoint__image_medium
 msgid "Medium-sized touchpoint. It is automatically resized as a 128x128px image, with aspect ratio preserved. Use this field in form views or some kanban views."
-msgstr ""
+msgstr "Punto de contacto de tamaño mediano. Se cambia automáticamente de tamaño como una imagen de 128x128px, con relación de aspecto conservada. Utilice este campo en las vistas de formulario o en algunas vistas kanban."
 
 #. module: lean_marketing
 #: model:ir.ui.menu,name:lean_marketing.menu_lean_marketing_utm_medium
 msgid "Mediums"
-msgstr ""
+msgstr "Medios"
 
 #. module: lean_marketing
 #: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_plan__message_has_error
@@ -832,7 +849,7 @@ msgstr "Odoo lo ayuda a rastrear fácilmente todas las actividades relacionadas 
 #. module: lean_marketing
 #: model_terms:ir.actions.act_window,help:lean_marketing.action_lean_marketing_touchpoints_hub_form
 msgid "Odoo helps you easily track all activities related to a touchpoint hub."
-msgstr ""
+msgstr "Odoo lo ayuda a rastrear fácilmente todas las actividades relacionadas con un concentrador de puntos de contacto."
 
 #. module: lean_marketing
 #: model_terms:ir.actions.act_window,help:lean_marketing.action_lean_marketing_touchpoints_form
@@ -900,10 +917,10 @@ msgid "Photo"
 msgstr "Foto"
 
 #. module: lean_marketing
-#: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_touchpoint__plan_id
 #: model:ir.model.fields,field_description:lean_marketing.field_mail_mass_mailing_campaign__plan_id
+#: model:ir.model.fields,field_description:lean_marketing.field_utm_campaign__plan_id
 msgid "Plan"
-msgstr ""
+msgstr "Plan"
 
 #. module: lean_marketing
 #: selection:lean_marketing.plan,activity_state:0
@@ -948,6 +965,11 @@ msgstr "Compra"
 #: model_terms:ir.ui.view,arch_db:lean_marketing.lean_marketing_plan_view_form
 msgid "Related campaigns"
 msgstr "Campañas relacionadas"
+
+#. module: lean_marketing
+#: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_touchpoint__responsible_id
+msgid "Responsible"
+msgstr "Responsable"
 
 #. module: lean_marketing
 #: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_plan__activity_user_id
@@ -1067,6 +1089,7 @@ msgid "Target"
 msgstr "Objetivo"
 
 #. module: lean_marketing
+#: model:ir.model.fields,field_description:lean_marketing.field_crm_lead__term_id
 #: model_terms:ir.ui.view,arch_db:lean_marketing.utm_term_view_form
 #: model_terms:ir.ui.view,arch_db:lean_marketing.utm_term_view_tree
 msgid "Term"
@@ -1114,7 +1137,7 @@ msgstr "Pruebas"
 #. module: lean_marketing
 #: model_terms:ir.ui.view,arch_db:lean_marketing.view_res_partner_lean_marketing_filter
 msgid "Touchpoint Hub"
-msgstr "Hub de puntos de contacto"
+msgstr "Concentrador de puntos de contacto"
 
 #. module: lean_marketing
 #: model:ir.model,name:lean_marketing.model_lean_marketing_touchpoint_tag
@@ -1131,6 +1154,7 @@ msgstr "Etiquetas de punto de contacto"
 #. module: lean_marketing
 #: model:ir.actions.act_window,name:lean_marketing.action_lean_marketing_touchpoints_form
 #: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_plan__touchpoints_ids
+#: model:ir.model.fields,field_description:lean_marketing.field_utm_medium__touchpoint_id
 #: model:ir.ui.menu,name:lean_marketing.menu_lean_marketing_touchpoint
 #: model:ir.ui.menu,name:lean_marketing.menu_lean_marketing_touchpoints
 #: model_terms:ir.ui.view,arch_db:lean_marketing.lean_marketing_plan_view_form
@@ -1144,7 +1168,10 @@ msgid "Touchpoints Hubs"
 msgstr "Concentradores de puntos de contacto"
 
 #. module: lean_marketing
+#: model:ir.model.fields,field_description:lean_marketing.field_hr_recruitment_source__hub_id
 #: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_touchpoint__hub_id
+#: model:ir.model.fields,field_description:lean_marketing.field_mail_mass_mailing__hub_id
+#: model:ir.model.fields,field_description:lean_marketing.field_utm_source__hub_id
 msgid "Touchpoints hub"
 msgstr "Concentrador de puntos de contacto"
 
@@ -1171,14 +1198,29 @@ msgid "URL"
 msgstr ""
 
 #. module: lean_marketing
+#: model:ir.model,name:lean_marketing.model_utm_campaign
+msgid "UTM Campaign"
+msgstr "Campaña de UTM"
+
+#. module: lean_marketing
 #: model:ir.model,name:lean_marketing.model_utm_content
 msgid "UTM Content"
 msgstr "Contenido UTM"
 
 #. module: lean_marketing
+#: model:ir.model,name:lean_marketing.model_utm_medium
+msgid "UTM Medium"
+msgstr "Medio UTM"
+
+#. module: lean_marketing
+#: model:ir.model,name:lean_marketing.model_utm_source
+msgid "UTM Source"
+msgstr "Origen UTM"
+
+#. module: lean_marketing
 #: model:ir.model,name:lean_marketing.model_utm_term
 msgid "UTM Term"
-msgstr ""
+msgstr "Término UTM"
 
 #. module: lean_marketing
 #: model:ir.ui.menu,name:lean_marketing.menu_lean_marketing_utm_config
@@ -1211,6 +1253,11 @@ msgid "View"
 msgstr "Ver"
 
 #. module: lean_marketing
+#: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_brand__url
+msgid "Website"
+msgstr "Sitio web"
+
+#. module: lean_marketing
 #: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_plan__website_message_ids
 #: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_solution__website_message_ids
 #: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_touchpoint__website_message_ids
@@ -1228,6 +1275,11 @@ msgstr "Historial de comunicaciones del sitio web"
 #: model:ir.model.fields,field_description:lean_marketing.field_lean_marketing_brand__youtube
 msgid "Youtube Channel"
 msgstr "Canal de Youtube"
+
+#. module: lean_marketing
+#: model_terms:ir.ui.view,arch_db:lean_marketing.lean_marketing_brand_view_form
+msgid "e.g. www.odoo.com"
+msgstr "Por ejemplo, www.odoo.com"
 
 #. module: lean_marketing
 #: model_terms:ir.ui.view,arch_db:lean_marketing.lean_marketing_touchpoint_tag_form

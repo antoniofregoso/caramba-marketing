@@ -273,6 +273,7 @@
            		<group expand="0" name="group_by" string="Group By">
            			<filter name="group_type" string="Type" context="{'group_by': 'type'}"/>
            			<filter name="group_hub" string="Hub" context="{'group_by': 'hub_id'}"/>
+           			<filter name="group_responsible" string="Responsible" context="{'group_by': 'responsible_id'}"/>
            			<filter name="group_buyer_journey_stage" string="Buyer's Journey Stage" context="{'group_by': 'buyer_journey_stage'}"/>
            			<filter name="group_plan" string="Lean Marketing Plan" context="{'group_by': 'plan_id'}"/>
            		</group>
