@@ -5,7 +5,7 @@
         <menuitem
             id="lean_marketing_menu_root"
             name="Lean Marketing"
-            web_icon="marketing,static/description/icon.png"
+            web_icon="lean_marketing,static/description/icon.png"
             groups=""
             sequence="6"/>
            
