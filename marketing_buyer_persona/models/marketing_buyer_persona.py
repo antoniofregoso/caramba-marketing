@@ -87,6 +87,17 @@ class Competence(models.Model):
         ('name_uniq', 'unique (name)', "Buyer competence name already exists !"),
     ]
     
+class Segment(models.Model):
+    _name = "lean_marketing.segment"
+    
+    name = fields.Char('Name', required=True, translate=True)
+    distribution = fields.Char('Distribution', translate=True)
+    lifestyle = fields.Html('Lifestyle Characteristics', translate=True)
+    psychological  = fields.Html('Psychological Characteristics', translate=True)
+    consumer = fields.Html('Consumer Characteristics', translate=True)
+    members_ids = fields.One2many('lean_marketing.buyer_persona', 'segment_id', string='Members') 
+    color = fields.Integer('Color Index')
+    
     
 class BuyerPersona(models.Model):
     _name = "lean_marketing.buyer_persona"
@@ -97,9 +108,10 @@ class BuyerPersona(models.Model):
         return self.env['res.lang'].get_installed()
     
     name = fields.Char('Place Name', required=True, translate=True)
-    tribe_id = fields.Many2one('lean_marketing.tribe', string='Tribe', index=True, required=True)
+    segment_id = fields.Many2one('lean_marketing.segment', string='Segment')
+    tribe_id = fields.Many2one('lean_marketing.tribe', string='Tribe',  required=True)
     color = fields.Integer(string='Color Index', default=0)
-    bio = fields.Html('Bio')
+    bio = fields.Html('Bio', translate=True)
     age_min = fields.Integer('Age Min')
     age_max = fields.Integer('Age Max')
     gender = fields.Selection([('female','Female'),('male','Male')], string='Gender')

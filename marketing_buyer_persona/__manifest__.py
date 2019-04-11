@@ -20,6 +20,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/marketing_buyer_persona_views.xml',
+        'data/buyer_persona_data.xml'
     ],
 
     'demo': [

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+    	
+    	<record id="segment_innovators" model="lean_marketing.segment">
+    		<field name="name">Innovators</field>
+    		<field name="distribution">(8% of pop.)</field>
+    		<field name="lifestyle" type="html">
+    		<ul>
+    			<li>Successful, sophisticated.</li>
+    			<li>Value personal growth.</li>
+    			<li>Wide intellectual interests.</li>
+    			<li>Wide intellectual interests </li>
+    			<li>Well informed, concerned with social issues.</li>
+    			<li>Highly social.</li>
+    			<li>Politically very active.</li>
+    		</ul>
+    		</field>
+    		<field name="psychological" type="html">
+    		<ul>
+    			<li>Optimistic.</li>
+    			<li>Self-confident.</li>
+    			<li>Involved.</li>
+    			<li>Outgoing.</li>
+    			<li>Growth oriented.</li>
+    			<li>Open to change.</li>
+    			<li>Established &amp; emerging leaders in business &amp; government.</li>
+    		</ul>
+    		</field>
+    		<field name="consumer" type="html">
+    		<ul>
+    			<li>Enjoy the "finer things"</li>
+    			<li>Receptive to new products, technologies, distribution.</li>
+    			<li>Skeptical of advertising.</li>
+    			<li>Frequent readers of a wide variety of publications.</li>
+    			<li>Light TV viewers.</li>
+    		</ul>
+    		</field>    	
+    	</record>
+    	
+    	<record id="segment_thinkers" model="lean_marketing.segment">
+    		<field name="name">Thinkers</field>
+    		<field name="distribution">(11% of pop.)</field>
+    		<field name="lifestyle" type="html">
+    		<ul>
+    			<li>Moderately active in community and politics.</li>
+    			<li>Leisure centers on home.</li>
+    			<li>Value education &amp; travel.</li>
+    			<li>Health conscious.</li>
+    			<li>Politically moderate and tolerant.</li>
+    		</ul>
+    		</field>
+    		<field name="psychological" type="html">
+    		<ul>
+    			<li>Mature.</li>
+    			<li>Satisfied.</li>
+    			<li>Reflective.</li>
+    			<li>Open-minded.</li>
+    			<li>Intrinsically motivated.</li>
+    			<li>Value order, knowledge, and responsibility.</li>
+    		</ul>
+    		</field>
+    		<field name="consumer" type="html">
+    		<ul>
+    			<li>Little interest in image or prestige.</li>
+    			<li>Above average consumers of products for the home.</li>
+    			<li>Like educational and public affairs.</li>
+    			<li>Programming on TV.</li>
+    			<li>Read widely and often.</li>
+    			<li>Look for value &amp; durability.</li>
+    		</ul>
+    		</field>    	
+    	</record>
+    	
+    	<record id="segment_achievers" model="lean_marketing.segment">
+    		<field name="name">Achievers</field>
+    		<field name="distribution">(13% of pop.)</field>
+    		<field name="lifestyle" type="html">
+    		<ul>
+    			<li>Lives center on career &amp; famly.</li>
+    			<li>Have formal social relations.</li>
+    			<li>Avoid excess change or stimulation.</li>
+    			<li>May emphasize work at the expense of recreation.</li>
+    			<li>Politically conservative.</li>
+    		</ul>
+    		</field>
+    		<field name="psychological" type="html">
+    		<ul>
+    			<li>Moderate.</li>
+    			<li>Goal oriented.</li>
+    			<li>Conventional.</li>
+    			<li>Deliberate.</li>
+    			<li>In control.</li>
+    		</ul>
+    		</field>
+    		<field name="consumer" type="html">
+    		<ul>
+    			<li>Attracted to premium product.</li>
+    			<li>Prime target for a variety of products.</li>
+    			<li>Average TV watchers.</li>
+    			<li>Read business, news, and self-help publications.</li>
+    		</ul>
+    		</field>    	
+    	</record>
+    	
+    	<record id="segment_experiencers" model="lean_marketing.segment">
+    		<field name="name">Experiencers</field>
+    		<field name="distribution">(12% of pop.)</field>
+    		<field name="lifestyle" type="html">
+    		<ul>
+    			<li>Like the new, offbeat, and risky.</li>
+    			<li>Like exercise, socializing, sports, and outdoors.</li>
+    			<li>Concerned about image.</li>
+    			<li>Unconforming, but admire wealth, power, and fame.</li>
+    			<li>Politically apathetic.</li>
+    		</ul>
+    		</field>
+    		<field name="psychological" type="html">
+    		<ul>
+    			<li>Extraverted.</li>
+    			<li>Unconventional.</li>
+    			<li>Active.</li>
+    			<li>Impetuous.</li>
+    			<li>Energetic.</li>
+    			<li>Enthusiastic and impulsive.</li>
+    		</ul>
+    		</field>
+    		<field name="consumer" type="html">
+    		<ul>
+    			<li>Follow fashion and fads.</li>
+    			<li>Spend much of disposable income on socializing.</li>
+    			<li>Buy on impulse.</li>
+    			<li>Attend to advertising.</li>
+    			<li>Listen to rock music</li>
+    		</ul>
+    		</field>    	
+    	</record>
+    	
+    	<record id="segment_believers" model="lean_marketing.segment">
+    		<field name="name">Believers</field>
+    		<field name="distribution">(16% of pop.)</field>
+    		<field name="lifestyle" type="html">
+    		<ul>
+    			<li>Respect rules and trust authority figures.</li>
+    			<li>Enjoy settled, comfortable, predictable existence.</li>
+    			<li>Socialize within family and established groups.</li>
+    			<li>Politically conservative.</li>
+    			<li>Reasonably well informed.</li>
+    		</ul>
+    		</field>
+    		<field name="psychological" type="html">
+    		<ul>
+    			<li>Traditional.</li>
+    			<li>Conforming.</li>
+    			<li>Cautious.</li>
+    			<li>Moralistic.</li>
+    			<li>Settled.</li>
+    		</ul>
+    		</field>
+    		<field name="consumer" type="html">
+    		<ul>
+    			<li>Buy American.</li>
+    			<li>Slow to change habits.</li>
+    			<li>Look for bargains.</li>
+    			<li>Watch TV more than average.</li>
+    			<li>Read retirement, home and garden, and general interest magazines.</li>
+    		</ul>
+    		</field>    	
+    	</record>
+    	
+    	<record id="segment_strivers" model="lean_marketing.segment">
+    		<field name="name">Strivers</field>
+    		<field name="distribution">(13% of pop.)</field>
+    		<field name="lifestyle" type="html">
+    		<ul>
+    			<li>Narrow interests</li>
+    			<li>Easily bored</li>
+    			<li>Somewhat isolated</li>
+    			<li>Look to peer group for motivation and approval</li>
+    			<li>Unconcerned about health and nutrition</li>
+    			<li>Politically apathetic</li>
+    		</ul>
+    		</field>
+    		<field name="psychological" type="html">
+    		<ul>
+    			<li>Dissatisfied.</li>
+    			<li>Unsure.</li>
+    			<li>Alienated.</li>
+    			<li>Impulsive.</li>
+    			<li>Approval seeking.</li>
+    		</ul>
+    		</field>
+    		<field name="consumer" type="html">
+    		<ul>
+    			<li>Image conscious.</li>
+    			<li>Limited discretionary income, but carry credit balances.</li>
+    			<li>Spend on clothing and personal care products.</li>
+    			<li>Prefer TV to reading.</li>
+    		</ul>
+    		</field>    	
+    	</record>
+    	
+    	
+    	<record id="segment_makers" model="lean_marketing.segment">
+    		<field name="name">Makers</field>
+    		<field name="distribution">(13% of pop.)</field>
+    		<field name="lifestyle" type="html">
+    		<ul>
+    			<li>Enjoy outdoors.</li>
+    			<li>Prefer "hands on" activities.</li>
+    			<li>Spend leisure with family and close friends.</li>
+    			<li>Avoid joining organizations except unions.</li>
+    			<li>Distrust politicians, foreigners, and big business.</li>
+    		</ul>
+    		</field>
+    		<field name="psychological" type="html">
+    		<ul>
+    			<li>Practical.</li>
+    			<li>Self-sufficient.</li>
+    			<li>Constructive.</li>
+    			<li>Committed.</li>
+    			<li>Satisfied.</li>
+    		</ul>
+    		</field>
+    		<field name="consumer" type="html">
+    		<ul>
+    			<li>Shop for comfort, durability, value.</li>
+    			<li>Unimpressed by luxuries.</li>
+    			<li>Buy the basics.</li>
+    			<li>Listen to radio.</li>
+    			<li>Read auto, home mechanics, fishing, outdoors magazines.</li>
+    		</ul>
+    		</field>    	
+    	</record>
+    	
+    	
+    <record id="segment_survivors" model="lean_marketing.segment">
+    		<field name="name">Survivors</field>
+    		<field name="distribution">(14% of pop.)</field>
+    		<field name="lifestyle" type="html">
+    		<ul>
+    			<li>Limited interests and activities.</li>
+    			<li>Prime concerns are safety and security.</li>
+    			<li>Burdened with health problems.</li>
+    			<li>Conservative and traditional.</li>
+    			<li>Rely on organized religion.</li>
+    		</ul>
+    		</field>
+    		<field name="psychological" type="html">
+    		<ul>
+    			<li>Powerless.</li>
+    			<li>Narrowly focused.</li>
+    			<li>Risk averse.</li>
+    			<li>Burdened.</li>
+    			<li>Conservative.</li>
+    		</ul>
+    		</field>
+    		<field name="consumer" type="html">
+    		<ul>
+    			<li>Brand loyal.</li>
+    			<li>Use coupons and watch for sales.</li>
+    			<li>Trust advertising.</li>
+    			<li>Watch TV often.</li>
+    			<li>Read tabloids and women's magazines.</li>
+    		</ul>
+    		</field>    	
+    	</record>
+    
+    </data>
+</odoo>

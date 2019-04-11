@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-04 03:25+0000\n"
-"PO-Revision-Date: 2019-04-03 21:39-0600\n"
+"POT-Creation-Date: 2019-04-10 19:16+0000\n"
+"PO-Revision-Date: 2019-04-10 17:50-0500\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -23,6 +23,53 @@ msgid "# Children"
 msgstr "No. Hijos"
 
 #. module: marketing_buyer_persona
+#: model:lean_marketing.segment,distribution:marketing_buyer_persona.segment_thinkers
+msgid "(11% of pop.)"
+msgstr "(11% de la población.)"
+
+#. module: marketing_buyer_persona
+#: model:lean_marketing.segment,distribution:marketing_buyer_persona.segment_experiencers
+msgid "(12% of pop.)"
+msgstr "(12% de la población.)"
+
+#. module: marketing_buyer_persona
+#: model:lean_marketing.segment,distribution:marketing_buyer_persona.segment_achievers
+#: model:lean_marketing.segment,distribution:marketing_buyer_persona.segment_makers
+#: model:lean_marketing.segment,distribution:marketing_buyer_persona.segment_strivers
+msgid "(13% of pop.)"
+msgstr "(13% de la población.)"
+
+#. module: marketing_buyer_persona
+#: model:lean_marketing.segment,distribution:marketing_buyer_persona.segment_survivors
+msgid "(14% of pop.)"
+msgstr "(14% de la población.)"
+
+#. module: marketing_buyer_persona
+#: model:lean_marketing.segment,distribution:marketing_buyer_persona.segment_believers
+msgid "(16% of pop.)"
+msgstr "(16% de la población.)"
+
+#. module: marketing_buyer_persona
+#: model:lean_marketing.segment,distribution:marketing_buyer_persona.segment_innovators
+msgid "(8% of pop.)"
+msgstr "(8% de la población.)"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_thinkers
+msgid "Above average consumers of products for the home."
+msgstr "Consumidores por encima de la media de productos para el hogar."
+
+#. module: marketing_buyer_persona
+#: model:lean_marketing.segment,name:marketing_buyer_persona.segment_achievers
+msgid "Achievers"
+msgstr "Triunfadores"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_experiencers
+msgid "Active."
+msgstr "Activo."
+
+#. module: marketing_buyer_persona
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__age_max
 msgid "Age Max"
 msgstr "Edad Máxima"
@@ -31,6 +78,11 @@ msgstr "Edad Máxima"
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__age_min
 msgid "Age Min"
 msgstr "Edad Mínima"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_strivers
+msgid "Alienated."
+msgstr "Alienado."
 
 #. module: marketing_buyer_persona
 #: model:ir.model.fields,help:marketing_buyer_persona.field_lean_marketing_buyer_persona__lang
@@ -43,9 +95,44 @@ msgid "Annual Income"
 msgstr "Ingresos anuales"
 
 #. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_strivers
+msgid "Approval seeking."
+msgstr "Busca de aprobación"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_experiencers
+msgid "Attend to advertising."
+msgstr "Acepta publicidad."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_achievers
+msgid "Attracted to premium product."
+msgstr "Le atraen los productos premium."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_achievers
+msgid "Average TV watchers."
+msgstr "Espectador promedio de TV."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_achievers
+msgid "Avoid excess change or stimulation."
+msgstr "Evade la estimulación o el cambio excesivo."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_makers
+msgid "Avoid joining organizations except unions."
+msgstr "Evite unirse a organizaciones excepto sindicatos."
+
+#. module: marketing_buyer_persona
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_form
 msgid "Background"
 msgstr "Antecedentes"
+
+#. module: marketing_buyer_persona
+#: model:lean_marketing.segment,name:marketing_buyer_persona.segment_believers
+msgid "Believers"
+msgstr "Creyentes"
 
 #. module: marketing_buyer_persona
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__bio
@@ -54,10 +141,40 @@ msgid "Bio"
 msgstr "Biografía"
 
 #. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_survivors
+msgid "Brand loyal."
+msgstr "Leal a marcas."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_survivors
+msgid "Burdened with health problems."
+msgstr "Cargado de problemas de salud."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_survivors
+msgid "Burdened."
+msgstr "Agobiado."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_believers
+msgid "Buy American."
+msgstr "Compra productos nacionales."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_experiencers
+msgid "Buy on impulse."
+msgstr "Compra impulsivamente."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_makers
+msgid "Buy the basics."
+msgstr "Compra lo básico"
+
+#. module: marketing_buyer_persona
 #: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_buyer_competence
 #: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_buyer_goal
 msgid "Buyer Goal"
-msgstr "Objetivo del consumidor"
+msgstr "Objetivo del consumidor."
 
 #. module: marketing_buyer_persona
 #: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_buyer_objection
@@ -68,7 +185,7 @@ msgstr "Objeción del consumidor"
 #: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_buyer_persona
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_form
 msgid "Buyer Persona"
-msgstr "Persona Consumidora"
+msgstr "Buyer Persona"
 
 #. module: marketing_buyer_persona
 #: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_buyer_preferences
@@ -96,6 +213,11 @@ msgid "Buyers Persona"
 msgstr "Personas consumidoras"
 
 #. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_believers
+msgid "Cautious."
+msgstr "Cauteloso"
+
+#. module: marketing_buyer_persona
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__city
 msgid "City"
 msgstr "Ciudad"
@@ -108,15 +230,52 @@ msgstr "Ciudad"
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_preferences__color
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_content_type__color
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_meeting_place__color
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_segment__color
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_social_media_preference__color
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__color
 msgid "Color Index"
 msgstr "Índice de Colores"
 
 #. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_makers
+msgid "Committed."
+msgstr "Comprometido."
+
+#. module: marketing_buyer_persona
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__company_id
 msgid "Company"
 msgstr "Compañía"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_experiencers
+msgid "Concerned about image."
+msgstr "Preocupado por la imagen."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_believers
+msgid "Conforming."
+msgstr ""
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_survivors
+msgid "Conservative and traditional."
+msgstr ""
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_survivors
+msgid "Conservative."
+msgstr "Conservador."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_makers
+msgid "Constructive."
+msgstr "Constructivo."
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_segment__consumer
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_segment_view_form
+msgid "Consumer Characteristics"
+msgstr ""
 
 #. module: marketing_buyer_persona
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_form
@@ -139,6 +298,11 @@ msgid "Content type name already exists !"
 msgstr "El tipo de contenido ta existe"
 
 #. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_achievers
+msgid "Conventional."
+msgstr "Convencional."
+
+#. module: marketing_buyer_persona
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__country_id
 msgid "Country"
 msgstr "País"
@@ -147,6 +311,11 @@ msgstr "País"
 #: model_terms:ir.actions.act_window,help:marketing_buyer_persona.action_lean_marketing_buyer_persona_form
 msgid "Create a new buyer persona"
 msgstr "Crea una nueba persona consumidora"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.actions.act_window,help:marketing_buyer_persona.action_lean_marketing_segment_form
+msgid "Create a new segment"
+msgstr "Crear un nuevo segmento"
 
 #. module: marketing_buyer_persona
 #: model_terms:ir.actions.act_window,help:marketing_buyer_persona.action_lean_marketing_tribe_form
@@ -161,6 +330,7 @@ msgstr "Crea una nueva tribu"
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_preferences__create_uid
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_content_type__create_uid
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_meeting_place__create_uid
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_segment__create_uid
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_social_media_preference__create_uid
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__create_uid
 msgid "Created by"
@@ -174,6 +344,7 @@ msgstr "Creado por"
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_preferences__create_date
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_content_type__create_date
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_meeting_place__create_date
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_segment__create_date
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_social_media_preference__create_date
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__create_date
 msgid "Created on"
@@ -186,9 +357,15 @@ msgstr "Moneda"
 
 #. module: marketing_buyer_persona
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_segment_view_kanban
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_tribe_view_kanban
 msgid "Delete"
 msgstr "Suprimir"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_achievers
+msgid "Deliberate."
+msgstr "Deliberar."
 
 #. module: marketing_buyer_persona
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_form
@@ -208,10 +385,26 @@ msgstr "Descripción"
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_preferences__display_name
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_content_type__display_name
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_meeting_place__display_name
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_segment__display_name
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_social_media_preference__display_name
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__display_name
 msgid "Display Name"
 msgstr "Nombre mostrado"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_strivers
+msgid "Dissatisfied."
+msgstr "Insatisfecho.."
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_segment__distribution
+msgid "Distribution"
+msgstr "Distribución"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_makers
+msgid "Distrust politicians, foreigners, and big business."
+msgstr "Desconfía de los políticos, los extranjeros, y las grandes empresas."
 
 #. module: marketing_buyer_persona
 #: selection:lean_marketing.buyer_persona,status:0
@@ -220,15 +413,62 @@ msgstr "Divorciado"
 
 #. module: marketing_buyer_persona
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_segment_view_kanban
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_tribe_view_kanban
 msgid "Dropdown menu"
 msgstr "Menú desplegable"
 
 #. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_strivers
+msgid "Easily bored"
+msgstr "Se aburre fácilmente"
+
+#. module: marketing_buyer_persona
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_segment_view_kanban
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_tribe_view_kanban
 msgid "Edit"
 msgstr "Editar"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_experiencers
+msgid "Energetic."
+msgstr "Energético."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_makers
+msgid "Enjoy outdoors."
+msgstr "Disfruta al aire libre"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_believers
+msgid "Enjoy settled, comfortable, predictable existence."
+msgstr "Disfruta de una vida estable, cómoda y predecible."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_innovators
+msgid "Enjoy the \"finer things\""
+msgstr "Disfruta de las \"cosas buenas\""
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_experiencers
+msgid "Enthusiastic and impulsive."
+msgstr "Entusiasta e impulsivo."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_innovators
+msgid "Established &amp; emerging leaders in business &amp; government."
+msgstr "Establecido,  líderazgo emergentes en los negocios y el gobierno."
+
+#. module: marketing_buyer_persona
+#: model:lean_marketing.segment,name:marketing_buyer_persona.segment_experiencers
+msgid "Experiencers"
+msgstr "Vividores de experiencias"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_experiencers
+msgid "Extraverted."
+msgstr "Extravertido."
 
 #. module: marketing_buyer_persona
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.view_lean_marketing_buyer_persona_select
@@ -237,20 +477,30 @@ msgid "Female"
 msgstr "Mujer"
 
 #. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_experiencers
+msgid "Follow fashion and fads."
+msgstr "Sigue la moda y las tendencias."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_innovators
+msgid "Frequent readers of a wide variety of publications."
+msgstr "Lectores frecuentes de una amplia variedad de publicaciones."
+
+#. module: marketing_buyer_persona
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__gender
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.view_lean_marketing_buyer_persona_select
 msgid "Gender"
 msgstr "Género"
 
 #. module: marketing_buyer_persona
-#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_kanban
-msgid "Gender:"
-msgstr "Género:"
-
-#. module: marketing_buyer_persona
 #: sql_constraint:lean_marketing.buyer_goal:0
 msgid "Goal name already exists !"
 msgstr "El objetivo ya existe"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_achievers
+msgid "Goal oriented."
+msgstr "Orientado a objetivos."
 
 #. module: marketing_buyer_persona
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__goal_ids
@@ -263,6 +513,26 @@ msgid "Group By"
 msgstr "Agrupar por"
 
 #. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_innovators
+msgid "Growth oriented."
+msgstr "Orientado a crecimiento."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_achievers
+msgid "Have formal social relations."
+msgstr "Tener relaciones sociales formales."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_thinkers
+msgid "Health conscious."
+msgstr "Conciencia de salud."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_innovators
+msgid "Highly social."
+msgstr "Altamente social."
+
+#. module: marketing_buyer_persona
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_competence__id
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_goal__id
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_objection__id
@@ -270,6 +540,7 @@ msgstr "Agrupar por"
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_preferences__id
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_content_type__id
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_meeting_place__id
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_segment__id
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_social_media_preference__id
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__id
 msgid "ID"
@@ -279,6 +550,41 @@ msgstr ""
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__image
 msgid "Image"
 msgstr "Imagen"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_strivers
+msgid "Image conscious."
+msgstr "Consciente de su imágen."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_experiencers
+msgid "Impetuous."
+msgstr "Impetuoso."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_strivers
+msgid "Impulsive."
+msgstr "Impulsivo."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_achievers
+msgid "In control."
+msgstr "En control."
+
+#. module: marketing_buyer_persona
+#: model:lean_marketing.segment,name:marketing_buyer_persona.segment_innovators
+msgid "Innovators"
+msgstr "Innovadores"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_thinkers
+msgid "Intrinsically motivated."
+msgstr "Auto motivado."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_innovators
+msgid "Involved."
+msgstr "Involucrado."
 
 #. module: marketing_buyer_persona
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__function
@@ -299,6 +605,7 @@ msgstr "Idioma"
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_preferences____last_update
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_content_type____last_update
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_meeting_place____last_update
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_segment____last_update
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_social_media_preference____last_update
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe____last_update
 msgid "Last Modified on"
@@ -312,6 +619,7 @@ msgstr "Última modificación en"
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_preferences__write_uid
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_content_type__write_uid
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_meeting_place__write_uid
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_segment__write_uid
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_social_media_preference__write_uid
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__write_uid
 msgid "Last Updated by"
@@ -325,6 +633,7 @@ msgstr "Última actualización por"
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_preferences__write_date
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_content_type__write_date
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_meeting_place__write_date
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_segment__write_date
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_social_media_preference__write_date
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__write_date
 msgid "Last Updated on"
@@ -336,9 +645,92 @@ msgid "Lean Marketing Plan"
 msgstr "Plan de Marquetin Magro"
 
 #. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_thinkers
+msgid "Leisure centers on home."
+msgstr "Centros de ocio en el hogar."
+
+#. module: marketing_buyer_persona
+#: model:ir.actions.act_window,name:marketing_buyer_persona.action_lean_marketing_segment_form
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_segment__lifestyle
+#: model:ir.ui.menu,name:marketing_buyer_persona.menu_lean_marketing_segment
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_segment_view_form
+msgid "Lifestyle Characteristics"
+msgstr "Características de estilo de vida"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_innovators
+msgid "Light TV viewers."
+msgstr "Espectador de TV ligero."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_thinkers
+msgid "Like educational and public affairs."
+msgstr "Como la educación y los asuntos públicos."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_experiencers
+msgid "Like exercise, socializing, sports, and outdoors."
+msgstr "Gusta del ejercicio, la socialización, el deporte y el aire libre."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_experiencers
+msgid "Like the new, offbeat, and risky."
+msgstr "Gusta de lo nuevo, poco convencional, y arriesgado."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_strivers
+msgid "Limited discretionary income, but carry credit balances."
+msgstr "Ingresos discrecionales limitados, pero con saldos de crédito."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_survivors
+msgid "Limited interests and activities."
+msgstr "Intereses y actividades limitados."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_makers
+msgid "Listen to radio."
+msgstr "Escuchar la radio"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_experiencers
+msgid "Listen to rock music"
+msgstr "Escuchar musica rock"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_thinkers
+msgid "Little interest in image or prestige."
+msgstr "Poco interés por la imagen o el prestigio."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_achievers
+msgid "Lives center on career &amp; famly."
+msgstr "Su prioridad es su de carrera y familia."
+
+#. module: marketing_buyer_persona
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_form
 msgid "Location"
 msgstr "Ubicación"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_believers
+msgid "Look for bargains."
+msgstr "Busque ofertas."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_thinkers
+msgid "Look for value &amp; durability."
+msgstr "Busque valor y durabilidad."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_strivers
+msgid "Look to peer group for motivation and approval"
+msgstr "Mira al grupo de compañeros para la motivación y aprobación."
+
+#. module: marketing_buyer_persona
+#: model:lean_marketing.segment,name:marketing_buyer_persona.segment_makers
+msgid "Makers"
+msgstr "Creadores"
 
 #. module: marketing_buyer_persona
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.view_lean_marketing_buyer_persona_select
@@ -350,6 +742,16 @@ msgstr "Hombre"
 #: selection:lean_marketing.buyer_persona,status:0
 msgid "Married"
 msgstr "Casado"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_thinkers
+msgid "Mature."
+msgstr "Maduro."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_achievers
+msgid "May emphasize work at the expense of recreation."
+msgstr "Puede enfatizar el trabajo a costa de la recreación."
 
 #. module: marketing_buyer_persona
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__image_medium
@@ -378,10 +780,27 @@ msgid "Meeting place name already exists !"
 msgstr "El lugar de reunión ya existe"
 
 #. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_segment__members_ids
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__members_ids
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_segment_view_form
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_tribe_view_form
 msgid "Members"
 msgstr "Miembros"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_achievers
+msgid "Moderate."
+msgstr "Moderado."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_thinkers
+msgid "Moderately active in community and politics."
+msgstr "Moderadamente activo en la comunidad y en la política."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_believers
+msgid "Moralistic."
+msgstr "Moralizador."
 
 #. module: marketing_buyer_persona
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_competence__name
@@ -389,6 +808,7 @@ msgstr "Miembros"
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_objection__name
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_preferences__name
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_content_type__name
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_segment__name
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_social_media_preference__name
 msgid "Name"
 msgstr "Nombre"
@@ -399,9 +819,24 @@ msgid "Name of the Buyer Persona"
 msgstr "Nombre de la Persona Consumidora"
 
 #. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_segment_view_form
+msgid "Name of the Segment"
+msgstr "Nombre del Segmento"
+
+#. module: marketing_buyer_persona
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_tribe_view_form
 msgid "Name of the Tribe"
 msgstr "Nombre de la tribu"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_strivers
+msgid "Narrow interests"
+msgstr "Intereses estrechos"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_survivors
+msgid "Narrowly focused."
+msgstr "Estrechamente enfocado."
 
 #. module: marketing_buyer_persona
 #: sql_constraint:lean_marketing.buyer_objection:0
@@ -417,8 +852,30 @@ msgstr "Objeciones"
 #. module: marketing_buyer_persona
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_kanban
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_plan_buyers_view_form
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_segment_view_form
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_tribe_view_form
 msgid "Open"
 msgstr "Abierto"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_innovators
+msgid "Open to change."
+msgstr "Abierto al cambio."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_thinkers
+msgid "Open-minded."
+msgstr "Mente abierta."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_innovators
+msgid "Optimistic."
+msgstr "Optimista."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_innovators
+msgid "Outgoing."
+msgstr "Extrovertido"
 
 #. module: marketing_buyer_persona
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_form
@@ -433,9 +890,137 @@ msgid "Place Name"
 msgstr "Nombre del lugar"
 
 #. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_strivers
+msgid "Politically apathetic"
+msgstr "Políticamente apático"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_experiencers
+msgid "Politically apathetic."
+msgstr "Políticamente apático."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_achievers
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_believers
+msgid "Politically conservative."
+msgstr "Políticamente conservador."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_thinkers
+msgid "Politically moderate and tolerant."
+msgstr "Políticamente moderado y tolerante."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_innovators
+msgid "Politically very active."
+msgstr "Políticamente muy activo."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_survivors
+msgid "Powerless."
+msgstr "Impotente."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_makers
+msgid "Practical."
+msgstr "Práctico."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_makers
+msgid "Prefer \"hands on\" activities."
+msgstr "Prefier actividades manuales."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_strivers
+msgid "Prefer TV to reading."
+msgstr "Prefiero la televisión a la lectura."
+
+#. module: marketing_buyer_persona
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_form
 msgid "Preferences"
 msgstr "Preferencias"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_survivors
+msgid "Prime concerns are safety and security."
+msgstr "Las principales preocupaciones son la seguridad y la seguridad."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_achievers
+msgid "Prime target for a variety of products."
+msgstr "Primer objetivo para una variedad de productos."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_thinkers
+msgid "Programming on TV."
+msgstr "Programación en TV."
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_segment__psychological
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_segment_view_form
+msgid "Psychological Characteristics"
+msgstr "Caracteristicas psicologicas"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_makers
+msgid "Read auto, home mechanics, fishing, outdoors magazines."
+msgstr "Lee revistas sobre autos, mantenimiento del hogar, pesca, al aire libre."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_achievers
+msgid "Read business, news, and self-help publications."
+msgstr "Lee publicaciones de negocios, noticias y autoayuda."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_believers
+msgid "Read retirement, home and garden, and general interest magazines."
+msgstr "Lee revistas de jubilación, hogar y jardín, y de interés general."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_survivors
+msgid "Read tabloids and women's magazines."
+msgstr "Leer tabloides y revistas de mujeres."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_thinkers
+msgid "Read widely and often."
+msgstr "Leer ampliamente y con frecuencia."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_believers
+msgid "Reasonably well informed."
+msgstr "Razonablemente bien informado."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_innovators
+msgid "Receptive to new products, technologies, distribution."
+msgstr "Receptivo a nuevos productos, tecnologías, distribución."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_thinkers
+msgid "Reflective."
+msgstr "Pensadore."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_survivors
+msgid "Rely on organized religion."
+msgstr "Confía en la religión organizada."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_believers
+msgid "Respect rules and trust authority figures."
+msgstr "Respeta las reglas y confiar en las figuras de autoridad."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_survivors
+msgid "Risk averse."
+msgstr "Aversión al riesgo."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_makers
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_thinkers
+msgid "Satisfied."
+msgstr "Satisfecho."
 
 #. module: marketing_buyer_persona
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.view_lean_marketing_buyer_persona_select
@@ -443,9 +1028,55 @@ msgid "Search Buyers Persona"
 msgstr "Buscar a la Persona Consumidora"
 
 #. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__segment_id
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_segment_view_tree
+msgid "Segment"
+msgstr "Segmento"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_form
+msgid "Segment VALS2"
+msgstr "Segmento VALS2"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_kanban
+msgid "Segment:"
+msgstr "Segmento:"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_innovators
+msgid "Self-confident."
+msgstr "Seguro de sí mismo."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_makers
+msgid "Self-sufficient."
+msgstr "Autosuficiente."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_believers
+msgid "Settled."
+msgstr "Resuelto."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_makers
+msgid "Shop for comfort, durability, value."
+msgstr "Compra basado en  confort, durabilidad, valor."
+
+#. module: marketing_buyer_persona
 #: selection:lean_marketing.buyer_persona,status:0
 msgid "Single"
 msgstr "Soltero"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_innovators
+msgid "Skeptical of advertising."
+msgstr "Escéptico de la publicidad."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_believers
+msgid "Slow to change habits."
+msgstr "Lento para cambiar hábitos."
 
 #. module: marketing_buyer_persona
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__image_small
@@ -470,6 +1101,31 @@ msgid "Social Media name already exists !"
 msgstr "Ya existe el Medio Social"
 
 #. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_believers
+msgid "Socialize within family and established groups."
+msgstr "Socializar dentro de la familia y grupos establecidos."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_strivers
+msgid "Somewhat isolated"
+msgstr "Algo aislado"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_makers
+msgid "Spend leisure with family and close friends."
+msgstr "Pasa el tiempo libre con la familia y amigos cercanos."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_experiencers
+msgid "Spend much of disposable income on socializing."
+msgstr "Gastar gran parte de los ingresos disponibles en la socialización."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_strivers
+msgid "Spend on clothing and personal care products."
+msgstr "Gasta en ropa y productos de cuidado personal."
+
+#. module: marketing_buyer_persona
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__state_id
 msgid "State"
 msgstr "Estado"
@@ -478,13 +1134,33 @@ msgstr "Estado"
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__status
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.view_lean_marketing_buyer_persona_select
 msgid "Status"
-msgstr "Estado Civil"
+msgstr "Estado"
 
 #. module: marketing_buyer_persona
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_kanban
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_plan_buyers_view_form
 msgid "Status:"
 msgstr "Estado Civil:"
+
+#. module: marketing_buyer_persona
+#: model:lean_marketing.segment,name:marketing_buyer_persona.segment_strivers
+msgid "Strivers"
+msgstr "Esforzados"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_innovators
+msgid "Successful, sophisticated."
+msgstr "Exitoso, sofisticado."
+
+#. module: marketing_buyer_persona
+#: model:lean_marketing.segment,name:marketing_buyer_persona.segment_survivors
+msgid "Survivors"
+msgstr "Sobrevivientes"
+
+#. module: marketing_buyer_persona
+#: model:lean_marketing.segment,name:marketing_buyer_persona.segment_thinkers
+msgid "Thinkers"
+msgstr "Pensadores"
 
 #. module: marketing_buyer_persona
 #: model:ir.model.fields,help:marketing_buyer_persona.field_lean_marketing_buyer_persona__image
@@ -495,6 +1171,11 @@ msgstr "Este campo contiene la imagen utilizada como avatar para este contacto, 
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__title
 msgid "Title"
 msgstr "Título"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_believers
+msgid "Traditional."
+msgstr "Tradicional."
 
 #. module: marketing_buyer_persona
 #: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_tribe
@@ -518,6 +1199,91 @@ msgid "Tribes"
 msgstr "Tribus"
 
 #. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_survivors
+msgid "Trust advertising."
+msgstr "Confíe en la publicidad."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_strivers
+msgid "Unconcerned about health and nutrition"
+msgstr "Unconcerned about health and nutrition"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_experiencers
+msgid "Unconforming, but admire wealth, power, and fame."
+msgstr "No está conforme, pero admira la riqueza, el poder y la fama."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_experiencers
+msgid "Unconventional."
+msgstr "Unconventional."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_makers
+msgid "Unimpressed by luxuries."
+msgstr "No impresionado por los lujos."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_strivers
+msgid "Unsure."
+msgstr "Inseguro."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_survivors
+msgid "Use coupons and watch for sales."
+msgstr "Usa cupones y busca ofertas."
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_form
+msgid "VALS2:"
+msgstr ""
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_thinkers
+msgid "Value education &amp; travel."
+msgstr "Valora la educación y viajes."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_thinkers
+msgid "Value order, knowledge, and responsibility."
+msgstr "Valora el orden, conocimiento y responsabilidad."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_innovators
+msgid "Value personal growth."
+msgstr "Valora el crecimiento personal."
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_segment_view_form
+msgid "Values and Lifestyles"
+msgstr "Valores y estilos de vida"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_believers
+msgid "Watch TV more than average."
+msgstr "Ve la televisión más de lo normal."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_survivors
+msgid "Watch TV often."
+msgstr "Ver la televisión a menudo."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_innovators
+msgid "Well informed, concerned with social issues."
+msgstr "Bien informado, preocupado por las cuestiones sociales."
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_innovators
+msgid "Wide intellectual interests"
+msgstr "Amplios intereses intelectuales"
+
+#. module: marketing_buyer_persona
+#: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_innovators
+msgid "Wide intellectual interests."
+msgstr "Amplios intereses intelectuales."
+
+#. module: marketing_buyer_persona
 #: selection:lean_marketing.buyer_persona,status:0
 msgid "Widower"
 msgstr "Vudo"
@@ -531,3 +1297,8 @@ msgstr "C.P."
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_tribe_view_form
 msgid "description"
 msgstr "descripción"
+
+#. module: marketing_buyer_persona
+#: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_segment
+msgid "lean_marketing.segment"
+msgstr ""
