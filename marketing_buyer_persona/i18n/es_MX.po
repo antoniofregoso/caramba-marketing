@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-10 19:16+0000\n"
-"PO-Revision-Date: 2019-04-10 17:50-0500\n"
+"POT-Creation-Date: 2019-04-11 21:58+0000\n"
+"PO-Revision-Date: 2019-04-11 17:03-0500\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -58,6 +58,11 @@ msgstr "(8% de la población.)"
 #: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_thinkers
 msgid "Above average consumers of products for the home."
 msgstr "Consumidores por encima de la media de productos para el hogar."
+
+#. module: marketing_buyer_persona
+#: selection:lean_marketing.segment,primary_motivation:0
+msgid "Achievement"
+msgstr "Logros"
 
 #. module: marketing_buyer_persona
 #: model:lean_marketing.segment,name:marketing_buyer_persona.segment_achievers
@@ -185,7 +190,7 @@ msgstr "Objeción del consumidor"
 #: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_buyer_persona
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_form
 msgid "Buyer Persona"
-msgstr "Buyer Persona"
+msgstr ""
 
 #. module: marketing_buyer_persona
 #: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_buyer_preferences
@@ -254,12 +259,12 @@ msgstr "Preocupado por la imagen."
 #. module: marketing_buyer_persona
 #: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_believers
 msgid "Conforming."
-msgstr ""
+msgstr "Conformista."
 
 #. module: marketing_buyer_persona
 #: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_survivors
 msgid "Conservative and traditional."
-msgstr ""
+msgstr "Conservador y tradicionalista."
 
 #. module: marketing_buyer_persona
 #: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_survivors
@@ -275,7 +280,7 @@ msgstr "Constructivo."
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_segment__consumer
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_segment_view_form
 msgid "Consumer Characteristics"
-msgstr ""
+msgstr "Características de consumo"
 
 #. module: marketing_buyer_persona
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_form
@@ -528,6 +533,11 @@ msgid "Health conscious."
 msgstr "Conciencia de salud."
 
 #. module: marketing_buyer_persona
+#: selection:lean_marketing.segment,resources:0
+msgid "High Resources"
+msgstr "Recursos altos"
+
+#. module: marketing_buyer_persona
 #: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_innovators
 msgid "Highly social."
 msgstr "Altamente social."
@@ -545,6 +555,11 @@ msgstr "Altamente social."
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__id
 msgid "ID"
 msgstr ""
+
+#. module: marketing_buyer_persona
+#: selection:lean_marketing.segment,primary_motivation:0
+msgid "Ideals"
+msgstr "Idealista"
 
 #. module: marketing_buyer_persona
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__image
@@ -726,6 +741,11 @@ msgstr "Busque valor y durabilidad."
 #: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_strivers
 msgid "Look to peer group for motivation and approval"
 msgstr "Mira al grupo de compañeros para la motivación y aprobación."
+
+#. module: marketing_buyer_persona
+#: selection:lean_marketing.segment,resources:0
+msgid "Low Resources"
+msgstr "Bajos recursos"
 
 #. module: marketing_buyer_persona
 #: model:lean_marketing.segment,name:marketing_buyer_persona.segment_makers
@@ -941,6 +961,11 @@ msgid "Preferences"
 msgstr "Preferencias"
 
 #. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_segment__primary_motivation
+msgid "Primary Motivation"
+msgstr "Motivación primaria"
+
+#. module: marketing_buyer_persona
 #: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_survivors
 msgid "Prime concerns are safety and security."
 msgstr "Las principales preocupaciones son la seguridad y la seguridad."
@@ -1007,6 +1032,11 @@ msgid "Rely on organized religion."
 msgstr "Confía en la religión organizada."
 
 #. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_segment__resources
+msgid "Resources"
+msgstr "Recursos"
+
+#. module: marketing_buyer_persona
 #: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_believers
 msgid "Respect rules and trust authority figures."
 msgstr "Respeta las reglas y confiar en las figuras de autoridad."
@@ -1042,6 +1072,11 @@ msgstr "Segmento VALS2"
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_kanban
 msgid "Segment:"
 msgstr "Segmento:"
+
+#. module: marketing_buyer_persona
+#: selection:lean_marketing.segment,primary_motivation:0
+msgid "Self-Expresion"
+msgstr "Autoexpresión"
 
 #. module: marketing_buyer_persona
 #: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_innovators
@@ -1206,7 +1241,7 @@ msgstr "Confíe en la publicidad."
 #. module: marketing_buyer_persona
 #: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_strivers
 msgid "Unconcerned about health and nutrition"
-msgstr "Unconcerned about health and nutrition"
+msgstr "Sin preocuparse por la salud y la nutrición."
 
 #. module: marketing_buyer_persona
 #: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_experiencers
@@ -1216,7 +1251,7 @@ msgstr "No está conforme, pero admira la riqueza, el poder y la fama."
 #. module: marketing_buyer_persona
 #: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_experiencers
 msgid "Unconventional."
-msgstr "Unconventional."
+msgstr "Poco convencional."
 
 #. module: marketing_buyer_persona
 #: model_terms:lean_marketing.segment,consumer:marketing_buyer_persona.segment_makers
