@@ -92,6 +92,8 @@ class Segment(models.Model):
     
     name = fields.Char('Name', required=True, translate=True)
     distribution = fields.Char('Distribution', translate=True)
+    primary_motivation = fields.Selection([('ideals', 'Ideals'), ('achievement', 'Achievement'), ('self-expression', 'Self-Expresion')], 'Primary Motivation', translate=True)
+    resources = fields.Selection([('high-resources','High Resources'),('low-resources', 'Low Resources')], 'Resources', translate=True)
     lifestyle = fields.Html('Lifestyle Characteristics', translate=True)
     psychological  = fields.Html('Psychological Characteristics', translate=True)
     consumer = fields.Html('Consumer Characteristics', translate=True)

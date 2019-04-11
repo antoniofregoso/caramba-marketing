@@ -5,6 +5,8 @@
     	<record id="segment_innovators" model="lean_marketing.segment">
     		<field name="name">Innovators</field>
     		<field name="distribution">(8% of pop.)</field>
+    		<field name="resources">high-resources</field>    		
+    		<field name="color">10</field>
     		<field name="lifestyle" type="html">
     		<ul>
     			<li>Successful, sophisticated.</li>
@@ -41,6 +43,8 @@
     	<record id="segment_thinkers" model="lean_marketing.segment">
     		<field name="name">Thinkers</field>
     		<field name="distribution">(11% of pop.)</field>
+    		<field name="primary_motivation">ideals</field> 		
+    		<field name="color">4</field>
     		<field name="lifestyle" type="html">
     		<ul>
     			<li>Moderately active in community and politics.</li>
@@ -75,6 +79,8 @@
     	<record id="segment_achievers" model="lean_marketing.segment">
     		<field name="name">Achievers</field>
     		<field name="distribution">(13% of pop.)</field>
+    		<field name="primary_motivation">achievement</field> 		
+    		<field name="color">5</field>
     		<field name="lifestyle" type="html">
     		<ul>
     			<li>Lives center on career &amp; famly.</li>
@@ -106,6 +112,8 @@
     	<record id="segment_experiencers" model="lean_marketing.segment">
     		<field name="name">Experiencers</field>
     		<field name="distribution">(12% of pop.)</field>
+    		<field name="primary_motivation">self-expression</field>	
+    		<field name="color">3</field>
     		<field name="lifestyle" type="html">
     		<ul>
     			<li>Like the new, offbeat, and risky.</li>
@@ -139,6 +147,8 @@
     	<record id="segment_believers" model="lean_marketing.segment">
     		<field name="name">Believers</field>
     		<field name="distribution">(16% of pop.)</field>
+    		<field name="primary_motivation">ideals</field>	
+    		<field name="color">4</field>
     		<field name="lifestyle" type="html">
     		<ul>
     			<li>Respect rules and trust authority figures.</li>
@@ -171,6 +181,8 @@
     	<record id="segment_strivers" model="lean_marketing.segment">
     		<field name="name">Strivers</field>
     		<field name="distribution">(13% of pop.)</field>
+    		<field name="primary_motivation">achievement</field>	
+    		<field name="color">5</field>
     		<field name="lifestyle" type="html">
     		<ul>
     			<li>Narrow interests</li>
@@ -204,6 +216,8 @@
     	<record id="segment_makers" model="lean_marketing.segment">
     		<field name="name">Makers</field>
     		<field name="distribution">(13% of pop.)</field>
+    		<field name="primary_motivation">self-expression</field>		
+    		<field name="color">3</field>
     		<field name="lifestyle" type="html">
     		<ul>
     			<li>Enjoy outdoors.</li>
@@ -237,6 +251,8 @@
     <record id="segment_survivors" model="lean_marketing.segment">
     		<field name="name">Survivors</field>
     		<field name="distribution">(14% of pop.)</field>
+    		<field name="resources">low-resources</field>	
+    		<field name="color">9</field>
     		<field name="lifestyle" type="html">
     		<ul>
     			<li>Limited interests and activities.</li>

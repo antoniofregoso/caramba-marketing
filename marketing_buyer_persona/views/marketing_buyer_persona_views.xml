@@ -26,6 +26,14 @@
                         <h1><field name="name" placeholder="Name of the Segment" nolabel="1"/></h1>
                         <h4><field name="distribution" /></h4>                        
                     </div>
+                    <group>
+                    	<group>
+                    		<field name="primary_motivation" />
+                    	</group>
+                    	<group>
+                    		<field name="resources" />
+                    	</group>
+                    </group>
             		<group>
             			<group string="Lifestyle Characteristics">
             				<field name="lifestyle" widget="html" nolabel="1"/>
@@ -101,7 +109,10 @@
                                         <field name="name"/>
                                     </a>
                                 </h4> 
-                                
+                                <ul>
+                                	<li>Primary Motivation: <field name="primary_motivation" /></li>
+                                	<li>Resources: <field name="resources" /></li>
+                                </ul>                                
                                  </div>                             
                         		<div class="oe_clear"/>
                             </div>
