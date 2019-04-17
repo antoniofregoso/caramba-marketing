@@ -30,7 +30,7 @@ class MeetingContentType(models.Model):
 class SocialMediaPreference(models.Model):
 
     _name = "lean_marketing.social_media_preference"
-    _description = "Social Media Preferences"
+    _description = "Social Media Preference"
 
     name = fields.Char('Name', required=True, translate=True)
     color = fields.Integer('Color Index')
@@ -78,7 +78,7 @@ class Preference(models.Model):
 class Competence(models.Model):
 
     _name = "lean_marketing.buyer_competence"
-    _description = "Buyer Goal"
+    _description = "Buyer Competence"
 
     name = fields.Char('Name', required=True, translate=True)
     color = fields.Integer('Color Index')

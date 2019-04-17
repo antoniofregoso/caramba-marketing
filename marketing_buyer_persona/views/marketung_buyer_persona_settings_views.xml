@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+         <menuitem id="menu_lean_marketing_buyer persona_config" name="Buyers Persona"
+            parent="lean_marketing.lean_marketing_menu_config"
+            sequence="4"/>
+         <!-- Meeting Place -->
+         
+                 <record id="lean_marketing_meeting_place_form" model="ir.ui.view">
+            <field name="name">lean_marketing.meeting_place.form</field>
+            <field name="model">lean_marketing.meeting_place</field>
+            <field name="arch" type="xml">
+                <form string="Meeting Place">
+                    <group>
+                        <field name="name"/>
+                        <field name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="lean_marketing_meeting_place_tree" model="ir.ui.view">
+            <field name="name">lean_marketing.meeting_place.tree</field>
+            <field name="model">lean_marketing.meeting_place</field>
+            <field name="arch" type="xml">
+                <tree string="Meeting Places">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="lean_marketing_meeting_place_action" model="ir.actions.act_window">
+            <field name="name">Meeting Places</field>
+            <field name="res_model">lean_marketing.meeting_place</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="lean_marketing_meeting_place_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new meeting place
+              </p><p>
+                Create tags that fit your brands to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_lean_marketing_meeting_place"
+            name="Meeting Places"
+            action="lean_marketing_meeting_place_action"
+            parent="menu_lean_marketing_buyer persona_config"
+            sequence="1"/>
+            
+            
+          <!-- Content Type -->
+         
+          <record id="lean_marketing_content_type_form" model="ir.ui.view">
+            <field name="name">lean_marketing.content_type.form</field>
+            <field name="model">lean_marketing.content_type</field>
+            <field name="arch" type="xml">
+                <form string="Content Type">
+                    <group>
+                        <field name="name"/>
+                        <field name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="lean_marketing_content_type_tree" model="ir.ui.view">
+            <field name="name">lean_marketing.content_type.tree</field>
+            <field name="model">lean_marketing.content_type</field>
+            <field name="arch" type="xml">
+                <tree string="Content Types">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="lean_marketing_content_type_action" model="ir.actions.act_window">
+            <field name="name">Content Types</field>
+            <field name="res_model">lean_marketing.content_type</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="lean_marketing_content_type_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new content type
+              </p><p>
+                Create tags that fit your brands to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_lean_marketing_content_type"
+            name="Content Types"
+            action="lean_marketing_content_type_action"
+            parent="menu_lean_marketing_buyer persona_config"
+            sequence="2"/>
+            
+          <!-- Social Media Preference -->
+         
+          <record id="lean_marketing_social_media_preference_form" model="ir.ui.view">
+            <field name="name">lean_marketing.social_media_preference.form</field>
+            <field name="model">lean_marketing.social_media_preference</field>
+            <field name="arch" type="xml">
+                <form string="Social Media Preference">
+                    <group>
+                        <field name="name"/>
+                        <field name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="lean_marketing_social_media_preference_tree" model="ir.ui.view">
+            <field name="name">lean_marketing.social_media_preference.tree</field>
+            <field name="model">lean_marketing.social_media_preference</field>
+            <field name="arch" type="xml">
+                <tree string="Social Media Preferences">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="lean_marketing_social_media_preference_action" model="ir.actions.act_window">
+            <field name="name">Social Media Preferences</field>
+            <field name="res_model">lean_marketing.social_media_preference</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="lean_marketing_social_media_preference_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new social media preference
+              </p><p>
+                Create tags that fit your brands to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_lean_marketing_social_media_preference"
+            name="Social Media Preferences"
+            action="lean_marketing_social_media_preference_action"
+            parent="menu_lean_marketing_buyer persona_config"
+            sequence="3"/>
+            
+            
+                  <!-- Social Buyer Objection -->
+         
+          <record id="lean_marketing_buyer_objection_form" model="ir.ui.view">
+            <field name="name">lean_marketing.buyer_objection.form</field>
+            <field name="model">lean_marketing.buyer_objection</field>
+            <field name="arch" type="xml">
+                <form string="Buyer Objection">
+                    <group>
+                        <field name="name"/>
+                        <field name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="lean_marketing_buyer_objection_tree" model="ir.ui.view">
+            <field name="name">lean_marketing.buyer_objection.tree</field>
+            <field name="model">lean_marketing.buyer_objection</field>
+            <field name="arch" type="xml">
+                <tree string="Buyer Objections">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="lean_marketing_buyer_objection_action" model="ir.actions.act_window">
+            <field name="name">Buyer Objections</field>
+            <field name="res_model">lean_marketing.buyer_objection</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="lean_marketing_buyer_objection_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new buyer objection
+              </p><p>
+                Create tags that fit your brands to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_lean_marketing_buyer_objection"
+            name="Buyer Objections"
+            action="lean_marketing_buyer_objection_action"
+            parent="menu_lean_marketing_buyer persona_config"
+            sequence="4"/>
+            
+            
+                  <!-- Social Buyer Goal -->
+         
+          <record id="lean_marketing_buyer_goal_form" model="ir.ui.view">
+            <field name="name">lean_marketing.buyer_goal.form</field>
+            <field name="model">lean_marketing.buyer_goal</field>
+            <field name="arch" type="xml">
+                <form string="Buyer Goal">
+                    <group>
+                        <field name="name"/>
+                        <field name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="lean_marketing_buyer_goal_tree" model="ir.ui.view">
+            <field name="name">lean_marketing.buyer_goal.tree</field>
+            <field name="model">lean_marketing.buyer_goal</field>
+            <field name="arch" type="xml">
+                <tree string="Buyer Goals">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="lean_marketing_buyer_goal_action" model="ir.actions.act_window">
+            <field name="name">Buyer Goals</field>
+            <field name="res_model">lean_marketing.buyer_goal</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="lean_marketing_buyer_goal_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new buyer goal
+              </p><p>
+                Create tags that fit your brands to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_lean_marketing_buyer_goal"
+            name="Buyer Goals"
+            action="lean_marketing_buyer_goal_action"
+            parent="menu_lean_marketing_buyer persona_config"
+            sequence="5"/>
+
+            
+                  <!-- Social Buyer Preference -->
+         
+          <record id="lean_marketing_buyer_preferences_form" model="ir.ui.view">
+            <field name="name">lean_marketing.buyer_preferences.form</field>
+            <field name="model">lean_marketing.buyer_preferences</field>
+            <field name="arch" type="xml">
+                <form string="Buyer Preference">
+                    <group>
+                        <field name="name"/>
+                        <field name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="lean_marketing_buyer_preferences_tree" model="ir.ui.view">
+            <field name="name">lean_marketing.buyer_preferences.tree</field>
+            <field name="model">lean_marketing.buyer_preferences</field>
+            <field name="arch" type="xml">
+                <tree string="Buyer Preferences">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="lean_marketing_buyer_preferences_action" model="ir.actions.act_window">
+            <field name="name">Buyer Preferences</field>
+            <field name="res_model">lean_marketing.buyer_preferences</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="lean_marketing_buyer_preferences_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new buyer preference
+              </p><p>
+                Create tags that fit your brands to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_lean_marketing_buyer_preferences"
+            name="Buyer Preferences"
+            action="lean_marketing_buyer_preferences_action"
+            parent="menu_lean_marketing_buyer persona_config"
+            sequence="6"/>
+            
+                        
+                  <!-- Social Buyer Competence -->
+         
+          <record id="lean_marketing_buyer_competence_form" model="ir.ui.view">
+            <field name="name">lean_marketing.buyer_competence.form</field>
+            <field name="model">lean_marketing.buyer_competence</field>
+            <field name="arch" type="xml">
+                <form string="Buyer Competence">
+                    <group>
+                        <field name="name"/>
+                        <field name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="lean_marketing_buyer_competence_tree" model="ir.ui.view">
+            <field name="name">lean_marketing.buyer_competence.tree</field>
+            <field name="model">lean_marketing.buyer_competence</field>
+            <field name="arch" type="xml">
+                <tree string="Buyer Competences">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="lean_marketing_buyer_competence_action" model="ir.actions.act_window">
+            <field name="name">Buyer Competences</field>
+            <field name="res_model">lean_marketing.buyer_competence</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="lean_marketing_buyer_competence_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new buyer preference
+              </p><p>
+                Create tags that fit your brands to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_lean_marketing_buyer_competence"
+            name="Buyer Competences"
+            action="lean_marketing_buyer_competence_action"
+            parent="menu_lean_marketing_buyer persona_config"
+            sequence="7"/>
+
+</odoo>

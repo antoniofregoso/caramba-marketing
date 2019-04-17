@@ -142,7 +142,7 @@ class CustomerPain(models.Model):
     color = fields.Integer('Color Index')
 
     _sql_constraints = [
-        ('name_uniq', 'unique (name)', "Custumer pain name already exists !"),
+        ('name_uniq', 'unique (name)', "Customer pain name already exists !"),
     ]
 
 class CustomerGain(models.Model):

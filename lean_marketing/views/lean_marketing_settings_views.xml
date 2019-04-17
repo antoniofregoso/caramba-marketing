@@ -9,6 +9,10 @@
             parent="lean_marketing_menu_config"
             sequence="2"/>	
             
+         <menuitem id="menu_lean_marketing_solution_config" name="Solution Parameters"
+            parent="lean_marketing_menu_config"
+            sequence="3"/>
+            
   
             
             <!--
@@ -28,7 +32,7 @@
         </record>
 
         <record id="lean_marketing_brand_tag_tree" model="ir.ui.view">
-            <field name="name">clean_marketing.brand.tag.tree</field>
+            <field name="name">lean_marketing.brand.tag.tree</field>
             <field name="model">lean_marketing.brand.tag</field>
             <field name="arch" type="xml">
                 <tree string="Brand Tags">
@@ -207,6 +211,233 @@
             action="utm_term_action"
             parent="menu_lean_marketing_utm_config"
             sequence="4"/>
+            
+    <!-- Solution Parameters -->    
+    
+               
+        <record id="lean_marketing_custumer_job_form" model="ir.ui.view">
+            <field name="name">lean_marketing.solution.customer_job.form</field>
+            <field name="model">lean_marketing.solution.customer_job</field>
+            <field name="arch" type="xml">
+                <form string="customer Job">
+                    <group>
+                        <field name="name"/>
+                        <field name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="lean_marketing_custumer_job_tree" model="ir.ui.view">
+            <field name="name">lean_marketing.solution.customer_job.tree</field>
+            <field name="model">lean_marketing.solution.customer_job</field>
+            <field name="arch" type="xml">
+                <tree string="Customer Jobs">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="lean_marketing_custumer_job_action" model="ir.actions.act_window">
+            <field name="name">Customer Jobs</field>
+            <field name="res_model">lean_marketing.solution.customer_job</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="lean_marketing_custumer_job_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new custumer job
+              </p><p>
+                Create tags that fit your solution to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_lean_marketing_custumer_job_tag"
+            name="Customer Jobs"
+            action="lean_marketing_custumer_job_action"
+            parent="menu_lean_marketing_solution_config"
+            sequence="1"/>    
+        
+        
+                       
+        <record id="lean_marketing_customer_pain_form" model="ir.ui.view">
+            <field name="name">lean_marketing.solution.customer_pain.form</field>
+            <field name="model">lean_marketing.solution.customer_pain</field>
+            <field name="arch" type="xml">
+                <form string="Customer Pain">
+                    <group>
+                        <field name="name"/>
+                        <field name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="lean_marketing_customer_pain_tree" model="ir.ui.view">
+            <field name="name">lean_marketing.solution.customer_pain.tree</field>
+            <field name="model">lean_marketing.solution.customer_pain</field>
+            <field name="arch" type="xml">
+                <tree string="Customer Pains">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="lean_marketing_customer_pain_action" model="ir.actions.act_window">
+            <field name="name">Customer Pains</field>
+            <field name="res_model">lean_marketing.solution.customer_pain</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="lean_marketing_customer_pain_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new custumer pain
+              </p><p>
+                Create tags that fit your solution to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_lean_marketing_customer_pain_tag"
+            name="Customer Pains"
+            action="lean_marketing_customer_pain_action"
+            parent="menu_lean_marketing_solution_config"
+            sequence="2"/>    
       
+                             
+        <record id="lean_marketing_customer_gain_form" model="ir.ui.view">
+            <field name="name">lean_marketing.solution.customer_gain.form</field>
+            <field name="model">lean_marketing.solution.customer_gain</field>
+            <field name="arch" type="xml">
+                <form string="Customer Gain">
+                    <group>
+                        <field name="name"/>
+                        <field name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="lean_marketing_customer_gain_tree" model="ir.ui.view">
+            <field name="name">lean_marketing.solution.customer_gain.tree</field>
+            <field name="model">lean_marketing.solution.customer_gain</field>
+            <field name="arch" type="xml">
+                <tree string="Customer Gains">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="lean_marketing_customer_gain_action" model="ir.actions.act_window">
+            <field name="name">Customer Gains</field>
+            <field name="res_model">lean_marketing.solution.customer_gain</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="lean_marketing_customer_gain_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new custumer gain
+              </p><p>
+                Create tags that fit your solution to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_lean_marketing_customer_gain_tag"
+            name="Customer Gains"
+            action="lean_marketing_customer_gain_action"
+            parent="menu_lean_marketing_solution_config"
+            sequence="3"/>  
+            
+                                         
+        <record id="lean_marketing_pain_reliever_form" model="ir.ui.view">
+            <field name="name">lean_marketing.solution.pain_reliever.form</field>
+            <field name="model">lean_marketing.solution.pain_reliever</field>
+            <field name="arch" type="xml">
+                <form string="Pain Reliever">
+                    <group>
+                        <field name="name"/>
+                        <field name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="lean_marketing_pain_reliever_tree" model="ir.ui.view">
+            <field name="name">lean_marketing.solution.pain_reliever.tree</field>
+            <field name="model">lean_marketing.solution.pain_reliever</field>
+            <field name="arch" type="xml">
+                <tree string="Pain Relievers">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="lean_marketing_pain_reliever_action" model="ir.actions.act_window">
+            <field name="name">Pain Relievers</field>
+            <field name="res_model">lean_marketing.solution.pain_reliever</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="lean_marketing_pain_reliever_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new pain reliever
+              </p><p>
+                Create tags that fit your solution to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_lean_marketing_pain_reliever_tag"
+            name="Pain Relievers"
+            action="lean_marketing_pain_reliever_action"
+            parent="menu_lean_marketing_solution_config"
+            sequence="4"/>  
+            
+                 <record id="lean_marketing_gain_creator_form" model="ir.ui.view">
+            <field name="name">lean_marketing.solution.gain_creator.form</field>
+            <field name="model">lean_marketing.solution.gain_creator</field>
+            <field name="arch" type="xml">
+                <form string="Gain Creator">
+                    <group>
+                        <field name="name"/>
+                        <field name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="lean_marketing_gain_creator_tree" model="ir.ui.view">
+            <field name="name">lean_marketing.solution.gain_creator.tree</field>
+            <field name="model">lean_marketing.solution.gain_creator</field>
+            <field name="arch" type="xml">
+                <tree string="Gain Creators">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="lean_marketing_gain_creator_action" model="ir.actions.act_window">
+            <field name="name">Gain Creators</field>
+            <field name="res_model">lean_marketing.solution.gain_creator</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="lean_marketing_gain_creator_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new gain creator
+              </p><p>
+                Create tags that fit your solution to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_lean_marketing_gain_creator_tag"
+            name="Gain Creators"
+            action="lean_marketing_gain_creator_action"
+            parent="menu_lean_marketing_solution_config"
+            sequence="5"/>  
+         
 
 </odoo>

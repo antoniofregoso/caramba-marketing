@@ -1,10 +1,20 @@
 <?xml version="1.0"?>
 <odoo>
 
-  <!--       <template id="contactus_form" name="Contact Form" inherit_id="website_crm.contactus_form" customize_show="True">
+        <template id="contactus_form" name="Contact Form" inherit_id="website_crm.contactus_form" customize_show="True">
             <xpath expr="//textarea[@name='description']" position="after">
-            	<input type="hidden"  name="content_id.name" required="" t-att-value="request.params.get('content', '')" />
-            	<input type="hidden"  name="term_id.name" required="" t-att-value="request.params.get('term', '')" />
-            </xpath>
-           </template> --> 
+            <t t-if="request.params.get('utm_content', '')">            	
+            	<t t-set="utmContent" t-value="website.get_utmContent(request.params.get('utm_content', ''))"/>
+            	<t t-if="utmContent>0" >
+            		<input type="hidden"  name="content_id" required="" t-att-value="utmContent" />
+            	</t>
+            </t>
+            <t t-if="request.params.get('utm_term', '')">            	
+            	<t t-set="utmTerm" t-value="website.get_utmTerm(request.params.get('utm_term', ''))"/>
+            	<t t-if="utmTerm>0" >
+            		<input type="hidden"  name="term_id" required="" t-att-value="utmTerm" />
+            	</t>
+            </t>
+            	     </xpath>
+           </template> 
 </odoo>

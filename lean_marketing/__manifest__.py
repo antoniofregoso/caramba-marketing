@@ -18,7 +18,7 @@
     'version': '12.0.0.0.0',
 
 
-    'depends': ['crm', 'sale', 'project', 'project_timeline', 'mass_mailing'],
+    'depends': ['crm', 'sale', 'project', 'project_timeline', 'mass_mailing', 'website_crm', 'website_blog_category_and_author'],
 
 
     'data': [
@@ -36,4 +36,6 @@
     'demo': [
         'demo/demo.xml',
     ],
+    
+    'post_init_hook': '_set_blacklisted_out',
 }
