@@ -1156,7 +1156,7 @@ msgstr "Objetivo"
 #: model_terms:ir.ui.view,arch_db:lean_marketing.utm_term_view_form
 #: model_terms:ir.ui.view,arch_db:lean_marketing.utm_term_view_tree
 msgid "Term"
-msgstr "Término de búsqueda"
+msgstr "Término"
 
 #. module: lean_marketing
 #: model:ir.model.fields,field_description:lean_marketing.field_utm_term__name
@@ -1167,7 +1167,7 @@ msgstr "Nombre del término"
 #: model:ir.actions.act_window,name:lean_marketing.utm_term_action
 #: model:ir.ui.menu,name:lean_marketing.menu_lean_marketing_utm_term
 msgid "Terms"
-msgstr "Términos de búsqueda"
+msgstr "Término"
 
 #. module: lean_marketing
 #: selection:lean_marketing.touchpoint,state:0

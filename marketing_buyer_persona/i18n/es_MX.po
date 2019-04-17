@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-11 21:58+0000\n"
-"PO-Revision-Date: 2019-04-11 17:03-0500\n"
+"POT-Creation-Date: 2019-04-17 17:42+0000\n"
+"PO-Revision-Date: 2019-04-17 12:56-0500\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -176,15 +176,43 @@ msgid "Buy the basics."
 msgstr "Compra lo básico"
 
 #. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_competence_form
+msgid "Buyer Competence"
+msgstr "Competencia del Consumidor"
+
+#. module: marketing_buyer_persona
+#: model:ir.actions.act_window,name:marketing_buyer_persona.lean_marketing_buyer_competence_action
+#: model:ir.ui.menu,name:marketing_buyer_persona.menu_lean_marketing_buyer_competence
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_competence_tree
+msgid "Buyer Competences"
+msgstr "Competencias del Consumidor"
+
+#. module: marketing_buyer_persona
 #: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_buyer_competence
 #: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_buyer_goal
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_goal_form
 msgid "Buyer Goal"
 msgstr "Objetivo del consumidor."
 
 #. module: marketing_buyer_persona
+#: model:ir.actions.act_window,name:marketing_buyer_persona.lean_marketing_buyer_goal_action
+#: model:ir.ui.menu,name:marketing_buyer_persona.menu_lean_marketing_buyer_goal
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_goal_tree
+msgid "Buyer Goals"
+msgstr "Metas del Comprador"
+
+#. module: marketing_buyer_persona
 #: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_buyer_objection
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_objection_form
 msgid "Buyer Objection"
 msgstr "Objeción del consumidor"
+
+#. module: marketing_buyer_persona
+#: model:ir.actions.act_window,name:marketing_buyer_persona.lean_marketing_buyer_objection_action
+#: model:ir.ui.menu,name:marketing_buyer_persona.menu_lean_marketing_buyer_objection
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_objection_tree
+msgid "Buyer Objections"
+msgstr "Objeciones del consumudor"
 
 #. module: marketing_buyer_persona
 #: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_buyer_persona
@@ -194,8 +222,16 @@ msgstr ""
 
 #. module: marketing_buyer_persona
 #: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_buyer_preferences
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_preferences_form
 msgid "Buyer Preference"
 msgstr "Preferencia del Consumidor"
+
+#. module: marketing_buyer_persona
+#: model:ir.actions.act_window,name:marketing_buyer_persona.lean_marketing_buyer_preferences_action
+#: model:ir.ui.menu,name:marketing_buyer_persona.menu_lean_marketing_buyer_preferences
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_preferences_tree
+msgid "Buyer Preferences"
+msgstr "Preferencias del Consumidor"
 
 #. module: marketing_buyer_persona
 #: sql_constraint:lean_marketing.buyer_competence:0
@@ -210,12 +246,14 @@ msgstr "La preferencia del consumidor ya existe"
 #. module: marketing_buyer_persona
 #: model:ir.actions.act_window,name:marketing_buyer_persona.action_lean_marketing_buyer_persona_form
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_plan__buyers_persona_ids
+#: model:ir.ui.menu,name:marketing_buyer_persona.menu_lean_marketing_buyer
+#: persona_config
 #: model:ir.ui.menu,name:marketing_buyer_persona.menu_lean_marketing_buyer_persona
 #: model:ir.ui.menu,name:marketing_buyer_persona.menu_lean_marketing_buyers_persona_hub
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_tree
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_plan_buyers_view_form
 msgid "Buyers Persona"
-msgstr "Personas consumidoras"
+msgstr ""
 
 #. module: marketing_buyer_persona
 #: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_believers
@@ -289,6 +327,7 @@ msgstr "Preferencias de Contenido"
 
 #. module: marketing_buyer_persona
 #: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_content_type
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_content_type_form
 msgid "Content Type"
 msgstr "Tipo de Contenido"
 
@@ -296,6 +335,13 @@ msgstr "Tipo de Contenido"
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__content_type_ids
 msgid "Content Type Preferences"
 msgstr "Preferencias de Tipo de Contenido"
+
+#. module: marketing_buyer_persona
+#: model:ir.actions.act_window,name:marketing_buyer_persona.lean_marketing_content_type_action
+#: model:ir.ui.menu,name:marketing_buyer_persona.menu_lean_marketing_content_type
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_content_type_tree
+msgid "Content Types"
+msgstr "Tipos de Contenido"
 
 #. module: marketing_buyer_persona
 #: sql_constraint:lean_marketing.content_type:0
@@ -313,9 +359,35 @@ msgid "Country"
 msgstr "País"
 
 #. module: marketing_buyer_persona
+#: model_terms:ir.actions.act_window,help:marketing_buyer_persona.lean_marketing_buyer_goal_action
+msgid "Create a new buyer goal"
+msgstr "Crea una nueva meta del consumidor"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.actions.act_window,help:marketing_buyer_persona.lean_marketing_buyer_objection_action
+msgid "Create a new buyer objection"
+msgstr "Crea una nueva objeción del consumidor"
+
+#. module: marketing_buyer_persona
 #: model_terms:ir.actions.act_window,help:marketing_buyer_persona.action_lean_marketing_buyer_persona_form
 msgid "Create a new buyer persona"
-msgstr "Crea una nueba persona consumidora"
+msgstr "Crea un nuevo buyer persona"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.actions.act_window,help:marketing_buyer_persona.lean_marketing_buyer_competence_action
+#: model_terms:ir.actions.act_window,help:marketing_buyer_persona.lean_marketing_buyer_preferences_action
+msgid "Create a new buyer preference"
+msgstr "crea una nueva preferencia del consumidor"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.actions.act_window,help:marketing_buyer_persona.lean_marketing_content_type_action
+msgid "Create a new content type"
+msgstr "Crea un nuevo tipo de contenido"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.actions.act_window,help:marketing_buyer_persona.lean_marketing_meeting_place_action
+msgid "Create a new meeting place"
+msgstr "Crea un nuevo lugar de reunion"
 
 #. module: marketing_buyer_persona
 #: model_terms:ir.actions.act_window,help:marketing_buyer_persona.action_lean_marketing_segment_form
@@ -323,9 +395,25 @@ msgid "Create a new segment"
 msgstr "Crear un nuevo segmento"
 
 #. module: marketing_buyer_persona
+#: model_terms:ir.actions.act_window,help:marketing_buyer_persona.lean_marketing_social_media_preference_action
+msgid "Create a new social media preference"
+msgstr "crea una nueva preferencia de medios sociales"
+
+#. module: marketing_buyer_persona
 #: model_terms:ir.actions.act_window,help:marketing_buyer_persona.action_lean_marketing_tribe_form
 msgid "Create a new tribe"
 msgstr "Crea una nueva tribu"
+
+#. module: marketing_buyer_persona
+#: model_terms:ir.actions.act_window,help:marketing_buyer_persona.lean_marketing_buyer_competence_action
+#: model_terms:ir.actions.act_window,help:marketing_buyer_persona.lean_marketing_buyer_goal_action
+#: model_terms:ir.actions.act_window,help:marketing_buyer_persona.lean_marketing_buyer_objection_action
+#: model_terms:ir.actions.act_window,help:marketing_buyer_persona.lean_marketing_buyer_preferences_action
+#: model_terms:ir.actions.act_window,help:marketing_buyer_persona.lean_marketing_content_type_action
+#: model_terms:ir.actions.act_window,help:marketing_buyer_persona.lean_marketing_meeting_place_action
+#: model_terms:ir.actions.act_window,help:marketing_buyer_persona.lean_marketing_social_media_preference_action
+msgid "Create tags that fit your brands to better manage."
+msgstr "Crea etiquetas que se ajusten a tus marcas para una mejor gestión."
 
 #. module: marketing_buyer_persona
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_competence__create_uid
@@ -784,7 +872,15 @@ msgid "Medium-sized image of this contact. It is automatically resized as a 128x
 msgstr "Imagen mediana de este contacto. Se redimensiona automáticamente a 128x128px, con el ratio de aspecto preservado. Se usa este campo en las vistas formulario y en algunas vistas kanban."
 
 #. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_meeting_place_form
+msgid "Meeting Place"
+msgstr "Lugar de Reunión"
+
+#. module: marketing_buyer_persona
+#: model:ir.actions.act_window,name:marketing_buyer_persona.lean_marketing_meeting_place_action
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__meeting_place_ids
+#: model:ir.ui.menu,name:marketing_buyer_persona.menu_lean_marketing_meeting_place
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_meeting_place_tree
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_tribe_view_form
 msgid "Meeting Places"
 msgstr "Lugares de Reunión"
@@ -836,7 +932,7 @@ msgstr "Nombre"
 #. module: marketing_buyer_persona
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_form
 msgid "Name of the Buyer Persona"
-msgstr "Nombre de la Persona Consumidora"
+msgstr "Nombre del buyer personaa"
 
 #. module: marketing_buyer_persona
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_segment_view_form
@@ -966,6 +1062,11 @@ msgid "Primary Motivation"
 msgstr "Motivación primaria"
 
 #. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_segment_view_kanban
+msgid "Primary Motivation:"
+msgstr "Motivación Primaria:"
+
+#. module: marketing_buyer_persona
 #: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_survivors
 msgid "Prime concerns are safety and security."
 msgstr "Las principales preocupaciones son la seguridad y la seguridad."
@@ -1037,6 +1138,11 @@ msgid "Resources"
 msgstr "Recursos"
 
 #. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_segment_view_kanban
+msgid "Resources:"
+msgstr "Recursos:"
+
+#. module: marketing_buyer_persona
 #: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_believers
 msgid "Respect rules and trust authority figures."
 msgstr "Respeta las reglas y confiar en las figuras de autoridad."
@@ -1055,7 +1161,7 @@ msgstr "Satisfecho."
 #. module: marketing_buyer_persona
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.view_lean_marketing_buyer_persona_select
 msgid "Search Buyers Persona"
-msgstr "Buscar a la Persona Consumidora"
+msgstr "Buscar al "
 
 #. module: marketing_buyer_persona
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__segment_id
@@ -1124,9 +1230,17 @@ msgid "Small-sized image of this contact. It is automatically resized as a 64x64
 msgstr "Imagen de tamaño pequeño de este contacto. Se redimensiona automáticamente a 64x64 px, con el ratio de aspecto preservado. Use este campo donde se requiera una imagen pequeña."
 
 #. module: marketing_buyer_persona
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_social_media_preference_form
+msgid "Social Media Preference"
+msgstr "Preferencia de Medios Sociales"
+
+#. module: marketing_buyer_persona
+#: model:ir.actions.act_window,name:marketing_buyer_persona.lean_marketing_social_media_preference_action
 #: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_social_media_preference
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__social_media_ids
+#: model:ir.ui.menu,name:marketing_buyer_persona.menu_lean_marketing_social_media_preference
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_form
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_social_media_preference_tree
 msgid "Social Media Preferences"
 msgstr "Preferencias de Medios Sociales"
 
