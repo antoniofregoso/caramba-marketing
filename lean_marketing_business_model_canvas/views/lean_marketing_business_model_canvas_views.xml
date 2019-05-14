@@ -1,0 +1,160 @@
+<odoo>
+
+		 <record id='lean_marketing_business_model_canvas_buyer_form' model='ir.ui.view'>
+        <field name="name">lean_marketing.plan.business_model_canvas_buye.form</field>
+        <field name="model">lean_marketing.plan</field>
+        <field name="inherit_id" ref="marketing_buyer_persona.lean_marketing_plan_buyers_view_form"/>
+        <field name="arch" type="xml">
+        <xpath expr="//page[@name='buyer_persona']" position="replace">
+        </xpath>
+        </field>
+        </record>
+
+       <record id='lean_marketing_business_model_canvas_form' model='ir.ui.view'>
+        <field name="name">lean_marketing.plan.business_model_canvas.form</field>
+        <field name="model">lean_marketing.plan</field>
+        <field name="inherit_id" ref="lean_marketing.lean_marketing_plan_view_form"/>
+        <field name="arch" type="xml">
+        <xpath expr="//page[@name='touchpoints']" position="replace">
+        </xpath>
+        <xpath expr="//page[@name='mission']" position="after">
+        	<page string="Business Model Canvas" col="1">
+        		<group col="5">
+        			<group col="1" >
+        				<h4>Key Partners</h4>
+        				<field name="key_partners_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+        			</group>
+        			<group col="1" >
+        				<group col="1" >
+        					<h4>Key Activities</h4>
+        					<field name="key_activities_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+        				</group>
+        				<group col="1" >
+        					<h4>Key Resources</h4>
+        					<field name="key_resources_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+        				</group>
+        			</group>
+        			<group col="1" >
+        				<h4>Value Propositions</h4>
+        				<field name="value_propositions"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+        			</group>
+        			<group col="1">
+        				<group col="1" >
+        				<h4>Customer Relationship</h4>
+        					<field name="customer_relationships_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"  />
+        				</group>
+        				<group col="1" >
+        					<h4>Touchpoints</h4>
+        					<field name="touchpoints_ids" widget="many2many"   nolabel="1">
+        						 <tree select="true" >
+        						  	<field name="name"   />
+        						  </tree>
+        						  <form>
+        						  	<field name="name"   />
+        						  </form>
+                     		</field>
+        				</group>
+        			</group>
+        			<group col="1" >
+        				<h4>Customer Segments</h4>
+        			<field name="buyers_persona_ids" widget="many2many_kanban" nolabel="1">
+        			 <kanban>				        
+                	<field name="id"/>
+                    <field name="color"/>
+                    <field name="name"/>
+	                <field name="tribe_id" />
+	                <field name="status" />
+                    <field name="image_medium"/>
+				        <templates>
+				        	 <t t-name="kanban-box">
+				        	 	<div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+				        	 		 <a type="open" href="#" class="o_kanban_image oe_kanban_action">
+                                <img alt="Open" t-att-src="kanban_image('lean_marketing.buyer_persona', 'image_medium', record.id.raw_value)" class="img-fluid" style="width:100px;"/>
+                            </a>
+					        	 	<div class="oe_kanban_details">
+		                            	<h4 class="oe_partner_heading">
+		                                    <a type="open" class="o_kanban_record_title">
+		                                        <field name="name"/>
+		                                    </a>
+		                                </h4> 
+		                                <ul>
+			                                 <li>Tribe: <field name="tribe_id"/></li>
+			                                 <li>Status: <field name="status"/></li>
+		                                 </ul>
+	                                 </div>                             
+	                        		<div class="oe_clear"/>
+				        	 	
+				        	 	</div>	
+				             </t>
+				        </templates>
+				    </kanban>
+               </field> 	         			
+        			</group>
+        		</group>
+        		<group col="2">
+        			<group col="1" >
+        			<h4>Cost Structure</h4>
+        				<field name="cost_structure_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+        			</group>
+        			<group col="1" >
+        				<h4>Revenue Streams</h4>
+        				<field name="revenue_streams_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+        			</group>
+        		</group>
+        	</page>
+        	
+        </xpath>        
+        </field>
+        </record>
+        
+        <menuitem id="menu_lean_marketing_business_model_canvas_config" name="Business Model Canvas"
+            parent="lean_marketing.lean_marketing_menu_config"
+            sequence="4"/>
+            
+                  <!-- Meeting Place -->
+         
+        <record id="lean_marketing_business_model_canvas_form" model="ir.ui.view">
+            <field name="name">lean_marketing.meeting_place.form</field>
+            <field name="model">lean_marketing.meeting_place</field>
+            <field name="arch" type="xml">
+                <form string="Meeting Place">
+                    <group>
+                        <field name="name"/>
+                        <field name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="lean_marketing_business_model_canvas_tree" model="ir.ui.view">
+            <field name="name">lean_marketing.meeting_place.tree</field>
+            <field name="model">lean_marketing.meeting_place</field>
+            <field name="arch" type="xml">
+                <tree string="Meeting Places">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="lean_marketing__business_model_canvas_action" model="ir.actions.act_window">
+            <field name="name">Meeting Places</field>
+            <field name="res_model">lean_marketing.meeting_place</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="lean_marketing_meeting_place_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new meeting place
+              </p><p>
+                Create tags that fit your brands to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_lean_marketing_business_model_canvas"
+            name="Meeting Places"
+            action="lean_marketing_meeting_place_action"
+            parent="menu_lean_marketing_buyer persona_config"
+            sequence="1"/>
+
+</odoo>
