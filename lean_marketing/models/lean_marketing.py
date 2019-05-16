@@ -196,7 +196,7 @@ class Solution(models.Model):
     ref = fields.Char(string='Internal Reference')
     customer_job_ids = fields.Many2many('lean_marketing.solution.customer_job', 'lean_marketing_solutiont_customer_job_rel', 'solution_id', 'customer_job_id', string='Custumer Jobs')
     customer_pain_ids = fields.Many2many('lean_marketing.solution.customer_pain', 'lean_marketing_solutiont_customer_pain_rel', 'solution_id', 'customer_pain_id', string='Custumer Pains')
-    custumer_gain_ids = fields.Many2many('lean_marketing.solution.customer_gain', 'lean_marketing_solutiont_custumer_gain_rel', 'solution_id', 'custumer_gain_id', string='Custumer Gain')
+    customer_gain_ids = fields.Many2many('lean_marketing.solution.customer_gain', 'lean_marketing_solutiont_custumer_gain_rel', 'solution_id', 'custumer_gain_id', string='Custumer Gain')
     pain_reliever_ids = fields.Many2many('lean_marketing.solution.pain_reliever', 'lean_marketing_solutiont_pain_reliever_rel', 'solution_id', 'pain_reliever_id', string='Pain Reliever')
     gain_creator_ids = fields.Many2many('lean_marketing.solution.gain_creator', 'lean_marketing_solutiont_gain_creator_rel', 'solution_id', 'gain_creator_id', string='Gain Creator')
     products_ids = fields.Many2many('product.product',  'lean_marketing_solutiont_product_rel', 'solution_id', 'product_id', string='Products or Services')
