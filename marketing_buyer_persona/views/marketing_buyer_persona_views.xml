@@ -160,10 +160,11 @@
             	<sheet>
             		 <div class="oe_title">
                         <h1><field name="name" placeholder="Name of the Tribe" nolabel="1"/></h1>
-                        <div class="o_row">
-                        	<field name="meeting_place_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Meeting Places" nolabel="1"/>
-                        </div>
                     </div>
+                    <group>
+                    	<group><field name="category_id" /></group>
+                    	<group><field name="meeting_place_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Meeting Places" /></group>
+                    </group>
                     <group string="description">
                      <field name="description" nolabel="1" />
                     </group>
