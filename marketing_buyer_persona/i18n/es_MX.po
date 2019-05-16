@@ -1,21 +1,19 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* marketing_buyer_persona
+#	* marketing_buyer_persona
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-16 21:35+0000\n"
-"PO-Revision-Date: 2019-05-16 16:36-0500\n"
+"POT-Creation-Date: 2019-05-16 22:16+0000\n"
+"PO-Revision-Date: 2019-05-16 22:16+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-"Language: es_MX\n"
-"X-Generator: Poedit 2.0.6\n"
 
 #. module: marketing_buyer_persona
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__children
@@ -132,7 +130,7 @@ msgstr "Evite unirse a organizaciones excepto sindicatos."
 #. module: marketing_buyer_persona
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_form
 msgid "Background"
-msgstr "Fondo"
+msgstr "Antecedentes"
 
 #. module: marketing_buyer_persona
 #: model:lean_marketing.segment,name:marketing_buyer_persona.segment_believers
@@ -246,8 +244,7 @@ msgstr "La preferencia del consumidor ya existe"
 #. module: marketing_buyer_persona
 #: model:ir.actions.act_window,name:marketing_buyer_persona.action_lean_marketing_buyer_persona_form
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_plan__buyers_persona_ids
-#: model:ir.ui.menu,name:marketing_buyer_persona.menu_lean_marketing_buyer
-#: persona_config
+#: model:ir.ui.menu,name:marketing_buyer_persona.menu_lean_marketing_buyer persona_config
 #: model:ir.ui.menu,name:marketing_buyer_persona.menu_lean_marketing_buyer_persona
 #: model:ir.ui.menu,name:marketing_buyer_persona.menu_lean_marketing_buyers_persona_hub
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_tree
@@ -919,7 +916,7 @@ msgstr "El lugar de reunión ya existe"
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_segment_view_form
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_tribe_view_form
 msgid "Members"
-msgstr "Socios"
+msgstr "Miembros"
 
 #. module: marketing_buyer_persona
 #: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_achievers
@@ -1020,7 +1017,6 @@ msgstr "Objetivos Personales"
 #. module: marketing_buyer_persona
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__name
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_meeting_place__name
-#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__name
 msgid "Place Name"
 msgstr "Nombre del lugar"
 
@@ -1364,6 +1360,11 @@ msgid "Tribe Category"
 msgstr "Categoría de Tribú"
 
 #. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__name
+msgid "Tribe Name"
+msgstr "Nombre de Tribú"
+
+#. module: marketing_buyer_persona
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_kanban
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_plan_buyers_view_form
 msgid "Tribe:"
@@ -1479,3 +1480,4 @@ msgstr "descripción"
 #: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_segment
 msgid "lean_marketing.segment"
 msgstr ""
+
