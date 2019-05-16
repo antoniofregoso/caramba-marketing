@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-17 17:42+0000\n"
-"PO-Revision-Date: 2019-04-17 12:56-0500\n"
+"POT-Creation-Date: 2019-05-16 21:35+0000\n"
+"PO-Revision-Date: 2019-05-16 16:36-0500\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -132,7 +132,7 @@ msgstr "Evite unirse a organizaciones excepto sindicatos."
 #. module: marketing_buyer_persona
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_form
 msgid "Background"
-msgstr "Antecedentes"
+msgstr "Fondo"
 
 #. module: marketing_buyer_persona
 #: model:lean_marketing.segment,name:marketing_buyer_persona.segment_believers
@@ -176,6 +176,7 @@ msgid "Buy the basics."
 msgstr "Compra lo básico"
 
 #. module: marketing_buyer_persona
+#: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_buyer_competence
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_competence_form
 msgid "Buyer Competence"
 msgstr "Competencia del Consumidor"
@@ -188,7 +189,6 @@ msgid "Buyer Competences"
 msgstr "Competencias del Consumidor"
 
 #. module: marketing_buyer_persona
-#: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_buyer_competence
 #: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_buyer_goal
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_goal_form
 msgid "Buyer Goal"
@@ -254,6 +254,11 @@ msgstr "La preferencia del consumidor ya existe"
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_plan_buyers_view_form
 msgid "Buyers Persona"
 msgstr ""
+
+#. module: marketing_buyer_persona
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__category_id
+msgid "Category"
+msgstr "Categoría"
 
 #. module: marketing_buyer_persona
 #: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_believers
@@ -405,6 +410,11 @@ msgid "Create a new tribe"
 msgstr "Crea una nueva tribu"
 
 #. module: marketing_buyer_persona
+#: model_terms:ir.actions.act_window,help:marketing_buyer_persona.lean_marketing_tribe_category_action
+msgid "Create a new tribe category"
+msgstr "Crea una nueba categoría de tribú"
+
+#. module: marketing_buyer_persona
 #: model_terms:ir.actions.act_window,help:marketing_buyer_persona.lean_marketing_buyer_competence_action
 #: model_terms:ir.actions.act_window,help:marketing_buyer_persona.lean_marketing_buyer_goal_action
 #: model_terms:ir.actions.act_window,help:marketing_buyer_persona.lean_marketing_buyer_objection_action
@@ -412,6 +422,7 @@ msgstr "Crea una nueva tribu"
 #: model_terms:ir.actions.act_window,help:marketing_buyer_persona.lean_marketing_content_type_action
 #: model_terms:ir.actions.act_window,help:marketing_buyer_persona.lean_marketing_meeting_place_action
 #: model_terms:ir.actions.act_window,help:marketing_buyer_persona.lean_marketing_social_media_preference_action
+#: model_terms:ir.actions.act_window,help:marketing_buyer_persona.lean_marketing_tribe_category_action
 msgid "Create tags that fit your brands to better manage."
 msgstr "Crea etiquetas que se ajusten a tus marcas para una mejor gestión."
 
@@ -426,6 +437,7 @@ msgstr "Crea etiquetas que se ajusten a tus marcas para una mejor gestión."
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_segment__create_uid
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_social_media_preference__create_uid
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__create_uid
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe_category__create_uid
 msgid "Created by"
 msgstr "Creado por"
 
@@ -440,6 +452,7 @@ msgstr "Creado por"
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_segment__create_date
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_social_media_preference__create_date
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__create_date
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe_category__create_date
 msgid "Created on"
 msgstr "Creado el"
 
@@ -481,6 +494,7 @@ msgstr "Descripción"
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_segment__display_name
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_social_media_preference__display_name
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__display_name
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe_category__display_name
 msgid "Display Name"
 msgstr "Nombre mostrado"
 
@@ -641,6 +655,7 @@ msgstr "Altamente social."
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_segment__id
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_social_media_preference__id
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__id
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe_category__id
 msgid "ID"
 msgstr ""
 
@@ -711,6 +726,7 @@ msgstr "Idioma"
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_segment____last_update
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_social_media_preference____last_update
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe____last_update
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe_category____last_update
 msgid "Last Modified on"
 msgstr "Última modificación en"
 
@@ -725,6 +741,7 @@ msgstr "Última modificación en"
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_segment__write_uid
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_social_media_preference__write_uid
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__write_uid
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe_category__write_uid
 msgid "Last Updated by"
 msgstr "Última actualización por"
 
@@ -739,13 +756,14 @@ msgstr "Última actualización por"
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_segment__write_date
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_social_media_preference__write_date
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe__write_date
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe_category__write_date
 msgid "Last Updated on"
 msgstr "Última actualización el"
 
 #. module: marketing_buyer_persona
 #: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_plan
 msgid "Lean Marketing Plan"
-msgstr "Plan de Marquetin Magro"
+msgstr "Plan de Lean Marketing"
 
 #. module: marketing_buyer_persona
 #: model_terms:lean_marketing.segment,lifestyle:marketing_buyer_persona.segment_thinkers
@@ -901,7 +919,7 @@ msgstr "El lugar de reunión ya existe"
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_segment_view_form
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_tribe_view_form
 msgid "Members"
-msgstr "Miembros"
+msgstr "Socios"
 
 #. module: marketing_buyer_persona
 #: model_terms:lean_marketing.segment,psychological:marketing_buyer_persona.segment_achievers
@@ -926,6 +944,7 @@ msgstr "Moralizador."
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_content_type__name
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_segment__name
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_social_media_preference__name
+#: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_tribe_category__name
 msgid "Name"
 msgstr "Nombre"
 
@@ -1230,13 +1249,13 @@ msgid "Small-sized image of this contact. It is automatically resized as a 64x64
 msgstr "Imagen de tamaño pequeño de este contacto. Se redimensiona automáticamente a 64x64 px, con el ratio de aspecto preservado. Use este campo donde se requiera una imagen pequeña."
 
 #. module: marketing_buyer_persona
+#: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_social_media_preference
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_social_media_preference_form
 msgid "Social Media Preference"
 msgstr "Preferencia de Medios Sociales"
 
 #. module: marketing_buyer_persona
 #: model:ir.actions.act_window,name:marketing_buyer_persona.lean_marketing_social_media_preference_action
-#: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_social_media_preference
 #: model:ir.model.fields,field_description:marketing_buyer_persona.field_lean_marketing_buyer_persona__social_media_ids
 #: model:ir.ui.menu,name:marketing_buyer_persona.menu_lean_marketing_social_media_preference
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_form
@@ -1334,6 +1353,15 @@ msgstr "Tradicional."
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.view_lean_marketing_buyer_persona_select
 msgid "Tribe"
 msgstr "Tribu"
+
+#. module: marketing_buyer_persona
+#: model:ir.actions.act_window,name:marketing_buyer_persona.lean_marketing_tribe_category_action
+#: model:ir.model,name:marketing_buyer_persona.model_lean_marketing_tribe_category
+#: model:ir.ui.menu,name:marketing_buyer_persona.menu_lean_marketing_tribe_category
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_tribe_category_form
+#: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_tribe_category_tree
+msgid "Tribe Category"
+msgstr "Categoría de Tribú"
 
 #. module: marketing_buyer_persona
 #: model_terms:ir.ui.view,arch_db:marketing_buyer_persona.lean_marketing_buyer_persona_view_kanban
