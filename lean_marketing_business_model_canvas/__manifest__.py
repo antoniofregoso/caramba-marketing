@@ -22,7 +22,7 @@
 
    
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'views/lean_marketing_business_model_canvas_views.xml',
     ],
     

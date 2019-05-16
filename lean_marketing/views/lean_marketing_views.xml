@@ -454,6 +454,9 @@
         <field name="model">lean_marketing.plan</field>
         <field name="arch" type="xml">
             <form string="Lean Marketing Plan">
+            <header>
+              <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
             	<sheet>
             		 <div class="oe_button_box" name="button_box" groups="base.group_user">            		 	
                         <button name="toggle_active" type="object"
@@ -517,10 +520,11 @@
         <field name="name">lean_marketing.plan.kanban</field>
         <field name="model">lean_marketing.plan</field>
         <field name="arch" type="xml">
-            <kanban  class="o_kanban_small_column">
+            <kanban  default_group_by="state" class="o_kanban_small_column">
                 <field name="id"/>
                 <field name="name" />
                 <field name="color"/>
+            	<field name="state"/>
                  <templates>
                     <t t-name="kanban-box">
                         <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">

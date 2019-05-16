@@ -230,7 +230,18 @@ class Plan(models.Model):
     _order = 'name asc'
     _inherit = ['mail.thread', 'mail.activity.mixin']
     
+    
+    def _expand_states(self, states, domain, order):
+        return ['draft', 'active', 'done', 'cancel']
+    
     name = fields.Char('Name', required=True) 
+    state = fields.Selection([
+        ('draft', 'Draft'),
+        ('active', 'Active'),
+        ('done', 'Completed'),
+        ('cancel', 'Cancelled'),
+        ],
+        string='Status', default='draft', required=True, copy=False, track_visibility='onchange', group_expand='_expand_states')
     active = fields.Boolean(default=True,
         help="If the active field is set to False, it will allow you to hide the project without removing it.")
     mission = fields.Html('Description')
