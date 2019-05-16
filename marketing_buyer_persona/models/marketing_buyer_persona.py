@@ -169,7 +169,7 @@ class Tribe(models.Model):
     _name = "lean_marketing.tribe"
     _description = "Tribe"
     
-    name = fields.Char('Place Name', required=True, translate=True) 
+    name = fields.Char('Tribe Name', required=True, translate=True) 
     category_id = fields.Many2one('lean_marketing.tribe.category',  string='Category')   
     color = fields.Integer(string='Color Index', default=0)
     meeting_place_ids = fields.Many2many('lean_marketing.meeting_place', 'tribe_buyer_rel', 'tribe_id', 'meeting_place_id', string='Meeting Places')

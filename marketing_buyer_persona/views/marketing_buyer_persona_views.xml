@@ -148,6 +148,7 @@
         <field name="arch" type="xml">
             <tree string="Tribe">
                 <field name="name" />
+                <field name="category_id" />
             </tree>
         </field>
     </record>
