@@ -116,7 +116,7 @@ class BuyerPersona(models.Model):
     bio = fields.Html('Bio', translate=True)
     age_min = fields.Integer('Age Min')
     age_max = fields.Integer('Age Max')
-    gender = fields.Selection([('female','Female'),('male','Male')], string='Gender')
+    gender = fields.Selection([('female','Female'),('male','Male'), ('gay','Gay'),('lesbian','Lesbian')], string='Gender', required=True)
     status = fields.Selection([('married','Married'),('single','Single'), ('divorced','Divorced'),('widower','Widower')])
     children = fields.Integer('# Children')
     income = fields.Monetary('Annual Income', currency_field='company_currency')
