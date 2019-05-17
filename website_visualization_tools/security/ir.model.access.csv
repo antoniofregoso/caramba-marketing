@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_website_visualization_tools_website_visualization_tools,website_visualization_tools.website_visualization_tools,model_website_visualization_tools_website_visualization_tools,,1,0,0,0

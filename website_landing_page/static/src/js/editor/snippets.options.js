@@ -21,7 +21,13 @@ options.registry.timeline = options.Class.extend({
 	
 	removeItem: function (previewMode, value, $opt) {
 		alert('Puto');
-	}
+	},
+	
+	onFocus: function () {
+		var name = this.$target.attr('id');
+		alert(name);
+	},
+	
 	
 });
     
