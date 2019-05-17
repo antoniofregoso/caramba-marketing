@@ -30,7 +30,7 @@ class MeetingContentType(models.Model):
 class SocialMediaPreference(models.Model):
 
     _name = "lean_marketing.social_media_preference"
-    _description = "Social Media Preferences"
+    _description = "Social Media Preference"
 
     name = fields.Char('Name', required=True, translate=True)
     color = fields.Integer('Color Index')
@@ -78,7 +78,7 @@ class Preference(models.Model):
 class Competence(models.Model):
 
     _name = "lean_marketing.buyer_competence"
-    _description = "Buyer Goal"
+    _description = "Buyer Competence"
 
     name = fields.Char('Name', required=True, translate=True)
     color = fields.Integer('Color Index')
@@ -157,13 +157,20 @@ class BuyerPersona(models.Model):
         tools.image_resize_images(vals)
         return super(BuyerPersona, self).write(vals)
     
+class TribeCategory(models.Model):
 
+    _name = "lean_marketing.tribe.category"
+    _description = "Tribe Category"
+
+    name = fields.Char('Name', required=True, translate=True)
+   
     
 class Tribe(models.Model):
     _name = "lean_marketing.tribe"
     _description = "Tribe"
     
-    name = fields.Char('Place Name', required=True, translate=True)    
+    name = fields.Char('Tribe Name', required=True, translate=True) 
+    category_id = fields.Many2one('lean_marketing.tribe.category',  string='Category')   
     color = fields.Integer(string='Color Index', default=0)
     meeting_place_ids = fields.Many2many('lean_marketing.meeting_place', 'tribe_buyer_rel', 'tribe_id', 'meeting_place_id', string='Meeting Places')
     description = fields.Html('Description')

@@ -337,26 +337,29 @@
                     <notebook colspan="4">
                     	<page string="Value Proposition Canvas" autofocus="autofocus">
                     		<group>
-                    			<group string="Customer Jobs">
-                    				<field name="customer_job_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+                    			<group col="1">                    				
+	                    			<group string="Gain Creator">
+	                    				<field name="gain_creator_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+	                    			</group>
+                    				<group string="Products or Services">
+                    					<field name="products_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+                    				</group>
+	                    			<group string="Pain Reliever">
+	                    				<field name="pain_reliever_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+	                    			</group>
                     			</group>
-                    			<group string="Products or Services">
-                    				<field name="products_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
-                    			</group>
-                    			<group string="Customer Pains">
+                    			<group col="1">
+	                    			<group string="Customer Gains">
+	                    				<field name="customer_gain_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+	                    			</group>
+	                    			<group string="Customer Jobs">
+	                    				<field name="customer_job_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+	                    			</group>
+                    				<group string="Customer Pains">
                     				<field name="customer_pain_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
                     			</group>
-                    			<group string="Pain Reliever">
-                    				<field name="pain_reliever_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
-                    			</group>
-                    			<group string="Customer Gains">
-                    				<field name="customer_pain_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
-                    			</group>
-                    			<group string="Gain Creator">
-                    				<field name="gain_creator_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
                     			</group>
                     		</group>
-                    	
                     	</page>
                     	<page string="Description" >
                     		<field name="description" widget="html" nolabel="1"/>
@@ -451,6 +454,9 @@
         <field name="model">lean_marketing.plan</field>
         <field name="arch" type="xml">
             <form string="Lean Marketing Plan">
+            <header>
+              <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
             	<sheet>
             		 <div class="oe_button_box" name="button_box" groups="base.group_user">            		 	
                         <button name="toggle_active" type="object"
@@ -489,7 +495,7 @@
                     	<page string="Mission" name="mission" autofocus="autofocus">
                     		<field name="mission" nolabel="1"/>
                     	</page>
-                    	<page string="Touchpoints">
+                    	<page string="Touchpoints" name="touchpoints">
                     		<field name="touchpoints_ids" widget="one2many_list" nolabel="1" >
                      			 <tree string="Touchpoints" editable="bottom">
                      			 	<field name="name" />
@@ -514,10 +520,11 @@
         <field name="name">lean_marketing.plan.kanban</field>
         <field name="model">lean_marketing.plan</field>
         <field name="arch" type="xml">
-            <kanban  class="o_kanban_small_column">
+            <kanban  default_group_by="state" class="o_kanban_small_column">
                 <field name="id"/>
                 <field name="name" />
                 <field name="color"/>
+            	<field name="state"/>
                  <templates>
                     <t t-name="kanban-box">
                         <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">

@@ -10,3 +10,7 @@ class Lead(models.Model):
                                   help="Identifies search terms.")
     term_id = fields.Many2one('utm.term', 'Term',
                                   help="Identifies what specifically was clicked to bring the user to the site, such as a banner ad or a text link. It is often used for A/B testing and content-targeted ads.")
+    
+
+
+    
