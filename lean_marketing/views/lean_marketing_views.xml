@@ -481,10 +481,13 @@
                      		<field name="date_end"/>
                      	</group>
                      	<group string="Related campaigns">
-                     		<field name="campaigns_ids" widget="one2many_list" nolabel="1" >
-                     			 <tree string="Campaigns" editable="bottom">
+                     		<field name="campaigns_ids" widget="many2many" nolabel="1" >
+                     			 <tree string="Campaigns">
                      			 	<field name="name" />
-                     			 </tree>                     		
+                     			 </tree>   
+                     			  <form>
+        						  	<field name="name"   />
+        						  </form>                  		
                      		</field>
                      	</group>
                      	<group>
