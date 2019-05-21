@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_lean_marketing_ads_lean_marketing_ads,lean_marketing_ads.lean_marketing_ads,model_lean_marketing_ads_lean_marketing_ads,,1,0,0,0
