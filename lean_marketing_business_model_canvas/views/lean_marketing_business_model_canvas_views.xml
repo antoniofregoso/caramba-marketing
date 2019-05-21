@@ -29,6 +29,8 @@
         				<field name="key_activities_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
         				<h5 class="card-title border-top border-dark">Key Resources</h5>
         				<h6 class="text-muted">Physical</h6>
+        				<field name="key_physical_resource_tag_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+        				<h6 class="text-muted">Physical in Warehouse</h6>
         				<field name="key_physical_resource_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
         				<h6 class="text-muted" >Human</h6>
         				<field name="key_human_resources_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
@@ -109,17 +111,150 @@
         </field>
         </record>
         
- <!--    <menuitem id="menu_lean_marketing_business_model_canvas_config" name="Business Model Canvas"
+    <menuitem id="menu_lean_marketing_business_model_canvas_config" name="Business Model Canvas"
             parent="lean_marketing.lean_marketing_menu_config"
             sequence="4"/>
             
-               
+                
          
-        <record id="lean_marketing_business_model_canvas_key_resources_form" model="ir.ui.view">
-            <field name="name">lean_marketing.meeting_place.form</field>
-            <field name="model">lean_marketing.meeting_place</field>
+        <record id="lean_marketing_business_model_canvas_key_physical_resource_form" model="ir.ui.view">
+            <field name="name">lean_marketing.key_physical_resource.form</field>
+            <field name="model">lean_marketing.key_physical_resource</field>
             <field name="arch" type="xml">
-                <form string="Meeting Place">
+                <form string="Key Physical Resource">
+                    <group>
+                        <field name="name"/>
+                        <field name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="lean_marketing_business_model_canvas_key_physical_resource_tree" model="ir.ui.view">
+            <field name="name">lean_marketing.key_physical_resource.tree</field>
+            <field name="model">lean_marketing.key_physical_resource</field>
+            <field name="arch" type="xml">
+                <tree string="Key Physical Resource">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="lean_marketing__business_model_canvas_key_physical_resource_action" model="ir.actions.act_window">
+            <field name="name">Key Physical Resource</field>
+            <field name="res_model">lean_marketing.key_physical_resource</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="lean_marketing_business_model_canvas_key_physical_resource_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new key physical resource
+              </p><p>
+                Create tags that fit your brands to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_lean_marketing_business_model_canvas_key_physical_resource"
+            name="Key Physical Resource"
+            action="lean_marketing__business_model_canvas_key_physical_resource_action"
+            parent="menu_lean_marketing_business_model_canvas_config"
+            sequence="1"/>     
+            
+       <record id="lean_marketing_business_model_canvas_key_resources_financial_form" model="ir.ui.view">
+            <field name="name">lean_marketing.key_resources_financial.form</field>
+            <field name="model">lean_marketing.key_resources_financial</field>
+            <field name="arch" type="xml">
+                <form string="Key Financial Resource">
+                    <group>
+                        <field name="name"/>
+                        <field name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="lean_marketing_business_model_canvas_key_resources_financial_tree" model="ir.ui.view">
+            <field name="name">lean_marketing.key_resources_financial.tree</field>
+            <field name="model">lean_marketing.key_resources_financial</field>
+            <field name="arch" type="xml">
+                <tree string="Key Financial Resource">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="lean_marketing__business_model_canvas_key_resources_financial_action" model="ir.actions.act_window">
+            <field name="name">Key Financial Resource</field>
+            <field name="res_model">lean_marketing.key_resources_financial</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="lean_marketing_business_model_canvas_key_resources_financial_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new key financial resource
+              </p><p>
+                Create tags that fit your brands to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_lean_marketing_business_model_canvas_key_resources_financial"
+            name="Key Financial Resource"
+            action="lean_marketing__business_model_canvas_key_resources_financial_action"
+            parent="menu_lean_marketing_business_model_canvas_config"
+            sequence="2"/>     
+            
+         <record id="lean_marketing_business_model_canvas_key_resources_intellectual_form" model="ir.ui.view">
+            <field name="name">lean_marketing.key_resources_intellectual.form</field>
+            <field name="model">lean_marketing.key_resources_intellectual</field>
+            <field name="arch" type="xml">
+                <form string="Key Intellectual Resource">
+                    <group>
+                        <field name="name"/>
+                        <field name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="lean_marketing_business_model_canvas_key_resources_intellectual_tree" model="ir.ui.view">
+            <field name="name">lean_marketing.key_resources_intellectual.tree</field>
+            <field name="model">lean_marketing.key_resources_intellectual</field>
+            <field name="arch" type="xml">
+                <tree string="Key Intellectual Resource">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="lean_marketing__business_model_canvas_key_resources_intellectual_action" model="ir.actions.act_window">
+            <field name="name">Key Intellectual Resource</field>
+            <field name="res_model">lean_marketing.key_resources_intellectual</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="lean_marketing_business_model_canvas_key_resources_intellectual_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new key intellectual resource
+              </p><p>
+                Create tags that fit your brands to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_lean_marketing_business_model_canvas_key_resources_intellectual"
+            name="Key Financial Resource"
+            action="lean_marketing__business_model_canvas_key_resources_intellectual_action"
+            parent="menu_lean_marketing_business_model_canvas_config"
+            sequence="3"/>     
+            
+            
+        <record id="lean_marketing_business_model_canvas_key_resources_form" model="ir.ui.view">
+            <field name="name">lean_marketing.key_resources.form</field>
+            <field name="model">lean_marketing.key_resources</field>
+            <field name="arch" type="xml">
+                <form string="Another Resources">
                     <group>
                         <field name="name"/>
                         <field name="color" groups="base.group_no_one"/>
@@ -129,23 +264,23 @@
         </record>
 
         <record id="lean_marketing_business_model_canvas_key_resources_tree" model="ir.ui.view">
-            <field name="name">lean_marketing.meeting_place.tree</field>
-            <field name="model">lean_marketing.meeting_place</field>
+            <field name="name">lean_marketing.key_resources.tree</field>
+            <field name="model">lean_marketing.key_resources</field>
             <field name="arch" type="xml">
-                <tree string="Meeting Places">
+                <tree string="Another Resources">
                     <field name="name"/>
                 </tree>
             </field>
         </record>
         
         <record id="lean_marketing__business_model_canvas_key_resources_action" model="ir.actions.act_window">
-            <field name="name">Meeting Places</field>
-            <field name="res_model">lean_marketing.meeting_place</field>
+            <field name="name">Another Resources</field>
+            <field name="res_model">lean_marketing.key_resources</field>
             <field name="view_type">form</field>
-            <field name="view_id" ref="lean_marketing_meeting_place_tree"/>
+            <field name="view_id" ref="lean_marketing_business_model_canvas_key_resources_tree"/>
             <field name="help" type="html">
               <p class="o_view_nocontent_smiling_face">
-                Create a new meeting place
+                Create a new another resource
               </p><p>
                 Create tags that fit your brands to better manage.
               </p>
@@ -154,9 +289,57 @@
 
         <menuitem
             id="menu_lean_marketing_business_model_canvas_key_resources"
-            name="Meeting Places"
-            action="lean_marketing_meeting_place_action"
-            parent="menu_lean_marketing_buyer persona_config"
-            sequence="1"/>    -->    
+            name="Another Resources"
+            action="lean_marketing__business_model_canvas_key_resources_action"
+            parent="menu_lean_marketing_business_model_canvas_config"
+            sequence="4"/>     
+            
+            
+           
+        <record id="lean_marketing_business_model_canvas_channels_form" model="ir.ui.view">
+            <field name="name">lean_marketing.channels.form</field>
+            <field name="model">lean_marketing.channels</field>
+            <field name="arch" type="xml">
+                <form string="Channels">
+                    <group>
+                        <field name="name"/>
+                        <field name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="lean_marketing_business_model_canvas_channels_tree" model="ir.ui.view">
+            <field name="name">lean_marketing.channels.tree</field>
+            <field name="model">lean_marketing.channels</field>
+            <field name="arch" type="xml">
+                <tree string="Channels">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="lean_marketing__business_model_canvas_channels_action" model="ir.actions.act_window">
+            <field name="name">Channels</field>
+            <field name="res_model">lean_marketing.channels</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="lean_marketing_business_model_canvas_channels_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new another chanel
+              </p><p>
+                Create tags that fit your brands to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_lean_marketing_business_model_canvas_channels"
+            name="Channels"
+            action="lean_marketing__business_model_canvas_channels_action"
+            parent="menu_lean_marketing_business_model_canvas_config"
+            sequence="5"/>     
+       
+       
 
 </odoo>

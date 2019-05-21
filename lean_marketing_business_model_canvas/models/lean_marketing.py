@@ -54,7 +54,17 @@ class CustomerChannels(models.Model):
     ]
     
 
-    
+class KeyPhysicalResource(models.Model):
+
+    _name = "lean_marketing.key_physical_resource"
+    _description = "Key Physical Resource"
+
+    name = fields.Char('Tag Name', required=True, translate=True)
+    color = fields.Integer('Color Index')
+
+    _sql_constraints = [
+        ('name_uniq', 'unique (name)', "Tag name already exists !"),
+    ]    
     
 
 class Plan(models.Model):
@@ -65,6 +75,7 @@ class Plan(models.Model):
     key_activities_ids = fields.Many2many('project.task', 'lean_marketing_plan_project_task_rel', 'plan_id', 'task_id', string='Key Activities')
     key_human_resources_ids = fields.Many2many('res.partner', 'lean_marketing_plan_hr_res_partner_rel','plan_id', 'res_partner_id', string='Human Resources') 
     key_physical_resource_ids = fields.Many2many('product.product', 'lean_marketing_plan_product_rel','plan_id', 'product_id', string='Physical Resources') 
+    key_physical_resource_tag_ids = fields.Many2many('lean_marketing.key_physical_resource', 'lean_marketing_plan_key_physical_resource_rel','plan_id', 'tag_id', string='Physical Resources') 
     key_resources_ids = fields.Many2many('lean_marketing.key_resources', 'lean_marketing_key_resources_rel', 'plan_id', 'tag_id', string='Tags')
     key_resources_financial_ids = fields.Many2many('lean_marketing.key_resources_financial', 'lean_marketing_key_resources_financial_rel', 'plan_id', 'tag_id', string='Tags')
     key_resources_intellectual_ids = fields.Many2many('lean_marketing.key_resources_intellectual', 'lean_marketing_key_resources_intellectual_rel', 'plan_id', 'tag_id', string='Tags')
