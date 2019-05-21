@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-15 22:04+0000\n"
-"PO-Revision-Date: 2019-05-15 20:40-0500\n"
+"POT-Creation-Date: 2019-05-21 18:00+0000\n"
+"PO-Revision-Date: 2019-05-21 13:03-0500\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,23 +18,33 @@ msgstr ""
 "X-Generator: Poedit 2.0.6\n"
 
 #. module: lean_marketing_business_model_canvas
+#: model:ir.actions.act_window,name:lean_marketing_business_model_canvas.lean_marketing__business_model_canvas_key_resources_action
+#: model:ir.ui.menu,name:lean_marketing_business_model_canvas.menu_lean_marketing_business_model_canvas_key_resources
 #: model_terms:ir.ui.view,arch_db:lean_marketing_business_model_canvas.lean_marketing_business_model_canvas_form
+#: model_terms:ir.ui.view,arch_db:lean_marketing_business_model_canvas.lean_marketing_business_model_canvas_key_resources_form
+#: model_terms:ir.ui.view,arch_db:lean_marketing_business_model_canvas.lean_marketing_business_model_canvas_key_resources_tree
 msgid "Another Resources"
 msgstr "Otros recursos"
 
 #. module: lean_marketing_business_model_canvas
+#: model:ir.ui.menu,name:lean_marketing_business_model_canvas.menu_lean_marketing_business_model_canvas_config
 #: model_terms:ir.ui.view,arch_db:lean_marketing_business_model_canvas.lean_marketing_business_model_canvas_form
 msgid "Business Model Canvas"
 msgstr "Esquema de modelo de negocios"
 
 #. module: lean_marketing_business_model_canvas
+#: model:ir.actions.act_window,name:lean_marketing_business_model_canvas.lean_marketing__business_model_canvas_channels_action
 #: model:ir.model,name:lean_marketing_business_model_canvas.model_lean_marketing_channels
+#: model:ir.ui.menu,name:lean_marketing_business_model_canvas.menu_lean_marketing_business_model_canvas_channels
+#: model_terms:ir.ui.view,arch_db:lean_marketing_business_model_canvas.lean_marketing_business_model_canvas_channels_form
+#: model_terms:ir.ui.view,arch_db:lean_marketing_business_model_canvas.lean_marketing_business_model_canvas_channels_tree
 #: model_terms:ir.ui.view,arch_db:lean_marketing_business_model_canvas.lean_marketing_business_model_canvas_form
 msgid "Channels"
 msgstr "Canales"
 
 #. module: lean_marketing_business_model_canvas
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_channels__color
+#: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_physical_resource__color
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_resources__color
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_resources_financial__color
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_resources_intellectual__color
@@ -52,7 +62,42 @@ msgid "Costs Structure"
 msgstr "Estructura de costo"
 
 #. module: lean_marketing_business_model_canvas
+#: model_terms:ir.actions.act_window,help:lean_marketing_business_model_canvas.lean_marketing__business_model_canvas_channels_action
+msgid "Create a new another chanel"
+msgstr "Crea otro canal"
+
+#. module: lean_marketing_business_model_canvas
+#: model_terms:ir.actions.act_window,help:lean_marketing_business_model_canvas.lean_marketing__business_model_canvas_key_resources_action
+msgid "Create a new another resource"
+msgstr "Crea otro recurso"
+
+#. module: lean_marketing_business_model_canvas
+#: model_terms:ir.actions.act_window,help:lean_marketing_business_model_canvas.lean_marketing__business_model_canvas_key_resources_financial_action
+msgid "Create a new key financial resource"
+msgstr "Crea otro recurso financiero clave"
+
+#. module: lean_marketing_business_model_canvas
+#: model_terms:ir.actions.act_window,help:lean_marketing_business_model_canvas.lean_marketing__business_model_canvas_key_resources_intellectual_action
+msgid "Create a new key intellectual resource"
+msgstr "Crea otro recurso intelectual"
+
+#. module: lean_marketing_business_model_canvas
+#: model_terms:ir.actions.act_window,help:lean_marketing_business_model_canvas.lean_marketing__business_model_canvas_key_physical_resource_action
+msgid "Create a new key physical resource"
+msgstr "Crea otro recurso físico"
+
+#. module: lean_marketing_business_model_canvas
+#: model_terms:ir.actions.act_window,help:lean_marketing_business_model_canvas.lean_marketing__business_model_canvas_channels_action
+#: model_terms:ir.actions.act_window,help:lean_marketing_business_model_canvas.lean_marketing__business_model_canvas_key_physical_resource_action
+#: model_terms:ir.actions.act_window,help:lean_marketing_business_model_canvas.lean_marketing__business_model_canvas_key_resources_action
+#: model_terms:ir.actions.act_window,help:lean_marketing_business_model_canvas.lean_marketing__business_model_canvas_key_resources_financial_action
+#: model_terms:ir.actions.act_window,help:lean_marketing_business_model_canvas.lean_marketing__business_model_canvas_key_resources_intellectual_action
+msgid "Create tags that fit your brands to better manage."
+msgstr "Crea etiquetas que se ajusten a tus marcas para una mejor gestión."
+
+#. module: lean_marketing_business_model_canvas
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_channels__create_uid
+#: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_physical_resource__create_uid
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_resources__create_uid
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_resources_financial__create_uid
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_resources_intellectual__create_uid
@@ -61,6 +106,7 @@ msgstr "Creado por"
 
 #. module: lean_marketing_business_model_canvas
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_channels__create_date
+#: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_physical_resource__create_date
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_resources__create_date
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_resources_financial__create_date
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_resources_intellectual__create_date
@@ -70,7 +116,7 @@ msgstr "Creado el"
 #. module: lean_marketing_business_model_canvas
 #: model_terms:ir.ui.view,arch_db:lean_marketing_business_model_canvas.lean_marketing_business_model_canvas_form
 msgid "Customer Relationship"
-msgstr "Relaciones con el cliente"
+msgstr "Relación con el cliente"
 
 #. module: lean_marketing_business_model_canvas
 #: model_terms:ir.ui.view,arch_db:lean_marketing_business_model_canvas.lean_marketing_business_model_canvas_form
@@ -79,6 +125,7 @@ msgstr "Segmentos de clientes"
 
 #. module: lean_marketing_business_model_canvas
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_channels__display_name
+#: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_physical_resource__display_name
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_resources__display_name
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_resources_financial__display_name
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_resources_intellectual__display_name
@@ -107,6 +154,7 @@ msgstr "Recursos humanos"
 
 #. module: lean_marketing_business_model_canvas
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_channels__id
+#: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_physical_resource__id
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_resources__id
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_resources_financial__id
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_resources_intellectual__id
@@ -116,7 +164,7 @@ msgstr ""
 #. module: lean_marketing_business_model_canvas
 #: model_terms:ir.ui.view,arch_db:lean_marketing_business_model_canvas.lean_marketing_business_model_canvas_form
 msgid "Intellectual"
-msgstr "Intelectuales"
+msgstr "Intelectual"
 
 #. module: lean_marketing_business_model_canvas
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_plan__key_activities_ids
@@ -125,12 +173,20 @@ msgid "Key Activities"
 msgstr "Actividades clave"
 
 #. module: lean_marketing_business_model_canvas
+#: model:ir.actions.act_window,name:lean_marketing_business_model_canvas.lean_marketing__business_model_canvas_key_resources_financial_action
 #: model:ir.model,name:lean_marketing_business_model_canvas.model_lean_marketing_key_resources_financial
+#: model:ir.ui.menu,name:lean_marketing_business_model_canvas.menu_lean_marketing_business_model_canvas_key_resources_financial
+#: model:ir.ui.menu,name:lean_marketing_business_model_canvas.menu_lean_marketing_business_model_canvas_key_resources_intellectual
+#: model_terms:ir.ui.view,arch_db:lean_marketing_business_model_canvas.lean_marketing_business_model_canvas_key_resources_financial_form
+#: model_terms:ir.ui.view,arch_db:lean_marketing_business_model_canvas.lean_marketing_business_model_canvas_key_resources_financial_tree
 msgid "Key Financial Resource"
 msgstr "Recurso financiero clave"
 
 #. module: lean_marketing_business_model_canvas
+#: model:ir.actions.act_window,name:lean_marketing_business_model_canvas.lean_marketing__business_model_canvas_key_resources_intellectual_action
 #: model:ir.model,name:lean_marketing_business_model_canvas.model_lean_marketing_key_resources_intellectual
+#: model_terms:ir.ui.view,arch_db:lean_marketing_business_model_canvas.lean_marketing_business_model_canvas_key_resources_intellectual_form
+#: model_terms:ir.ui.view,arch_db:lean_marketing_business_model_canvas.lean_marketing_business_model_canvas_key_resources_intellectual_tree
 msgid "Key Intellectual Resource"
 msgstr "Recurso Intelectual Clave"
 
@@ -139,6 +195,15 @@ msgstr "Recurso Intelectual Clave"
 #: model_terms:ir.ui.view,arch_db:lean_marketing_business_model_canvas.lean_marketing_business_model_canvas_form
 msgid "Key Partners"
 msgstr "Socios clave"
+
+#. module: lean_marketing_business_model_canvas
+#: model:ir.actions.act_window,name:lean_marketing_business_model_canvas.lean_marketing__business_model_canvas_key_physical_resource_action
+#: model:ir.model,name:lean_marketing_business_model_canvas.model_lean_marketing_key_physical_resource
+#: model:ir.ui.menu,name:lean_marketing_business_model_canvas.menu_lean_marketing_business_model_canvas_key_physical_resource
+#: model_terms:ir.ui.view,arch_db:lean_marketing_business_model_canvas.lean_marketing_business_model_canvas_key_physical_resource_form
+#: model_terms:ir.ui.view,arch_db:lean_marketing_business_model_canvas.lean_marketing_business_model_canvas_key_physical_resource_tree
+msgid "Key Physical Resource"
+msgstr "Recurso Físico Clave"
 
 #. module: lean_marketing_business_model_canvas
 #: model:ir.model,name:lean_marketing_business_model_canvas.model_lean_marketing_key_resources
@@ -152,6 +217,7 @@ msgstr "Recursos clave"
 
 #. module: lean_marketing_business_model_canvas
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_channels____last_update
+#: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_physical_resource____last_update
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_resources____last_update
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_resources_financial____last_update
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_resources_intellectual____last_update
@@ -160,6 +226,7 @@ msgstr "Última modificación en"
 
 #. module: lean_marketing_business_model_canvas
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_channels__write_uid
+#: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_physical_resource__write_uid
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_resources__write_uid
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_resources_financial__write_uid
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_resources_intellectual__write_uid
@@ -168,6 +235,7 @@ msgstr "Última actualización por"
 
 #. module: lean_marketing_business_model_canvas
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_channels__write_date
+#: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_physical_resource__write_date
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_resources__write_date
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_resources_financial__write_date
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_resources_intellectual__write_date
@@ -190,9 +258,15 @@ msgid "Physical"
 msgstr "Físicos"
 
 #. module: lean_marketing_business_model_canvas
-#: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_plan__key_fhysical_resource_ids
+#: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_plan__key_physical_resource_ids
+#: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_plan__key_physical_resource_tag_ids
 msgid "Physical Resources"
 msgstr "Recursos físicos"
+
+#. module: lean_marketing_business_model_canvas
+#: model_terms:ir.ui.view,arch_db:lean_marketing_business_model_canvas.lean_marketing_business_model_canvas_form
+msgid "Physical in Warehouse"
+msgstr "Físico en Almacén"
 
 #. module: lean_marketing_business_model_canvas
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_plan__revenue_streams_ids
@@ -207,6 +281,7 @@ msgstr "Estado Civil:"
 
 #. module: lean_marketing_business_model_canvas
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_channels__name
+#: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_physical_resource__name
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_resources__name
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_resources_financial__name
 #: model:ir.model.fields,field_description:lean_marketing_business_model_canvas.field_lean_marketing_key_resources_intellectual__name
@@ -215,6 +290,7 @@ msgstr "Nombre de etiqueta"
 
 #. module: lean_marketing_business_model_canvas
 #: sql_constraint:lean_marketing.channels:0
+#: sql_constraint:lean_marketing.key_physical_resource:0
 #: sql_constraint:lean_marketing.key_resources:0
 #: sql_constraint:lean_marketing.key_resources_financial:0
 #: sql_constraint:lean_marketing.key_resources_intellectual:0
