@@ -8,7 +8,8 @@ ADS_PLATFORMS = [
     ('twitter','Twitter'),
     ('bing','Bing'),
     ('linkedin','LinkedIn'),
-    ('wase','Wase')
+    ('wase','Wase'),
+    ('whatsapp','WhatsApp')
     ]
 
 class AddsCampaign(models.Model):
@@ -36,5 +37,33 @@ class Audience(models.Model):
     _description = 'Audience'
     
     name = fields.Char('Name', required=True)
+    
+class AddsGroup(models.Model):
+    _name = 'lean_marketing.adds_campaign.adds_group'
+    _description = 'Adds Group'
+    
+    name = fields.Char('Name', required=True)
+    active = fields.Boolean('Active', default=True, track_visibility=True)
+    adds_campaign_id = fields.Many2one('lean_marketing.adds_campaign', 'Campaign')
+    audience_id = fields.Many2one('lean_marketing.adds_campaign.audience', 'Audience')
+    
+class Ad(models.Model):
+    _name = 'lean_marketing.adds_campaign.ad'
+    _description = 'Ad'
+    
+    name = fields.Char('Name', required=True)
+    active = fields.Boolean('Active', default=True, track_visibility=True)
+    adds_group_ids = fields.Many2one('lean_marketing.adds_group')
+    
+class BuyerPersona(models.Model):
+    _name = "lean_marketing.buyer_persona"
+    _inherit = "lean_marketing.buyer_persona"
+    
+    audience_id = fields.Many2ome('lean_marketing.adds_campaign.audience', 'Audience')
+    
+    
+    
+    
+
     
     

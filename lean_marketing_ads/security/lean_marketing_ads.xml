@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<odoo>
+		
+		 <record id="module_lean_marketing_ads" model="ir.module.category">
+            <field name="name">Ads</field>
+            <field name="sequence">18</field>
+        </record>
+        <record id="group_lean_marketing_ads_development_team" model="res.groups">
+            <field name="name">Development team</field>
+            <field name="category_id" ref="module_lean_marketing_ads"/>
+        </record>
+        <record id="group_lean_marketing_ads_scrum_master" model="res.groups">
+            <field name="name">Scrum Master</field>
+            <field name="category_id" ref="module_lean_marketing_ads"/>
+            <field name="implied_ids" eval="[(4, ref('group_lean_marketing_ads_development_team'))]"/>
+        </record>
+        <record id="group_lean_marketing_ads_product_owner" model="res.groups">
+            <field name="name">Product owner</field>
+            <field name="category_id" ref="module_lean_marketing_ads_ads"/>
+            <field name="implied_ids" eval="[(4, ref('group_lean_ads_marketing_scrum_master'))]"/>
+        </record>
+        <record id="group_lean_marketing_ads_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="module_lean_marketing_ads"/>
+            <field name="implied_ids" eval="[(4, ref('group_lean_marketing_ads_product_owner'))]"/>
+             <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+
+</odoo>
