@@ -33,7 +33,7 @@
             <field name="name">Tribe Category</field>
             <field name="res_model">lean_marketing.tribe.category</field>
             <field name="view_type">form</field>
-            <field name="view_id" ref="lean_marketing_meeting_place_tree"/>
+            <field name="view_id" ref="lean_marketing_tribe_category_tree"/>
             <field name="help" type="html">
               <p class="o_view_nocontent_smiling_face">
                 Create a new tribe category

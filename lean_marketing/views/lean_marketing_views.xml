@@ -6,26 +6,26 @@
             id="lean_marketing_menu_root"
             name="Lean Marketing"
             web_icon="lean_marketing,static/description/icon.png"
-            groups=""
+            groups="group_lean_marketing_development_team"
             sequence="6"/>
            
          <menuitem
             id="lean_marketing_menu_plans"
             name="Lean Marketing Plans"
             parent="lean_marketing_menu_root"
-            sequence="1" groups="group_lean_marketing_scrum_master,group_lean_marketing_product_owner,group_lean_marketing_manager"/>
+            sequence="1" groups="group_lean_marketing_development_team"/>
             
         <menuitem
             id="lean_marketing_menu_assets"
             name="Assets"
             parent="lean_marketing_menu_root"
-            sequence="3" groups="group_lean_marketing_scrum_master,group_lean_marketing_product_owner,group_lean_marketing_manager"/>
+            sequence="3" groups="group_lean_marketing_development_team"/>
             
 		 <menuitem
             id="lean_marketing_menu_solution"
             name="Solutions"
             parent="lean_marketing_menu_root"
-            sequence="2" groups="group_lean_marketing_scrum_master,group_lean_marketing_product_owner,group_lean_marketing_manager"/>
+            sequence="2" groups="group_lean_marketing_development_team"/>
             
 		
 

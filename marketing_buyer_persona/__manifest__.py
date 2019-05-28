@@ -20,7 +20,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/marketing_buyer_persona_views.xml',
-        'views/marketung_buyer_persona_settings_views.xml',
+        'views/marketing_buyer_persona_settings_views.xml',
         'data/buyer_persona_data.xml'
     ],
 
