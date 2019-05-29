@@ -12,8 +12,8 @@ ADS_PLATFORMS = [
     ('whatsapp','WhatsApp')
     ]
 
-class AddsCampaign(models.Model):
-    _name = 'lean_marketing.adds_campaign'
+class AdsCampaign(models.Model):
+    _name = 'lean_marketing.ads_campaign'
     _description = 'Ads Campaign'
     
     name = fields.Char('Name', required=True)
@@ -27,33 +27,33 @@ class AddsCampaign(models.Model):
         string='Status', default='draft', required=True, copy=False, track_visibility='onchange', group_expand='_expand_states')
     platform = fields.Selection(ADS_PLATFORMS, 'Platform')
     campaign_id = fields.Many2one('utm.campaign', 'campaign_id',
-        required=True, ondelete='cascade',  help="This name helps you tracking your different campaign efforts, e.g. Fall_Drive, Christmas_Special")
+        required=True, ondelete='cascade', string="Campaign",  help="Psrent Campaign")
     
     def _expand_states(self, states, domain, order):
         return ['draft', 'active', 'done', 'cancel']
 
 class Audience(models.Model):
-    _name = 'lean_marketing.adds_campaign.audience'
+    _name = 'lean_marketing.ads_campaign.audience'
     _description = 'Audience'
     
     name = fields.Char('Name', required=True)
     
-class AddsGroup(models.Model):
+class AdsGroup(models.Model):
     _name = 'lean_marketing.adds_campaign.adds_group'
-    _description = 'Adds Group'
+    _description = 'Ads Group'
     
     name = fields.Char('Name', required=True)
     active = fields.Boolean('Active', default=True, track_visibility=True)
-    adds_campaign_id = fields.Many2one('lean_marketing.adds_campaign', 'Campaign')
-    audience_id = fields.Many2one('lean_marketing.adds_campaign.audience', 'Audience')
+    ads_campaign_id = fields.Many2one('lean_marketing.ads_campaign', 'Campaign')
+    audience_id = fields.Many2one('lean_marketing.ads_campaign.audience', 'Audience')
     
 class Ad(models.Model):
-    _name = 'lean_marketing.adds_campaign.ad'
+    _name = 'lean_marketing.ads_campaign.ad'
     _description = 'Ad'
     
     name = fields.Char('Name', required=True)
     active = fields.Boolean('Active', default=True, track_visibility=True)
-    adds_group_ids = fields.Many2one('lean_marketing.adds_group')
+    adds_group_ids = fields.Many2one('lean_marketing.ads_group')
     
 class BuyerPersona(models.Model):
     _name = "lean_marketing.buyer_persona"
