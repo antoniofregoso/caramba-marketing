@@ -1,0 +1,323 @@
+<odoo>
+  
+          <menuitem
+            id="lean_marketing_ads_menu_root"
+            name="Ads"
+            web_icon="lean_marketing_ads,static/description/icon.png"
+            groups="group_lean_marketing_ads_development_team"
+            sequence="7"/>
+            
+            
+    <record id='lean_marketing_ads_campaign_audience_view_tree' model='ir.ui.view'>
+        <field name="name">lean_marketing.ads_campaign.audience.tree</field>
+        <field name="model">lean_marketing.ads_campaign.audience</field>
+        <field name="arch" type="xml">
+            <tree string="Audiences">
+                <field name="name" />
+                 <field name="buyer_persona_id" />
+            </tree>
+        </field>
+    </record>      
+    
+    <record id='lean_marketing_ads_campaign_audience_view_form' model='ir.ui.view'>
+        <field name="name">lean_marketing.ads_campaign.audience.form</field>
+        <field name="model">lean_marketing.ads_campaign.audience</field>
+        <field name="arch" type="xml">
+            <form string="Audience">
+            	<sheet>
+            		 <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="name" placeholder="e.g. Audience name"/></h1>
+                               <h2 class="o_row row no-gutters d-flex">
+                                <div class="col">
+                                    <label for="buyer_persona_id" class="oe_edit_only" />
+                                    <div class="o_row">
+                                        <field name="buyer_persona_id" class="oe_inline" />
+                                       
+                                    </div>
+                                </div>
+                              </h2>
+                    </div>
+	            	 <notebook colspan="4" id="filters">
+	            	 
+	            	 </notebook>
+            	</sheet>
+         	</form>  
+        </field>
+     </record> 
+     
+    <record id='lean_marketing_ads_campaign_audience_view_kanban' model='ir.ui.view'>
+        <field name="name">lean_marketing.ads_campaign.audience.kanban</field>
+        <field name="model">lean_marketing.ads_campaign.audience</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_small_column">            	
+                <field name="id"/>
+                <field name="name" />
+                <field name="buyer_persona_id" />
+                <field name="color" />
+                 <templates>
+                 	<t t-name="kanban-box">
+                      	<t t-name="kanban-box">
+                      		 <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                      		 <div class="o_dropdown_kanban dropdown">
+
+                                    <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                        <span class="fa fa-ellipsis-v"/>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                                        <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                    </div>
+                                </div>
+                                <div class="oe_kanban_details">
+                                	<h2 class="oe_partner_heading">
+                                    <a type="open" class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </a>
+                                </h2> 
+                                <ul>
+                                 <li><field name="buyer_persona_id"/></li>
+                                 </ul>
+                                
+                                </div>
+                                <div class="oe_clear"/>
+                      		</div>
+                      	</t>
+                    </t>
+                 </templates>            
+            </kanban>
+        </field>
+     </record>
+     
+     <record id="lean_marketing_ads_campaign_audience_action" model="ir.actions.act_window">
+            <field name="name">Audiences</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lean_marketing.ads_campaign.audience</field>
+            <field name="view_type">form</field>
+            <field name="domain">[]</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="filter" eval="True"/>
+             <field name="view_id" ref="lean_marketing_ads_campaign_audience_view_kanban"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new audience
+              </p><p>
+                Odoo helps you easily track all activities related to a audience.
+              </p>
+            </field>
+        </record>
+        
+          <menuitem
+            id="lean_marketing_ads_campaign_audience_menu"
+            name="Audiences"
+            parent="lean_marketing_ads_menu_root"
+            action="lean_marketing_ads_campaign_audience_action"
+            sequence="1" groups="group_lean_marketing_ads_development_team"/>
+            
+            
+    <record id='lean_marketing_ads_campaign_view_tree' model='ir.ui.view'>
+        <field name="name">lean_marketing.ads_campaign.tree</field>
+        <field name="model">lean_marketing.ads_campaign</field>
+        <field name="arch" type="xml">
+            <tree string="Ads Campaigns">
+                <field name="campaign_id" />
+                <field name="name" />
+                <field name="active" />
+                <field name="campaign_id" />
+                <field name="platform" />
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
+    
+    <record id='lean_marketing_ads_campaign_view_form' model='ir.ui.view'>
+        <field name="name">lean_marketing.ads_campaign.form</field>
+        <field name="model">lean_marketing.ads_campaign</field>
+        <field name="arch" type="xml">
+            <form string="Ads Campaign">
+            	<header>
+            		<field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
+            	<sheet>
+            		 <div class="oe_button_box" name="button_box">
+            		 
+            		 </div>
+            	
+            	</sheet>
+         	</form>  
+        </field>
+     </record> 
+     
+     <record id='lean_marketing_ads_campaign_view_kanban' model='ir.ui.view'>
+        <field name="name">lean_marketing.ads_campaign.kanban</field>
+        <field name="model">lean_marketing.ads_campaign</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state" class="o_kanban_small_column">          	
+                <field name="id"/>
+                <field name="name" />
+                <field name="color" />
+                 <templates>
+                 </templates>            
+            
+            </kanban>
+        </field>
+     </record>
+     
+          <record id="lean_marketing_ads_campaign_action" model="ir.actions.act_window">
+            <field name="name">Ads Campaigns</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lean_marketing.ads_campaign</field>
+            <field name="view_type">form</field>
+            <field name="domain">[]</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="filter" eval="True"/>
+             <field name="view_id" ref="lean_marketing_ads_campaign_view_kanban"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new ads campaign
+              </p><p>
+                Odoo helps you easily track all activities related to a campaign.
+              </p>
+            </field>
+        </record>
+        
+         <menuitem
+            id="lean_marketing_ads_campaign_menu"
+            name="Ads Campaigns"
+            parent="lean_marketing_ads_menu_root"
+            action="lean_marketing_ads_campaign_action"
+            sequence="2" groups="group_lean_marketing_ads_development_team"/>
+    
+        <record id='lean_marketing_ads_campaign_ads_group_view_tree' model='ir.ui.view'>
+        <field name="name">lean_marketing.ads_campaign.ads_group.tree</field>
+        <field name="model">lean_marketing.ads_campaign.ads_group</field>
+        <field name="arch" type="xml">
+            <tree string="Ads Groups">
+            	<field name="ads_campaign_id" />
+                <field name="name" />
+                <field name="active" />
+                <field name="audience_id" />
+            </tree>
+        </field>
+    </record>
+    
+     <record id='lean_marketing_ads_campaign_ads_group_view_form' model='ir.ui.view'>
+        <field name="name">lean_marketing.ads_campaign.ads_group.form</field>
+        <field name="model">lean_marketing.ads_campaign.ads_group</field>
+        <field name="arch" type="xml">
+            <form string="Ads Group">
+            	<sheet>
+            	
+            	</sheet>
+         	</form>  
+        </field>
+     </record> 
+     
+      <record id='lean_marketing_ads_campaign_ads_group_view_kanban' model='ir.ui.view'>
+        <field name="name">lean_marketing.ads_campaign.ads_group.kanban</field>
+        <field name="model">lean_marketing.ads_campaign.ads_group</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="ads_campaign_id" class="o_kanban_small_column">          	
+                <field name="id"/>
+                <field name="name" />
+                <field name="color" />
+                 <templates>
+                 </templates>            
+            
+            </kanban>
+        </field>
+     </record>
+            
+      <record id="lean_marketing_ads_campaign_ads_group_action" model="ir.actions.act_window">
+            <field name="name">Ads Groups</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lean_marketing.ads_campaign.ads_group</field>
+            <field name="view_type">form</field>
+            <field name="domain">[]</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="filter" eval="True"/>
+             <field name="view_id" ref="lean_marketing_ads_campaign_ads_group_view_kanban"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new ads group
+              </p>
+            </field>
+        </record>    
+        
+        
+                  
+          <menuitem
+            id="lean_marketing_ads_campaign_ads_group_menu"
+            name="Ads Groups"
+            parent="lean_marketing_ads_menu_root"
+            action="lean_marketing_ads_campaign_ads_group_action"
+            sequence="3" groups="group_lean_marketing_ads_development_team"/>
+
+    
+     <record id='lean_marketing_ads_campaign_ad_view_tree' model='ir.ui.view'>
+        <field name="name">lean_marketing.ads_campaign.ad.tree</field>
+        <field name="model">lean_marketing.ads_campaign.ad</field>
+        <field name="arch" type="xml">
+            <tree string="Ads">
+            	<field name="ads_group_id" />
+                <field name="name" />
+                <field name="active" />
+            </tree>
+        </field>
+    </record>
+    
+     <record id='lean_marketing_ads_campaign_ad_view_form' model='ir.ui.view'>
+        <field name="name">lean_marketing.ads_campaign.ad.form</field>
+        <field name="model">lean_marketing.ads_campaign.ad</field>
+        <field name="arch" type="xml">
+            <form string="Ad">
+            	<sheet>
+            	
+            	</sheet>
+         	</form>  
+        </field>
+     </record> 
+     
+         <record id='lean_marketing_ads_campaign_ad_view_kanban' model='ir.ui.view'>
+        <field name="name">lean_marketing.ads_campaign.ad.kanban</field>
+        <field name="model">lean_marketing.ads_campaign.ad</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="ads_group_id" class="o_kanban_small_column">          	
+                <field name="id"/>
+                <field name="name" />
+                <field name="color" />
+                 <templates>
+                 </templates>            
+            
+            </kanban>
+        </field>
+     </record>
+     
+      <record id="lean_marketing_ads_campaign_ad_action" model="ir.actions.act_window">
+            <field name="name">Ads</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lean_marketing.ads_campaign.ad</field>
+            <field name="view_type">form</field>
+            <field name="domain">[]</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="filter" eval="True"/>
+             <field name="view_id" ref="lean_marketing_ads_campaign_ad_view_kanban"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new ad
+              </p><p>
+                Odoo helps you easily track all activities related to a ad.
+              </p>
+            </field>
+        </record>
+       
+          <menuitem
+            id="lean_marketing_ads_campaign_ad_menu"
+            name="Ads"
+            parent="lean_marketing_ads_menu_root"
+            action="lean_marketing_ads_campaign_ad_action"
+            sequence="4" groups="group_lean_marketing_ads_development_team"/>
+                   
+  
+</odoo>

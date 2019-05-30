@@ -26,8 +26,9 @@ class AdsCampaign(models.Model):
         ],
         string='Status', default='draft', required=True, copy=False, track_visibility='onchange', group_expand='_expand_states')
     platform = fields.Selection(ADS_PLATFORMS, 'Platform')
-    campaign_id = fields.Many2one('utm.campaign', 'campaign_id',
-        required=True, ondelete='cascade', string="Campaign",  help="Psrent Campaign")
+    campaign_id = fields.Many2one('utm.campaign', 'Campaign',
+        required=True, ondelete='cascade',   help=" Campaign")
+    color = fields.Integer('Kanban Color Index')
     
     def _expand_states(self, states, domain, order):
         return ['draft', 'active', 'done', 'cancel']
@@ -36,16 +37,19 @@ class Audience(models.Model):
     _name = 'lean_marketing.ads_campaign.audience'
     _description = 'Audience'
     
-    name = fields.Char('Name', required=True)
+    name = fields.Char(string='Name', required=True)
+    buyer_persona_id = fields.Many2one('lean_marketing.buyer_persona', 'Buyer Persona')
+    color = fields.Integer('Kanban Color Index')
     
 class AdsGroup(models.Model):
-    _name = 'lean_marketing.adds_campaign.adds_group'
+    _name = 'lean_marketing.ads_campaign.ads_group'
     _description = 'Ads Group'
     
     name = fields.Char('Name', required=True)
     active = fields.Boolean('Active', default=True, track_visibility=True)
     ads_campaign_id = fields.Many2one('lean_marketing.ads_campaign', 'Campaign')
     audience_id = fields.Many2one('lean_marketing.ads_campaign.audience', 'Audience')
+    color = fields.Integer('Kanban Color Index')
     
 class Ad(models.Model):
     _name = 'lean_marketing.ads_campaign.ad'
@@ -53,13 +57,14 @@ class Ad(models.Model):
     
     name = fields.Char('Name', required=True)
     active = fields.Boolean('Active', default=True, track_visibility=True)
-    adds_group_ids = fields.Many2one('lean_marketing.ads_group')
+    ads_group_id = fields.Many2one('lean_marketing.ads_group')
+    color = fields.Integer('Kanban Color Index')
     
 class BuyerPersona(models.Model):
     _name = "lean_marketing.buyer_persona"
     _inherit = "lean_marketing.buyer_persona"
     
-    audience_id = fields.Many2ome('lean_marketing.adds_campaign.audience', 'Audience')
+    audience_id = fields.Many2one('lean_marketing.adds_campaign.audience', 'Audience')
     
     
     

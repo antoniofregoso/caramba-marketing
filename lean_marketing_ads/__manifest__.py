@@ -1,29 +1,30 @@
 # -*- coding: utf-8 -*-
-{
-    'name': "lean_marketing_ads",
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).#
 
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+{
+    'name': "Ads",
+
+    'summary': "Online Ads",
 
     'description': """
-        Long description of module's purpose
+        Base module for advertising management in social networks and search engines.
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Antonio Fregoso",
+    'website': "http://www.antoniofregoso.blog",
 
    
-    'category': 'Uncategorized',
-    'version': '0.1',
+    'category': 'Marketing',
+    'version': '12.0.0.0.0',
 
     
-    'depends': ['base'],
+    'depends': ['marketing_buyer_persona'],
 
    
     'data': [
-        'security/lean_marketing_ads.xml'
+        'security/lean_marketing_ads.xml',
         'security/ir.model.access.csv',
+        'views/lean_marketing_ads_views.xml'
     ],
    
 }

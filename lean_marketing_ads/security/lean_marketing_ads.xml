@@ -16,8 +16,8 @@
         </record>
         <record id="group_lean_marketing_ads_product_owner" model="res.groups">
             <field name="name">Product owner</field>
-            <field name="category_id" ref="module_lean_marketing_ads_ads"/>
-            <field name="implied_ids" eval="[(4, ref('group_lean_ads_marketing_scrum_master'))]"/>
+            <field name="category_id" ref="module_lean_marketing_ads"/>
+            <field name="implied_ids" eval="[(4, ref('group_lean_marketing_ads_scrum_master'))]"/>
         </record>
         <record id="group_lean_marketing_ads_manager" model="res.groups">
             <field name="name">Manager</field>
