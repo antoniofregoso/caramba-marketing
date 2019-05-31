@@ -113,7 +113,16 @@
             name="Audiences"
             parent="lean_marketing_ads_menu_root"
             action="lean_marketing_ads_campaign_audience_action"
-            sequence="1" groups="group_lean_marketing_ads_development_team"/>
+            sequence="1" 
+            groups="group_lean_marketing_ads_development_team"/>
+            
+        <menuitem 
+        	id="lean_marketing_ads_campaign_audience_assets_menu" 
+        	name="Audiences"
+            parent="marketing_buyer_persona.menu_lean_marketing_buyers_persona_hub"
+            action="lean_marketing_ads_campaign_audience_action"             
+            sequence="4"
+            groups="group_lean_marketing_ads_development_team"/>
             
             
     <record id='lean_marketing_ads_campaign_view_tree' model='ir.ui.view'>
