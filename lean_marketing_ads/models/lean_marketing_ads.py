@@ -17,7 +17,7 @@ class AdsCampaign(models.Model):
     _description = 'Ads Campaign'
     
     name = fields.Char('Name', required=True)
-    active = fields.Boolean('Active', default=True, track_visibility=True)
+    active = fields.Boolean('Active', default=False, track_visibility=True)
     state = fields.Selection([
         ('draft', 'Draft'),
         ('active', 'Active'),
@@ -25,7 +25,7 @@ class AdsCampaign(models.Model):
         ('cancel', 'Cancelled'),
         ],
         string='Status', default='draft', required=True, copy=False, track_visibility='onchange', group_expand='_expand_states')
-    platform = fields.Selection(ADS_PLATFORMS, 'Platform')
+    platform = fields.Selection(ADS_PLATFORMS, 'Platform', required=True)
     campaign_id = fields.Many2one('utm.campaign', 'Campaign',
         required=True, ondelete='cascade',   help=" Campaign")
     color = fields.Integer('Kanban Color Index')
@@ -61,10 +61,9 @@ class Ad(models.Model):
     color = fields.Integer('Kanban Color Index')
     
 class BuyerPersona(models.Model):
-    _name = "lean_marketing.buyer_persona"
     _inherit = "lean_marketing.buyer_persona"
     
-    audience_id = fields.Many2one('lean_marketing.adds_campaign.audience', 'Audience')
+    audience_id = fields.Many2one('lean_marketing.ads_campaign.audience', 'Audience')
     
     
     

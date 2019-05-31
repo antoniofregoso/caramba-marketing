@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).#
 
 {
-    'name': "Ads",
+    'name': "Lean Marketing Ads",
 
     'summary': "Online Ads",
 

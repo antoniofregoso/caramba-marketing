@@ -18,6 +18,8 @@
             </tree>
         </field>
     </record>      
+  
+  <!-- Audience forms -->  
     
     <record id='lean_marketing_ads_campaign_audience_view_form' model='ir.ui.view'>
         <field name="name">lean_marketing.ads_campaign.audience.form</field>
@@ -38,7 +40,7 @@
                                 </div>
                               </h2>
                     </div>
-	            	 <notebook colspan="4" id="filters">
+	            	 <notebook colspan="4" name="filters">
 	            	 
 	            	 </notebook>
             	</sheet>
@@ -56,7 +58,6 @@
                 <field name="buyer_persona_id" />
                 <field name="color" />
                  <templates>
-                 	<t t-name="kanban-box">
                       	<t t-name="kanban-box">
                       		 <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
                       		 <div class="o_dropdown_kanban dropdown">
@@ -84,7 +85,6 @@
                                 <div class="oe_clear"/>
                       		</div>
                       	</t>
-                    </t>
                  </templates>            
             </kanban>
         </field>
@@ -116,6 +116,10 @@
             sequence="1" 
             groups="group_lean_marketing_ads_development_team"/>
             
+
+
+<!--  Asset menu for audience  -->
+            
         <menuitem 
         	id="lean_marketing_ads_campaign_audience_assets_menu" 
         	name="Audiences"
@@ -123,6 +127,10 @@
             action="lean_marketing_ads_campaign_audience_action"             
             sequence="4"
             groups="group_lean_marketing_ads_development_team"/>
+            
+ 
+  
+  <!-- Ads campaign forms  -->
             
             
     <record id='lean_marketing_ads_campaign_view_tree' model='ir.ui.view'>
@@ -133,7 +141,6 @@
                 <field name="campaign_id" />
                 <field name="name" />
                 <field name="active" />
-                <field name="campaign_id" />
                 <field name="platform" />
                 <field name="state" />
             </tree>
@@ -150,8 +157,25 @@
                 </header>
             	<sheet>
             		 <div class="oe_button_box" name="button_box">
-            		 
+            		 	<button name="toggle_active" type="object" confirm="(Un)archiving a blog automatically (un)archives its posts. Do you want to proceed?" class="oe_stat_button" icon="fa-toggle-on">
+                                <field name="active" widget="boolean_button" options='{"terminology": "inactive"}'/>
+                            </button>
             		 </div>
+            		  <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="name" placeholder="e.g. Audience name"/></h1>
+                    </div>
+                    <group>
+                    	<group>
+                    		<field name="campaign_id" />
+                    	</group>
+                    	<group>
+                    		<field name="platform" />
+                    	</group>
+                    </group>
+	            	 <notebook colspan="4" name="ads_groups">
+	            	 
+	            	 </notebook>
             	
             	</sheet>
          	</form>  
@@ -166,7 +190,50 @@
                 <field name="id"/>
                 <field name="name" />
                 <field name="color" />
+                <field name="active" />
                  <templates>
+                 	<t t-name="kanban-box">
+                 	 <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                      		 <div class="o_dropdown_kanban dropdown">
+
+                                    <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                        <span class="fa fa-ellipsis-v"/>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                                        <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                    </div>
+                                </div>
+                                 <div class="oe_kanban_content">
+                                 	<div id="textbox">
+                                 		<div t-if="condition"  class="float-right">
+                                 			<i class="fa fa-toggle-on"/>
+                                 		</div>
+                                 		<div t-else=""  class="float-right">
+                                 			<i class="fa fa-toggle-off"/>
+                                 		</div>
+		                                <strong>
+		                                    <field name="name"/>
+		                                </strong>
+		                            </div>
+                                 </div>
+                                  <div class="oe_kanban_details">
+                                  	  <ul>
+	                                 	<li><field name="campaign_id"/></li>
+	                                 	<li><field name="platform"/></li>
+	                                 </ul>
+                                  </div>
+                                   <div class="o_kanban_record_bottom">
+                                   <div class="oe_kanban_bottom_right">
+                                   </div>
+                                   	 <div class="oe_kanban_bottom_right">
+                                   	 	
+                                   	 </div>
+                                   </div>
+                                <div class="oe_clear"/>
+                      		</div>
+                 	</t>
                  </templates>            
             
             </kanban>
@@ -327,6 +394,24 @@
             parent="lean_marketing_ads_menu_root"
             action="lean_marketing_ads_campaign_ad_action"
             sequence="4" groups="group_lean_marketing_ads_development_team"/>
+            
+         
+         <record id="lean_marketing_buyer_persona_audience _form" model="ir.ui.view">
+            <field name="name">lean_marketing.buyer_persona.audience.form</field>
+            <field name="model">lean_marketing.buyer_persona</field>
+            <field name="inherit_id" ref="marketing_buyer_persona.lean_marketing_buyer_persona_view_form"/>
+            <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_title')]/h4" position="replace">
+            	<h4>Audience <field name="audience_id" placeholder="For ad microsegmentation" nolabel="1"/></h4>
+            </xpath>
+            </field>
+            </record>
+            
+            
+     
+            
+            
+     
                    
   
 </odoo>

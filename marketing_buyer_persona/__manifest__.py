@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).#
 
 {
-    'name': "Marketing Buyer Persona",
+    'name': "Lean Marketing Buyer Persona",
 
     'summary': 'Tool to create person buyer templates and group them in tribes',
 
