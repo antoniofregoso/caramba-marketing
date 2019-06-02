@@ -5,7 +5,7 @@
             name="Ads"
             web_icon="lean_marketing_ads,static/description/icon.png"
             groups="group_lean_marketing_ads_development_team"
-            sequence="7"/>
+            sequence="6"/>
             
             
     <record id='lean_marketing_ads_campaign_audience_view_tree' model='ir.ui.view'>
@@ -44,6 +44,11 @@
 	            	 
 	            	 </notebook>
             	</sheet>
+            	 <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                </div>
          	</form>  
         </field>
      </record> 
@@ -52,7 +57,7 @@
         <field name="name">lean_marketing.ads_campaign.audience.kanban</field>
         <field name="model">lean_marketing.ads_campaign.audience</field>
         <field name="arch" type="xml">
-            <kanban class="o_kanban_small_column">            	
+            <kanban class="o_kanban_small_column"  quick_create="false">            	
                 <field name="id"/>
                 <field name="name" />
                 <field name="buyer_persona_id" />
@@ -113,7 +118,7 @@
             name="Audiences"
             parent="lean_marketing_ads_menu_root"
             action="lean_marketing_ads_campaign_audience_action"
-            sequence="1" 
+            sequence="4" 
             groups="group_lean_marketing_ads_development_team"/>
             
 
@@ -137,12 +142,12 @@
         <field name="name">lean_marketing.ads_campaign.tree</field>
         <field name="model">lean_marketing.ads_campaign</field>
         <field name="arch" type="xml">
-            <tree string="Ads Campaigns">
+            <tree string="Ads Campaigns" decoration-success="active==True" decoration-muted="active==False">
                 <field name="campaign_id" />
                 <field name="name" />
-                <field name="active" />
                 <field name="platform" />
                 <field name="state" />
+                <field name="active" invisible="1"/>
             </tree>
         </field>
     </record>
@@ -157,7 +162,10 @@
                 </header>
             	<sheet>
             		 <div class="oe_button_box" name="button_box">
-            		 	<button name="toggle_active" type="object" confirm="(Un)archiving a blog automatically (un)archives its posts. Do you want to proceed?" class="oe_stat_button" icon="fa-toggle-on">
+            		 	<button  attrs="{'invisible': [('active', '=', False)]}" name="toggle_active" type="object" confirm="(Un)archiving a blog automatically (un)archives its posts. Do you want to proceed?" class="oe_stat_button" icon="fa-toggle-on">
+                                <field name="active" widget="boolean_button" options='{"terminology": "inactive"}'/>
+                            </button>
+                            <button  attrs="{'invisible': [('active', '=', True)]}"  name="toggle_active" type="object" confirm="(Un)archiving a blog automatically (un)archives its posts. Do you want to proceed?" class="oe_stat_button" icon="fa-toggle-off">
                                 <field name="active" widget="boolean_button" options='{"terminology": "inactive"}'/>
                             </button>
             		 </div>
@@ -178,6 +186,11 @@
 	            	 </notebook>
             	
             	</sheet>
+            	 <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                </div>
          	</form>  
         </field>
      </record> 
@@ -186,7 +199,7 @@
         <field name="name">lean_marketing.ads_campaign.kanban</field>
         <field name="model">lean_marketing.ads_campaign</field>
         <field name="arch" type="xml">
-            <kanban default_group_by="state" class="o_kanban_small_column">          	
+            <kanban default_group_by="state"  quick_create="false" class="o_kanban_small_column">          	
                 <field name="id"/>
                 <field name="name" />
                 <field name="color" />
@@ -207,12 +220,6 @@
                                 </div>
                                  <div class="oe_kanban_content">
                                  	<div id="textbox">
-                                 		<div t-if="condition"  class="float-right">
-                                 			<i class="fa fa-toggle-on"/>
-                                 		</div>
-                                 		<div t-else=""  class="float-right">
-                                 			<i class="fa fa-toggle-off"/>
-                                 		</div>
 		                                <strong>
 		                                    <field name="name"/>
 		                                </strong>
@@ -225,9 +232,15 @@
 	                                 </ul>
                                   </div>
                                    <div class="o_kanban_record_bottom">
-                                   <div class="oe_kanban_bottom_right">
-                                   </div>
+                                     <div class="oe_kanban_bottom_left">
+                                     </div>
                                    	 <div class="oe_kanban_bottom_right">
+                                 		<t t-if="record.active.raw_value"  class="float-left">
+                                 			<i class="fa fa-toggle-on"/>
+                                 		</t>
+                                 		<t t-if="!record.active.raw_value"  class="float-left">
+                                 			<i class="fa fa-toggle-off"/>
+                                 		</t>
                                    	 	
                                    	 </div>
                                    </div>
@@ -245,7 +258,7 @@
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">lean_marketing.ads_campaign</field>
             <field name="view_type">form</field>
-            <field name="domain">[]</field>
+            <field name="domain">['|',('active','=',True),('active','=',False)]</field>
             <field name="view_mode">kanban,tree,form</field>
             <field name="filter" eval="True"/>
              <field name="view_id" ref="lean_marketing_ads_campaign_view_kanban"/>
@@ -263,17 +276,17 @@
             name="Ads Campaigns"
             parent="lean_marketing_ads_menu_root"
             action="lean_marketing_ads_campaign_action"
-            sequence="2" groups="group_lean_marketing_ads_development_team"/>
+            sequence="1" groups="group_lean_marketing_ads_development_team"/>
     
         <record id='lean_marketing_ads_campaign_ads_group_view_tree' model='ir.ui.view'>
         <field name="name">lean_marketing.ads_campaign.ads_group.tree</field>
         <field name="model">lean_marketing.ads_campaign.ads_group</field>
         <field name="arch" type="xml">
-            <tree string="Ads Groups">
+            <tree string="Ads Groups" decoration-success="active==True" decoration-muted="active==False">
             	<field name="ads_campaign_id" />
                 <field name="name" />
-                <field name="active" />
                 <field name="audience_id" />
+                <field name="active" invisible="1"/>
             </tree>
         </field>
     </record>
@@ -284,8 +297,36 @@
         <field name="arch" type="xml">
             <form string="Ads Group">
             	<sheet>
+            	<div class="oe_button_box" name="button_box">
+            		 	<button  attrs="{'invisible': [('active', '=', False)]}" name="toggle_active" type="object" confirm="(Un)archiving a blog automatically (un)archives its posts. Do you want to proceed?" class="oe_stat_button" icon="fa-toggle-on">
+                                <field name="active" widget="boolean_button" options='{"terminology": "inactive"}'/>
+                            </button>
+                            <button  attrs="{'invisible': [('active', '=', True)]}"  name="toggle_active" type="object" confirm="(Un)archiving a blog automatically (un)archives its posts. Do you want to proceed?" class="oe_stat_button" icon="fa-toggle-off">
+                                <field name="active" widget="boolean_button" options='{"terminology": "inactive"}'/>
+                            </button>
+            		 </div>
+            		  <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="name" placeholder="e.g. Audience name"/></h1>
+                    </div>
+                    <group>
+                    	<group>
+                    		<field name="ads_campaign_id" />
+                    	</group>
+                    	<group>
+                    		<field name="audience_id" />
+                    	</group>
+                    </group>
+	            	 <notebook colspan="4" name="ads">
+	            	 
+	            	 </notebook>
             	
             	</sheet>
+            	 <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                </div>
          	</form>  
         </field>
      </record> 
@@ -294,13 +335,56 @@
         <field name="name">lean_marketing.ads_campaign.ads_group.kanban</field>
         <field name="model">lean_marketing.ads_campaign.ads_group</field>
         <field name="arch" type="xml">
-            <kanban default_group_by="ads_campaign_id" class="o_kanban_small_column">          	
+            <kanban  quick_create="false" class="o_kanban_small_column">          	
                 <field name="id"/>
                 <field name="name" />
+                <field name="active" />
                 <field name="color" />
                  <templates>
-                 </templates>            
-            
+                 	<t t-name="kanban-box">
+                      		 <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                      		 <div class="o_dropdown_kanban dropdown">
+
+                                    <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                        <span class="fa fa-ellipsis-v"/>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                                        <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                    </div>
+                                </div>
+                                 <div class="oe_kanban_content">
+                                 	<div id="textbox">
+		                                <strong>
+		                                    <field name="name"/>
+		                                </strong>
+		                            </div>
+                                 </div>
+                                  <div class="oe_kanban_details">
+                                  	  <ul>
+	                                 	<li><field name="ads_campaign_id"/></li>
+	                                 	<li><field name="audience_id"/></li>
+	                                 </ul>
+                                  </div>
+                                   <div class="o_kanban_record_bottom">
+                                     <div class="oe_kanban_bottom_left">
+                                     </div>
+                                   	 <div class="oe_kanban_bottom_right">
+                                 		<t t-if="record.active.raw_value"  class="float-left">
+                                 			<i class="fa fa-toggle-on"/>
+                                 		</t>
+                                 		<t t-if="!record.active.raw_value"  class="float-left">
+                                 			<i class="fa fa-toggle-off"/>
+                                 		</t>
+                                   	 	
+                                   	 </div>
+                                   </div>
+                                
+                                <div class="oe_clear"/>
+                      		</div>
+                      	</t>
+                 </templates>       
             </kanban>
         </field>
      </record>
@@ -310,7 +394,7 @@
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">lean_marketing.ads_campaign.ads_group</field>
             <field name="view_type">form</field>
-            <field name="domain">[]</field>
+            <field name="domain">['|',('active','=',True),('active','=', False)]</field>
             <field name="view_mode">kanban,tree,form</field>
             <field name="filter" eval="True"/>
              <field name="view_id" ref="lean_marketing_ads_campaign_ads_group_view_kanban"/>
@@ -328,17 +412,17 @@
             name="Ads Groups"
             parent="lean_marketing_ads_menu_root"
             action="lean_marketing_ads_campaign_ads_group_action"
-            sequence="3" groups="group_lean_marketing_ads_development_team"/>
+            sequence="2" groups="group_lean_marketing_ads_development_team"/>
 
     
      <record id='lean_marketing_ads_campaign_ad_view_tree' model='ir.ui.view'>
         <field name="name">lean_marketing.ads_campaign.ad.tree</field>
         <field name="model">lean_marketing.ads_campaign.ad</field>
         <field name="arch" type="xml">
-            <tree string="Ads">
+            <tree string="Ads" decoration-success="active==True" decoration-muted="active==False">
             	<field name="ads_group_id" />
                 <field name="name" />
-                <field name="active" />
+                <field name="active" invisible="1"/>
             </tree>
         </field>
     </record>
@@ -349,8 +433,26 @@
         <field name="arch" type="xml">
             <form string="Ad">
             	<sheet>
+            		<div class="oe_button_box" name="button_box">
+            		 	<button  attrs="{'invisible': [('active', '=', False)]}" name="toggle_active" type="object" confirm="(Un)archiving a blog automatically (un)archives its posts. Do you want to proceed?" class="oe_stat_button" icon="fa-toggle-on">
+                                <field name="active" widget="boolean_button" options='{"terminology": "inactive"}'/>
+                            </button>
+                            <button  attrs="{'invisible': [('active', '=', True)]}"  name="toggle_active" type="object" confirm="(Un)archiving a blog automatically (un)archives its posts. Do you want to proceed?" class="oe_stat_button" icon="fa-toggle-off">
+                                <field name="active" widget="boolean_button" options='{"terminology": "inactive"}'/>
+                            </button>
+            		 </div>
+            		  <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="name" placeholder="e.g. Audience name"/></h1>
+                             <h4>Ad Group: <field name="ads_group_id" placeholder="Segment VALS2 " nolabel="1"/></h4>
+                    </div>
             	
             	</sheet>
+            	 <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                </div>
          	</form>  
         </field>
      </record> 
@@ -359,11 +461,55 @@
         <field name="name">lean_marketing.ads_campaign.ad.kanban</field>
         <field name="model">lean_marketing.ads_campaign.ad</field>
         <field name="arch" type="xml">
-            <kanban default_group_by="ads_group_id" class="o_kanban_small_column">          	
+            <kanban  quick_create="false" class="o_kanban_small_column">          	
                 <field name="id"/>
                 <field name="name" />
+                <field name="active" />
                 <field name="color" />
+                <field name="ads_group_id" />
                  <templates>
+                 	<t t-name="kanban-box">
+                      		 <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                      		 <div class="o_dropdown_kanban dropdown">
+
+                                    <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                        <span class="fa fa-ellipsis-v"/>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                                        <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                    </div>
+                                </div>
+                                 <div class="oe_kanban_content">
+                                 	<div id="textbox">
+		                                <strong>
+		                                    <field name="name"/>
+		                                </strong>
+		                            </div>
+                                 </div>
+                                  <div class="oe_kanban_details">
+                                  	  <ul>
+	                                 	<li><field name="ads_group_id"/></li>
+	                                 </ul>
+                                  </div>
+                                   <div class="o_kanban_record_bottom">
+                                     <div class="oe_kanban_bottom_left">
+                                     </div>
+                                   	 <div class="oe_kanban_bottom_right">
+                                 		<t t-if="record.active.raw_value"  class="float-left">
+                                 			<i class="fa fa-toggle-on"/>
+                                 		</t>
+                                 		<t t-if="!record.active.raw_value"  class="float-left">
+                                 			<i class="fa fa-toggle-off"/>
+                                 		</t>
+                                   	 	
+                                   	 </div>
+                                   </div>
+                                
+                                <div class="oe_clear"/>
+                      		</div>
+                      	</t>
                  </templates>            
             
             </kanban>
@@ -375,7 +521,7 @@
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">lean_marketing.ads_campaign.ad</field>
             <field name="view_type">form</field>
-            <field name="domain">[]</field>
+            <field name="domain">['|',('active','=',True),('active','=', False)]</field>
             <field name="view_mode">kanban,tree,form</field>
             <field name="filter" eval="True"/>
              <field name="view_id" ref="lean_marketing_ads_campaign_ad_view_kanban"/>
@@ -393,7 +539,7 @@
             name="Ads"
             parent="lean_marketing_ads_menu_root"
             action="lean_marketing_ads_campaign_ad_action"
-            sequence="4" groups="group_lean_marketing_ads_development_team"/>
+            sequence="3" groups="group_lean_marketing_ads_development_team"/>
             
          
          <record id="lean_marketing_buyer_persona_audience _form" model="ir.ui.view">

@@ -15,9 +15,10 @@ ADS_PLATFORMS = [
 class AdsCampaign(models.Model):
     _name = 'lean_marketing.ads_campaign'
     _description = 'Ads Campaign'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     
     name = fields.Char('Name', required=True)
-    active = fields.Boolean('Active', default=False, track_visibility=True)
+    active = fields.Boolean('Active', default=False)
     state = fields.Selection([
         ('draft', 'Draft'),
         ('active', 'Active'),
@@ -36,6 +37,7 @@ class AdsCampaign(models.Model):
 class Audience(models.Model):
     _name = 'lean_marketing.ads_campaign.audience'
     _description = 'Audience'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     
     name = fields.Char(string='Name', required=True)
     buyer_persona_id = fields.Many2one('lean_marketing.buyer_persona', 'Buyer Persona')
@@ -44,9 +46,10 @@ class Audience(models.Model):
 class AdsGroup(models.Model):
     _name = 'lean_marketing.ads_campaign.ads_group'
     _description = 'Ads Group'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     
     name = fields.Char('Name', required=True)
-    active = fields.Boolean('Active', default=True, track_visibility=True)
+    active = fields.Boolean('Active', default=False)
     ads_campaign_id = fields.Many2one('lean_marketing.ads_campaign', 'Campaign')
     audience_id = fields.Many2one('lean_marketing.ads_campaign.audience', 'Audience')
     color = fields.Integer('Kanban Color Index')
@@ -54,10 +57,11 @@ class AdsGroup(models.Model):
 class Ad(models.Model):
     _name = 'lean_marketing.ads_campaign.ad'
     _description = 'Ad'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     
     name = fields.Char('Name', required=True)
-    active = fields.Boolean('Active', default=True, track_visibility=True)
-    ads_group_id = fields.Many2one('lean_marketing.ads_group')
+    active = fields.Boolean('Active', default=False)
+    ads_group_id = fields.Many2one('lean_marketing.ads_campaign.ads_group', required=True)
     color = fields.Integer('Kanban Color Index')
     
 class BuyerPersona(models.Model):
