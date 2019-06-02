@@ -50,7 +50,7 @@ class AdsGroup(models.Model):
     
     name = fields.Char('Name', required=True)
     active = fields.Boolean('Active', default=False)
-    ads_campaign_id = fields.Many2one('lean_marketing.ads_campaign', 'Campaign')
+    ads_campaign_id = fields.Many2one('lean_marketing.ads_campaign', 'Campaign', domain=['|',('active','=',True),('active','=', False)])
     audience_id = fields.Many2one('lean_marketing.ads_campaign.audience', 'Audience')
     color = fields.Integer('Kanban Color Index')
     
@@ -61,7 +61,7 @@ class Ad(models.Model):
     
     name = fields.Char('Name', required=True)
     active = fields.Boolean('Active', default=False)
-    ads_group_id = fields.Many2one('lean_marketing.ads_campaign.ads_group', required=True)
+    ads_group_id = fields.Many2one('lean_marketing.ads_campaign.ads_group', required=True, domain=['|',('active','=',True),('active','=', False)])
     color = fields.Integer('Kanban Color Index')
     
 class BuyerPersona(models.Model):

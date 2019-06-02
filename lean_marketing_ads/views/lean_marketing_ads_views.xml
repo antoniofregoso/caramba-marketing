@@ -171,7 +171,7 @@
             		 </div>
             		  <div class="oe_title">
                             <label for="name" class="oe_edit_only"/>
-                            <h1><field name="name" placeholder="e.g. Audience name"/></h1>
+                            <h1><field name="name" placeholder="e.g. Campaign name"/></h1>
                     </div>
                     <group>
                     	<group>
@@ -307,7 +307,7 @@
             		 </div>
             		  <div class="oe_title">
                             <label for="name" class="oe_edit_only"/>
-                            <h1><field name="name" placeholder="e.g. Audience name"/></h1>
+                            <h1><field name="name" placeholder="e.g. Ad Group name"/></h1>
                     </div>
                     <group>
                     	<group>
@@ -443,8 +443,8 @@
             		 </div>
             		  <div class="oe_title">
                             <label for="name" class="oe_edit_only"/>
-                            <h1><field name="name" placeholder="e.g. Audience name"/></h1>
-                             <h4>Ad Group: <field name="ads_group_id" placeholder="Segment VALS2 " nolabel="1"/></h4>
+                            <h1><field name="name" placeholder="e.g. Ad name"/></h1>
+                             <h4>Ad Group: <field name="ads_group_id" placeholder="Select Ad Group" nolabel="1"/></h4>
                     </div>
             	
             	</sheet>
