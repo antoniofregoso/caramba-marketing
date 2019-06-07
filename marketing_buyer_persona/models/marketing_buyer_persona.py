@@ -2,6 +2,8 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).#
 
 from odoo import models, fields, api, tools
+import logging
+_logger = logging.getLogger(__name__)
 
 class MeetingPlace(models.Model):
 
