@@ -79,6 +79,7 @@ class Touchpoint(models.Model):
     name = fields.Char('Name', required=True)
     active = fields.Boolean(default=True)
     color = fields.Integer('Kanban Color Index')
+    sequence = fields.Integer('Sequence')
     state = fields.Selection([
         ('draft', 'Draft'),('testing', 'Testing'),
         ('operating', 'Operating'), ('maintenance', 'Maintenance'), ('cancel', 'Cancelled')],
@@ -254,6 +255,7 @@ class Plan(models.Model):
     campaigns_ids = fields.One2many('utm.campaign', 'plan_id', string="Campaigns", ondelete='cascade')
     touchpoints_ids = fields.One2many('lean_marketing.touchpoint', 'plan_id', string="Touchpoints", ondelete='set null')
     color = fields.Integer(string='Color Index')
+    sequence = fields.Integer('Sequence')
     company_id = fields.Many2one('res.company', string='Company', index=True, default=lambda self: self.env.user.company_id.id)
     company_currency = fields.Many2one(string='Currency', related='company_id.currency_id', readonly=True, relation="res.currency")
     

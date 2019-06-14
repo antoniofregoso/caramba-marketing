@@ -13,6 +13,13 @@
             parent="lean_marketing_menu_config"
             sequence="3"/>
             
+         
+        <menuitem
+            id="lean_marketing_menu_config"
+            name="Configuration"
+            parent="lean_marketing_menu_root"
+            sequence="80" groups="group_lean_marketing_manager"/>
+            
   
             
             <!--

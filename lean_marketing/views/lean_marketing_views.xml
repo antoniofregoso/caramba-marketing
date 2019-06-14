@@ -643,5 +643,8 @@
         <menuitem id="menu_lean_buyer_journey" name="Buyer's Journey"
             parent="lean_marketing_menu_plans"
             action="lean_marketing_buyer_journey_action" sequence="2"/>
- 
+            
+            
+            
+
 </odoo>

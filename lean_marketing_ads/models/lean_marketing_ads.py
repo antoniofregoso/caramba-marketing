@@ -28,7 +28,7 @@ class AdsCampaign(models.Model):
         ('cancel', 'Cancelled'),
         ],
         string='Status', default='draft', required=True, copy=False, track_visibility='onchange', group_expand='_expand_states')
-    platform = fields.Selection(ADS_PLATFORMS, 'Platform', required=True)
+    platform = fields.Selection(ADS_PLATFORMS, 'Platform', required=True, default='facebook')
     campaign_id = fields.Many2one('utm.campaign', 'Campaign',
         required=True, ondelete='cascade',   help=" Campaign")
     color = fields.Integer('Kanban Color Index')

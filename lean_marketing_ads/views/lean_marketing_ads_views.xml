@@ -83,6 +83,8 @@
                                     </a>
                                 </h2> 
                                 <ul>
+                                <li><field name="campaign_id"/></li>
+                                 <li><field name="platform"/></li>
                                  <li><field name="buyer_persona_id"/></li>
                                  </ul>
                                 
@@ -554,9 +556,81 @@
             </record>
             
             
-     
+                 
             
+       <record id="lean_marketing_ads_busines_form" model="ir.ui.view">
+            <field name="name">res.company.form</field>
+            <field name="model">res.company</field>
+            <field name="arch" type="xml">
+                <form string="Company">
+                  <sheet>
+                    <field name="logo" widget="image"  class="oe_avatar" readonly="1"/>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <notebook colspan="4">
+                        <page string="Facebook" id="Facebook">
+                        	<group>
+                        		<group>
+                        			 <field name="fb_business_id" />
+                        			 <field name="fb_access_token" />
+                        		</group>
+                        		<group>
+                        			<field name="fb_app_id" />
+                        			<field name="fb_app_secret" />                        		
+                        		</group>
+                        	</group>
+                            
+                        </page>
+                    </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="lean_marketing_ads_busines_tree" model="ir.ui.view">
+            <field name="name">res.company.tree</field>
+            <field name="model">res.company</field>
+            <field name="field_parent">child_ids</field>
+            <field name="arch" type="xml">
+                <tree string="Companies">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                </tree>
+            </field>
+        </record>
+ 
             
+           <menuitem
+            id="lean_marketing_ads_menu_config"
+            name="Configuration"
+            parent="lean_marketing_ads_menu_root"
+            sequence="80" groups="group_lean_marketing_ads_manager"/>   
+            
+      <record id="lean_marketing_ads_busines_action" model="ir.actions.act_window">
+            <field name="name">Company</field>
+            <field name="res_model">res.company</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="lean_marketing_brand_tag_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new company
+              </p><p>
+                Create tags that fit your brands to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="lean_marketing_ads_busines_menu"
+            name="Company"
+            action="lean_marketing_brand_tag_action"
+            parent="menu_lean_marketing_tags_config"
+            sequence="1"/>      
      
                    
   
