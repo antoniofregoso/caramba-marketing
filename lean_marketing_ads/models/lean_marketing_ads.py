@@ -35,6 +35,8 @@ class AdsCampaign(models.Model):
     
     def _expand_states(self, states, domain, order):
         return ['draft', 'active', 'done', 'cancel']
+    
+
 
 class Audience(models.Model):
     _name = 'lean_marketing.ads_campaign.audience'
@@ -42,28 +44,11 @@ class Audience(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     
     name = fields.Char(string='Name', required=True)
-    buyer_persona_id = fields.Many2one('lean_marketing.buyer_persona', 'Buyer Persona')
     color = fields.Integer('Kanban Color Index')
+    buyer_persona_id = fields.Many2one('lean_marketing.buyer_persona', 'Buyer Persona')
     
 
-    @api.one
-    def  write(self, values): 
-        buyer_persona_obj = self.env['lean_marketing.buyer_persona']
-        buyer_persona_ids = buyer_persona_obj.search([('audience_id', '=', self.id)])     
-        if len(buyer_persona_ids)>=1:
-            for i in  buyer_persona_obj.browse(buyer_persona_ids):   
-                i.id.audience_id = None                     
-        res = super(Audience, self).write(values)   
-        audience_ids = self.search([('buyer_persona_id', '=', self.buyer_persona_id.id)]) 
-        if  len(audience_ids) >= 1:
-            for i in self.browse(audience_ids): 
-                i.id.buyer_persona_id  = None
-        buyer_persona = buyer_persona_obj.browse([self.buyer_persona_id])
-        if len(buyer_persona) == 1:
-            buyer_persona.id.audience_id = self.id   
-            return res
-        else:
-            res = False
+
     
 class AdsGroup(models.Model):
     _name = 'lean_marketing.ads_campaign.ads_group'
