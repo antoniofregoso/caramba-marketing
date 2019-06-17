@@ -61,6 +61,7 @@
                 <field name="id"/>
                 <field name="name" />
                 <field name="buyer_persona_id" />
+                <field name="res_company_id" />
                 <field name="color" />
                  <templates>
                       	<t t-name="kanban-box">
@@ -83,7 +84,7 @@
                                     </a>
                                 </h2> 
                                 <ul>
-                                <li><field name="campaign_id"/></li>
+                                <li><field name="res_company_id"/></li>
                                  <li><field name="platform"/></li>
                                  <li><field name="buyer_persona_id"/></li>
                                  </ul>
@@ -614,22 +615,22 @@
       <record id="lean_marketing_ads_busines_action" model="ir.actions.act_window">
             <field name="name">Company</field>
             <field name="res_model">res.company</field>
+            <field name="view_type">tree</field>
+            <field name="view_id" ref="lean_marketing_ads_busines_tree"/>
+        </record>
+        
+         <record id="lean_marketing_ads_busines_action2" model="ir.actions.act_window">
+            <field name="name">Company</field>
+            <field name="res_model">res.company</field>
             <field name="view_type">form</field>
-            <field name="view_id" ref="lean_marketing_brand_tag_tree"/>
-            <field name="help" type="html">
-              <p class="o_view_nocontent_smiling_face">
-                Create a new company
-              </p><p>
-                Create tags that fit your brands to better manage.
-              </p>
-            </field>
+            <field name="view_id" ref="lean_marketing_ads_busines_form"/>
         </record>
 
         <menuitem
             id="lean_marketing_ads_busines_menu"
             name="Company"
-            action="lean_marketing_brand_tag_action"
-            parent="menu_lean_marketing_tags_config"
+            action="lean_marketing_ads_busines_action"
+            parent="lean_marketing_ads_menu_config"
             sequence="1"/>      
      
                    

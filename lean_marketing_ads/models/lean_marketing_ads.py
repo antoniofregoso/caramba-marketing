@@ -14,6 +14,8 @@ ADS_PLATFORMS = [
     ('whatsapp','WhatsApp')
     ]
 
+
+
 class AdsCampaign(models.Model):
     _name = 'lean_marketing.ads_campaign'
     _description = 'Ads Campaign'
@@ -46,6 +48,8 @@ class Audience(models.Model):
     name = fields.Char(string='Name', required=True)
     color = fields.Integer('Kanban Color Index')
     buyer_persona_id = fields.Many2one('lean_marketing.buyer_persona', 'Buyer Persona')
+    res_company_id = fields.Many2one('res_company', 'Business')
+    platform = fields.Selection(ADS_PLATFORMS, 'Platform', required=True, default='facebook')
     
 
 
