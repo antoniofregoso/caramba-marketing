@@ -10,7 +10,7 @@ class ResCompany(models.Model):
     fb_business_id = fields.Char('Business ID',  translate=True)
     fb_access_token = fields.Char('Access Token',  translate=True)
     fb_app_id = fields.Char('App Id', translate=True)
-    fb_app_secret = fields.Char('Name', translate=True)
+    fb_app_secret = fields.Char('App Secret', translate=True)
     
     
     

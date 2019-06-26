@@ -8,6 +8,126 @@
             sequence="6"/>
             
             
+<!-- Account -->
+
+    <record id='lean_marketing_ad_account_view_tree' model='ir.ui.view'>
+        <field name="name">lean_marketing.ad_account.tree</field>
+        <field name="model">lean_marketing.ad_account</field>
+        <field name="arch" type="xml">
+            <tree string="Ad Accounts">
+                <field name="name" />
+                <field name="account_status" />
+                 <field name="active_campaigns" />
+                 <field name="spend" />
+            </tree>
+        </field>
+    </record>  
+    
+        <record id='lean_marketing_ad_account_view_form' model='ir.ui.view'>
+        <field name="name">lean_marketing.ad_account.form</field>
+        <field name="model">lean_marketing.ad_account</field>
+        <field name="arch" type="xml">
+            <form string="Ad Account">
+            	<sheet>
+            		 <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="name" placeholder="e.g. Account name"/></h1>
+                             
+                    </div>
+	            	 <group>
+	            	 	<group>
+	            	 		<field name="account_id" />
+	            	 		<field name="type" />
+	            	 		<field name="account_status" />
+	            	 		<field name="disable_reason " />
+	            	    </group>
+	            	 	<group>
+	            	 		<field name="age" />
+	            	 		<field name="active_campaigns" />
+	            	 		<field name="balance" />
+	            	    </group>
+	            	 </group>
+            	</sheet>
+            	 <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                </div>
+         	</form>  
+        </field>
+     </record> 
+     
+         <record id='lean_marketing_ad_account_view_kanban' model='ir.ui.view'>
+        <field name="name">lean_marketing.ad_account.kanban</field>
+        <field name="model">lean_marketing.ad_account</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_small_column"  quick_create="false">            	
+                <field name="id"/>
+                <field name="name" />
+                <field name="active_campaigns" />
+                <field name="spend" />
+                <field name="color" />
+                 <templates>
+                 	<t t-name="kanban-box">
+                 		<div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                 			 <div class="o_dropdown_kanban dropdown">
+                 			 	  <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                        <span class="fa fa-ellipsis-v"/>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                                        <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                    </div>
+                 			 </div>
+                 			 <div class="oe_kanban_details">
+                 			 	<h2 class="oe_partner_heading">
+                                    <a type="open" class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </a>
+                                </h2> 
+                                <ul>
+                                <li><field name="active_campaigns"/></li>
+                                 <li><field name="spend"/></li>
+                                 </ul>
+                                
+                 			 </div>
+                 			 <div class="oe_clear"/> 
+                 		</div>                 	
+                 	</t>
+                 </templates>
+              </kanban>
+          </field>
+          </record>
+          
+        <record id="lean_marketing_ad_account_action" model="ir.actions.act_window">
+            <field name="name">Ad Accounts</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lean_marketing.ad_account</field>
+            <field name="view_type">form</field>
+            <field name="domain">[]</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="filter" eval="True"/>
+             <field name="view_id" ref="lean_marketing_ad_account_view_kanban"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new ad account
+              </p><p>
+                Odoo helps you easily track all activities related to a ad account.
+              </p>
+            </field>
+        </record>
+        
+          <menuitem
+            id="lean_marketing_ad_account_menu"
+            name="Ad Accounts"
+            parent="lean_marketing_ads_menu_root"
+            action="lean_marketing_ad_account_action"
+            sequence="0" 
+            groups="group_lean_marketing_ads_development_team"/>
+
+    <!-- Audience tree-->            
+            
     <record id='lean_marketing_ads_campaign_audience_view_tree' model='ir.ui.view'>
         <field name="name">lean_marketing.ads_campaign.audience.tree</field>
         <field name="model">lean_marketing.ads_campaign.audience</field>
@@ -556,14 +676,35 @@
             </field>
             </record>
             
-            
+     <record id='lean_marketing_adaccount_view_tree' model='ir.ui.view'>
+        <field name="name">lean_marketing.ads_campaign.tree</field>
+        <field name="model">lean_marketing.ads_campaign</field>
+        <field name="arch" type="xml">
+            <tree string="Ads Campaigns" decoration-success="active==True" decoration-muted="active==False">
+                <field name="campaign_id" />
+                <field name="name" />
+                <field name="platform" />
+                <field name="state" />
+                <field name="active" invisible="1"/>
+            </tree>
+        </field>
+    </record>      
                  
             
-       <record id="lean_marketing_ads_busines_form" model="ir.ui.view">
+    
+            
+           <menuitem
+            id="lean_marketing_ads_menu_config"
+            name="Configuration"
+            parent="lean_marketing_ads_menu_root"
+            sequence="80" groups="group_lean_marketing_ads_manager"/>   
+            
+            
+           <record id="lean_marketing_ads_business_form" model="ir.ui.view">
             <field name="name">res.company.form</field>
             <field name="model">res.company</field>
             <field name="arch" type="xml">
-                <form string="Company">
+                <form string="Business">
                   <sheet>
                     <field name="logo" widget="image"  class="oe_avatar" readonly="1"/>
                     <div class="oe_title">
@@ -577,11 +718,11 @@
                         	<group>
                         		<group>
                         			 <field name="fb_business_id" />
-                        			 <field name="fb_access_token" />
+                        			 <field name="fb_access_token" password="True" />
                         		</group>
                         		<group>
                         			<field name="fb_app_id" />
-                        			<field name="fb_app_secret" />                        		
+                        			<field name="fb_app_secret" password="True" />                        		
                         		</group>
                         	</group>
                             
@@ -592,44 +733,41 @@
             </field>
         </record>
         
-        <record id="lean_marketing_ads_busines_tree" model="ir.ui.view">
+        <record id="lean_marketing_ads_business_tree" model="ir.ui.view">
             <field name="name">res.company.tree</field>
             <field name="model">res.company</field>
-            <field name="field_parent">child_ids</field>
             <field name="arch" type="xml">
-                <tree string="Companies">
+                <tree string="Business">
                     <field name="sequence" widget="handle"/>
                     <field name="name"/>
-                    <field name="partner_id"/>
+                    <field name="website"/>
                 </tree>
             </field>
         </record>
  
-            
-           <menuitem
-            id="lean_marketing_ads_menu_config"
-            name="Configuration"
-            parent="lean_marketing_ads_menu_root"
-            sequence="80" groups="group_lean_marketing_ads_manager"/>   
-            
-      <record id="lean_marketing_ads_busines_action" model="ir.actions.act_window">
-            <field name="name">Company</field>
-            <field name="res_model">res.company</field>
-            <field name="view_type">tree</field>
-            <field name="view_id" ref="lean_marketing_ads_busines_tree"/>
-        </record>
-        
-         <record id="lean_marketing_ads_busines_action2" model="ir.actions.act_window">
-            <field name="name">Company</field>
+       <record id="lean_marketing_ads_business_action" model="ir.actions.act_window">
+            <field name="name">Business</field>
+            <field name="type">ir.actions.act_window</field>
             <field name="res_model">res.company</field>
             <field name="view_type">form</field>
-            <field name="view_id" ref="lean_marketing_ads_busines_form"/>
-        </record>
+            <field name="view_mode">tree,form</field>
+            <field name="filter" eval="True"/>
+            <field name="view_ids"
+                   eval="[
+            (5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('lean_marketing_ads_business_tree')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('lean_marketing_ads_business_form')})]"/>
+            
+        </record>           
+ 
+        
+
+        
 
         <menuitem
             id="lean_marketing_ads_busines_menu"
-            name="Company"
-            action="lean_marketing_ads_busines_action"
+            name="Business"
+            action="lean_marketing_ads_business_action"
             parent="lean_marketing_ads_menu_config"
             sequence="1"/>      
      
