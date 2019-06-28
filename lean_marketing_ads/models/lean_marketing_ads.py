@@ -2,6 +2,8 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).#
 from odoo import models, fields, api
 
+from facebook_business.api import FacebookAdsApi
+from facebook_business.adobjects.business import Business
 
 import logging
 _logger = logging.getLogger(__name__)
@@ -73,78 +75,45 @@ class AdAccount(models.Model):
     
     name = fields.Char(string='Name', required=True)
     account_id = fields.Char(string='Account ID', readonly=True) 
-    type = fields.Selection([('owned', 'Owned'),('shared', 'Shared')], string='Type')
+    type = fields.Selection([('owned', 'Owned'),('shared', 'Shared')], string='Type', default='owned', readonly=True)
     fb_id = fields.Char(string='ID', readonly=True) 
     account_status = fields.Selection(ACCOUNT_STATUS, string='Status', readonly=True)
     disable_reason = fields.Selection(DISABLE_REASON, string='Disable Reason', readonly=True)
-    age = fields.Float('Age', digits=10, readonly=True)
+    age = fields.Float('Age', readonly=True)
     currency = fields.Char('Currency', size=3, readonly=True)
     balance = fields.Float('Spend', readonly=True)
     active_campaigns = fields.Integer('Active Campaigns', readonly=True)
     company_id = fields.Many2one('res.company', string='Company', index=True, default=lambda self: self.env.user.company_id.id)
     color = fields.Integer('Kanban Color Index')
     
+    def update_ad_account(self):
+        api_access = self.env['res.company'].sudo().search_read([],['id', 'fb_business_id', 'fb_access_token', 'fb_app_id', 'fb_app_secret'])
+        obj_ad_accounts = self.env['lean_marketing.ad_account'].search_read([],['id', 'account_id'])
+        ad_accounts = []
+        for bsn in api_access:
+            if bsn['fb_business_id'] != None and bsn['fb_business_id'] != None and bsn['fb_access_token'] != None and bsn['fb_app_id'] != None and bsn['fb_app_secret'] != None:
+                FacebookAdsApi.init(bsn['fb_app_id'], bsn['fb_app_secret'], bsn['fb_access_token'] )
+                my_business = Business(bsn['fb_business_id'])
+                fields = ['id', 'account_id', 'name','currency', 'age','balance','disable_reason', 'account_status']
+                accounts = my_business.get_owned_ad_accounts(fields=fields)
+                for account in accounts:
+                    data = {}
+                    data['name'] = account['name']
+                    data['account_id'] = account['account_id']
+                    data['fb_id'] = account['id']
+                    data['account_status'] = account['account_status']
+                    data['disable_reason'] = account['disable_reason']
+                    data['age'] = account['age']
+                    data['currency'] = account['currency']
+                    data['balance'] = account['balance']
+                    data['company_id'] = bsn['id']
+                    ad_accounts.append(account)
+        for account in ad_accounts:
+            
+            
+        _logger.warn('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh{}'.format(ad_accounts))
+        return True
     
-    
-    @api.multi
-    def read(self, fields=None, load='_classic_read'):
-        #Update ad account
-
-        """ read([fields])
-
-        Reads the requested fields for the records in ``self``, low-level/RPC
-        method. In Python code, prefer :meth:`~.browse`.
-
-        :param fields: list of field names to return (default is all fields)
-        :return: a list of dictionaries mapping field names to their values,
-                 with one dictionary per record
-        :raise AccessError: if user has no read rights on some of the given
-                records
-        """
-        # check access rights
-        self.check_access_rights('read')
-        fields = self.check_field_access_rights('read', fields)
-
-        # split fields into stored and computed fields
-        stored, inherited, computed = [], [], []
-        for name in fields:
-            field = self._fields.get(name)
-            if field:
-                if field.store:
-                    stored.append(name)
-                elif field.base_field.store:
-                    inherited.append(name)
-                else:
-                    computed.append(name)
-            else:
-                _logger.warning("%s.read() with unknown field '%s'", self._name, name)
-
-        # fetch stored fields from the database to the cache; this should feed
-        # the prefetching of secondary records
-        self._read_from_database(stored, inherited)
-
-        # retrieve results from records; this takes values from the cache and
-        # computes remaining fields
-        self = self.with_prefetch(self._prefetch.copy())
-        data = [(record, {'id': record._ids[0]}) for record in self]
-        use_name_get = (load == '_classic_read')
-        for name in (stored + inherited + computed):
-            convert = self._fields[name].convert_to_read
-            # restrict the prefetching of self's model to self; this avoids
-            # computing fields on a larger recordset than self
-            self._prefetch[self._name] = set(self._ids)
-            for record, vals in data:
-                # missing records have their vals empty
-                if not vals:
-                    continue
-                try:
-                    vals[name] = convert(record[name], record, use_name_get)
-                except:
-                    vals.clear()
-        result = [vals for record, vals in data if vals]
-        _logger.warn('********************************************************{}'.format(self.env.user.company_id.name))
-        return result
- 
 
 class AdsCampaign(models.Model):
     _name = 'lean_marketing.ads_campaign'

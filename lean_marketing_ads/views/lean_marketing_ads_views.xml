@@ -18,7 +18,7 @@
                 <field name="name" />
                 <field name="account_status" />
                  <field name="active_campaigns" />
-                 <field name="spend" />
+                 <field name="balance" />
             </tree>
         </field>
     </record>  
@@ -34,19 +34,20 @@
                             <h1><field name="name" placeholder="e.g. Account name"/></h1>
                              
                     </div>
-	            	 <group>
-	            	 	<group>
-	            	 		<field name="account_id" />
+                    <group>
+                    	<group>
+                    		<field name="account_id" />
 	            	 		<field name="type" />
 	            	 		<field name="account_status" />
-	            	 		<field name="disable_reason " />
-	            	    </group>
-	            	 	<group>
-	            	 		<field name="age" />
+	            	 		<field name="disable_reason" />
+                        </group>    
+                    	<group> 
+	            	 		<field name="age" />              	
 	            	 		<field name="active_campaigns" />
 	            	 		<field name="balance" />
-	            	    </group>
-	            	 </group>
+                        </group>                    
+                    </group>
+                    
             	</sheet>
             	 <div class="oe_chatter">
                     <field name="message_follower_ids" widget="mail_followers"/>
@@ -65,7 +66,7 @@
                 <field name="id"/>
                 <field name="name" />
                 <field name="active_campaigns" />
-                <field name="spend" />
+                <field name="balance" />
                 <field name="color" />
                  <templates>
                  	<t t-name="kanban-box">
@@ -88,7 +89,7 @@
                                 </h2> 
                                 <ul>
                                 <li><field name="active_campaigns"/></li>
-                                 <li><field name="spend"/></li>
+                                 <li><field name="balance"/></li>
                                  </ul>
                                 
                  			 </div>
