@@ -66,7 +66,30 @@ DATE_PRESET = [
     ('this_year','This year')
     ]
 
-
+def _get_tasks(odoo, fb, id_field):
+    for_update = []
+    for_delete = []
+    for_create = []
+    test1 = []
+    test2 = []
+    for i in fb:
+        test1.append(i[id_field])
+        if len(odoo)>0:
+            for j in odoo:
+                if i[id_field]==j[id_field]:
+                    for_update.append(i[id_field])
+    for i in range(len(test1)):
+        if test1[i] not in for_update:
+            for_create.append(test1[i])
+    for i in odoo:
+        test2.append(i[id_field])
+    for i in range(len(test2)):
+        if test2[i] not in test1:
+            for_delete.append(test2[i])
+    res = {'update':for_update, 'delete':for_delete, 'create':for_create}
+    return res
+                   
+        
 
 class AdAccount(models.Model):
     _name = 'lean_marketing.ad_account'
@@ -74,7 +97,7 @@ class AdAccount(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     
     name = fields.Char(string='Name', required=True)
-    account_id = fields.Char(string='Account ID', readonly=True) 
+    account_id = fields.Char(string='Account ID', readonly=True, required=True) 
     type = fields.Selection([('owned', 'Owned'),('shared', 'Shared')], string='Type', default='owned', readonly=True)
     fb_id = fields.Char(string='ID', readonly=True) 
     account_status = fields.Selection(ACCOUNT_STATUS, string='Status', readonly=True)
@@ -87,11 +110,12 @@ class AdAccount(models.Model):
     color = fields.Integer('Kanban Color Index')
     
     def update_ad_account(self):
-        api_access = self.env['res.company'].sudo().search_read([],['id', 'fb_business_id', 'fb_access_token', 'fb_app_id', 'fb_app_secret'])
-        obj_ad_accounts = self.env['lean_marketing.ad_account'].search_read([],['id', 'account_id'])
+        api_access = self.env['res.company'].sudo().search_read([('fb_business_id', '!=', False), ('fb_access_token', '!=', False)],['id', 'fb_business_id', 'fb_access_token', 'fb_app_id', 'fb_app_secret'])
+        obj = self.env['lean_marketing.ad_account']
+        obj_ad_accounts = obj.search_read([],['id', 'account_id'])
         ad_accounts = []
         for bsn in api_access:
-            if bsn['fb_business_id'] != None and bsn['fb_business_id'] != None and bsn['fb_access_token'] != None and bsn['fb_app_id'] != None and bsn['fb_app_secret'] != None:
+            if bsn['fb_app_id'] != False and bsn['fb_app_secret'] != False:
                 FacebookAdsApi.init(bsn['fb_app_id'], bsn['fb_app_secret'], bsn['fb_access_token'] )
                 my_business = Business(bsn['fb_business_id'])
                 fields = ['id', 'account_id', 'name','currency', 'age','balance','disable_reason', 'account_status']
@@ -108,10 +132,18 @@ class AdAccount(models.Model):
                     data['balance'] = account['balance']
                     data['company_id'] = bsn['id']
                     ad_accounts.append(account)
-        for account in ad_accounts:
-            
-            
-        _logger.warn('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh{}'.format(ad_accounts))
+                tasks = _get_tasks(obj_ad_accounts, ad_accounts, 'account_id') 
+                
+                for account in ad_accounts:
+                    if account['account_id'] in tasks['create']:
+                        obj.create(account)
+                        _logger.warn('Ad Account {} created'.format(account['name']))
+                    elif account['account_id'] in tasks['update']:
+                        obj.search([('account_id','=',account['account_id'])])[0].write(account)                        
+                        _logger.warn('Ad Account {} updated'.format(account['name']))
+                    elif account['account_id'] in tasks['delete']:                        
+                        obj.search([('account_id','=',account['account_id'])])[0].write(account)                        
+                        _logger.warn('Ad Account {} deleted'.format(account['name']))   
         return True
     
 
