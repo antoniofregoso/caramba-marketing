@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="marketing_print_story_brand" model="ir.actions.report">
+        <field name="name">Print Brand Story</field>
+        <field name="model">marketing_strategy.story_brand</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">marketing_strategy.print_story_brand</field>
+        <field name="report_file">marketing_strategy.print_story_brand</field>
+        <field name="print_report_name">'Brand history of  %s' % (object.brand_id.name).replace('/', '')</field>
+        <field name="binding_model_id" ref="model_marketing_strategy_story_brand"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="print_story_brand">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h1 class="text-center">Brand Story</h1>
+                        <h1 class="text-center" t-field="o.name" />
+                        <h1 class="text-center" t-field="o.brand_id.name" />
+                            <h2>Summary</h2>
+                            <t t-raw="o.summary" />
+                            <h2>Conceptual Map</h2>
+                            <img t-if="o.image_1920" t-att-src="image_data_uri(o.image_1920)" style="max-width:90%" alt="Brand"/>
+                            <p style="page-break-after:always;">   </p>
+                            <h2>Brand Persona</h2>
+                            <div class="media">
+                                <img t-if="o.brand_id.image_1920" t-att-src="image_data_uri(o.brand_id.image_1920)" style="max-height:85pt;max-width:90%" alt="Brand"/>
+                                <div class="media-body">
+                                    <div class="row">
+                                        <div class="col-6 px-3">
+                                            <h4>Personality</h4>
+                                            <p t-field="o.brand_id.personality" />
+                                            <div class="progress">
+                                                <div class="progress-bar" role="progressbar" t-att-style="'width: {}%'.format(o.brand_id.openness)" t-att-aria-valuenow="o.brand_id.openness" aria-valuemin="0" aria-valuemax="100"><t t-esc="'Opennes {}%'.format(o.brand_id.openness)"/></div>
+                                            </div>
+                                            <div class="progress mt-2">
+                                                <div class="progress-bar" role="progressbar" t-att-style="'width: {}%'.format(o.brand_id.conscientiousness)" t-att-aria-valuenow="o.brand_id.conscientiousness" aria-valuemin="0" aria-valuemax="100"><t t-esc="'Conscientiousness {}%'.format(o.brand_id.conscientiousness)"/></div>
+                                            </div>
+                                            <div class="progress mt-2">
+                                                <div class="progress-bar" role="progressbar" t-att-style="'width: {}%'.format(o.brand_id.extraversion)" t-att-aria-valuenow="o.brand_id.extraversion" aria-valuemin="0" aria-valuemax="100"><t t-esc="'Extraversion {}%'.format(o.brand_id.extraversion)"/></div>
+                                            </div>
+                                            <div class="progress mt-2">
+                                                <div class="progress-bar" role="progressbar" t-att-style="'width: {}%'.format(o.brand_id.agreeableness)" t-att-aria-valuenow="o.brand_id.agreeableness" aria-valuemin="0" aria-valuemax="100"><t t-esc="'Agreeableness {}%'.format(o.brand_id.agreeableness)"/></div>
+                                            </div>
+                                            <div class="progress mt-2">
+                                                <div class="progress-bar" role="progressbar" t-att-style="'width: {}%'.format(o.brand_id.emotional_range)" t-att-aria-valuenow="o.brand_id.emotional_range" aria-valuemin="0" aria-valuemax="100"><t t-esc="'Emotional Range {}%'.format(o.brand_id.emotional_range)"/></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <h4>Customer Relation</h4>
+                                            <p t-field="o.brand_id.customer_relationship" />
+                                            <h4>Conversation Topics</h4>
+                                            <t t-foreach="o.brand_id.topics_ids" t-as="topic"><span class="badge badge-pill badge-info" t-esc="topic.name"/></t>
+                                            <h4>Values</h4>
+                                            <t t-foreach="o.brand_id.values_ids" t-as="value"><span class="badge badge-pill badge-info" t-esc="value.name"/></t>
+                                            <h4>Needs</h4>
+                                            <t t-foreach="o.brand_id.needs_ids" t-as="need"><span class="badge badge-pill badge-info" t-esc="need.name"/></t>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h2>Buyers Persona</h2>
+                            <div class="row">
+                                <t t-foreach="o.buyers_ids" t-as="buyer"> 
+                                    <div class="col-6"> 
+                                        <h5 class="mt-0" t-field="buyer.name"/>
+                                        <div class="media border-secondary">
+                                            <img t-if="buyer.image_1920" t-att-src="image_data_uri(buyer.image_1920)" style="max-height:85pt;max-width:90%" alt="Brand"/>
+                                            <div class="media-body">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">Tribe: <span t-field="buyer.tribe_id.name"/></li>
+                                                    <li class="list-group-item">Gender: </li>
+                                                    <li class="list-group-item">Age: </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </t>                        
+                            </div>
+                        <p style="page-break-after:always;">   </p>
+                         <div class="row mb-3">
+                            <h2>Buyer’s Journey</h2>
+                         </div>
+                        <div class="row mb-3">
+                            <span class="btn btn-info" style="width:20%;">Awareness</span>
+                            <span class="btn btn-warning text-white" style="width:20%;">Consideration</span>
+                            <span class="btn btn-success" style="width:20%;">Purchase</span>
+                            <span class="btn btn-primary" style="width:20%;">Service</span>
+                            <span class="btn btn-danger" style="width:20%;">Loyalty</span>
+                        </div>
+                         <div class="row mb-3">
+                            <h2>Story</h2>
+                         </div>
+                        <div class="row mb-3">
+                            <div class="col-4">
+                                <div class="card border-info shadow-sm ">
+                                    <div class="card-header text-center text-white bg-info">
+                                        Chapter 1
+                                    </div>
+                                    <div class="card-body">
+                                        <h4>Status Quo.</h4>
+                                        <p>
+                                            The hero is introduced in their ordinary world. Complacent, but lacking something.
+                                        </p>
+                                        <h3>Topics</h3>
+                                    </div>
+                                    <ul class="list-group list-group-flush" t-foreach="o.chapters_ids" t-as="theme">
+                                        <t t-if="theme.chapter=='chapter_1'">
+                                            <li class="list-group-item"/><span t-esc="theme.value" />: <span t-esc="theme.name" />
+                                        </t>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="card border-info">
+                                    <div class="card-header text-center text-white bg-info">
+                                        Chapter 2
+                                    </div>
+                                    <div class="card-body">
+                                        <h4>Call to Adventure.</h4>
+                                        <p>
+                                            The hero is called to go out and achieve the thing she wants the most.
+                                        </p>
+                                        <h3>Topics</h3>
+                                    </div>
+                                    <ul class="list-group list-group-flush" t-foreach="o.chapters_ids" t-as="theme">
+                                        <t t-if="theme.chapter=='chapter_2'">
+                                            <li class="list-group-item"  t-esc="theme.name" />
+                                        </t>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="card border-info">
+                                    <div class="card-header text-center text-white bg-info">
+                                        Chapter 3
+                                    </div>
+                                    <div class="card-body">
+                                        <h4>Refusal of the call.</h4>
+                                        <p>
+                                            But he hero scared of change and ignores her calling.
+                                        </p>
+                                        <h3>Topics</h3>
+                                    </div>
+                                    <ul class="list-group list-group-flush" t-foreach="o.chapters_ids" t-as="theme">
+                                        <t t-if="theme.chapter=='chapter_3'">
+                                            <li class="list-group-item"  t-esc="theme.name" />
+                                        </t>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-4">
+                                <div class="card border-info">
+                                    <div class="card-header text-center text-white bg-info">
+                                        Chapter 4
+                                    </div>
+                                    <div class="card-body">
+                                        <h4>Meeting with the mentor.</h4>
+                                        <p>
+                                            The hero meets a sage or is given a special tool that convinces her that she can succeed.
+                                        </p>
+                                        <h3>Topics</h3>
+                                    </div>
+                                    <ul class="list-group list-group-flush" t-foreach="o.chapters_ids" t-as="theme">
+                                        <t t-if="theme.chapter=='chapter_4'">
+                                            <li class="list-group-item"  t-esc="theme.name" />
+                                        </t>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="card border-warning">
+                                    <div class="card-header text-center text-white bg-warning">
+                                        Chapter 5
+                                    </div>
+                                    <div class="card-body">
+                                        <h4>Crossing the threshold.</h4>
+                                        <p>
+                                        The hero enters the adventure to a point of no return.
+                                        </p>
+                                        <h3>Topics</h3>
+                                    </div>
+                                    <ul class="list-group list-group-flush" t-foreach="o.chapters_ids" t-as="theme">
+                                        <t t-if="theme.chapter=='chapter_5'">
+                                            <li class="list-group-item"  t-esc="theme.name" />
+                                        </t>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="card border-warning">
+                                    <div class="card-header text-center text-white bg-warning">
+                                        Chapter 6
+                                    </div>
+                                    <div class="card-body">
+                                        <h4>Trials and Allies.</h4>
+                                        <p>
+                                        The hero undergoes tests and makes new friends all in a montage that trains her to overcome the biggest test yet to come.
+                                        </p>
+                                        <h3>Topics</h3>
+                                    </div>
+                                    <ul class="list-group list-group-flush" t-foreach="o.chapters_ids" t-as="theme">
+                                        <t t-if="theme.chapter=='chapter_6'">
+                                            <li class="list-group-item"  t-esc="theme.name" />
+                                        </t>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="page-break-after:always;">   </p>
+                        <div class="row mb-3">
+                            <div class="col-4">
+                                <div class="card border-warning">
+                                    <div class="card-header text-center text-white bg-warning">
+                                        Chapter 7
+                                    </div>
+                                    <div class="card-body">
+                                        <h4>Approaching the cave.</h4>
+                                        <p>
+                                        The hero is ready to face her biggest fear.
+                                        </p>
+                                        <h3>Topics</h3>
+                                    </div>
+                                    <ul class="list-group list-group-flush" t-foreach="o.chapters_ids" t-as="theme">
+                                        <t t-if="theme.chapter=='chapter_7'">
+                                            <li class="list-group-item"  t-esc="theme.name" />
+                                        </t>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="card border-success">
+                                    <div class="card-header text-center text-white bg-success">
+                                        Chapter 8
+                                    </div>
+                                    <div class="card-body">
+                                        <h4>The Ordeal.</h4>
+                                        <p>
+                                        The hero faces the biggest fear and, whether successful or not, gains something and loses something in return.
+                                        </p>
+                                        <h3>Topics</h3>
+                                    </div>
+                                    <ul class="list-group list-group-flush" t-foreach="o.chapters_ids" t-as="theme">
+                                        <t t-if="theme.chapter=='chapter_8'">
+                                            <li class="list-group-item"  t-esc="theme.name" />
+                                        </t>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="card border-success">
+                                    <div class="card-header text-center text-white bg-success">
+                                        Chapter 9
+                                    </div>
+                                    <div class="card-body">
+                                        <h4>The Reward.</h4>
+                                        <p>
+                                        The hero receives some kind of reward for facing her fears.
+                                        </p>
+                                        <h3>Topics.</h3>
+                                    </div>
+                                    <ul class="list-group list-group-flush" t-foreach="o.chapters_ids" t-as="theme">
+                                        <t t-if="theme.chapter=='chapter_9'">
+                                            <li class="list-group-item"  t-esc="theme.name" />
+                                        </t>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-4">
+                                <div class="card border-primary">
+                                    <div class="card-header text-center text-white bg-primary">
+                                        Chapter 10
+                                    </div>
+                                    <div class="card-body">
+                                        <h4>The Road Back.</h4>
+                                        <p>
+                                            The hero crosses the threshold to return to the ordinary world, but is being chased by the unresolved conflict with her fears.
+                                        </p>
+                                        <h3>Topics</h3>
+                                    </div>
+                                    <ul class="list-group list-group-flush" t-foreach="o.chapters_ids" t-as="theme">
+                                        <t t-if="theme.chapter=='chapter_A'">
+                                            <li class="list-group-item"  t-esc="theme.name" />
+                                        </t>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="card border-primary">
+                                    <div class="card-header text-center text-white bg-primary">
+                                        Chapter 11
+                                    </div>
+                                    <div class="card-body">
+                                        <h4>Resurrection.</h4>
+                                        <p>
+                                            The threat is at its highest and the hero pulls out all of the knowledge and skills that she gained earlier in her trials, reaching into the darkest depths of herself and transcending into a more powerful version of herself.
+                                        </p>
+                                        <h3>Topics</h3>
+                                    </div>
+                                    <ul class="list-group list-group-flush" t-foreach="o.chapters_ids" t-as="theme">
+                                        <t t-if="theme.chapter=='chapter_B'">
+                                            <li class="list-group-item"  t-esc="theme.name" />
+                                        </t>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="card border-danger">
+                                    <div class="card-header text-center text-white bg-danger">
+                                        Chapter 12
+                                    </div>
+                                    <div class="card-body">
+                                        <h4>Return with the Elixir.</h4>
+                                        <p>
+                                            After defeating the big bad, the hero returns to her ordinary life, having changed and now with the ability to share her new knowledge with the world.
+                                        </p>
+                                        <h3>Topics</h3>
+                                    </div>
+                                    <ul class="list-group list-group-flush" t-foreach="o.chapters_ids" t-as="theme">
+                                        <t t-if="theme.chapter=='chapter_C'">
+                                            <li class="list-group-item"  t-esc="theme.name" />
+                                        </t>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

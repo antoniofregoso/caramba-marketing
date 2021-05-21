@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+    <!-- Needs -->
+    <record id="marketing_strategy_need_opt_1" model="marketing_strategy.need">
+    	<field name="name">Excitement</field>
+    </record>
+
+    <record id="marketing_strategy_need_opt_2" model="marketing_strategy.need">
+    	<field name="name">Harmony</field>
+    </record>
+
+    <record id="marketing_strategy_need_opt_3" model="marketing_strategy.need">
+    	<field name="name">Curiosity</field>
+    </record>
+
+    <record id="marketing_strategy_need_opt_4" model="marketing_strategy.need">
+    	<field name="name">Ideal</field>
+    </record>
+
+    <record id="marketing_strategy_need_opt_5" model="marketing_strategy.need">
+    	<field name="name">Closeness</field>
+    </record>
+
+    <record id="marketing_strategy_need_opt_6" model="marketing_strategy.need">
+    	<field name="name">Self-expression</field>
+    </record>
+
+    <record id="marketing_strategy_need_opt_7" model="marketing_strategy.need">
+    	<field name="name">Liberty</field>
+    </record>
+
+    <record id="marketing_strategy_need_opt_8" model="marketing_strategy.need">
+    	<field name="name">Love</field>
+    </record>
+
+    <record id="marketing_strategy_need_opt_9" model="marketing_strategy.need">
+    	<field name="name">Practicality</field>
+    </record>
+
+    <record id="marketing_strategy_need_opt_10" model="marketing_strategy.need">
+    	<field name="name">Stability</field>
+    </record>
+
+    <record id="marketing_strategy_need_opt_11" model="marketing_strategy.need">
+    	<field name="name">Challenge</field>
+    </record>
+
+    <record id="marketing_strategy_need_opt_12" model="marketing_strategy.need">
+    	<field name="name">Structure</field>
+    </record>
+
+    <!-- Values -->
+
+    <record id="marketing_strategy_value_opt_1" model="marketing_strategy.value">
+    	<field name="name">Helping others</field>
+    </record>
+
+    <record id="marketing_strategy_value_opt_2" model="marketing_strategy.value">
+    	<field name="name">Tradition</field>
+    </record>
+
+    <record id="marketing_strategy_value_opt_3" model="marketing_strategy.value">
+    	<field name="name">Hedonism</field>
+    </record>
+
+    <record id="marketing_strategy_value_opt_4" model="marketing_strategy.value">
+    	<field name="name">Self-enhancement</field>
+    </record>
+
+    <record id="marketing_strategy_value_opt_5" model="marketing_strategy.value">
+    	<field name="name">Open to change</field>
+    </record>
+
+    <!-- Prospects Source -->
+
+      <record id="marketing_strategy_prospect_source_opt_1" model="marketing_strategy.prospect_source">
+    	<field name="name">Company Brand</field>
+        <field name="color">1</field>
+    </record>  
+
+      <record id="marketing_strategy_prospect_source_opt_2" model="marketing_strategy.prospect_source">
+    	<field name="name">Prospecting Content</field>
+        <field name="color">2</field>
+    </record>
+
+      <record id="marketing_strategy_prospect_source_opt_3" model="marketing_strategy.prospect_source">
+    	<field name="name">Referrals</field>
+        <field name="color">3</field>
+    </record>
+
+      <record id="marketing_strategy_prospect_source_opt_4" model="marketing_strategy.prospect_source">
+    	<field name="name">Networking</field>
+        <field name="color">4</field>
+    </record>
+
+      <record id="marketing_strategy_prospect_source_opt_5" model="marketing_strategy.prospect_source">
+    	<field name="name">Personal Brand</field>
+        <field name="color">5</field>
+    </record>
+
+    </data>
+</odoo>

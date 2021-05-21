@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="marketing_value_proposition_canvas" model="ir.actions.report">
+        <field name="name">Print Canvas</field>
+        <field name="model">marketing_strategy.value_proposition</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">marketing_strategy.print_value_proposition_canvas</field>
+        <field name="report_file">marketing_strategy.print_value_proposition_canvas</field>
+        <field name="print_report_name">'Print Badge - %s' % (object.name).replace('/', '')</field>
+        <field name="binding_model_id" ref="model_marketing_strategy_value_proposition"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="print_value_proposition_canvas">
+        <t t-call="web.basic_layout">
+            <div class="page">
+
+            </div>
+        </t>
+    </template>
+
+</odoo>

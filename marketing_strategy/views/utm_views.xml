@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record model="ir.ui.view" id="utm_marketing_strategy_campaign_form">
+            <field name="name">utm.campaign.form</field>
+            <field name="model">utm.campaign</field>
+            <field name="inherit_id" ref="utm.utm_campaign_view_form"/>
+            <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+            	<field name="plan_id"/>
+             </xpath>
+            </field>
+        </record>
+        
+       <record id="utm_marketing_strategy_medium_view_form" model="ir.ui.view">
+            <field name="name">utm.medium.form</field>
+            <field name="model">utm.medium</field>
+            <field name="inherit_id" ref="utm.utm_medium_view_form"/>
+            <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="replace">
+            	<group> <field name="name"/></group>
+             </xpath>
+            </field>
+        </record>
+        
+
+        
+        
+
+</odoo>

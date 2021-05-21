@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo >
+
+     <data noupdate="0">
+
+        <record model="ir.module.category" id="base.module_category_marketing_strategy">
+            <field name="description">Helps with strategic planning of marketing campaigns.</field>
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="group_strategy_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+            <field name="category_id" ref="base.module_category_marketing_strategy"/>
+        </record>
+
+        <record id="group_strategy_manager" model="res.groups">
+            <field name="name">Administrator</field>
+            <field name="category_id" ref="base.module_category_marketing_strategy"/>
+            <field name="implied_ids" eval="[(4, ref('group_strategy_user'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+
+    </data>
+
+    <data noupdate="1">
+
+        <record id="base.default_user" model="res.users">
+            <field name="groups_id" eval="[(4,ref('marketing_strategy.group_strategy_manager'))]"/>
+        </record>
+
+            <!-- Multi - Company Rules -->
+
+    <record model="ir.rule" id="strategy_brand_comp_rule">
+        <field name="name">Brand multi-company</field>
+        <field name="model_id" ref="model_marketing_strategy_brand"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+
+    <record model="ir.rule" id="strategy_touchpoint_comp_rule">
+        <field name="name">Touchpoint multi-company</field>
+        <field name="model_id" ref="model_marketing_strategy_touchpoint"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+
+    <record model="ir.rule" id="strategy_value_proposition_comp_rule">
+        <field name="name">Value Proposition multi-company</field>
+        <field name="model_id" ref="model_marketing_strategy_value_proposition"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+
+    <record model="ir.rule" id="strategy_buyer_persona_comp_rule">
+        <field name="name">Buyer Persona multi-company</field>
+        <field name="model_id" ref="model_marketing_strategy_buyer_persona"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+
+    <record model="ir.rule" id="strategy_tribe_comp_rule">
+        <field name="name">Tribe multi-company</field>
+        <field name="model_id" ref="model_marketing_strategy_tribe"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+
+    <record model="ir.rule" id="strategy_plan_comp_rule">
+        <field name="name">Marketing Plan multi-company</field>
+        <field name="model_id" ref="model_marketing_strategy_plan"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+
+    <record model="ir.rule" id="strategy_story_brand_theme_comp_rule">
+        <field name="name">Story Brand Theme multi-company</field>
+        <field name="model_id" ref="model_marketing_strategy_story_brand_theme"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+
+    <record model="ir.rule" id="strategy_story_brand_content_comp_rule">
+        <field name="name">Strory Brand Content multi-company</field>
+        <field name="model_id" ref="model_marketing_strategy_story_brand_content"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+
+    <record model="ir.rule" id="strategy_story_brand_comp_rule">
+        <field name="name">Story Brand multi-company</field>
+        <field name="model_id" ref="model_marketing_strategy_story_brand"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+
+
+    </data>
+
+</odoo>

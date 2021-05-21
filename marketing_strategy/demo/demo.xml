@@ -1,0 +1,455 @@
+<odoo>
+    <data >
+
+    <!--Tribe-->
+    <record id="tribe_1" model="marketing_strategy.tribe">
+    	<field name="name">Adultescents</field>
+    	<field name="description" type="html">
+        <p>
+          New generation of adults who refuse to grow up, adults with the soul of children, but with great financial resources.
+        </p>
+      </field>
+      <field name="image_128" type="base64" file="marketing_strategy/static/img/brand_tesla-motors-image.jpg"/>
+      <field name="color">1</field>
+    </record>
+
+    <record id="tribe_2" model="marketing_strategy.tribe">
+    	<field name="name">Dinkis</field>
+    	<field name="description" type="html">
+        <p>
+          Couples without children where both work and therefore have a double income.
+        </p>
+        <p>
+          They are large consumers of all kinds of novelties and of the luxury product segment.
+        </p>
+      </field>
+      <field name="image_128" type="base64" file="marketing_strategy/static/img/brand_tesla-motors-image.jpg"/>
+      <field name="color">1</field>
+    </record>
+
+    <record id="tribe_3" model="marketing_strategy.tribe">
+    	<field name="name">Singles</field>
+    	<field name="description" type="html">
+        <p>
+          They are single people by vocation. They usually live in large cities, have higher education and consumers of products / services for their own personal satisfaction.
+        </p>
+      </field>
+      <field name="image_128" type="base64" file="marketing_strategy/static/img/brand_tesla-motors-image.jpg"/>
+      <field name="color">1</field>
+    </record>
+
+        <record id="tribe_4" model="marketing_strategy.tribe">
+    	<field name="name">One Parent</field>
+    	<field name="description" type="html">
+        <p>
+          This group is made up of single-parent families, either by “obligation” (divorce) or by “vocation”.
+        </p>
+        <p>
+          It is a segment between the traditional family and the singles with aspects common to both.
+        </p>
+      </field>
+      <field name="image_128" type="base64" file="marketing_strategy/static/img/brand_tesla-motors-image.jpg"/>
+      <field name="color">1</field>
+    </record>
+
+    <record id="tribe_5" model="marketing_strategy.tribe">
+    	<field name="name">Bobos</field>
+    	<field name="description" type="html">
+        <p>
+          Bohemian Bourgeois. Millionaires with a rebellious and bohemian spirit. They are true foodies and lovers of luxury but they disguise their tastes with a golden spirit of spirituality and authenticity.
+        </p>
+      </field>
+      <field name="image_128" type="base64" file="marketing_strategy/static/img/brand_tesla-motors-image.jpg"/>
+      <field name="color">1</field>
+    </record>
+
+      <record id="tribe_6" model="marketing_strategy.tribe">
+    	<field name="name">Geeks</field>
+    	<field name="description" type="html">
+        <p>
+          It is about those people who have a fascination and addiction to everything technological. They are usually men of any age and social class but, yes, with great economic resources.
+        </p>
+      </field>
+      <field name="image_128" type="base64" file="marketing_strategy/static/img/brand_tesla-motors-image.jpg"/>
+      <field name="color">1</field>
+    </record>
+
+<!--Buyer Persona-->
+
+
+      <record id="buyer_persona_1" model="marketing_strategy.buyer_persona">
+    	<field name="name">Ronnie Hart</field>
+      <field name="tribe_id" ref="tribe_6"/>
+      <field name="income">10000</field> 
+      <field name="image_1920" type="base64" file="marketing_strategy/static/img/employee_al-image.jpg"/>
+      <field name="color">1</field>
+      <field name="bio" type="html">
+        <h2>Upper Middle Class Male</h2>
+      </field>
+    </record>
+
+
+    <record id="buyer_persona_2" model="marketing_strategy.buyer_persona">
+    	<field name="name">Paul Williams</field>
+      <field name="tribe_id" ref="tribe_6"/>
+      <field name="income">60000</field>
+      <field name="image_1920" type="base64" file="marketing_strategy/static/img/employee_jve-image.jpg"/>
+      <field name="color">1</field>
+      <field name="bio" type="html">
+        <h2>Middle Class Male</h2>
+      </field>
+    </record>
+
+    <record id="buyer_persona_3" model="marketing_strategy.buyer_persona">
+    	<field name="name">Randall Lewis</field>
+      <field name="tribe_id" ref="tribe_6"/>
+      <field name="income" >70000</field>
+      <field name="image_1920" type="base64" file="marketing_strategy/static/img/employee_stw-image.jpg"/>
+      <field name="color">1</field>
+      <field name="bio" type="html">
+        <h2>Middle Class Male</h2>
+      </field>
+    </record>
+
+
+    <!--Brand-->
+
+    <record id="brand_tesla" model="marketing_strategy.brand">
+    	<field name="name">Tesla</field>
+    	<field name="relation">main</field>
+      <field name="image_128" type="base64" file="marketing_strategy/static/img/brand_tesla-motors-image.jpg"/>
+      <field name="color">1</field>
+    </record>
+
+    <record id="brand_toyota" model="marketing_strategy.brand">
+    	<field name="name">Toyota</field>
+    	<field name="relation">competitor</field>
+      <field name="image_128" type="base64" file="marketing_strategy/static/img/brand_bmw-image.jpg"/>
+      <field name="color">2</field>
+    </record>
+
+    <record id="brand_bmw" model="marketing_strategy.brand">
+    	<field name="name">BMW</field>
+    	<field name="relation">competitor</field>
+      <field name="image_128" type="base64" file="marketing_strategy/static/img/brand_toyota-image.jpg"/>
+      <field name="color">3</field>
+    </record>
+
+<!--Customer Job-->
+
+    <record id="customer_job_t1" model="marketing_strategy.value_proposition.customer_job">
+    	<field name="name">Be diferent from others</field>
+      <field name="color">1</field>
+    </record>
+
+    <record id="customer_job_t2" model="marketing_strategy.value_proposition.customer_job">
+    	<field name="name">Occasional long distance trip</field>
+      <field name="color">1</field>
+    </record>
+
+    <record id="customer_job_t3" model="marketing_strategy.value_proposition.customer_job">
+    	<field name="name">Convey an image of success</field>
+      <field name="color">1</field>
+    </record>
+
+    <record id="customer_job_t4" model="marketing_strategy.value_proposition.customer_job">
+    	<field name="name">Personal mobility</field>
+      <field name="color">1</field>
+    </record>
+
+    <record id="customer_job_t5" model="marketing_strategy.value_proposition.customer_job">
+    	<field name="name">Commute to work</field>
+      <field name="color">1</field>
+    </record>
+
+    <record id="customer_job_ty1" model="marketing_strategy.value_proposition.customer_job">
+    	<field name="name">Be the same as friends</field>
+      <field name="color">1</field>
+    </record>
+
+    <record id="customer_job_ty2" model="marketing_strategy.value_proposition.customer_job">
+    	<field name="name">Convey image of happy family</field>
+      <field name="color">1</field>
+    </record>
+
+    <record id="customer_job_ty3" model="marketing_strategy.value_proposition.customer_job">
+    	<field name="name">Commute to family activities</field>
+      <field name="color">1</field>
+    </record>
+
+    <record id="customer_job_ty4" model="marketing_strategy.value_proposition.customer_job">
+    	<field name="name">Distances are not far from home</field>
+      <field name="color">1</field>
+    </record>
+
+    <!--Customer Pain-->
+
+    <record id="customer_pain_t1" model="marketing_strategy.value_proposition.customer_pain">
+    	<field name="name">Lack of charging stations</field>
+      <field name="color">2</field>
+    </record>
+
+    <record id="customer_pain_t2" model="marketing_strategy.value_proposition.customer_pain">
+    	<field name="name">Accident and harm</field>
+      <field name="color">2</field>
+    </record>
+
+    <record id="customer_pain_t3" model="marketing_strategy.value_proposition.customer_pain">
+    	<field name="name">Frequent charging</field>
+      <field name="color">2</field>
+    </record>
+
+    <record id="customer_pain_t4" model="marketing_strategy.value_proposition.customer_pain">
+    	<field name="name">Fear of dead battery</field>
+      <field name="color">2</field>
+    </record>
+
+    <record id="customer_pain_t5" model="marketing_strategy.value_proposition.customer_pain">
+    	<field name="name">Buy before price drop</field>
+      <field name="color">2</field>
+    </record>
+
+    <record id="customer_pain_ty1" model="marketing_strategy.value_proposition.customer_pain">
+    	<field name="name">Fear that something happens with car</field>
+      <field name="color">2</field>
+    </record>
+
+    <!--Customer Gain-->
+
+    <record id="customer_gain_t1" model="marketing_strategy.value_proposition.customer_gain">
+    	<field name="name">High saffety ratings</field>
+      <field name="color">3</field>
+    </record>
+
+    <record id="customer_gain_t2" model="marketing_strategy.value_proposition.customer_gain">
+    	<field name="name">Seating 4-7</field>
+      <field name="color">3</field>
+    </record>
+
+
+    <record id="customer_gain_t3" model="marketing_strategy.value_proposition.customer_gain">
+    	<field name="name">High-End battery tech</field>
+      <field name="color">3</field>
+    </record>
+
+
+    <record id="customer_gain_t4" model="marketing_strategy.value_proposition.customer_gain">
+    	<field name="name">Range of 250-400 Km</field>
+      <field name="color">3</field>
+    </record>
+
+
+    <record id="customer_gain_t5" model="marketing_strategy.value_proposition.customer_gain">
+    	<field name="name">Compliments from friends</field>
+      <field name="color">3</field>
+    </record>
+
+
+    <record id="customer_gain_t6" model="marketing_strategy.value_proposition.customer_gain">
+    	<field name="name">Design</field>
+      <field name="color">3</field>
+    </record>
+
+
+    <record id="customer_gain_ty1" model="marketing_strategy.value_proposition.customer_gain">
+    	<field name="name">Seating 3-5</field>
+      <field name="color">3</field>
+    </record>
+
+
+    <record id="customer_gain_t7" model="marketing_strategy.value_proposition.customer_gain">
+    	<field name="name">Perform like a sports car</field>
+      <field name="color">3</field>
+    </record>
+
+
+    <record id="customer_gain_t8" model="marketing_strategy.value_proposition.customer_gain">
+    	<field name="name">Brand recognition</field>
+      <field name="color">3</field>
+    </record>
+
+
+    <record id="customer_gain_ty5" model="marketing_strategy.value_proposition.customer_gain">
+    	<field name="name">Range of 150-250 Km</field>
+      <field name="color">3</field>
+    </record>
+
+
+    <record id="customer_gain_ty2" model="marketing_strategy.value_proposition.customer_gain">
+    	<field name="name">To compare with car of friends</field>
+      <field name="color">3</field>
+    </record>
+
+    <record id="customer_gain_ty3" model="marketing_strategy.value_proposition.customer_gain">
+    	<field name="name">Perform like a big family car</field>
+      <field name="color">3</field>
+    </record>
+
+<!-- Pain Reliever -->
+
+    <record id="customer_pain_reliever_t1" model="marketing_strategy.value_proposition.pain_reliever">
+    	<field name="name">Charging network</field>
+      <field name="color">4</field>
+    </record>
+
+    <record id="customer_pain_reliever_t2" model="marketing_strategy.value_proposition.pain_reliever">
+    	<field name="name">Charging 45-90 Km/h</field>
+      <field name="color">4</field>
+    </record>
+
+    <record id="customer_pain_reliever_t3" model="marketing_strategy.value_proposition.pain_reliever">
+    	<field name="name">5+2 seats</field>
+      <field name="color">4</field>
+    </record>
+
+    <record id="customer_pain_reliever_ty1" model="marketing_strategy.value_proposition.pain_reliever">
+    	<field name="name">5 seats</field>
+      <field name="color">4</field>
+    </record>
+
+    <record id="customer_pain_reliever_ty2" model="marketing_strategy.value_proposition.pain_reliever">
+    	<field name="name">Toyota safty sence</field>
+      <field name="color">4</field>
+    </record>
+
+
+    <!--Gain Creator-->
+
+    <record id="customer_gain_creator_t1" model="marketing_strategy.value_proposition.gain_creator">
+    	<field name="name">High-Tech feel 17" touch screen</field>
+      <field name="color">5</field>
+    </record>
+
+    <record id="customer_gain_creator_t2" model="marketing_strategy.value_proposition.gain_creator">
+    	<field name="name">Autonomous car</field>
+      <field name="color">5</field>
+    </record>
+
+    <record id="customer_gain_creator_t3" model="marketing_strategy.value_proposition.gain_creator">
+    	<field name="name">Focus on design &amp; style</field>
+      <field name="color">5</field>
+    </record>
+
+    <record id="customer_gain_creator_t4" model="marketing_strategy.value_proposition.gain_creator">
+    	<field name="name">Performance 0-100 Km/h 4.45-6.24 s</field>
+      <field name="color">5</field>
+    </record>
+
+    <record id="customer_gain_creator_ty1" model="marketing_strategy.value_proposition.gain_creator">
+    	<field name="name">Hybrid car</field>
+      <field name="color">5</field>
+    </record>
+
+    <record id="customer_gain_creator_ty2" model="marketing_strategy.value_proposition.gain_creator">
+    	<field name="name">Urban style</field>
+      <field name="color">5</field>
+    </record>
+
+    <record id="customer_gain_creator_ty3" model="marketing_strategy.value_proposition.gain_creator">
+    	<field name="name">Focus on comfort &amp; space</field>
+      <field name="color">5</field>
+    </record>
+
+    <record id="customer_gain_creator_ty4" model="marketing_strategy.value_proposition.gain_creator">
+    	<field name="name">Adaptative cruise control</field>
+      <field name="color">5</field>
+    </record>
+
+  <!--Products & Services-->
+
+  
+    <record id="customer_products_services_t1" model="marketing_strategy.value_proposition.products_services">
+    	<field name="name">8 years battery warranty</field>
+      <field name="color">6</field>
+    </record>
+
+      <record id="customer_products_services_t2" model="marketing_strategy.value_proposition.products_services">
+    	<field name="name">Model X, Model 3</field>
+      <field name="color">6</field>
+    </record>
+
+    <record id="customer_products_services_t3" model="marketing_strategy.value_proposition.products_services">
+    	<field name="name">Model S 60-85 KWh</field>
+      <field name="color">6</field>
+    </record>
+
+      <record id="customer_products_services_t4" model="marketing_strategy.value_proposition.products_services">
+    	<field name="name">Few options</field>
+      <field name="color">6</field>
+    </record>
+
+      <record id="customer_products_services_ty1" model="marketing_strategy.value_proposition.products_services">
+    	<field name="name">Customize your design</field>
+      <field name="color">6</field>
+    </record>
+
+      <record id="customer_products_services_ty2" model="marketing_strategy.value_proposition.products_services">
+    	<field name="name">Manual car</field>
+      <field name="color">6</field>
+    </record>
+
+      <record id="customer_products_services_ty3" model="marketing_strategy.value_proposition.products_services">
+    	<field name="name">Models: Sports, Prius, Land Crusier</field>
+      <field name="color">6</field>
+    </record>
+
+      <record id="customer_products_services_ty4" model="marketing_strategy.value_proposition.products_services">
+    	<field name="name">Models: Proace, Mirai, Verso</field>
+      <field name="color">6</field>
+    </record>
+
+      <record id="customer_products_services_ty5" model="marketing_strategy.value_proposition.products_services">
+    	<field name="name">A lot of options</field>
+      <field name="color">6</field>
+    </record>
+
+
+    <record id="value_proposition_1" model="marketing_strategy.value_proposition">
+    	<field name="name">Tesla</field>
+      <field name="state">active</field>
+      <field name="product_type">good</field>
+      <field name="assessment">fit</field>
+      <field name="brand_id" ref="brand_tesla"/>
+      <field name="buyer_persona_id" ref="buyer_persona_1"/>
+      <field eval="[(6, 0, [ref('customer_job_t1'), ref('customer_job_t2'), ref('customer_job_t3'), ref('customer_job_t4'), ref('customer_job_t5')])]" name="customer_job_ids"/>
+      <field eval="[(6, 0, [ref('customer_pain_t1'),ref('customer_pain_t2'),ref('customer_pain_t3'),ref('customer_pain_t4'),ref('customer_pain_t5')])]" name="customer_pain_ids"/>
+      <field eval="[(6, 0, [ref('customer_gain_t1'),ref('customer_gain_t2'),ref('customer_gain_t3'),ref('customer_gain_t4'),ref('customer_gain_t5'),ref('customer_gain_t6')])]" name="customer_gain_ids"/>
+      <field eval="[(6, 0, [ref('customer_pain_reliever_t1'),ref('customer_pain_reliever_t2'),ref('customer_pain_reliever_t3')])]" name="pain_reliever_ids"/>
+      <field eval="[(6, 0, [ref('customer_gain_creator_t1'),ref('customer_gain_creator_t2'),ref('customer_gain_creator_t3'),ref('customer_gain_creator_t4')])]" name="gain_creator_ids"/>
+      <field eval="[(6, 0, [ref('customer_products_services_t1'),ref('customer_products_services_t2'),ref('customer_products_services_t3'),ref('customer_products_services_t4')])]" name="products_services_ids"/>
+    </record>
+
+
+    <record id="value_proposition_2" model="marketing_strategy.value_proposition">
+    	<field name="name">Toyota</field>
+      <field name="state">active</field>
+      <field name="product_type">good</field>
+      <field name="assessment">fit</field>
+      <field name="brand_id" ref="brand_toyota"/>
+      <field name="buyer_persona_id" ref="buyer_persona_3"/>
+      <field eval="[(6, 0, [ref('customer_job_ty1'),ref('customer_job_ty2'),ref('customer_job_t4'),ref('customer_job_ty3'),ref('customer_job_ty4')])]" name="customer_job_ids"/>
+      <field eval="[(6, 0, [ref('customer_pain_t2'),ref('customer_pain_t3'),ref('customer_pain_ty1'),ref('customer_pain_t5')])]" name="customer_pain_ids"/>
+      <field eval="[(6, 0, [ref('customer_gain_ty1'),ref('customer_gain_t1'),ref('customer_gain_ty5'),ref('customer_gain_ty2'),ref('customer_gain_t6'),ref('customer_gain_ty3'),ref('customer_gain_t8')])]" name="customer_gain_ids"/>
+      <field eval="[(6, 0, [ref('customer_pain_reliever_ty2'),ref('customer_pain_reliever_ty1')])]" name="pain_reliever_ids"/>
+      <field eval="[(6, 0, [ref('customer_gain_creator_ty1'),ref('customer_gain_creator_ty2'),ref('customer_gain_creator_ty3'),ref('customer_gain_creator_ty4')])]" name="gain_creator_ids"/>
+      <field eval="[(6, 0, [ref('customer_products_services_ty1'),ref('customer_products_services_ty2'),ref('customer_products_services_ty3'),ref('customer_products_services_ty4'),ref('customer_products_services_ty5')])]" name="products_services_ids"/>
+    </record>
+
+
+    <record id="value_proposition_3" model="marketing_strategy.value_proposition">
+    	<field name="name">Toyota</field>
+      <field name="state">done</field>
+      <field name="product_type">good</field>
+      <field name="assessment">mis_fit</field>
+      <field name="brand_id" ref="brand_toyota"/>
+      <field name="buyer_persona_id" ref="buyer_persona_2"/>
+      <field eval="[(6, 0, [ref('customer_job_t1'),ref('customer_job_t3'),ref('customer_job_t4'),ref('customer_job_t5'),ref('customer_job_t2')])]" name="customer_job_ids"/>
+      <field eval="[(6, 0, [ref('customer_pain_t1'),ref('customer_pain_t2'),ref('customer_pain_t3'),ref('customer_pain_t4'),ref('customer_pain_t5')])]" name="customer_pain_ids"/>
+      <field eval="[(6, 0, [ref('customer_gain_t1'),ref('customer_gain_t2'),ref('customer_gain_t3'),ref('customer_gain_t4'),ref('customer_gain_t5'),ref('customer_gain_t6'),ref('customer_gain_t7'),ref('customer_gain_t8')])]" name="customer_gain_ids"/>
+      <field eval="[(6, 0, [ref('customer_pain_reliever_ty2'),ref('customer_pain_reliever_ty1')])]" name="pain_reliever_ids"/>
+      <field eval="[(6, 0, [ref('customer_gain_creator_ty1'),ref('customer_gain_creator_ty2'),ref('customer_gain_creator_ty3'),ref('customer_gain_creator_ty4')])]" name="gain_creator_ids"/>
+      <field eval="[(6, 0, [ref('customer_products_services_ty3'),ref('customer_products_services_ty4'),ref('customer_products_services_ty2'),ref('customer_products_services_ty5'),ref('customer_products_services_ty1')])]" name="products_services_ids"/>
+    </record>
+
+    </data>
+</odoo>

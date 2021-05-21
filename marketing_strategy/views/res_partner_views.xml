@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  	<record id="view_partner_marketing_strategy_form" model="ir.ui.view">
+		<field name="name">res.partner.res_partner_marketing_strategy.form.inherit</field>
+		<field name="model">res.partner</field>
+		<field name="priority">2</field>
+		<field name="inherit_id" ref="base.view_partner_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//group[@name='purchase']" position="after">
+				<group string="Marketing" name="marketing" priority="3" groups="marketing_strategy.group_strategy_user">
+                	<field name="brand_advocacy"/>
+                    <field name="evangelist"/>
+                    <field name="heater"/>
+                    <field name="touchpoint_hub"/>
+                </group>			
+			</xpath>
+		</field>
+	</record>
+	
+	    	 <record id="action_marketing_strategy_touchpoints_hub_form" model="ir.actions.act_window">
+            <field name="name">Touchpoints Hubs</field>
+            <field name="res_model">res.partner</field>
+            <field name="domain">[('touchpoint_hub','=',True)]</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="context">{'search_default_touchpoint_hub': 1,'default_touchpoint_hub':1, 'default_is_company': True}</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new touchpoins hub in your address book
+              </p><p>
+                Odoo helps you easily track all activities related to a touchpoint hub.
+              </p>
+            </field>
+        </record>
+    
+    <menuitem id="menu_marketing_strategy_touchpoint_hub" name="Touchpoints hubs"
+            parent="menu_marketing_strategy_touchpoints"
+            action="action_marketing_strategy_touchpoints_hub_form" sequence="3"/>
+
+
+        <!-- Partner Kanban View -->
+        <record model="ir.ui.view" id="res_partner_brand_advocacy_kanban_view">
+            <field name="name">res.partner.kanban</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="brand_advocacy" class="o_res_partner_kanban o_kanban_small_column">
+                    <field name="id"/>
+                    <field name="color"/>
+                    <field name="display_name"/>
+                    <field name="title"/>
+                    <field name="email"/>
+                    <field name="parent_id"/>
+                    <field name="is_company"/>
+                    <field name="function"/>
+                    <field name="phone"/>
+                    <field name="street"/>
+                    <field name="street2"/>
+                    <field name="zip"/>
+                    <field name="city"/>
+                    <field name="country_id"/>
+                    <field name="mobile"/>
+                    <field name="state_id"/>
+                    <field name="category_id"/>
+                    <field name="image_128"/>
+                    <field name="type"/>
+                    <field name="brand_advocacy"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
+                                <t t-if="!record.is_company.raw_value">
+                                    <t t-if="record.type.raw_value === 'delivery'" t-set="placeholder" t-value="'/base/static/img/truck.png'"/>
+                                    <t t-elif="record.type.raw_value === 'invoice'" t-set="placeholder" t-value="'/base/static/img/money.png'"/>
+                                    <t t-else="" t-set="placeholder" t-value="'/base/static/img/avatar_grey.png'"/>
+                                    <div class="o_kanban_image_fill_left d-none d-md-block" t-attf-style="background-image:url('#{kanban_image('res.partner', 'image_128', record.id.raw_value,  placeholder)}')">
+                                        <img class="o_kanban_image_inner_pic" t-if="record.parent_id.raw_value" t-att-alt="record.parent_id.value" t-att-src="kanban_image('res.partner', 'image_128', record.parent_id.raw_value)"/>
+                                    </div>
+                                    <div class="o_kanban_image d-md-none" t-attf-style="background-image:url('#{kanban_image('res.partner', 'image_128', record.id.raw_value,  placeholder)}')">
+                                        <img class="o_kanban_image_inner_pic" t-if="record.parent_id.raw_value" t-att-alt="record.parent_id.value" t-att-src="kanban_image('res.partner', 'image_128', record.parent_id.raw_value)"/>
+                                    </div>
+                                </t>
+                                <t t-else="">
+                                    <t t-set="placeholder" t-value="'/base/static/img/company_image.png'"/>
+                                    <div class="o_kanban_image_fill_left o_kanban_image_full" t-attf-style="background-image: url(#{kanban_image('res.partner', 'image_128', record.id.raw_value, placeholder)})" role="img"/>
+                                </t>
+                                <div class="oe_kanban_details">
+                                    <strong class="o_kanban_record_title oe_partner_heading"><field name="display_name"/></strong>
+                                    <div class="o_kanban_tags_section oe_kanban_partner_categories"/>
+                                    <ul>
+                                        <li t-if="record.parent_id.raw_value and !record.function.raw_value"><field name="parent_id"/></li>
+                                        <li t-if="!record.parent_id.raw_value and record.function.raw_value"><field name="function"/></li>
+                                        <li t-if="record.parent_id.raw_value and record.function.raw_value"><field name="function"/> at <field name="parent_id"/></li>
+                                        <li t-if="record.city.raw_value and !record.country_id.raw_value"><field name="city"/></li>
+                                        <li t-if="!record.city.raw_value and record.country_id.raw_value"><field name="country_id"/></li>
+                                        <li t-if="record.city.raw_value and record.country_id.raw_value"><field name="city"/>, <field name="country_id"/></li>
+                                        <li t-if="record.email.raw_value" class="o_text_overflow"><field name="email"/></li>
+                                    </ul>
+                                    <div class="oe_kanban_partner_links"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+
+        <record id='marketing_strategy_brand_advocacy_action' model='ir.actions.act_window'>
+        <field name="name">Brand Advocacy</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="domain">[('brand_advocacy','!=','does_not_apply')]</field>
+        <field name="view_id" ref="res_partner_brand_advocacy_kanban_view"/>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new brand
+          </p>
+        </field>
+    </record>
+
+    <menuitem action="marketing_strategy_brand_advocacy_action" parent="menu_marketing_strategy_actors" id="marketing_strategy.brand_advocacy_menu" sequence="2"/>
+
+    <record id='marketing_strategy_evangelist_action' model='ir.actions.act_window'>
+        <field name="name">Evangelists</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="domain">[('evangelist','=',True)]</field>
+        <field name="context">{'search_default_evangelist': 1,'default_customer': 1,'default_evangelist':1}</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new evangelist
+          </p>
+        </field>
+    </record>
+ 
+     <menuitem action="marketing_strategy_evangelist_action" parent="menu_marketing_strategy_actors" id="marketing_strategy.evangelist" sequence="3"/>
+
+    <record id='marketing_strategy_heater_action' model='ir.actions.act_window'>
+        <field name="name">Heaters</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="domain">[('heater','=',True)]</field>
+        <field name="context">{'search_default_heater': 1, 'default_heater':1}</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new heater
+          </p>
+        </field>
+    </record>
+ 
+     <menuitem action="marketing_strategy_heater_action" parent="menu_marketing_strategy_actors" id="marketing_strategy.heater" sequence="4"/>
+
+
+</odoo>

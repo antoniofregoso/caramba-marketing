@@ -1,0 +1,964 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_marketing_strategy_brand_config" name="Brands"
+            parent="marketing_strategy_menu_config"
+            sequence="1"/>	
+            
+        <menuitem id="menu_marketing_strategy_utm_config" name="UTMs"
+            parent="marketing_strategy_menu_config"
+            sequence="2"/>	
+            
+         <menuitem id="menu_marketing_strategy_value_proposition_config" name="Value Proposition Parameters"
+            parent="marketing_strategy_menu_config"
+            sequence="3"/>
+
+        <menuitem id="menu_marketing_strategy_buyer_persona_config" name="Buyers Persona"
+            parent="marketing_strategy_menu_config"
+            sequence="4"/>
+
+        <menuitem id="menu_marketing_strategy_touch_point_config" name="Touch Points"
+            parent="marketing_strategy_menu_config"
+            sequence="5"/>
+            
+         
+        <menuitem
+            id="marketing_strategy_menu_config"
+            name="Configuration"
+            parent="marketing_strategy_menu_root"
+            sequence="80" groups="group_strategy_manager"/>
+            
+  
+            
+            <!--
+            leam_marketing.brand.tag views
+        -->
+        <record id="marketing_strategy_brand_tag_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.brand.tag.form</field>
+            <field name="model">marketing_strategy.brand.tag</field>
+            <field name="arch" type="xml">
+                <form string="Brand Tags">
+                    <group>
+                        <field name="name"/>
+                        <field widget="color_picker" name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="marketing_strategy_brand_tag_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.brand.tag.tree</field>
+            <field name="model">marketing_strategy.brand.tag</field>
+            <field name="arch" type="xml">
+                <tree string="Brand Tags">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="marketing_strategy_brand_tag_action" model="ir.actions.act_window">
+            <field name="name">Brand Tags</field>
+            <field name="res_model">marketing_strategy.brand.tag</field>
+            <field name="view_id" ref="marketing_strategy_brand_tag_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new tag for brands
+              </p><p>
+                Create tags that fit your brands to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_marketing_strategy_brand_tag"
+            name="Brand Tags"
+            action="marketing_strategy_brand_tag_action"
+            parent="menu_marketing_strategy_brand_config"
+            sequence="1"/>
+
+           <!--
+            leam_marketing.brand.topic views
+        -->
+        <record id="marketing_strategy_brand_topic_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.brand.topic.form</field>
+            <field name="model">marketing_strategy.brand.topic</field>
+            <field name="arch" type="xml">
+                <form string="Conversation Topics">
+                    <group>
+                        <field name="name"/>
+                        <field widget="color_picker" name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="marketing_strategy_brand_topic_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.brand.topic.tree</field>
+            <field name="model">marketing_strategy.brand.topic</field>
+            <field name="arch" type="xml">
+                <tree string="Conversation Topics">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="marketing_strategy_brand_topic_action" model="ir.actions.act_window">
+            <field name="name">Conversation Topics</field>
+            <field name="res_model">marketing_strategy.brand.topic</field>
+            <field name="view_id" ref="marketing_strategy_brand_topic_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new conversation topics for brands.
+              </p><p>
+                Create conversation topics that fit your brands to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_marketing_strategy_brand_topic"
+            name="Conversation Topics"
+            action="marketing_strategy_brand_topic_action"
+            parent="menu_marketing_strategy_brand_config"
+            sequence="2"/>
+            
+                        <!--
+            leam_marketing.touchcontact.tag views
+        -->
+        <record id="marketing_strategy_touchpoint_tag_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.touchpoint.tag.form</field>
+            <field name="model">marketing_strategy.touchpoint.tag</field>
+            <field name="arch" type="xml">
+                <form string="Touchpoint Tags">
+                    <group>
+                        <field name="name"/>
+                        <field widget="color_picker" name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="marketing_strategy_touchpoint_tag_tree" model="ir.ui.view">
+            <field name="name">cmarketing_strategy.touchpoint.tag.tree</field>
+            <field name="model">marketing_strategy.touchpoint.tag</field>
+            <field name="arch" type="xml">
+                <tree string="Touchpoint Tags">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="marketing_strategy_touchpoint_tag_action" model="ir.actions.act_window">
+            <field name="name">Touchpoint Tags</field>
+            <field name="res_model">marketing_strategy.touchpoint.tag</field>
+            <field name="view_id" ref="marketing_strategy_touchpoint_tag_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new tag for touchpoints
+              </p><p>
+                Create tags that fit your touchpoints to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_marketing_strategy_touchpoint_tag"
+            name="Touchpoint Tags"
+            action="marketing_strategy_touchpoint_tag_action"
+            parent="menu_marketing_strategy_touch_point_config"
+            sequence="1"/>
+            
+            
+         <menuitem
+            id="menu_marketing_strategy_utm_campaign"
+            name="Campaigns"
+            action="utm.utm_campaign_action"
+            parent="menu_marketing_strategy_utm_config"
+            sequence="1"/>
+            
+         <menuitem
+            id="menu_marketing_strategy_utm_medium"
+            name="Mediums"
+            action="utm.utm_medium_action"
+            parent="menu_marketing_strategy_utm_config"
+            sequence="2"/>
+            
+          <menuitem
+            id="menu_marketing_strategy_utm_source"
+            name="Sources"
+            action="utm.utm_source_action"
+            parent="menu_marketing_strategy_utm_config"
+            sequence="3"/>
+            
+         <record id="utm_content_view_tree" model="ir.ui.view">
+            <field name="name">utm.content.tree</field>
+            <field name="model">utm.content</field>
+            <field name="arch" type="xml">
+                <tree string="Content">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="utm_content_view_form" model="ir.ui.view">
+            <field name="name">utm.content.form</field>
+            <field name="model">utm.content</field>
+            <field name="arch" type="xml">
+                <form string="Content">
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        
+        <record id="utm_content_action" model="ir.actions.act_window">
+            <field name="name">Contents</field>
+            <field name="res_model">utm.content</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Define a new content
+              </p>
+            </field>
+        </record>
+        
+        <menuitem
+            id="menu_marketing_strategy_utm_content"
+            name="Contents"
+            action="utm_content_action"
+            parent="menu_marketing_strategy_utm_config"
+            sequence="4"/>
+            
+                   
+         <record id="utm_term_view_tree" model="ir.ui.view">
+            <field name="name">utm.term.tree</field>
+            <field name="model">utm.term</field>
+            <field name="arch" type="xml">
+                <tree string="Term">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="utm_term_view_form" model="ir.ui.view">
+            <field name="name">utm.term.form</field>
+            <field name="model">utm.term</field>
+            <field name="arch" type="xml">
+                <form string="Term">
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="utm_term_action" model="ir.actions.act_window">
+            <field name="name">Terms</field>
+            <field name="res_model">utm.term</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Define a new content
+              </p>
+            </field>
+        </record>
+        
+        <menuitem
+            id="menu_marketing_strategy_utm_term"
+            name="Terms"
+            action="utm_term_action"
+            parent="menu_marketing_strategy_utm_config"
+            sequence="4"/>
+            
+    <!-- Solution Parameters -->    
+    
+               
+        <record id="marketing_strategy_custumer_job_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.value_proposition.customer_job.form</field>
+            <field name="model">marketing_strategy.value_proposition.customer_job</field>
+            <field name="arch" type="xml">
+                <form string="Customer Job">
+                    <group>
+                        <field name="name"/>
+                        <field widget="color_picker" name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="marketing_strategy_custumer_job_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.value_proposition.customer_job.tree</field>
+            <field name="model">marketing_strategy.value_proposition.customer_job</field>
+            <field name="arch" type="xml">
+                <tree string="Customer Jobs">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="marketing_strategy_custumer_job_action" model="ir.actions.act_window">
+            <field name="name">Customer Jobs</field>
+            <field name="res_model">marketing_strategy.value_proposition.customer_job</field>
+            <field name="view_id" ref="marketing_strategy_custumer_job_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new custumer job
+              </p><p>
+                Create Customer Jobs that fit your value proposition to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_marketing_strategy_custumer_job_tag"
+            name="Customer Jobs"
+            action="marketing_strategy_custumer_job_action"
+            parent="menu_marketing_strategy_value_proposition_config"
+            sequence="1"/>    
+        
+        
+                       
+        <record id="marketing_strategy_customer_pain_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.value_proposition.customer_pain.form</field>
+            <field name="model">marketing_strategy.value_proposition.customer_pain</field>
+            <field name="arch" type="xml">
+                <form string="Customer Pain">
+                    <group>
+                        <field name="name"/>
+                        <field widget="color_picker" name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="marketing_strategy_customer_pain_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.value_proposition.customer_pain.tree</field>
+            <field name="model">marketing_strategy.value_proposition.customer_pain</field>
+            <field name="arch" type="xml">
+                <tree string="Customer Pains">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="marketing_strategy_customer_pain_action" model="ir.actions.act_window">
+            <field name="name">Customer Pains</field>
+            <field name="res_model">marketing_strategy.value_proposition.customer_pain</field>
+            <field name="view_id" ref="marketing_strategy_customer_pain_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new custumer pain
+              </p><p>
+                Create Customer Pains that fit your value proposition to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_marketing_strategy_customer_pain_tag"
+            name="Customer Pains"
+            action="marketing_strategy_customer_pain_action"
+            parent="menu_marketing_strategy_value_proposition_config"
+            sequence="2"/>    
+      
+                             
+        <record id="marketing_strategy_customer_gain_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.value_proposition.customer_gain.form</field>
+            <field name="model">marketing_strategy.value_proposition.customer_gain</field>
+            <field name="arch" type="xml">
+                <form string="Customer Gain">
+                    <group>
+                        <field name="name"/>
+                        <field widget="color_picker" name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="marketing_strategy_customer_gain_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.value_proposition.customer_gain.tree</field>
+            <field name="model">marketing_strategy.value_proposition.customer_gain</field>
+            <field name="arch" type="xml">
+                <tree string="Customer Gains">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="marketing_strategy_customer_gain_action" model="ir.actions.act_window">
+            <field name="name">Customer Gains</field>
+            <field name="res_model">marketing_strategy.value_proposition.customer_gain</field>
+            <field name="view_id" ref="marketing_strategy_customer_gain_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new custumer gain
+              </p><p>
+                Create Customer Gains that fit your value proposition to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_marketing_strategy_customer_gain_tag"
+            name="Customer Gains"
+            action="marketing_strategy_customer_gain_action"
+            parent="menu_marketing_strategy_value_proposition_config"
+            sequence="3"/>  
+            
+                                         
+        <record id="marketing_strategy_pain_reliever_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.value_proposition.pain_reliever.form</field>
+            <field name="model">marketing_strategy.value_proposition.pain_reliever</field>
+            <field name="arch" type="xml">
+                <form string="Pain Reliever">
+                    <group>
+                        <field name="name"/>
+                        <field widget="color_picker" name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="marketing_strategy_pain_reliever_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.value_proposition.pain_reliever.tree</field>
+            <field name="model">marketing_strategy.value_proposition.pain_reliever</field>
+            <field name="arch" type="xml">
+                <tree string="Pain Relievers">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="marketing_strategy_pain_reliever_action" model="ir.actions.act_window">
+            <field name="name">Pain Relievers</field>
+            <field name="res_model">marketing_strategy.value_proposition.pain_reliever</field>
+            <field name="view_id" ref="marketing_strategy_pain_reliever_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new pain reliever
+              </p><p>
+                Create Pain Relievers that fit your value proposition to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_marketing_strategy_pain_reliever_tag"
+            name="Pain Relievers"
+            action="marketing_strategy_pain_reliever_action"
+            parent="menu_marketing_strategy_value_proposition_config"
+            sequence="4"/>  
+            
+        <record id="marketing_strategy_gain_creator_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.value_proposition.gain_creator.form</field>
+            <field name="model">marketing_strategy.value_proposition.gain_creator</field>
+            <field name="arch" type="xml">
+                <form string="Gain Creator">
+                    <group>
+                        <field name="name"/>
+                        <field  widget="color_picker" name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="marketing_strategy_gain_creator_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.value_proposition.gain_creator.tree</field>
+            <field name="model">marketing_strategy.value_proposition.gain_creator</field>
+            <field name="arch" type="xml">
+                <tree string="Gain Creators">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="marketing_strategy_gain_creator_action" model="ir.actions.act_window">
+            <field name="name">Gain Creators</field>
+            <field name="res_model">marketing_strategy.value_proposition.gain_creator</field>
+            <field name="view_id" ref="marketing_strategy_gain_creator_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new gain creator
+              </p><p>
+                Create Gain Creators that fit your value proposition to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_marketing_strategy_gain_creator_tag"
+            name="Gain Creators"
+            action="marketing_strategy_gain_creator_action"
+            parent="menu_marketing_strategy_value_proposition_config"
+            sequence="5"/>  
+            
+        <record id="marketing_strategy_products_services_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.value_proposition.products_services.form</field>
+            <field name="model">marketing_strategy.value_proposition.products_services</field>
+            <field name="arch" type="xml">
+                <form string="Products &amp; Services">
+                    <group>
+                        <field name="name"/>
+                        <field widget="color_picker" name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="marketing_strategy_products_services_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.value_proposition.products_services.tree</field>
+            <field name="model">marketing_strategy.value_proposition.products_services</field>
+            <field name="arch" type="xml">
+                <tree string="Products &amp; Services">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="marketing_strategy_products_services_action" model="ir.actions.act_window">
+            <field name="name">Products &amp; Services</field>
+            <field name="res_model">marketing_strategy.value_proposition.products_services</field>
+            <field name="view_id" ref="marketing_strategy_products_services_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new product or service
+              </p><p>
+                Create Products &amp; Services that fit your value proposition to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_marketing_strategy_products_services_tag"
+            name="Products &amp; Services"
+            action="marketing_strategy_products_services_action"
+            parent="menu_marketing_strategy_value_proposition_config"
+            sequence="6"/>  
+            
+            
+            
+
+            
+                    <!-- Tribe Category-->
+         
+          <record id="marketing_strategy_tribe_category_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.tribe.category.form</field>
+            <field name="model">marketing_strategy.tribe.category</field>
+            <field name="arch" type="xml">
+                <form string="Tribe Category">
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="marketing_strategy_tribe_category_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.tribe.category.tree</field>
+            <field name="model">marketing_strategy.tribe.category</field>
+            <field name="arch" type="xml">
+                <tree string="Tribe Category">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="marketing_strategy_tribe_category_action" model="ir.actions.act_window">
+            <field name="name">Tribe Category</field>
+            <field name="res_model">marketing_strategy.tribe.category</field>
+            <field name="view_id" ref="marketing_strategy_tribe_category_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new tribe category
+              </p><p>
+                Create tags that fit your brands to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_marketing_strategy_tribe_category"
+            name="Tribe Category"
+            action="marketing_strategy_tribe_category_action"
+            parent="menu_marketing_strategy_buyer_persona_config"
+            sequence="0"/>
+         <!-- Meeting Place -->
+         
+           <record id="marketing_strategy_meeting_place_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.meeting_place.form</field>
+            <field name="model">marketing_strategy.meeting_place</field>
+            <field name="arch" type="xml">
+                <form string="Meeting Place">
+                    <group>
+                        <field name="name"/>
+                        <field widget="color_picker" name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="marketing_strategy_meeting_place_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.meeting_place.tree</field>
+            <field name="model">marketing_strategy.meeting_place</field>
+            <field name="arch" type="xml">
+                <tree string="Meeting Places">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="marketing_strategy_meeting_place_action" model="ir.actions.act_window">
+            <field name="name">Meeting Places</field>
+            <field name="res_model">marketing_strategy.meeting_place</field>
+            <field name="view_id" ref="marketing_strategy_meeting_place_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new meeting place
+              </p><p>
+                Create tags that fit your brands to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_marketing_strategy_meeting_place"
+            name="Meeting Places"
+            action="marketing_strategy_meeting_place_action"
+            parent="menu_marketing_strategy_buyer_persona_config"
+            sequence="1"/>
+
+
+         <!-- Omline Meeting Place -->
+         
+           <record id="marketing_strategy_online_place_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.online_place.form</field>
+            <field name="model">marketing_strategy.online_place</field>
+            <field name="arch" type="xml">
+                <form string="Online Place">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="place_type"/>
+                        </group>
+                        <group>
+                            <field name="url" widget="url"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="marketing_strategy_online_place_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.online_place.tree</field>
+            <field name="model">marketing_strategy.online_place</field>
+            <field name="arch" type="xml">
+                <tree string="Online Places">
+                    <field name="name"/>
+                    <field name="place_type"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="marketing_strategy_online_place_action" model="ir.actions.act_window">
+            <field name="name">Online Places</field>
+            <field name="res_model">marketing_strategy.online_place</field>
+            <field name="view_id" ref="marketing_strategy_online_place_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new online meeting place
+              </p><p>
+                Create tags that fit your brands to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_marketing_strategy_online_place"
+            name="Online Places"
+            action="marketing_strategy_online_place_action"
+            parent="menu_marketing_strategy_buyer_persona_config"
+            sequence="1"/>
+            
+            
+            
+          <!-- Content Type -->
+         
+          <record id="marketing_strategy_content_type_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.content_type.form</field>
+            <field name="model">marketing_strategy.content_type</field>
+            <field name="arch" type="xml">
+                <form string="Content Type">
+                    <group>
+                        <field name="name"/>
+                        <field widget="color_picker" name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="marketing_strategy_content_type_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.content_type.tree</field>
+            <field name="model">marketing_strategy.content_type</field>
+            <field name="arch" type="xml">
+                <tree string="Content Types">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="marketing_strategy_content_type_action" model="ir.actions.act_window">
+            <field name="name">Content Types</field>
+            <field name="res_model">marketing_strategy.content_type</field>
+            <field name="view_id" ref="marketing_strategy_content_type_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new content type
+              </p><p>
+                Create tags that fit your brands to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_marketing_strategy_content_type"
+            name="Content Types"
+            action="marketing_strategy_content_type_action"
+            parent="menu_marketing_strategy_buyer_persona_config"
+            sequence="3"/>
+            
+          <!-- Social Media Preference -->
+         
+          <record id="marketing_strategy_social_media_preference_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.social_media_preference.form</field>
+            <field name="model">marketing_strategy.social_media_preference</field>
+            <field name="arch" type="xml">
+                <form string="Social Media Preference">
+                    <group>
+                        <field name="name"/>
+                        <field widget="color_picker" name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="marketing_strategy_social_media_preference_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.social_media_preference.tree</field>
+            <field name="model">marketing_strategy.social_media_preference</field>
+            <field name="arch" type="xml">
+                <tree string="Social Media Preferences">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="marketing_strategy_social_media_preference_action" model="ir.actions.act_window">
+            <field name="name">Social Media Preferences</field>
+            <field name="res_model">marketing_strategy.social_media_preference</field>
+            <field name="view_id" ref="marketing_strategy_social_media_preference_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new social media preference
+              </p><p>
+                Create tags that fit your brands to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_marketing_strategy_social_media_preference"
+            name="Social Media Preferences"
+            action="marketing_strategy_social_media_preference_action"
+            parent="menu_marketing_strategy_buyer_persona_config"
+            sequence="4"/>
+            
+            
+                  <!-- Social Buyer Objection -->
+         
+          <record id="marketing_strategy_buyer_objection_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.buyer_objection.form</field>
+            <field name="model">marketing_strategy.buyer_objection</field>
+            <field name="arch" type="xml">
+                <form string="Buyer Objection">
+                    <group>
+                        <field name="name"/>
+                        <field widget="color_picker" name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="marketing_strategy_buyer_objection_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.buyer_objection.tree</field>
+            <field name="model">marketing_strategy.buyer_objection</field>
+            <field name="arch" type="xml">
+                <tree string="Buyer Objections">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="marketing_strategy_buyer_objection_action" model="ir.actions.act_window">
+            <field name="name">Buyer Objections</field>
+            <field name="res_model">marketing_strategy.buyer_objection</field>
+            <field name="view_id" ref="marketing_strategy_buyer_objection_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new buyer objection
+              </p><p>
+                Create tags that fit your brands to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_marketing_strategy_buyer_objection"
+            name="Buyer Objections"
+            action="marketing_strategy_buyer_objection_action"
+            parent="menu_marketing_strategy_buyer_persona_config"
+            sequence="5"/>
+            
+            
+                  <!-- Social Buyer Goal -->
+         
+          <record id="marketing_strategy_buyer_goal_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.buyer_goal.form</field>
+            <field name="model">marketing_strategy.buyer_goal</field>
+            <field name="arch" type="xml">
+                <form string="Buyer Goal">
+                    <group>
+                        <field name="name"/>
+                        <field widget="color_picker" name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="marketing_strategy_buyer_goal_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.buyer_goal.tree</field>
+            <field name="model">marketing_strategy.buyer_goal</field>
+            <field name="arch" type="xml">
+                <tree string="Buyer Goals">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="marketing_strategy_buyer_goal_action" model="ir.actions.act_window">
+            <field name="name">Buyer Goals</field>
+            <field name="res_model">marketing_strategy.buyer_goal</field>
+            <field name="view_id" ref="marketing_strategy_buyer_goal_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new buyer goal
+              </p><p>
+                Create tags that fit your brands to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_marketing_strategy_buyer_goal"
+            name="Buyer Goals"
+            action="marketing_strategy_buyer_goal_action"
+            parent="menu_marketing_strategy_buyer_persona_config"
+            sequence="5"/>
+
+            
+                  <!-- Social Buyer LifeStyle -->
+         
+          <record id="marketing_strategy_buyer_lifestyle_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.buyer_lifestyle.form</field>
+            <field name="model">marketing_strategy.buyer_lifestyle</field>
+            <field name="arch" type="xml">
+                <form string="Buyer Lifestyle">
+                    <group>
+                        <field name="name"/>
+                        <field widget="color_picker" name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="marketing_strategy_buyer_lifestyle_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.buyer_lifestyle.tree</field>
+            <field name="model">marketing_strategy.buyer_lifestyle</field>
+            <field name="arch" type="xml">
+                <tree string="Buyer Lifestyle">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="marketing_strategy_buyer_lifestyle_action" model="ir.actions.act_window">
+            <field name="name">Buyer Lifestyle</field>
+            <field name="res_model">marketing_strategy.buyer_lifestyle</field>
+            <field name="view_id" ref="marketing_strategy_buyer_lifestyle_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new buyer preference
+              </p><p>
+                Create tags that fit your brands to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_marketing_strategy_buyer_lifestyle"
+            name="Buyer Lifestyle"
+            action="marketing_strategy_buyer_lifestyle_action"
+            parent="menu_marketing_strategy_buyer_persona_config"
+            sequence="5"/>
+            
+                        
+                  <!-- Social Buyer Competence -->
+         
+          <record id="marketing_strategy_buyer_competence_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.buyer_competence.form</field>
+            <field name="model">marketing_strategy.buyer_competence</field>
+            <field name="arch" type="xml">
+                <form string="Buyer Competence">
+                    <group>
+                        <field name="name"/>
+                        <field widget="color_picker" name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="marketing_strategy_buyer_competence_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.buyer_competence.tree</field>
+            <field name="model">marketing_strategy.buyer_competence</field>
+            <field name="arch" type="xml">
+                <tree string="Buyer Competences">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="marketing_strategy_buyer_competence_action" model="ir.actions.act_window">
+            <field name="name">Buyer Competences</field>
+            <field name="res_model">marketing_strategy.buyer_competence</field>
+            <field name="view_id" ref="marketing_strategy_buyer_competence_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new buyer preference
+              </p><p>
+                Create tags that fit your brands to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_marketing_strategy_buyer_competence"
+            name="Buyer Competences"
+            action="marketing_strategy_buyer_competence_action"
+            parent="menu_marketing_strategy_buyer_persona_config"
+            sequence="6"/>
+            
+
+            
+                
+         
+        
+         
+
+</odoo>
